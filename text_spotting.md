@@ -7,9 +7,15 @@
 - CRAFT로 Text detection을 수행합니다.
 ## Image Reconstruction
 - Text segmentation map을 활용해 각 Bounding box별로 텍스트를 분리하고 이를 아래와 같이 새로운 이미지로서 재구축합니다.
-- ![1767_reconstruction](https://i.imgur.com/oIFoGos.png)
+- ![1767_reconstruction](https://i.imgur.com/gMJkCSi.png)
+- 이미지를 재구축하는 이유는 Text recognition 결과를 Bounding box별로 합치기 위함입니다.
+## Text segmentation map
+- ![1767_text_segmentation_map](https://i.imgur.com/8JFSUMX.png)
+- ![1767_reconstuction_text_segmentation_map](https://i.imgur.com/7Vf8GMC.png)
+- 원본 이미지와 재구축된 이미지 각각에 대해서 Text segmentation map을 생성합니다.
 ## Clova OCR API
-- 재구축된 이미지에 Clova OCR API를 사용합니다. 이때 그 결과에서 Text detection 결과는 사용하지 않고 Text recognition의 결과만 사용합니다. 그 이유는 Text detection을 이미 수행했으므로 Text recognition의 결과만 원래의 이미지의 올바른 좌표에 Mapping해주기만 하면 되기 때문입니다.
+- 재구축된 이미지에 Clova OCR API를 사용합니다.
+- 이때 그 결과에서 Text detection 결과는 사용하지 않고 Text recognition의 결과만 사용합니다. 재구축된 이미지에 대한 Text segmentation map과 원본 이미지에 대한 Text segmentation map을 사용해 Text recognition의 결과를 원본 이미지에 해당하는 Bounding box별로 병합합니다.
 ## Result
 - ![1767_text_spotting](https://i.imgur.com/Q3w19m6.png)
 
