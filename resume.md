@@ -15,7 +15,7 @@
 ## 'Flitto' (2022.05 ~)
 ### Menu Image Text Detection & Recognition (2022.11 ~)
 - Reference:
-    - https://github.com/KimRass/KimRass/blob/main/document_text_recognition.md
+    - https://github.com/KimRass/KimRass/blob/main/text_spotting.md
 ### Menu Image Text Removal (2022.09 ~)
 - References:
     - https://github.com/KimRass/KimRass/blob/main/text_removal.md
