@@ -12,16 +12,23 @@
 - 충북고등학교 졸업 (2006.03 ~ 2009.02)
 
 # Work Experience
-## 'Flitto' (2022.05 ~)
-- Data팀 / Place Lab 소속
-- 회사소개 : 번역 플랫폼 운영 및 데이터 판매, 사원수 약 150명, 2019년 코스닥 상장
-- 음식점의 메뉴 이미지를 다국어로 번역해 QR 코드로 제공하는 '메뉴 번역' 서비스에 사용되는 이미지 처리와 관련된 알고리즘 개발을 담당하고 있습니다.
-- Scene text remover로 원본 이미지에서 번역이 필요한 텍스트를 지우고 기계번역과 전문가 검수를 거친 번역문을 Scene text renderer로 렌더링하는 과정을 거쳐 번역된 메뉴 이미지가 만들어집니다.
-### Scene text renderer 개발 (2023.01 ~ 현재)
-- Ref: https://github.com/KimRass/scene_text_renderer
-- 원본 이미지에서 각 텍스트의 스타일 정보를 추출하고 (Text style recognition) 텍스트 영역을 계산하여 (Text region recognition) 이를 바탕으로 심미성과 가독성을 살려 번역문을 렌더링하는 기술에 관한 내용입니다.
-- Text style recognition은 Scene text image로부터 다음의 7가지 특성을 인식하는 것입니다; Font size, Writing direction, Text alignment, Text color, Text border color, Text border width, Text line breaking
-- Text region recognition은 텍스트가 렌더링될 수 있는 영역을 새롭게 계산하는 기술입니다. 이를 통해 한국어를 영어로 번역할 때와 같이 원문보다 번역문이 긴 경우에도 원본에 가까운 Font size로 텍스트를 렌더링할 수 있게 됩니다.
+## 'Flitto' (2022.05 ~ 2023.12)
+- Data dev. team & Place lab 소속
+- 회사소개: 번역 플랫폼 운영 및 데이터 판매, 사원수 약 150명, 2019년 코스닥 상장
+- 음식점의 메뉴 이미지에 대한 다국어 이미지 번역 서비스인 '플리토 플레이스' ('Flitto Place')와 관련된 image processing 알고리즘을 개발.
+<!-- - 음식점의 메뉴 이미지를 다국어로 번역해 QR 코드로 제공하는 '메뉴 번역' 서비스에 사용되는 이미지 처리와 관련된 알고리즘 개발을 담당하고 있습니다. -->
+<!-- - Scene text remover로 원본 이미지에서 번역이 필요한 텍스트를 지우고 기계번역과 전문가 검수를 거친 번역문을 Scene text renderer로 렌더링하는 과정을 거쳐 번역된 메뉴 이미지가 만들어집니다. -->
+### Textual attribute recognition model 개발 (2023.01 ~ 2023.06)
+- Ref: https://github.com/KimRass/Flitto-Image-Processing/tree/main/Place-Translation/Textual-Attribute-Recognizer
+- 원본 이미지의 텍스트로부터 그 속성 (textual attributes)을 추춣하고 이를 번역문을 렌더링할 때 활용.
+- 텍스트 속성은 다음의 7가지를 의미함; font size, writing direction, text alignment, text line breaking, text_color, text color, text_border_width
+- 도입 효과:
+    - as
+    - as-is; text color가 검은색 또는 하얀색으로 단조로움, to-be; 원본 이미지의 text color를 반영함으로써 다채롭고 생동감 있는 느낌을 전달
+- 함으로써 이미지 번역의 가독성과 심미성을 향상시키기 위한 모델.
+<!-- - 원본 이미지에서 각 텍스트의 스타일 정보를 추출하고 (Text style recognition) 텍스트 영역을 계산하여 (Text region recognition) 이를 바탕으로 심미성과 가독성을 살려 번역문을 렌더링하는 기술에 관한 내용입니다. -->
+<!-- - Text style recognition은 Scene text image로부터 다음의 7가지 특성을 인식하는 것입니다; Font size, Writing direction, Text alignment, Text color, Text border color, Text border width, Text line breaking -->
+<!-- - Text region recognition은 텍스트가 렌더링될 수 있는 영역을 새롭게 계산하는 기술입니다. 이를 통해 한국어를 영어로 번역할 때와 같이 원문보다 번역문이 긴 경우에도 원본에 가까운 Font size로 텍스트를 렌더링할 수 있게 됩니다. -->
 ### Scene text remover 개발 (2022.09 ~ 2023.01)
 - Ref: https://github.com/KimRass/scene_text_remover
 - 원본 이미지에 존재하는 텍스트를 자연스럽게 지우는 모델입니다. 원본 이미지에서 텍스트를 탐지하고 (Text detection) 텍스트만을 정확히 마스킹하는 마스크를 생성하여 (Text stroke mask prediction) 문맥을 고려하여 마스크 영역을 채워넣는 (Image inpainting) 과정으로 작동합니다.
