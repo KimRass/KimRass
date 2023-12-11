@@ -12,16 +12,16 @@
 - 충북고등학교 졸업 (2006.03 ~ 2009.02)
 
 # Work Experience
-## 'Flitto' (2022.05 ~ 2023.12)
+## '플리토' ('Flitto') (2022.05 ~ 2023.12)
 - Data dev. team & Place lab 소속
 - 회사소개: 번역 플랫폼 운영 및 데이터 판매, 사원수 약 150명, 2019년 코스닥 상장
 - 음식점의 메뉴 이미지에 대한 다국어 이미지 번역 서비스인 '플리토 플레이스' ('Flitto Place')와 관련된 image processing 알고리즘을 개발.
 <!-- - 음식점의 메뉴 이미지를 다국어로 번역해 QR 코드로 제공하는 '메뉴 번역' 서비스에 사용되는 이미지 처리와 관련된 알고리즘 개발을 담당하고 있습니다. -->
 <!-- - Scene text remover로 원본 이미지에서 번역이 필요한 텍스트를 지우고 기계번역과 전문가 검수를 거친 번역문을 Scene text renderer로 렌더링하는 과정을 거쳐 번역된 메뉴 이미지가 만들어집니다. -->
-### Textual attribute recognition model 개발 (2023.01 ~ 2023.06)
+### textual attribute recognition model 개발 (2023.01 ~ 2023.06)
 - Ref: https://github.com/KimRass/Flitto-Image-Processing/tree/main/Place-Translation/Textual-Attribute-Recognizer
 - 원본 이미지의 텍스트로부터 그 속성 (textual attributes)을 추춣하고 이를 번역문을 렌더링할 때 활용.
-- 텍스트 속성은 다음의 7가지를 의미함; font size, writing direction, text alignment, text line breaking, text_color, text color, text_border_width
+- 텍스트 속성은 다음의 7가지를 의미함; font size, writing direction, text alignment, text line breaking, text color, text border color, text border width
 - 도입 효과:
     - as
     - as-is; text color가 검은색 또는 하얀색으로 단조로움, to-be; 원본 이미지의 text color를 반영함으로써 다채롭고 생동감 있는 느낌을 전달
