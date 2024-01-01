@@ -63,21 +63,17 @@
 - Ref: https://github.com/KimRass/Flitto-ML/tree/main/Multilingual-Text-Embedder
 ### 6) textual attribute recognition model 개발 (2023.01 ~ 2023.06)
 - Ref: https://github.com/KimRass/Flitto-ML/tree/main/Place-Translation/Textual-Attribute-Recognizer
-- 원본 이미지의 텍스트로부터 그 속성 (textual attributes)을 추춣하고 이를 번역문을 렌더링할 때 활용.
-- 텍스트 속성은 다음의 7가지를 의미함; font size, writing direction, text alignment, text line breaking, text color, text border color, text border width
-- 도입 효과:
-    - as
-    - as-is: text color가 검은색 또는 하얀색으로 단조로움
-    - to-be: 원본 이미지의 text color를 반영함으로써 다채롭고 생동감 있는 느낌을 전달
+- 원본 이미지의 각 텍스트 객체로부터 그 속성을 추출하고 이를 각 텍스트의 번역문 렌더링 시 활용.
+- 도입 효과: 시각적인 이미지 번역 품질 향상.
 - 함으로써 이미지 번역의 가독성과 심미성을 향상시키기 위한 모델.
-<!-- - 원본 이미지에서 각 텍스트의 스타일 정보를 추출하고 (Text style recognition) 텍스트 영역을 계산하여 (Text region recognition) 이를 바탕으로 심미성과 가독성을 살려 번역문을 렌더링하는 기술에 관한 내용입니다. -->
-<!-- - Text style recognition은 Scene text image로부터 다음의 7가지 특성을 인식하는 것입니다; Font size, Writing direction, Text alignment, Text color, Text border color, Text border width, Text line breaking -->
+<!-- - 텍스트 속성은 다음의 7가지를 의미함; font size, writing direction, text alignment, text line breaking, text color, text border color, text border width -->
 <!-- - Text region recognition은 텍스트가 렌더링될 수 있는 영역을 새롭게 계산하는 기술입니다. 이를 통해 한국어를 영어로 번역할 때와 같이 원문보다 번역문이 긴 경우에도 원본에 가까운 Font size로 텍스트를 렌더링할 수 있게 됩니다. -->
 ### 7) Scene text removal model 개발 (2022.09 ~ 2023.01)
-- Ref: https://github.com/KimRass/Scene-Text-Remover
-- 원본 이미지에 존재하는 텍스트를 자연스럽게 지우는 모델입니다. 원본 이미지에서 텍스트를 탐지하고 (Text detection) 텍스트만을 정확히 마스킹하는 마스크를 생성하여 (Text stroke mask prediction) 문맥을 고려하여 마스크 영역을 채워넣는 (Image inpainting) 과정으로 작동합니다.
-- 해당 기술만을 전문적으로 서비스하는 경쟁사보다 훨씬 뛰어난 기능을 자랑하며, 이미지 분할 처리를 통해 초고해상도 이미지라 할지라도 그로부터 텍스트를 지우는 것이 가능합니다.
-- 중국어 등 일부 언어에 대해서 Text detection 성능이 조금 떨어지는 단점이 있어 추후 이를 보완하고자 계획하고 있습니다.
+- Ref: https://github.com/KimRass/Flitto-ML/tree/main/Place-Translation/Scene-Text-Remover
+- 메뉴 이미지에 존재하는 텍스트를 자연스럽게 지우는 모델
+- 텍스트간에 서로 가깝게 붙어있는 상황에서 원하는 텍스트만 선별해서 지우는 것이 가능.
+- 크게 3단계로 작동 (scene text detection → text stroke mask prediction → image inpainting).
+- 도입 효과: 수작업 감소, 이미지 처리 속도 향상, 시각적인 이미지 번역 품질 향상.
 ### 8) 데이터셋 구축 (2022.05 ~ 2022.11)
 - Ref: https://github.com/KimRass/Data-Collection
 - B2B 고객사의 의뢰에 따라 데이터셋을 구축하는 프로젝트에 있어서 최소한의 수작업으로 데이터 품질을 높이기 위한 각종 알고리즘을 개발.
@@ -103,13 +99,6 @@
 - 현업과 협의하여 대시보드 설계 및 Tableau와 data mart 연결.
 - 자동으로 대시보드의 데이터가 업데이트될 수 있도록 Tableau 로직 설계 
 - SQL을 통해 data mart와 Tableau 로직 점검.
-<!-- - 부문: 경영, 영업, HR, 재무, 공정, 품질, 분양, 조직도, etc. -->
-<!-- - 구축 분야
-    - 경영 (매출, 영업이익, etc.)
-    - 영업 (아파트 수주, 공급, 판매 각각에 대한 계획 및 실적)
-    - HR (임직원 수 현황, 입퇴사 추이, 인건비, etc.) -->
-<!-- - 대시보드 제작에 있어서는 Tableau 작업자 약 3명과 함께했으며 대시보드 간의 디자인에 통일성을 주어 작업하였고 최종적으로 제가 모든 대시보드를 점검했습니다. -->
-<!-- - 대시보드간 디자인의 통일성 부여 (팔레트, 폰트 사이즈 등). -->
 ### 2) 아파트 실거래가 데이터 분석 리드 (2020.01 ~ 2020.11)
 - Ref: https://github.com/KimRass/KimRass/blob/main/apartments_sales_price_analytics.md
 - 아파트 실거래가 데이터 분석을 통해 데이터 기반의 적정 분양가 산정 알고리즘의 가능성 탐색 목적.
