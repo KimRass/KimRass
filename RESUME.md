@@ -44,7 +44,7 @@
     - B2B 데이터 판매
     - 사원수 약 150명, 2019년 코스닥 상장
 - Data dev. team & Place lab 소속
-- 음식점의 메뉴 이미지에 대한 다국어 이미지 번역 서비스 '플리토 플레이스' ('Flitto Place')와 관련된 image processing 알고리즘 개발.
+- 음식점의 메뉴 이미지에 대한 다국어 이미지 번역 서비스 'Place Translation'과 관련된 모델 및 알고리즘 개발.
 ### 1) image processing
 - automatic image resizing
     - 기존 메뉴 이미지에서 가격 등 약간의 변화만 있는 새로운 이미지로의 변경이 필요할 때, feature matching을 통해 자동으로 새로운 이미지를 적절한 해상도로 resize.
@@ -60,9 +60,9 @@
 - image embedding에 기반하여 기존에 수집된 이미지와 유사한 이미지 제외.
 - language identification model을 통해 아랍어가 일정 비율 이상 포함되는지 확인.
 - 'EasyOCR' OCR framework를 사용하여 아랍어 텍스트의 수와 전체 텍스트에 대한 비율이 적정한 범위 내에 있는지 확인.
-<!-- ### 3) scene text image rotation classification model 개발 (2023.00 ~ 2023.00)
+### 3) scene text image rotation classification model 개발 (2023.00 ~ 2023.00)
 - Ref: https://github.com/KimRass/Flitto-ML/tree/main/Image-Rotation-Classifier
-### 4) language identification model 개발 (2023.00 ~ 2023.00)
+<!-- ### 4) language identification model 개발 (2023.00 ~ 2023.00)
 - Ref: https://github.com/KimRass/Flitto-ML/tree/main/Language-Identifier
 ### 5) multilingual text embedding model 개발 (2023.00 ~ 2023.00)
 - Ref: https://github.com/KimRass/Flitto-ML/tree/main/Multilingual-Text-Embedder -->
