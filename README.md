@@ -1,3 +1,5 @@
 - [RESUME](https://github.com/KimRass/KimRass/blob/main/RESUME.md)
-- Github stats: ![KimRass' GitHub stats](https://github-readme-stats.vercel.app/api?username=KimRass&show_icons=true&theme=radical)
-- 'Baekjoon Online Judge' solved rank: [![Solved.ac Profile](http://mazassumnida.wtf/api/v2/generate_badge?boj=rmx1000)](https://solved.ac/profile/rmx1000)
+- Github stats:
+    - ![KimRass' GitHub stats](https://github-readme-stats.vercel.app/api?username=KimRass&show_icons=true&theme=radical)
+- 'Baekjoon Online Judge' solved rank:
+    - [![Solved.ac Profile](http://mazassumnida.wtf/api/v2/generate_badge?boj=rmx1000)](https://solved.ac/profile/rmx1000)

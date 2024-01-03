@@ -50,18 +50,16 @@
     - 기존 메뉴 이미지에서 가격 등 약간의 변화만 있는 새로운 이미지로의 변경이 필요할 때, feature matching을 통해 자동으로 새로운 이미지를 적절한 해상도로 resize.
     - SIFT (Scale-Invariant Feature Transform)와 RANSAC (RANdom SAmple Consensus) 사용.
 - menu image generation
+    - Ref: https://github.com/KimRass/Flitto-ML/tree/main/Place-Translation/Menu-Image-Generator
     - As-is: 수작업으로 메뉴 이미지 제작, 비효율적인 프로세스, 이미지 번역 품질이 떨어짐.
     - To-be: Python을 통해 자동으로 메뉴 이미지 생성, 불필요하고 반복된 작업 없음, 이미지 번역 품질 향상.
-<!-- - menu image merge
-    - 하나의 음식점의 메뉴 이미지가 매우 여러 장일 때 상하 또는 좌우로 2장씩 합침으로써 사용자 경험 향상.
-    - 이미지의 테두리 색상 결정, -->
 ### 2) scene text image QC model 개발 (2023.00 ~ 2023.00)
 - Ref: https://github.com/KimRass/Flitto-ML/tree/main/Scene-Text-Image-QC
 - 아랍어 텍스트가 포함된 scene text images를 수집하는 프로젝트에서 여러 가지 알고리즘을 통해 데이터에 대한 자동 QC를 수행함으로써 데이터의 품질을 향상시키고 수동 QC로 인한 부담을 절감하는 모델.
 - image rotation classification model을 사용해 회전된 이미지를 정상으로 복원.
 - image embedding에 기반하여 기존에 수집된 이미지와 유사한 이미지 제외.
 - language identification model을 통해 아랍어가 일정 비율 이상 포함되는지 확인.
-- 'EasyOCR' OCR framework를 사용하여 텍스트 객체의 수가 일정 범위 안에 포함되는지 확인.
+- 'EasyOCR' OCR framework를 사용하여 아랍어 텍스트의 수와 전체 텍스트에 대한 비율이 적정한 범위 내에 있는지 확인.
 <!-- ### 3) scene text image rotation classification model 개발 (2023.00 ~ 2023.00)
 - Ref: https://github.com/KimRass/Flitto-ML/tree/main/Image-Rotation-Classifier
 ### 4) language identification model 개발 (2023.00 ~ 2023.00)
@@ -70,31 +68,31 @@
 - Ref: https://github.com/KimRass/Flitto-ML/tree/main/Multilingual-Text-Embedder -->
 ### 6) textual attribute recognition model 개발 (2023.01 ~ 2023.06)
 - Ref: https://github.com/KimRass/Flitto-ML/tree/main/Place-Translation/Textual-Attribute-Recognizer
-- 메뉴 이미지의 각 텍스트 객체의 속성을 추출하여 이를 번역문 렌더링 시 활용.
+- 메뉴 이미지에서 의미 단위의 각 텍스트의 속성을 추출하여 이를 번역문 렌더링 시 활용.
     - 속성: font size, writing direction, text alignment, text line breaking, text color, text border, text border color
 - 도입 효과: 시각적인 이미지 번역 품질 향상.
 ### 7) Scene text removal model 개발 (2022.09 ~ 2023.01)
 - Ref: https://github.com/KimRass/Flitto-ML/tree/main/Place-Translation/Scene-Text-Remover
 - 메뉴 이미지에 존재하는 텍스트를 자연스럽게 지우는 모델
-- 텍스트간에 서로 가깝게 붙어있는 상황에서 원하는 텍스트만 선별해서 지우는 것이 가능.
+- 텍스트 간에 서로 가깝게 붙어있을 때 원하는 텍스트만 선별해서 지우는 것이 가능.
 - 크게 3단계로 작동 (scene text detection → text stroke mask prediction → image inpainting).
 - 도입 효과: 수작업 감소, 이미지 처리 속도 향상, 시각적인 이미지 번역 품질 향상.
-### 8) 데이터셋 구축 (2022.05 ~ 2022.11)
+### 8) 데이터 QC (2022.05 ~ 2022.11)
 - Ref: https://github.com/KimRass/Data-Collection
-- B2B 고객사의 의뢰에 따라 데이터셋을 구축하는 프로젝트에 있어서 최소한의 수작업으로 데이터 품질을 높이기 위한 각종 알고리즘을 개발.
+- B2B 고객사의 의뢰에 따라 데이터를 수집하여 납품하는 프로젝트에 있어서 자동 데이터 QC를 위한 각종 알고리즘 개발.
     - 다국어 병렬 말뭉치 (텍스트 데이터)
-        - machine translation model 학습을 위한 다국어 데이터셋 구축 (ko, en, hi, km, tl, ru, vi, id, th).
+        - machine translation model 학습을 위한 다국어 데이터 수집 (ko, en, hi, km, tl, ru, vi, id, th).
     - 한국어 사전 예문 (텍스트 데이터)
-        - 전문용어, 공공용어, 신조어로 구분된 각 단어와 예문으로 구성된 데이터셋 구축.
+        - 전문용어, 공공용어, 신조어로 구분된 각 단어와 예문으로 구성된 데이터 수집.
         - 단어별 표준 띄어쓰기 규칙을 반영하여 문장 교정 (e.g., '빅데이터' -> '빅 데이터').
     - 명대사를 포함하는 한국어 대화문 (텍스트 데이터)
-        - 영화 명대사나 속담 등을 활용하여 문장을 생성하는 chatbot model을 학습시키기 위한 데이터셋 구축.
+        - 영화 명대사나 속담 등을 활용하여 문장을 생성하는 chatbot model을 학습시키기 위한 데이터 수집.
         - 형태소 분리에 기반하여 존댓말을 반말로 변환.
         - Sentence BERT에 기반한 문장간 유사도 검사.
     - 한국어와 영어 뉴스 기사 (텍스트 데이터)
-        - 형태소 분리에 기반하여 완전한 문장과 불완전한 문장을 구분하고 완전한 문장으로 이루어진 데이터셋 구축.
+        - 형태소 분리에 기반하여 완전한 문장과 불완전한 문장을 구분하고 완전한 문장으로 이루어진 데이터 수집.
     - 한국어 명령어 발화 (음성 데이터)
-        - "선풍기 켜 줘"와 같은 짧은 명령어를 발화한 음성 데이터셋 구축.
+        - "선풍기 켜 줘"와 같은 짧은 명령어를 발화한 음성 데이터 수집.
         - 요구조건에 따른 QA (e.g., 발화 구간의 길이와 수, 음성의 크기, 노이즈 등).
         - 음성 데이터 시각화 (waveform, spectrogram, mel-spectrogram).
 ## (2) 'HDC현대산업개발' (2016.07 ~ 2022.04, 정규직)
