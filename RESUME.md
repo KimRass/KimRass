@@ -45,34 +45,36 @@
     - 사원수 약 150명, 2019년 코스닥 상장
 - Data dev. team & Place lab 소속
 - 음식점의 메뉴 이미지에 대한 다국어 이미지 번역 서비스 'Place Translation'과 관련된 모델 및 알고리즘 개발.
+    - Ref: https://github.com/KimRass/KimRass/tree/main/Flitto/Place-Translation
 ### (1) image processing
 - automatic image resizing
+    - Ref: https://github.com/KimRass/KimRass/tree/main/Flitto/Place-Translation/Automatic-Image-Resizer
     - 기존 메뉴 이미지에서 가격 등 약간의 변화만 있는 새로운 이미지로의 변경이 필요할 때, feature matching을 통해 자동으로 새로운 이미지를 적절한 해상도로 resize.
     - SIFT (Scale-Invariant Feature Transform)와 RANSAC (RANdom SAmple Consensus) 사용.
 - menu image generation
-    - Ref: https://github.com/KimRass/Flitto-ML/tree/main/Place-Translation/Menu-Image-Generator
+    - Ref: https://github.com/KimRass/KimRass/tree/main/Flitto/Place-Translation/Menu-Image-Generator
     - As-is: 수작업으로 메뉴 이미지 제작, 비효율적인 프로세스, 이미지 번역 품질이 떨어짐.
     - To-be: Python을 통해 자동으로 메뉴 이미지 생성, 불필요하고 반복된 작업 없음, 이미지 번역 품질 향상.
 ### (2) scene text image QC model 개발 (2023.00 ~ 2023.00)
-- Ref: https://github.com/KimRass/Flitto-ML/tree/main/Scene-Text-Image-QC
+- Ref: https://github.com/KimRass/KimRass/tree/main/Flitto/Scene-Text-Image-QC
 - 아랍어 텍스트가 포함된 scene text images를 수집하는 프로젝트에서 여러 가지 알고리즘을 통해 데이터에 대한 자동 QC를 수행함으로써 데이터의 품질을 향상시키고 수동 QC로 인한 부담을 절감하는 모델.
 - image rotation classification model을 사용해 회전된 이미지를 정상으로 복원.
 - image embedding에 기반하여 기존에 수집된 이미지와 유사한 이미지 제외.
 - language identification model을 통해 아랍어가 일정 비율 이상 포함되는지 확인.
 - 'EasyOCR' OCR framework를 사용하여 아랍어 텍스트의 수와 전체 텍스트에 대한 비율이 적정한 범위 내에 있는지 확인.
 ### (3) scene text image rotation classification model 개발 (2023.00 ~ 2023.00)
-- Ref: https://github.com/KimRass/Flitto-ML/tree/main/Image-Rotation-Classifier
+- Ref: https://github.com/KimRass/KimRass/tree/main/Flitto/Image-Rotation-Classifier
 <!-- ### (4) language identification model 개발 (2023.00 ~ 2023.00)
 - Ref: https://github.com/KimRass/Flitto-ML/tree/main/Language-Identifier
 ### (5) multilingual text embedding model 개발 (2023.00 ~ 2023.00)
 - Ref: https://github.com/KimRass/Flitto-ML/tree/main/Multilingual-Text-Embedder -->
 ### (6) textual attribute recognition model 개발 (2023.01 ~ 2023.06)
-- Ref: https://github.com/KimRass/Flitto-ML/tree/main/Place-Translation/Textual-Attribute-Recognizer
+- Ref: https://github.com/KimRass/KimRass/tree/main/Flitto/Place-Translation/Textual-Attribute-Recognizer
 - 메뉴 이미지에서 의미 단위의 각 텍스트의 속성을 추출하여 이를 번역문 렌더링 시 활용.
     - 속성: font size, writing direction, text alignment, text line breaking, text color, text border, text border color
 - 도입 효과: 시각적인 이미지 번역 품질 향상.
 ### (7) Scene text removal model 개발 (2022.09 ~ 2023.01)
-- Ref: https://github.com/KimRass/Flitto-ML/tree/main/Place-Translation/Scene-Text-Remover
+- Ref: https://github.com/KimRass/KimRass/tree/main/Flitto/Place-Translation/Scene-Text-Remover
 - 메뉴 이미지에 존재하는 텍스트를 자연스럽게 지우는 모델
 - 텍스트 간에 서로 가깝게 붙어있을 때 원하는 텍스트만 선별해서 지우는 것이 가능.
 - 크게 3단계로 작동 (scene text detection → text stroke mask prediction → image inpainting).
@@ -104,12 +106,12 @@
 | 2016.07 ~ 2018.04 | ['김포 사우 IPARK' 아파트 기계설비 현장 관리](#4-김포-사우-ipark-아파트-기계설비-현장-관리-201607--201804) |
 - 이직 사유: 인공지능에 대한 전문성 향상
 ###	(1) Tableau 기반의 전사 대시보드 구축 리딩 (2021.02 ~ 2022.04)
-- Ref: https://github.com/KimRass/Tableau/blob/main/eis.md
+- Ref: https://github.com/KimRass/KimRass/tree/main/HDC/Tableau-BI
 - 현업과 협의하여 대시보드 설계 및 Tableau와 data mart 연결.
 - 자동으로 대시보드의 데이터가 업데이트될 수 있도록 Tableau 로직 설계 
 - SQL을 통해 data mart와 Tableau 로직 점검.
 ### (2) 아파트 실거래가 데이터 분석 리딩 (2020.01 ~ 2020.09)
-- Ref: https://github.com/KimRass/KimRass/blob/main/apt_price_analysis.md
+- Ref: https://github.com/KimRass/KimRass/tree/main/HDC/APT-Price-Analysis
 - 아파트 실거래가 데이터 분석을 통해 데이터 기반의 적정 분양가 산정 시도.
 - web scraping으로 '네이버 부동산' 등에서 부동산 관련 데이터 수집.
 - feature generation, feature selection 등 feature engineering.
