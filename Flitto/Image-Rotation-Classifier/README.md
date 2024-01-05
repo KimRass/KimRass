@@ -23,7 +23,7 @@
 - Accuracy 0.922 on test set
 
 # 4. Future Improvements
-- 아랍어 외의 다양한 언어로 확장하여 'Place Translation' 등의 서비스에도 사용함으로써 프로세스를 개선합니다.
+- 아랍어 외의 다양한 언어로 확장하여 'Place Translation' 등의 서비스에도 사용함으로써 프로세스를 개선할 필요가 있습니다.
 
 # 5. References
 - [1] [Arabic Scene Text Recognition in the Deep Learning Era: Analysis on A Novel Dataset]()
