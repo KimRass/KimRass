@@ -95,7 +95,7 @@
 
 # 5. References
 - [1] [Erasing Scene Text with Weak Supervision](https://github.com/KimRass/Place-Translation/blob/main/papers/erasing_scene_text_with_weak_supervision.pdf)
-- [2] [Character Region Awareness for Text Detection](https://github.com/KimRass/Place-Translation/blob/main/papers/character_region_awareness_for_text_detection.pdf)
+- [2] [Character Region Awareness for Text Detection](https://github.com/KimRass/CRAFT/blob/main/papers/character_region_awareness_for_text_detection.pdf)
 - [3] [Semantic Image Segmentation with Deep Convolutional Nets and Fully Connected CRFs](https://github.com/KimRass/Place-Translation/blob/main/papers/semantic_image_segmentation_with_deep_convolutional_nets_and_fully_connected_crfs.pdf)
 - [4] [Stroke-Based Scene Text Erasing Using Synthetic Data for Training](https://github.com/KimRass/Place-Translation/blob/main/papers/stroke_based_scene_text_erasing_using_synthetic_data_for_training.pdf)
 - [5] [Resolution-robust Large Mask Inpainting with Fourier Convolutions](https://github.com/KimRass/Place-Translation/blob/main/papers/resolution_robust_large_mask_inpainting_with_fourier_convolutions.pdf)

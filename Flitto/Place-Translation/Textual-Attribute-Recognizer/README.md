@@ -178,7 +178,7 @@
 | Ttext border color | 텍스트가 검은색 일 경우에는 하얀색을, 반대의 경우에는 검은색을 사용함으로써 text border가 지나치게 강조됨 | 추출된 text color와의 interpolation을 통해 text border가 지나치게 강조되는 느낌을 완화
 
 # 12. References
-- [1] [Character Region Awareness for Text Detection](https://github.com/KimRass/Place-Translation/blob/main/papers/character_region_awareness_for_text_detection.pdf)
+- [1] [Character Region Awareness for Text Detection](https://github.com/KimRass/CRAFT/blob/main/papers/character_region_awareness_for_text_detection.pdf)
 - [2] ['더' 잘 읽히고 자연스러운 이미지 번역을 위해 (파파고 텍스트 렌더링 개발기)](https://deview.kr/2023/sessions)
 
 <!-- ## Font Size Clustering and Limitation

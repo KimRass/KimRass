@@ -57,13 +57,16 @@
     - To-be: Python을 통해 자동으로 메뉴 이미지 생성, 불필요하고 반복된 작업 없음, 이미지 번역 품질 향상.
 ### (2) scene text image QC model 개발 (2023.00 ~ 2023.00)
 - Ref: https://github.com/KimRass/KimRass/tree/main/Flitto/Scene-Text-Image-QC
-- 아랍어 텍스트가 포함된 scene text images를 수집하는 프로젝트에서 여러 가지 알고리즘을 통해 데이터에 대한 자동 QC를 수행함으로써 데이터의 품질을 향상시키고 수동 QC로 인한 부담을 절감하는 모델.
+- 아랍어를 주로 포함하고 있는 scene text images를 수집하는 프로젝트에서 여러 가지 알고리즘을 통해 데이터에 대한 자동 QC를 수행함으로써 데이터의 품질을 향상시키고 수동 QC로 인한 부담을 절감하는 모델.
 - image rotation classification model을 사용해 회전된 이미지를 정상으로 복원.
 - image embedding에 기반하여 기존에 수집된 이미지와 유사한 이미지 제외.
 - language identification model을 통해 아랍어가 일정 비율 이상 포함되는지 확인.
 - 'EasyOCR' OCR framework를 사용하여 아랍어 텍스트의 수와 전체 텍스트에 대한 비율이 적정한 범위 내에 있는지 확인.
 ### (3) scene text image rotation classification model 개발 (2023.00 ~ 2023.00)
 - Ref: https://github.com/KimRass/KimRass/tree/main/Flitto/Image-Rotation-Classifier
+- 아랍어를 주로 포함하고 있는 scene text image에 대해서 이미지의 회전된 각도를 0°, 90°, 180°, 270° 중 하나로 분류하는 모델.
+- 자체 크라우드 소싱 데이터 수집 플랫폼을 통해 수직한 이미지 30,000장 활용.
+- 다소 강한 data augmentation을 적용하여 모델의 일반화 성능 확보.
 <!-- ### (4) language identification model 개발 (2023.00 ~ 2023.00)
 - Ref: https://github.com/KimRass/Flitto-ML/tree/main/Language-Identifier
 ### (5) multilingual text embedding model 개발 (2023.00 ~ 2023.00)
@@ -80,7 +83,7 @@
 - 크게 3단계로 작동 (scene text detection → text stroke mask prediction → image inpainting).
 - 도입 효과: 수작업 감소, 이미지 처리 속도 향상, 시각적인 이미지 번역 품질 향상.
 ### (8) 데이터 QC (2022.05 ~ 2022.11)
-- Ref: https://github.com/KimRass/Data-Collection
+- Ref: https://github.com/KimRass/KimRass/tree/main/Flitto/Data-Collection
 - B2B 고객사의 의뢰에 따라 데이터를 수집하여 납품하는 프로젝트에 있어서 자동 데이터 QC를 위한 각종 알고리즘 개발.
     - 다국어 병렬 말뭉치 (텍스트 데이터)
         - machine translation model 학습을 위한 다국어 데이터 수집 (ko, en, hi, km, tl, ru, vi, id, th).
