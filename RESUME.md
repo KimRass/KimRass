@@ -8,20 +8,19 @@
 # 2. Core Competencies
 - [Tableau 기반의 전사 대시보드 구축 리딩 경험](#1-tableau-기반의-전사-대시보드-구축-리딩-202102--202204)
 - [아파트 실거래가 데이터 분석 리딩 경험](#2-아파트-실거래가-데이터-분석-리딩-202001--202009)
-- vision model 개발 경험
-    - [scene text removal model](#scene-text-removal-model-개발-202209--202301)
-    - [textual attribute recognition model](#textual-attribute-recognition-model-개발-202301--202306)
-    - [scene text image rotation classification model](#scene-text-image-rotation-classification-model-개발-202300--202300)
-- language model 개발 경험
-    - [language identification model](#language-identification-model-개발-202300--202300)
-    - [multilingual text embedding model](#multilingual-text-embedding-model-개발-202300--202300)
-- [image processing](#1-image-processing)
-    - automatic image resizing
-    - menu image generation
+- Vision model 개발 경험
+    - [Scene text removal model](#scene-text-removal-model-개발-202209--202301)
+    - [Textual attribute recognition model](#textual-attribute-recognition-model-개발-202301--202306)
+    - [Image rotation classification model](#scene-text-image-rotation-classification-model-개발-202300--202300)
+- Language model 개발 경험
+    - [Language identification model](#language-identification-model-개발-202300--202300)
+<!-- - [Image processing](#1-image-processing)
+    - Automatic image resizing
+    - menu image generation -->
 - 알고리즘과 자료구조에 대한 이해
     - Ref: https://github.com/KimRass/Algorithm-Coding-Test
     - '프로그래머스' 90 문제 해결 / 'Baekjoon Online Judge' 153 문제 해결, Gold III 등급
-- 딥 러닝에 대한 이해 및 논문을 읽고 PyTorch로 from scratch 구현 경험
+- 딥 러닝에 대한 이해 및 논문을 읽고 PyTorch로 From scratch 구현 경험
     - Vision: DCGAN, Pix2Pix, CycleGAN, PGGAN, DDPM, ViT, DeepLab v3, Gatys et al. (2016), etc.
     - Language: BERT, Sentence BERT, RoBERTa, ALBERT, etc.
     - Vision-language: CLIP, etc.
@@ -38,60 +37,63 @@
 | 2022.05 ~ 2023.12 | ['Flitto' (정규직)](#1-flitto-202205--202312-정규직) |
 | 2016.07 ~ 2022.04 | ['HDC현대산업개발' (정규직)](#2-hdc현대산업개발-201607--202204-정규직) |
 ## 1) 'Flitto' (2022.05 ~ 2023.12, 정규직)
-- 퇴직 사유:
 - 회사 소개:
-    - 번역 플랫폼과 크라우드 데이터 레이블링 플랫폼 운영
+    - 음식점 메뉴 이미지에 대한 다국어 이미지 번역 서비스 제공.
+        - Ref: https://github.com/KimRass/KimRass/tree/main/Flitto/Place-Translation
     - B2B 데이터 판매
-    - 사원수 약 150명, 2019년 코스닥 상장
-- Data dev. team & Place lab 소속
-- 음식점의 메뉴 이미지에 대한 다국어 이미지 번역 서비스 'Place Translation'과 관련된 모델 및 알고리즘 개발.
-    - Ref: https://github.com/KimRass/KimRass/tree/main/Flitto/Place-Translation
-### (1) image processing
-- automatic image resizing
+    - 크라우드 데이터 레이블링 플랫폼 운영.
+    - 사원수 약 150명, 2019년 코스닥 상장.
+- 퇴직 사유: 인공지능에 대한 전문성 향상
+<!-- - Data dev. team & Place lab 소속 -->
+<!-- - 음식점의 메뉴 이미지에 대한 다국어 이미지 번역 서비스 'Place Translation'과 관련된 모델 및 알고리즘 개발. -->
+### (1) Image processing
+- Automatic image resizing
     - Ref: https://github.com/KimRass/KimRass/tree/main/Flitto/Place-Translation/Automatic-Image-Resizer
-    - 기존 메뉴 이미지에서 가격 등 약간의 변화만 있는 새로운 이미지로의 변경이 필요할 때, feature matching을 통해 자동으로 새로운 이미지를 적절한 해상도로 resize.
+    - 기존 메뉴 이미지에서 가격 등 약간의 변화만 있는 새로운 이미지로의 변경이 필요할 때, Feature matching을 통해 자동으로 새로운 이미지를 적절한 해상도로 resize.
     - SIFT (Scale-Invariant Feature Transform)와 RANSAC (RANdom SAmple Consensus) 사용.
-- menu image generation
+- Menu image generation
     - Ref: https://github.com/KimRass/KimRass/tree/main/Flitto/Place-Translation/Menu-Image-Generator
     - As-is: 수작업으로 메뉴 이미지 제작, 비효율적인 프로세스, 이미지 번역 품질이 떨어짐.
     - To-be: Python을 통해 자동으로 메뉴 이미지 생성, 불필요하고 반복된 작업 없음, 이미지 번역 품질 향상.
-### (2) scene text image QC model 개발 (2023.00 ~ 2023.00)
+### (2) Scene text image QC model 개발
 - Ref: https://github.com/KimRass/KimRass/tree/main/Flitto/Scene-Text-Image-QC
-- 아랍어를 주로 포함하고 있는 scene text images를 수집하는 프로젝트에서 여러 가지 알고리즘을 통해 데이터에 대한 자동 QC를 수행함으로써 데이터의 품질을 향상시키고 수동 QC로 인한 부담을 절감하는 모델.
-- image rotation classification model을 사용해 회전된 이미지를 정상으로 복원.
-- image embedding에 기반하여 기존에 수집된 이미지와 유사한 이미지 제외.
-- language identification model을 통해 아랍어가 일정 비율 이상 포함되는지 확인.
+- 아랍어를 주로 포함하고 있는 Scene text images를 수집하는 프로젝트에서 여러 가지 알고리즘을 통해 데이터에 대한 자동 QC를 수행함으로써 데이터의 품질을 향상시키고 수동 QC로 인한 부담을 절감하는 모델.
+- Image rotation classification model을 사용해 회전된 이미지를 정상으로 복원.
+- Image embedding에 기반하여 기존에 수집된 이미지와 유사한 이미지 제외.
+- Language identification model을 통해 아랍어가 일정 비율 이상 포함되는지 확인.
 - 'EasyOCR' OCR framework를 사용하여 아랍어 텍스트의 수와 전체 텍스트에 대한 비율이 적정한 범위 내에 있는지 확인.
-### (3) scene text image rotation classification model 개발 (2023.00 ~ 2023.00)
+### (3) Image rotation classification model 개발
 - Ref: https://github.com/KimRass/KimRass/tree/main/Flitto/Image-Rotation-Classifier
 - 아랍어를 주로 포함하고 있는 scene text image에 대해서 이미지의 회전된 각도를 0°, 90°, 180°, 270° 중 하나로 분류하는 모델.
-- 자체 크라우드 소싱 데이터 수집 플랫폼을 통해 수직한 이미지 30,000장 활용.
-- 다소 강한 data augmentation을 적용하여 모델의 일반화 성능 확보.
-<!-- ### (4) language identification model 개발 (2023.00 ~ 2023.00)
+- Data augmentation을 사용하여 모델의 일반화 성능 확보.
+- Pre-trained scene text detection model의 Architecture를 일부 수정하여 Fine-tunning 실시.
+### (4) Language identification model 개발
 - Ref: https://github.com/KimRass/Flitto-ML/tree/main/Language-Identifier
-### (5) multilingual text embedding model 개발 (2023.00 ~ 2023.00)
+<!-- ### (5) multilingual text embedding model 개발 (2023.00 ~ 2023.00)
 - Ref: https://github.com/KimRass/Flitto-ML/tree/main/Multilingual-Text-Embedder -->
-### (6) textual attribute recognition model 개발 (2023.01 ~ 2023.06)
+<!-- ### (5) textual attribute recognition model 개발 (2023.01 ~ 2023.06) -->
+### (5) Textual attribute recognition model 개발
 - Ref: https://github.com/KimRass/KimRass/tree/main/Flitto/Place-Translation/Textual-Attribute-Recognizer
 - 메뉴 이미지에서 의미 단위의 각 텍스트의 속성을 추출하여 이를 번역문 렌더링 시 활용.
-    - 속성: font size, writing direction, text alignment, text line breaking, text color, text border, text border color
+    - 속성: Font size, Writing direction, Text alignment, Text line breaking, Text color, Text border, Text border color
 - 도입 효과: 시각적인 이미지 번역 품질 향상.
-### (7) Scene text removal model 개발 (2022.09 ~ 2023.01)
+<!-- ### (6) Scene text removal model 개발 (2022.09 ~ 2023.01) -->
+### (6) Scene text removal model 개발
 - Ref: https://github.com/KimRass/KimRass/tree/main/Flitto/Place-Translation/Scene-Text-Remover
-- 메뉴 이미지에 존재하는 텍스트를 자연스럽게 지우는 모델
-- 텍스트 간에 서로 가깝게 붙어있을 때 원하는 텍스트만 선별해서 지우는 것이 가능.
-- 크게 3단계로 작동 (scene text detection → text stroke mask prediction → image inpainting).
+- 다수의 텍스트가 밀집한 상황에서도 원하는 텍스트만 선별해서 지우는 것이 가능.
+- 크게 3단계로 작동 (Scene text detection → Text stroke mask prediction → Image inpainting).
 - 도입 효과: 수작업 감소, 이미지 처리 속도 향상, 시각적인 이미지 번역 품질 향상.
-### (8) 데이터 QC (2022.05 ~ 2022.11)
+<!-- ### (7) 데이터 QC (2022.05 ~ 2022.11) -->
+### (7) 데이터 QC
 - Ref: https://github.com/KimRass/KimRass/tree/main/Flitto/Data-Collection
 - B2B 고객사의 의뢰에 따라 데이터를 수집하여 납품하는 프로젝트에 있어서 자동 데이터 QC를 위한 각종 알고리즘 개발.
     - 다국어 병렬 말뭉치 (텍스트 데이터)
-        - machine translation model 학습을 위한 다국어 데이터 수집 (ko, en, hi, km, tl, ru, vi, id, th).
+        - Machine translation model 학습을 위한 다국어 데이터 수집 (ko, en, hi, km, tl, ru, vi, id, th).
     - 한국어 사전 예문 (텍스트 데이터)
         - 전문용어, 공공용어, 신조어로 구분된 각 단어와 예문으로 구성된 데이터 수집.
         - 단어별 표준 띄어쓰기 규칙을 반영하여 문장 교정 (e.g., '빅데이터' -> '빅 데이터').
     - 명대사를 포함하는 한국어 대화문 (텍스트 데이터)
-        - 영화 명대사나 속담 등을 활용하여 문장을 생성하는 chatbot model을 학습시키기 위한 데이터 수집.
+        - 영화 명대사나 속담 등을 활용하여 문장을 생성하는 Chatbot model을 학습시키기 위한 데이터 수집.
         - 형태소 분리에 기반하여 존댓말을 반말로 변환.
         - Sentence BERT에 기반한 문장간 유사도 검사.
     - 한국어와 영어 뉴스 기사 (텍스트 데이터)
@@ -99,7 +101,7 @@
     - 한국어 명령어 발화 (음성 데이터)
         - "선풍기 켜 줘"와 같은 짧은 명령어를 발화한 음성 데이터 수집.
         - 요구조건에 따른 QA (e.g., 발화 구간의 길이와 수, 음성의 크기, 노이즈 등).
-        - 음성 데이터 시각화 (waveform, spectrogram, mel-spectrogram).
+        - 음성 데이터 시각화 (Waveform, Spectrogram, Mel-spectrogram).
 ## 2) 'HDC현대산업개발' (2016.07 ~ 2022.04, 정규직)
 | | |
 |-|-|
@@ -144,8 +146,11 @@
 | 2020.08 ~ 2020.09 | '고객데이터와 딥러닝을 활용한 추천시스템 구현' | '러닝스푼즈' |
 
 # 8. Annual Salary
-<!-- 
-# 9. Cover Letter
+- 현재: 계약 연봉 6,000만 원, 성과급 없음.
+- 희망: 현재의 연봉의 10% 인상 또는 협의 후 결정.
+- 입사 가능 시기: 최종 합격 후 2주 이내
+
+<!-- # 9. Cover Letter
 ## 1) Motivation
 - 저는 기계공학을 전공하여 국내 굴지의 건설사에서 기계설비 직무로 첫 사회생활을 시작했습니다. 그러나 맡은 바에 크게 흥미를 느끼지 못했고 제가 정말로 좋아하고 열정적으로 임할 수 있는 일을 찾지 못해 방황했습니다.
 - 그러던 중 우연한 기회에 그룹사의 Digital transformation을 이끄는 팀으로 이동하게 되었습니다. 그곳에서 아파트 실거래가 데이터 분석을 통해 자사 신축 아파트의 적정 분양가를 선정하고자 하는 프로젝트를 리딩하였고 이후에는 전사의 Tableau 운영과 EIS (중역정보시스템) 구축 등의 업무를 수행했습니다. Tableau에 관해서는 데이터 준비부터 대시보드 설계 및 제작까지 전 과정을 혼자 할 수 있는 정도의 실력을 가지고 있습니다. 그 전까지 저는 코딩, 데이터, 머신 러닝 이런 것들과는 전혀 인연이 없었지만 크게 흥미를 느꼈고 앞으로 이와 관련된 일을 하고 싶다고 확신하게 되었습니다. 컴퓨터 관련 전공자들과 비교했을 때 제 자신이 늦었다고 생각해 그들과의 경쟁에서 지지 않아야겠다는 생각으로 기술적인 역량을 갖추기 위해 끊임없이 노력하고 있습니다.
