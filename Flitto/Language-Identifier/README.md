@@ -22,5 +22,5 @@
 - python으로 작성된 transformer 모델을 c++로 변환/quantization —> 경량화/속도 개선
 
 # References
-- [1] [Unsupervised Cross-lingual Representation Learning at Scale](https://github.com/KimRass/KimRass/tree/main/Flitto/Language-Identifier/unsupervised_cross_lingual_representation_learning_at_scale.pdf)
+- [1] [Unsupervised Cross-lingual Representation Learning at Scale](https://github.com/KimRass/KimRass/blob/main/Flitto/Language-Identifier/papers/unsupervised_cross_lingual_representation_learning_at_scale.pdf)
 <!-- - https://huggingface.co/docs/transformers/model_doc/xlm-roberta#transformers.XLMRobertaForSequenceClassification -->
