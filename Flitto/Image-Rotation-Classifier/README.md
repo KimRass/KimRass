@@ -21,17 +21,18 @@
 - 변경되지 않은 레이어들에 대해서는 [2]의 공식 저장소에 공개되어있는 Parameters를 사용해 Fine-tune했습니다.
 
 # 3. Training Details
-- Number of epochs: 6
-- Input image size: 384
+- 기존 [2]의 레이어들에 대해서는 비교적 작은 Learning rate를, 새로 추가된 레이어들에 대해서는 비교적 큰 Learning rate를 적용했습니다.
+<!-- - Number of epochs: 6
+- Input image size: 384 -->
 
-# 4. Performance
+# 3. Performance
 - Accuracy 0.922 on test set
 
-# 5. Future Improvements
+# 4. Future Improvements
 - 아랍어 외의 다양한 언어에 대해 모델을 학습시킵니다.
 - 'Place Translation' 등 다른 서비스에도 사용해서 프로세스를 개선합니다.
 
-# 6. References
+# 5. References
 - [1] [Arabic Scene Text Recognition in the Deep Learning Era: Analysis on A Novel Dataset](https://github.com/HGamal11/EvArEST-dataset-for-Arabic-scene-text?tab=readme-ov-file)
 - [2] [Character Region Awareness for Text Detection](https://github.com/KimRass/CRAFT/blob/main/papers/character_region_awareness_for_text_detection.pdf)
 - [3] [A Simple Framework for Contrastive Learning of Visual Representations](https://github.com/KimRass/SimCLR/blob/main/papers/a_simple_framework_for_contrastive_learning_of_visual_representations.pdf)
