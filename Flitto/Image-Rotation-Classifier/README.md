@@ -30,7 +30,8 @@
 
 # 4. Future Improvements
 - 아랍어 외의 다양한 언어에 대해 모델을 학습시킵니다.
-- 'Place Translation' 등 다른 서비스에도 사용해서 프로세스를 개선합니다.
+- 학습된 모델을 'Place Translation' 등 다른 서비스에도 적용해서 이미지가 잘못 회전되어 들어오는 경우에 대한 프로세스를 개선합니다.
+- Scene text가 매우 작은 경우에 모델의 성능이 상대적으로 떨어지므로 이를 개선합니다.
 
 # 5. References
 - [1] [Arabic Scene Text Recognition in the Deep Learning Era: Analysis on A Novel Dataset](https://github.com/HGamal11/EvArEST-dataset-for-Arabic-scene-text?tab=readme-ov-file)
