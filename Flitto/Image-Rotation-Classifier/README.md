@@ -2,22 +2,23 @@
 
 # 1. Data
 - 자체 크라우드 소싱 데이터 수집 플랫폼을 통해 수집한 이미지 (31,652장) +  EvArEST [1] detection dataset (510장)
-- 전체 데이터의 각각 80%, 10%, 10%을 training set, valiation set, test set으로 나눴습니다.
+- 전체 데이터의 각각 80%, 10%, 10%을 Training set, Valiation set, Test set으로 나눴습니다.
 ## 1) Data Augmentation
-- [3]에서 사용된 data augmentation 기법들을 참고하여 다소 강하게 구현했습니다.
+- [3]에서 사용된 Data augmentation 기법들을 참고하여 다소 강하게 구현했습니다.
     - (작은 각도로) 이미지 회전
     - 이미지 자르기
-    - color jittering (hue, saturation, brightness, contrast) 적용
+    - Color jittering (hue, saturation, brightness, contrast) 적용
     - Gaussian blur 적용
 ## 2) Inference Strategy
-- 예측 시에는 이미지의 가로와 세로 중 작은 쪽이 input image size와 같아지도록 resize한 후 center crop했습니다.
+- 예측 시에는 이미지의 가로와 세로 중 작은 쪽이 Input image size와 같아지도록 Resize한 후 Center crop했습니다.
 
 # 2. Architecture
-- [2]의 구조에서 image classification task에 맞게 일부를 변형했습니다.
-    - 마지막 convolutional layer의 출력 차원을 2에서 4로 변경했습니다. (`nn.Conv2d(16, 4, kernel_size=1)`)
-    - 마지막 convolutional layer 다음에 global average pooling을 사용해서 spatial dimension을 제거했습니다.
-- 전체 학습 가능한 parameters의 수는 약 2,200만 개입니다.
-- 변경되지 않은 레이어들에 대해서는 [2]의 공식 저장소에 공개되어있는 parameters를 사용해 fine-tune했습니다.
+- [2]의 구조에서 Image classification task에 맞게 일부를 변형했습니다.
+    <!-- - 마지막 Convolutional layer의 출력 차원을 2에서 4로 변경했습니다. (`nn.Conv2d(16, 4, kernel_size=1)`) -->
+    - 마지막 Convolutional layer 다음에 Global average pooling을 사용해서 Spatial dimension을 제거했습니다.
+    - 이후에 두 개의 FC layer를 사용해서 4개의 Classes에 대한 확률을 출력하도록 했습니다.
+- 전체 학습 가능한 Parameters의 수는 약 2,200만 개입니다.
+- 변경되지 않은 레이어들에 대해서는 [2]의 공식 저장소에 공개되어있는 Parameters를 사용해 Fine-tune했습니다.
 
 # 3. Training Details
 - Number of epochs: 6
