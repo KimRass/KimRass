@@ -11,14 +11,13 @@
     - Language: BERT, Sentence BERT, RoBERTa, ALBERT, etc.
     - Vision-language: CLIP, etc.
 - Vision model 개발 경험
-    - [Scene text image QC model](#1-scene-text-image-qc-model-개발)
-    - [Image rotation classification model](#2-image-rotation-classification-model-개발)
-    - [Textual attribute recognition model](#4-textual-attribute-recognition-model-개발)
-    - [Scene text removal model](#5-scene-text-removal-model-개발)
-- [Tableau 기반의 전사 대시보드 구축 리딩 경험](#1-tableau-기반의-전사-대시보드-구축-리딩-202102--202204)
-- [아파트 실거래가 데이터 분석 리딩 경험](#2-아파트-실거래가-데이터-분석-리딩-202001--202009)
-- 알고리즘과 자료구조에 대한 이해
-    - Ref: https://github.com/KimRass/Algorithm-Coding-Test
+    - Scene text image QC model
+    - Image rotation classification model
+    - Textual attribute recognition model
+    - Scene text removal model
+- Tableau 기반의 전사 대시보드 구축 리딩 경험
+- 아파트 실거래가 데이터 분석 리딩 경험
+- [알고리즘과 자료구조에 대한 이해](https://github.com/KimRass/Algorithm-Coding-Test)
     - '프로그래머스' 90 문제 해결 / 'Baekjoon Online Judge' 153 문제 해결, Gold III 등급
 
 # 3. Education
@@ -30,49 +29,41 @@
 # 4. Work Experience
 | | |
 |-|-|
-| 2022.05 ~ 2023.12 | ['Flitto' (정규직)](#1-flitto-202205--202312-정규직) |
-| 2016.07 ~ 2022.04 | ['HDC현대산업개발' (정규직)](#2-hdc현대산업개발-201607--202204-정규직) |
+| 2022.05 ~ 2023.12 | 'Flitto' (정규직) |
+| 2016.07 ~ 2022.04 | 'HDC현대산업개발' (정규직) |
 ## 1) 'Flitto' (2022.05 ~ 2023.12, 정규직)
 - 회사 소개:
-    - 음식점 메뉴 이미지에 대한 다국어 이미지 번역 서비스 제공.
-        - Ref: https://github.com/KimRass/KimRass/tree/main/Flitto/Place-Translation
+    - [음식점 메뉴 이미지에 대한 다국어 이미지 번역 서비스 제공.](https://github.com/KimRass/KimRass/tree/main/Flitto/Place-Translation)
     - B2B 데이터 판매
     - 크라우드 데이터 레이블링 플랫폼 운영.
     - 사원수 약 150명, 2019년 코스닥 상장.
 - 퇴직 사유: 인공지능에 대한 전문성 향상
-### (1) Scene text image QC model 개발
-- Ref: https://github.com/KimRass/KimRass/tree/main/Flitto/Scene-Text-Image-QC
+### (1) [Scene text image QC model](https://github.com/KimRass/KimRass/tree/main/Flitto/Scene-Text-Image-QC) 개발
 - 아랍어 Scene text images 수집 프로젝트에서 여러 가지 알고리즘을 통해 데이터에 대한 QC를 수행하는 모델.
 - Image rotation classification model을 사용해 회전된 이미지를 정상으로 복원.
 - Image embedding에 기반하여 기존에 수집된 이미지와 유사한 이미지 제외.
 - 'EasyOCR' OCR framework를 사용하여 아랍어 텍스트의 수와 전체 텍스트에 대한 비율이 적정한 범위 내에 있는지 확인.
-### (2) Image rotation classification model 개발
-- Ref: https://github.com/KimRass/KimRass/tree/main/Flitto/Image-Rotation-Classifier
+### (2) [Image rotation classification model](https://github.com/KimRass/KimRass/tree/main/Flitto/Image-Rotation-Classifier) 개발
 - Scene text image에 대해서 이미지의 회전된 각도를 0°, 90°, 180°, 270° 중 하나로 분류하는 모델.
 - Data augmentation을 사용하여 모델의 일반화 성능 확보.
 - Pre-trained scene text detection model의 Architecture를 일부 수정하여 Fine-tunning 실시.
 ### (3) Image processing
-- Automatic image resizing
-    - Ref: https://github.com/KimRass/KimRass/tree/main/Flitto/Place-Translation/Automatic-Image-Resizer
+- [Automatic image resizing](https://github.com/KimRass/KimRass/tree/main/Flitto/Place-Translation/Automatic-Image-Resizer)
     - 기존 메뉴 이미지를 조금 다른 새로운 이미지로 변경할 때, Feature matching을 통해 새로운 이미지를 적절한 해상도로 resize.
     - SIFT (Scale-Invariant Feature Transform)와 RANSAC (RANdom SAmple Consensus) 사용.
     - 도입 효과: 기존 이미지에 대한 Bounding box annotation, 번역 등의 작업물 재활용을 통해 효율 향상.
-- Menu image generation
-    - Ref: https://github.com/KimRass/KimRass/tree/main/Flitto/Place-Translation/Menu-Image-Generator
+- [Menu image generation](https://github.com/KimRass/KimRass/tree/main/Flitto/Place-Translation/Menu-Image-Generator)
     - 기존에 수작업으로 이루어지던 메뉴 이미지 제작을 Python으로 템플릿화하여 자동화.
     - 도입 효과: 비효율적이고 반복되는 프로세스 개선, 시각적인 이미지 번역 품질 향상.
-### (4) Textual attribute recognition model 개발
-- Ref: https://github.com/KimRass/KimRass/tree/main/Flitto/Place-Translation/Textual-Attribute-Recognizer
+### (4) [Textual attribute recognition model](https://github.com/KimRass/KimRass/tree/main/Flitto/Place-Translation/Textual-Attribute-Recognizer) 개발
 - 메뉴 이미지에서 각 텍스트의 속성을 인식하는 모델로서, 이 속성들을 번역문 렌더링 시 활용.
     - 속성: Font size, Writing direction, Text alignment, Text line breaking, Text color, Text border, Text border color
 - 도입 효과: 시각적인 이미지 번역 품질 향상.
-### (5) Scene text removal model 개발
-- Ref: https://github.com/KimRass/KimRass/tree/main/Flitto/Place-Translation/Scene-Text-Remover
+### (5) [Scene text removal model](https://github.com/KimRass/KimRass/tree/main/Flitto/Place-Translation/Scene-Text-Remover) 개발
 - 메뉴 이미지에서 원하는 텍스트만 선별하여 자연스럽게 지우는 모델.
 - 크게 3단계로 작동 (Scene text detection → Text stroke mask prediction → Image inpainting).
 - 도입 효과: 수작업 감소, 이미지 처리 속도 향상, 시각적인 이미지 번역 품질 향상.
-### (6) 데이터 QC
-- Ref: https://github.com/KimRass/KimRass/tree/main/Flitto/Data-Collection
+### (6) [Data QC](https://github.com/KimRass/KimRass/tree/main/Flitto/Data-Collection)
 - B2B 고객사의 의뢰에 따라 데이터를 수집하여 납품하는 프로젝트에 있어서 자동 데이터 QC를 위한 각종 알고리즘 개발.
     - 다국어 병렬 말뭉치 (텍스트 데이터)
         - Machine translation model 학습을 위한 다국어 데이터 수집 (ko, en, hi, km, tl, ru, vi, id, th).
@@ -94,13 +85,11 @@
     - 종합건설업 (아파트 브랜드 'IPARK')
     - 사원 수 약 1,800명, 매출액 약 3조 원
 - 이직 사유: 인공지능에 대한 전문성 향상
-###	(1) Tableau 기반의 전사 대시보드 구축 리딩 (2021.02 ~ 2022.04)
-- Ref: https://github.com/KimRass/KimRass/tree/main/HDC/Tableau-BI
+###	(1) [Tableau 기반의 전사 대시보드 구축](https://github.com/KimRass/KimRass/tree/main/HDC/Tableau-BI) 리딩 (2021.02 ~ 2022.04)
 - 현업과 협의하여 대시보드 설계 및 Tableau와 data mart 연결.
 - 자동으로 대시보드의 데이터가 업데이트될 수 있도록 Tableau 로직 설계 
 - SQL을 통해 data mart와 Tableau 로직 점검.
-### (2) 아파트 실거래가 데이터 분석 리딩 (2020.01 ~ 2020.09)
-- Ref: https://github.com/KimRass/KimRass/tree/main/HDC/APT-Price-Analysis
+### (2) [아파트 실거래가 데이터 분석](https://github.com/KimRass/KimRass/tree/main/HDC/APT-Price-Analysis) 리딩 (2020.01 ~ 2020.09)
 - 아파트 실거래가 데이터 분석을 통해 데이터 기반의 적정 분양가 산정 시도.
 - web scraping으로 '네이버 부동산' 등에서 부동산 관련 데이터 수집.
 - feature generation, feature selection 등 feature engineering.
