@@ -34,10 +34,10 @@
 ## 1) 'Flitto' (2022.05 ~ 2023.12, 정규직)
 - 회사 소개:
     - [음식점 메뉴 이미지에 대한 다국어 이미지 번역 서비스 제공.](https://github.com/KimRass/KimRass/tree/main/Flitto/Place-Translation)
-    - B2B 데이터 판매
+    - B2B 데이터 판매.
     - 크라우드 데이터 레이블링 플랫폼 운영.
     - 사원수 약 150명, 2019년 코스닥 상장.
-- 퇴직 사유: 인공지능에 대한 전문성 향상
+<!-- - 퇴직 사유: 인공지능에 대한 전문성 향상 -->
 ### (1) [Scene text image QC model](https://github.com/KimRass/KimRass/tree/main/Flitto/Scene-Text-Image-QC) 개발
 - 아랍어 Scene text images 수집 프로젝트에서 여러 가지 알고리즘을 통해 데이터에 대한 QC를 수행하는 모델.
 - Image rotation classification model을 사용해 회전된 이미지를 정상으로 복원.
