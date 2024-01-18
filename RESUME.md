@@ -85,11 +85,11 @@
     - 종합건설업 (아파트 브랜드 'IPARK')
     - 사원 수 약 1,800명, 매출액 약 3조 원
 - 이직 사유: 인공지능에 대한 전문성 향상
-###	(1) [Tableau 기반의 전사 대시보드 구축](https://github.com/KimRass/KimRass/tree/main/HDC/Tableau-BI) 리딩 (2021.02 ~ 2022.04)
+###	(1) [Tableau 기반의 전사 대시보드 구축 리딩](https://github.com/KimRass/KimRass/tree/main/HDC/Tableau-BI) (2021.02 ~ 2022.04)
 - 현업과 협의하여 대시보드 설계 및 Tableau와 data mart 연결.
 - 자동으로 대시보드의 데이터가 업데이트될 수 있도록 Tableau 로직 설계 
 - SQL을 통해 data mart와 Tableau 로직 점검.
-### (2) [아파트 실거래가 데이터 분석](https://github.com/KimRass/KimRass/tree/main/HDC/APT-Price-Analysis) 리딩 (2020.01 ~ 2020.09)
+### (2) [아파트 실거래가 데이터 분석 리딩](https://github.com/KimRass/KimRass/tree/main/HDC/APT-Price-Analysis) (2020.01 ~ 2020.09)
 - 아파트 실거래가 데이터 분석을 통해 데이터 기반의 적정 분양가 산정 시도.
 - web scraping으로 '네이버 부동산' 등에서 부동산 관련 데이터 수집.
 - feature generation, feature selection 등 feature engineering.
