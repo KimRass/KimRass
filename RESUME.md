@@ -8,15 +8,15 @@
 # 2. Core Competencies
 - 딥 러닝 논문을 PyTorch로 From scratch 구현 경험
     - Vision: DCGAN, Pix2Pix, CycleGAN, PGGAN, DDPM, ViT, DeepLab v3, Gatys et al. (2016), etc.
-    - Language: BERT, Sentence BERT, RoBERTa, ALBERT, etc.
+    - Language: BERT, Sentence-BERT, RoBERTa, ALBERT, etc.
     - Vision-language: CLIP, etc.
 - Vision model 개발 경험
     - Scene text image QC model
     - Image rotation classification model
     - Textual attribute recognition model
     - Scene text removal model
-- Tableau 기반의 전사 대시보드 구축 리딩 경험
-- 아파트 실거래가 데이터 분석 리딩 경험
+- Tableau 기반의 전사 대시보드 구축 리드 경험
+- 아파트 실거래가 데이터 분석 리드 경험
 - [알고리즘과 자료구조에 대한 이해](https://github.com/KimRass/Algorithm-Coding-Test)
     - '프로그래머스' 90 문제 해결 / 'Baekjoon Online Judge' 153 문제 해결, Gold III 등급
 
@@ -73,7 +73,7 @@
     - 명대사를 포함하는 한국어 대화문 (텍스트 데이터)
         - 영화 명대사나 속담 등을 활용하여 문장을 생성하는 Chatbot model을 학습시키기 위한 데이터 수집.
         - 형태소 분리에 기반하여 존댓말을 반말로 변환.
-        - Sentence BERT에 기반한 문장간 유사도 검사.
+        - Sentence-BERT에 기반한 문장간 유사도 검사.
     - 한국어와 영어 뉴스 기사 (텍스트 데이터)
         - 형태소 분리에 기반하여 완전한 문장과 불완전한 문장을 구분하고 완전한 문장으로 이루어진 데이터 수집.
     - 한국어 명령어 발화 (음성 데이터)
@@ -84,15 +84,15 @@
 - 회사 소개:
     - 종합건설업 (아파트 브랜드 'IPARK')
     - 사원 수 약 1,800명, 매출액 약 3조 원
-- 이직 사유: 인공지능에 대한 전문성 향상
-###	(1) [Tableau 기반의 전사 대시보드 구축 리딩](https://github.com/KimRass/KimRass/tree/main/HDC/Tableau-BI) (2021.02 ~ 2022.04)
-- 현업과 협의하여 대시보드 설계 및 Tableau와 data mart 연결.
+- 이직 사유: 인공지능과 더 관련이 깊은 업무를 수행하며 그에 대한 전문성 향상
+###	(1) [Tableau 기반의 전사 대시보드 구축 리드](https://github.com/KimRass/KimRass/tree/main/HDC/Tableau-BI) (2021.02 ~ 2022.04)
+- 현업과 협의하여 대시보드 설계 및 Tableau와 Data mart 연결.
 - 자동으로 대시보드의 데이터가 업데이트될 수 있도록 Tableau 로직 설계 
-- SQL을 통해 data mart와 Tableau 로직 점검.
-### (2) [아파트 실거래가 데이터 분석 리딩](https://github.com/KimRass/KimRass/tree/main/HDC/APT-Price-Analysis) (2020.01 ~ 2020.09)
+- SQL을 통해 Data mart와 Tableau 로직 점검.
+### (2) [아파트 실거래가 데이터 분석 리드](https://github.com/KimRass/KimRass/tree/main/HDC/APT-Price-Analysis) (2020.01 ~ 2020.09)
 - 아파트 실거래가 데이터 분석을 통해 데이터 기반의 적정 분양가 산정 시도.
-- web scraping으로 '네이버 부동산' 등에서 부동산 관련 데이터 수집.
-- feature generation, feature selection 등 feature engineering.
+- Web scraping으로 '네이버 부동산' 등에서 부동산 관련 데이터 수집.
+- Feature engineering.
 - 'XGBoost' 기반 modeling.
 - 'Mapbox' 기반 데이터 시각화.
 - 최근 10년간의 전용면적 또는 층에 대한 선호도 변화 분석.
