@@ -7,8 +7,8 @@
 
 # 2. Core Competencies
 - 딥 러닝 논문을 PyTorch로 From scratch 구현 경험
-    - Vision: DCGAN, Pix2Pix, CycleGAN, PGGAN, DDPM, ViT, DeepLab v3, Gatys et al. (2016), etc.
-    - Language: BERT, Sentence-BERT, RoBERTa, ALBERT, etc.
+    - Vision: VAE, DCGAN, Pix2Pix, CycleGAN, PGGAN, DDPM, ViT, DeepLab v3, Gatys et al. (2016), etc.
+    - Language: BERT, Sentence-BERT, RoBERTa, etc.
     - Vision-language: CLIP, etc.
 - Vision model 개발 경험
     - Scene text image QC model
