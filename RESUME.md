@@ -87,7 +87,7 @@
 - 이직 사유: 인공지능과 더 관련이 깊은 업무를 수행하며 그에 대한 전문성 향상
 ###	(1) [Tableau 기반의 전사 대시보드 구축 리드](https://github.com/KimRass/KimRass/tree/main/HDC/Tableau-BI) (2021.02 ~ 2022.04)
 - 현업과 협의하여 대시보드 설계 및 Tableau와 Data mart 연결.
-- 자동으로 대시보드의 데이터가 업데이트될 수 있도록 Tableau 로직 설계 
+- 자동으로 대시보드의 데이터가 업데이트될 수 있도록 Tableau 로직 설계.
 - SQL을 통해 Data mart와 Tableau 로직 점검.
 ### (2) [아파트 실거래가 데이터 분석 리드](https://github.com/KimRass/KimRass/tree/main/HDC/APT-Price-Analysis) (2020.01 ~ 2020.09)
 - 아파트 실거래가 데이터 분석을 통해 데이터 기반의 적정 분양가 산정 시도.
