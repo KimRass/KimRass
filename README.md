@@ -16,7 +16,7 @@
 
 | Field | Year | Author | Title | Implementation | Training | Experiments |
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-| Vision | 2014 | 'VAE' | Kingma and Welling | ✔ | On MNIST | ~~ |
+| Vision | 2014 | ['VAE'](https://github.com/KimRass/VAE) | Kingma and Welling | ✔ | On MNIST | ~~ |
 | | 2015 | ['CAM'](https://github.com/KimRass/CAM) | Zhou et al. | ✔ | - | × |
 | | 2016 | [Gatys et al., 2016](https://github.com/KimRass/Gatys-et-al.-2016) | Gatys et al. |
 | | | ['YOLO'](https://github.com/KimRass/YOLO) | Redmon et al. |
