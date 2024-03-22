@@ -14,35 +14,35 @@
 | Language | 'BERT' (Devlin et al., 2019)<br>'Sentence-BERT' (Nils Reimers et al., 2019)<br>'RoBERTa' (Liu et al., 2019<br><br>Working on...<br>'Transformer' (Vaswani et al., 2017) ||
 | Vision-Language|| 'CLIP' (Radford et al., 2021) | -->
 
-| Field | Year | Author | Title | Implementation | Training | Experiments |
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-| Vision | 2014 | ['VAE'](https://github.com/KimRass/VAE) | Kingma and Welling | ✔ | On MNIST | ~~ |
-| | 2015 | ['CAM'](https://github.com/KimRass/CAM) | Zhou et al. | ✔ | - | × |
-| | 2016 | [Gatys et al., 2016](https://github.com/KimRass/Gatys-et-al.-2016) | Gatys et al. |
-| | | ['YOLO'](https://github.com/KimRass/YOLO) | Redmon et al. |
-| | | ['DCGAN'](https://github.com/KimRass/DCGAN) | Radford et al. |
-| | | ['VQ-VAE'](https://github.com/KimRass/VQ-VAE) | Oord et al. |
-| | | [Noroozi et al., 2016](https://github.com/KimRass/Mehdi-Noroozi-et-al.-2016) | Noroozi et al. |
-| | | [Zhang et al., 2016]((https://github.com/KimRass/Richard-Zhang-et-al.-2016)) | Zhang et al. |
-| | 2014<br>2017 | ['Conditional GAN'<br>'WGAN-GP'](https://github.com/KimRass/Conditional-WGAN-GP) | Mirza et al.<br>Gulrajani et al. |
-| | 2017 | ['Pix2Pix'](https://github.com/KimRass/Pix2Pix) | Isola et al. |
-| | | ['CycleGAN'](https://github.com/KimRass/CycleGAN) | Zhu et al. |
-| | | [Noroozi et al., 2017](https://github.com/KimRass/Mehdi-Noroozi-et-al.-2017) | Noroozi et al. |
-| | 2018 | ['PGGAN'](https://github.com/KimRass/PGGAN) | Karras et al. |
-| | | ['DeepLab v3'](https://github.com/KimRass/DeepLabv3) | Chen et al. |
-| | | ['PixelLink'](https://github.com/KimRass/PixelLink) | Deng et al. |
-| | | ['RotNet')](https://github.com/KimRass/RotNet) | Gidaris et al |
+| Field | Year | Author | Title | Implementations |
+|:-:|:-:|:-:|:-:|:-:|
+| Vision | 2014 | ['VAE'](https://github.com/KimRass/VAE) | Kingma and Welling | [✔] Training on MNIST<br>[✔] Encoder output visualization<br>[✔] Decoder output visualization |
+| | 2015 | ['CAM'](https://github.com/KimRass/CAM) | Zhou et al. | [✔] Application to GoogleNet
+| | 2016 | [Gatys et al., 2016](https://github.com/KimRass/Gatys-et-al.-2016) | Gatys et al. | [✔] Application to VGGNet-19 |
+| | | ['YOLO'](https://github.com/KimRass/YOLO) | Redmon et al. | [×] Training on VOC 2012<br>[×] Class probability map<br>[×] Ground truth vlisualization on grid|
+| | | ['DCGAN'](https://github.com/KimRass/DCGAN) | Radford et al. | [✔] Training on CelebA at 64 × 64<br> [✔] Sampling<br>[✔] Latent space interpolation |
+| | | [Noroozi et al., 2016](https://github.com/KimRass/Mehdi-Noroozi-et-al.-2016) | Noroozi et al. | [✔] Network<br>[✔] Chromatic aberration<br>[✔] Permutation set |
+| | | [Zhang et al., 2016]((https://github.com/KimRass/Richard-Zhang-et-al.-2016)) | Zhang et al. | [✔] Empirical probability distribution<br>[×] Color space |
+| | 2014<br>2017 | ['Conditional GAN'<br>'WGAN-GP'](https://github.com/KimRass/Conditional-WGAN-GP) | Mirza et al.<br>Gulrajani et al. | [✔] Training on MNIST |
+| | 2016<br>2017 | ['PixelCNN'<br>'VQ-VAE'](https://github.com/KimRass/VQ-VAE) | Oord et al.<br>Oord et al. | [✔] Training on Fashion MNIST<br>[✔] Training on CIFAR-10 |
+| | 2017 | ['Pix2Pix'](https://github.com/KimRass/Pix2Pix) | Isola et al. | [✔] Training on Google Maps<br>[✔] Training on Facades<br> [×] Inference on larger resolution |
+| | | ['CycleGAN'](https://github.com/KimRass/CycleGAN) | Zhu et al. | [✔] Training on Monet to photo<br>[✔] Training on Vangogh to photo<br>[✔] Training on Cezanne to photo<br>[✔] Training on Ukiyo-e to photo<br>[✔] Training on Horse to zebra<br>[✔] Training on Summer to winter |
+| | | [Noroozi et al., 2017](https://github.com/KimRass/Mehdi-Noroozi-et-al.-2017) | Noroozi et al. | [✔] Constrastive loss |
+| | 2018 | ['PGGAN'](https://github.com/KimRass/PGGAN) | Karras et al. | [✔] Training on CelebA-HQ at 512 × 512 |
+| | | ['DeepLab v3'](https://github.com/KimRass/DeepLabv3) | Chen et al. | [✔] Training on VOC 2012<br>[✔] Prediction on VOC 2012 validation set<br>[✔] Average mIoU |
+| | | ['PixelLink'](https://github.com/KimRass/PixelLink) | Deng et al. | [✔] Network<br>[✔] Instance-balanced cross entropy loss<br>[✔] Post-processing |
+| | | ['RotNet')](https://github.com/KimRass/RotNet) | Gidaris et al | [✔] Attention map visualization |
 | | 2020 |['STEFANN'](https://github.com/KimRass/STEFANN) | Roy et al. |
-| | | ['DDPM'](https://github.com/KimRass/DDPM) | Ho et al. |
-| | | ['DDIM'](https://github.com/KimRass/DDIM) | Song et al. |
-| | | ['ViT'](https://github.com/KimRass/ViT) | Dosovitskiy et al. |
-| | |['SimCLR'](https://github.com/KimRass/SimCLR) | Chen et al. |
-| | 2021 |['Improved DDPM'](https://github.com/KimRass/Improved-DDPM) | Nichol and Dhariwal |
-| | | ['ILVR'](https://github.com/KimRass/ILVR) | Choi et al. |
-| | | Working on...<br>['SDEdit'](https://github.com/KimRass/SDEdit) | Meng et al. |
+| | | ['DDPM'](https://github.com/KimRass/DDPM) | Ho et al. | [✔] Training on CelebA at 32 × 32<br>[✔] Training on CelebA at 64 × 64<br>[✔] Denoising process visualization<br>[✔] Linear interpolation sampling<br>[✔] Coarse-to-fine sampling |
+| | | ['DDIM'](https://github.com/KimRass/DDIM) | Song et al. | [✔] Sampling<br>[✔] Spherical interpolation sampling<br>[✔] Interpolation on grid sampling<br>[✔] Truncated normal |
+| | | ['ViT'](https://github.com/KimRass/ViT) | Dosovitskiy et al. | [✔] Training on CIFAR-10<br>[✔] Training on CIFAR-100<br>[✔] CutOut<br>Hide-and-Seek<br>[✔] CutMix<br>[✔] Attention Roll-out<br>[✔] Position embedding similarity<br>[✔] Position embedding interpolation |
+| | |['SimCLR'](https://github.com/KimRass/SimCLR) | Chen et al. | [✔] Normalized temperature-scaled cross entropy loss<br>[✔] Data augmentation<br>[✔] Pixel intensity histogram |
+| | 2021 |['Improved DDPM'](https://github.com/KimRass/Improved-DDPM) | Nichol and Dhariwal | [✔] Cosine diffusion schedule |
+| | | ['ILVR'](https://github.com/KimRass/ILVR) | Choi et al. | [✔] Sampling from single reference<br>[✔] Sampling from various scale factors<br>[✔] Sampling from various conditioning range |
+| | | Working on...<br>['SDEdit'](https://github.com/KimRass/SDEdit) | Meng et al. | [✔] User input stroke simulation |
 | | 2022 | Working on...<br>['CFG'](https://github.com/KimRass/CFG) | Ho et al. |
-| Language | 2017 | Working on...<br>['Transformer'](https://github.com/KimRass/Transformer) | Vaswani et al. | | On CIFAR-10 & CIFAR-100 | |
-| | 2019 | ['BERT'](https://github.com/KimRass/BERT) | Devlin et al. |
-| | | ['Sentence-BERT'](https://github.com/KimRass/Sentence-BERT) | Reimers et al. |
-| | | ['RoBERTa'](https://github.com/KimRass/RoBERTa) | Liu et al. |
-| Vision-Language | 2021 | ['CLIP'](https://github.com/KimRass/CLIP) | Radford et al. |
+| Language | 2017 | ['Transformer'](https://github.com/KimRass/Transformer) | Vaswani et al. | [✔] Network<br>[✔] Position encoding visualization |
+| | 2019 | ['BERT'](https://github.com/KimRass/BERT) | Devlin et al. | [✔] BookCorpus data pre-processing<br>[✔] Network<br>[✔] Masked language modeling<br>[✔] SQuAD data pre-processing<br>[✔]SWAG data pre-processing |
+| | | ['Sentence-BERT'](https://github.com/KimRass/Sentence-BERT) | Reimers et al. | [✔] Classification loss<br>[✔] Regression loss<br>[✔] Constrastive loss<br>[✔] STSb data pre-processing<br>[✔] WikiSection data pre-processing<br>[×] NLI data pre-processing |
+| | | ['RoBERTa'](https://github.com/KimRass/RoBERTa) | Liu et al. | [✔] BookCorpus data pre-processing<br>[✔] Masked language modeling<br>[×] BookCorpus data pre-processing<br>(SEGMENT-PAIR + NSP)<br>[×] BookCorpus data pre-processing<br>(SENTENCE-PAIR + NSP)<br>[✔] BookCorpus data pre-processing<br>(FULL-SENTENCES)<br>[×] BookCorpus data pre-processing<br>(DOC-SENTENCES) |
+| Vision-Language | 2021 | ['CLIP'](https://github.com/KimRass/CLIP) | Radford et al. | [✔] Training on Flickr8k + Flickr30k<br>[✔] Zero-shot classification on ImageNet1k (mini)<br>[✔]Lineage classification on ImageNet1k (mini) |
