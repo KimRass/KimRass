@@ -23,7 +23,7 @@
 - 각 pseudo character의 크기에 일정한 값을 곱해 이를 통해 해당 문자의 font size로 구합니다. 실제로는 하나의 bounding box에서 다양한 font size가 존재할 수도 있지만 모두 동일하다고 가정하여 통계적인 방법을 통해 하나의 font size를 추출합니다.
 
 # 2. Writing Direction
-- text region segmentation map으로부터 pseudo character centers (PCCs)를 추출합니다. 
+- text region segmentation map으로부터 pseudo character centers (PCCs) [3]를 추출합니다. 
     - <img src="https://user-images.githubusercontent.com/67457712/235050297-a43a5b3c-fdb1-41ad-a30c-30e0f2778910.jpg" width="600">
 - 각 PCC에 대해서 가장 가까운 다른 PCC를 찾습니다. 두 PCCs간의 x축 방향과 y축 방향 각각에 대한 거리를 구해서 x축 방향의 거리가 y축 방향의 거리보다 더 가까우면 가로쓰기라고 판단하고 y축 방향의 거리가 x축 방향의 거리보다 가까우면 세로쓰기라고 판단합니다.
 - 이때 가장 가까운 다른 PCC와의 거리가 font size와 비교해 너무 작다면, 바로 그 다음으로 가까운 PCC를 찾습니다. 이는 동일한 하나의 문자에 대해서 다수의 PCCs가 추출되는 경우에 이를 보완하기 위함입니다.
@@ -180,6 +180,7 @@
 # 12. References
 - [1] [Character Region Awareness for Text Detection](https://github.com/KimRass/CRAFT/blob/main/papers/character_region_awareness_for_text_detection.pdf)
 - [2] ['더' 잘 읽히고 자연스러운 이미지 번역을 위해 (파파고 텍스트 렌더링 개발기)](https://deview.kr/2023/sessions)
+- [3] [CLEval: Character-Level Evaluation for Text Detection and Recognition Tasks](https://github.com/KimRass/KimRass/tree/main/Flitto/papers/cleval_character_level_evaluation_for_text_detection_and_recognition_tasks.pdf)
 
 <!-- ## Font Size Clustering and Limitation
 - Font size와 Text color (R, G, B), 4개의 Features를 가지고 K-means clustering
