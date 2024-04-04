@@ -32,10 +32,12 @@
 | 각 pseudo character의 크기에 일정한 값을 곱해 이를 통해 해당 문자의 font size로 구합니다. 실제로는 하나의 bounding box에서 다양한 font size가 존재할 수도 있지만 모두 동일하다고 가정하여 통계적인 방법을 통해 하나의 font size를 추출합니다. |
 
 # 2. Writing Direction
-- text region segmentation map으로부터 pseudo character centers (PCCs) [3]를 추출합니다. 
-    - <img src="https://user-images.githubusercontent.com/67457712/235050297-a43a5b3c-fdb1-41ad-a30c-30e0f2778910.jpg" width="600">
-- 각 PCC에 대해서 가장 가까운 다른 PCC를 찾습니다. 두 PCCs간의 x축 방향과 y축 방향 각각에 대한 거리를 구해서 x축 방향의 거리가 y축 방향의 거리보다 더 멀면 가로쓰기라고 판단하고 y축 방향의 거리가 x축 방향의 거리보다 멀면 세로쓰기라고 판단합니다.
-- 이때 가장 가까운 다른 PCC와의 거리가 font size와 비교해 너무 작다면, 바로 그 다음으로 가까운 PCC를 찾습니다. 이는 동일한 하나의 문자에 대해서 다수의 PCCs가 추출되는 경우에 이를 보완하기 위함입니다.
+| PCCs |
+|:-|
+| <img src="https://user-images.githubusercontent.com/67457712/235050297-a43a5b3c-fdb1-41ad-a30c-30e0f2778910.jpg" width="600"> |
+| text region segmentation map으로부터 pseudo character centers (PCCs) [3]를 추출합니다. |
+| 각 PCC에 대해서 가장 가까운 다른 PCC를 찾습니다. 두 PCCs간의 x축 방향과 y축 방향 각각에 대한 거리를 구해서 x축 방향의 거리가 y축 방향의 거리보다 더 멀면 가로쓰기라고 판단하고 y축 방향의 거리가 x축 방향의 거리보다 멀면 세로쓰기라고 판단합니다. |
+| 이때 가장 가까운 다른 PCC와의 거리가 font size와 비교해 너무 작다면, 바로 그 다음으로 가까운 PCC를 찾습니다. 이는 동일한 하나의 문자에 대해서 다수의 PCCs가 추출되는 경우에 이를 보완하기 위함입니다. |
 
 # 3. Text Alignment
 - rule-based approach로는 추출이 불가능하다고 판단했습니다 [2]. 또한 각 bounding box의 이미지 영역만을 보고는 알 수 없으며 이미지의 전체적인 visual features를 고려하여야만 높은 정확도로 판단할 수 있다고 보았습니다.
@@ -86,22 +88,33 @@
 - 가장 font size가 클 수 있는 줄바꿈을 최종적으로 선택하고 같은 font size에 대해서는 줄바꿈 횟수가 가장 적은 것을 선택합니다. 
 
 # 5. Text Color
-- Scene text removal
-    - <img src="https://private-user-images.githubusercontent.com/105417680/247048146-d80b176f-f0a3-4ffa-9e45-83b575dcf278.jpg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MTIxOTE2MzYsIm5iZiI6MTcxMjE5MTMzNiwicGF0aCI6Ii8xMDU0MTc2ODAvMjQ3MDQ4MTQ2LWQ4MGIxNzZmLWYwYTMtNGZmYS05ZTQ1LTgzYjU3NWRjZjI3OC5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwNDA0JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDQwNFQwMDQyMTZaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1jOWM3NjllMmM4NmFlNTYzMDhlMjZiOTkyNjc1ODNmYmIwYjU2MTJlOTNiMDdmODM4MzlhZjVhMmRiNmM2OWVmJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.XVCWqz5uOI0qoYxZItHma-em1V3HOFjq-egn3uDOcts" width="600">
-- Pixel-wise image difference
-    - 원본 이미지와 텍스트가 제거된 이미지 사이의 픽셀 단위의 차이를 구합니다.
-    - <img src="https://private-user-images.githubusercontent.com/105417680/247062590-2127ef36-4b70-4b3a-938a-b90d693e89a5.jpg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MTIxOTE2MzYsIm5iZiI6MTcxMjE5MTMzNiwicGF0aCI6Ii8xMDU0MTc2ODAvMjQ3MDYyNTkwLTIxMjdlZjM2LTRiNzAtNGIzYS05MzhhLWI5MGQ2OTNlODlhNS5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwNDA0JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDQwNFQwMDQyMTZaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1jOTcxMTg5YTcxZmIzNmRiYjFjNTZjZTdjZWY1MTU2OWYyMzNlZjdkZDFkMmRhNmM1ZTNmNDQwNjg4ZjQ0ZDFiJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.gHR8iRas8_mGQSFvtO_lrM4tlnB7TrKoCimc38sX864" width="600">
-- 이를 바탕으로 mask를 생성합니다 [2].
-    - <img src="https://private-user-images.githubusercontent.com/105417680/247062575-8fd85555-6a72-4a2e-a336-bc597f75708c.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MTIxOTE2MzYsIm5iZiI6MTcxMjE5MTMzNiwicGF0aCI6Ii8xMDU0MTc2ODAvMjQ3MDYyNTc1LThmZDg1NTU1LTZhNzItNGEyZS1hMzM2LWJjNTk3Zjc1NzA4Yy5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwNDA0JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDQwNFQwMDQyMTZaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT01ZWVmNjFkYTMxZmIzMDE0ZWE4OWJjZjk3ODk1OWI2NzZjNzU2YTUxODA5ZGQxMDVhZjI5MDNmNTA5NTlmNjI5JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.ulWSGyq95sKtmP0HytJDmnEDQZbHhc7V37WVy1nFsI0" width="600">
+| Scene text removal |
+|:-|
+| <img src="https://private-user-images.githubusercontent.com/105417680/247048146-d80b176f-f0a3-4ffa-9e45-83b575dcf278.jpg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MTIxOTE2MzYsIm5iZiI6MTcxMjE5MTMzNiwicGF0aCI6Ii8xMDU0MTc2ODAvMjQ3MDQ4MTQ2LWQ4MGIxNzZmLWYwYTMtNGZmYS05ZTQ1LTgzYjU3NWRjZjI3OC5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwNDA0JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDQwNFQwMDQyMTZaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1jOWM3NjllMmM4NmFlNTYzMDhlMjZiOTkyNjc1ODNmYmIwYjU2MTJlOTNiMDdmODM4MzlhZjVhMmRiNmM2OWVmJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.XVCWqz5uOI0qoYxZItHma-em1V3HOFjq-egn3uDOcts" width="600"> |
+
+| Pixel-wise image difference |
+| <img src="https://private-user-images.githubusercontent.com/105417680/247062590-2127ef36-4b70-4b3a-938a-b90d693e89a5.jpg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MTIxOTE2MzYsIm5iZiI6MTcxMjE5MTMzNiwicGF0aCI6Ii8xMDU0MTc2ODAvMjQ3MDYyNTkwLTIxMjdlZjM2LTRiNzAtNGIzYS05MzhhLWI5MGQ2OTNlODlhNS5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwNDA0JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDQwNFQwMDQyMTZaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1jOTcxMTg5YTcxZmIzNmRiYjFjNTZjZTdjZWY1MTU2OWYyMzNlZjdkZDFkMmRhNmM1ZTNmNDQwNjg4ZjQ0ZDFiJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.gHR8iRas8_mGQSFvtO_lrM4tlnB7TrKoCimc38sX864" width="600"> |
+| 원본 이미지와 텍스트가 제거된 이미지 사이의 픽셀 단위의 차이를 구합니다. |
+
+| Mask |
+|:-|
+| <img src="https://private-user-images.githubusercontent.com/105417680/247062575-8fd85555-6a72-4a2e-a336-bc597f75708c.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MTIxOTE2MzYsIm5iZiI6MTcxMjE5MTMzNiwicGF0aCI6Ii8xMDU0MTc2ODAvMjQ3MDYyNTc1LThmZDg1NTU1LTZhNzItNGEyZS1hMzM2LWJjNTk3Zjc1NzA4Yy5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwNDA0JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDQwNFQwMDQyMTZaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT01ZWVmNjFkYTMxZmIzMDE0ZWE4OWJjZjk3ODk1OWI2NzZjNzU2YTUxODA5ZGQxMDVhZjI5MDNmNTA5NTlmNjI5JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.ulWSGyq95sKtmP0HytJDmnEDQZbHhc7V37WVy1nFsI0" width="600"> |
+| 이를 바탕으로 mask를 생성합니다 [2]. |
+
 - Color extraction
     - 각 bounding box에 대해서 mask에 해당하는 영역에 대해서만 원본 이미지로부터 픽셀별 색깔을 조사합니다. 이때 비슷하지만 서로 조금씩 다른 색깔은 많은 픽셀 수를 갖는 색깔 쪽으로 통합해 나갑니다.
     - 색깔의 수가 3개가 될 때까지 통합합니다. 이 3개의 색깔 중에서 가장 많은 픽셀 수를 갖는 `(7, 145, 58)`을 text color로 정합니다.
-        - Original image
-            - <img src="https://user-images.githubusercontent.com/67457712/235061924-e372749d-fa8f-4db2-a655-ad5210ff0c88.jpg" width="400">
-        - Pixel-wise image difference
-            - <img src="https://user-images.githubusercontent.com/67457712/235061927-f1e4e5ff-fcc4-4640-9817-4d14ba467e28.jpg" width="400">
-        - Text color candidates
-            - <img src="https://user-images.githubusercontent.com/67457712/235064154-1ff39941-f237-4639-8735-db7bf116986a.jpg" width="300">
+    | Original image |
+    |:-|
+    | <img src="https://user-images.githubusercontent.com/67457712/235061924-e372749d-fa8f-4db2-a655-ad5210ff0c88.jpg" width="400"> |
+    
+    | Pixel-wise image difference |
+    |:-|
+    | <img src="https://user-images.githubusercontent.com/67457712/235061927-f1e4e5ff-fcc4-4640-9817-4d14ba467e28.jpg" width="400"> |
+    
+    | Text color candidates |
+    |:-|
+    | <img src="https://user-images.githubusercontent.com/67457712/235064154-1ff39941-f237-4639-8735-db7bf116986a.jpg" width="300"> |
 
 # 6. Text Border
 - text border를 적용하지 않았을 때, 사람이 그 텍스트를 읽을 수 없으면 text border를 적용하고 읽을 수 있다면 적용하지 않습니다.
