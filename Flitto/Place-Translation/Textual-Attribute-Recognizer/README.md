@@ -24,10 +24,10 @@
 
 | Text region segmentation map |
 |:-|
-| connected component labeling, watershed 등을 사용해 각 문자를 서로 다른 Class로 구분하는 'text region segmentation map'을 생성합니다. 각 class가 정확히 하나의 문자를 나타내지는 못하므로 pseudo characters라고 부르겠습니다. |
 | <img src="https://user-images.githubusercontent.com/67457712/235050300-e4dff000-f476-485f-8cfd-28799b24e9f8.jpg" width="600"> |
 | <img src="https://user-images.githubusercontent.com/67457712/235050726-ab8d3a2f-75cd-4637-8e02-f2105ba41fff.jpg" width="200"> |
 | <img src="https://private-user-images.githubusercontent.com/105417680/247047557-593c6476-042a-47cf-9a99-cf093581cf0e.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MTIxOTE2MzYsIm5iZiI6MTcxMjE5MTMzNiwicGF0aCI6Ii8xMDU0MTc2ODAvMjQ3MDQ3NTU3LTU5M2M2NDc2LTA0MmEtNDdjZi05YTk5LWNmMDkzNTgxY2YwZS5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwNDA0JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDQwNFQwMDQyMTZaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT04ZjdkZDBkNzFiNGZjN2MxOWQ1ZDdkOTBjNWUzNGJiYjBlNjdiZjIzYmQ2ZDkxZTVjMzVhNmY1Y2E4MjdlNDA5JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.DR9ieMPn5W6aZ_DSKmkqV4cSOXvVECciPHsjbba6dzQ" width="600"> |
+| connected component labeling, watershed 등을 사용해 각 문자를 서로 다른 Class로 구분하는 'text region segmentation map'을 생성합니다. 각 class가 정확히 하나의 문자를 나타내지는 못하므로 pseudo characters라고 부르겠습니다. |
 | 매우 많은 수의 label이 생성되지만 이해를 돕기 위해 26개의 색상을 사용하여 단순화했습니다.|
 | 각 pseudo character의 크기에 일정한 값을 곱해 이를 통해 해당 문자의 font size로 구합니다. 실제로는 하나의 bounding box에서 다양한 font size가 존재할 수도 있지만 모두 동일하다고 가정하여 통계적인 방법을 통해 하나의 font size를 추출합니다. |
 
@@ -93,6 +93,7 @@
 | <img src="https://private-user-images.githubusercontent.com/105417680/247048146-d80b176f-f0a3-4ffa-9e45-83b575dcf278.jpg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MTIxOTE2MzYsIm5iZiI6MTcxMjE5MTMzNiwicGF0aCI6Ii8xMDU0MTc2ODAvMjQ3MDQ4MTQ2LWQ4MGIxNzZmLWYwYTMtNGZmYS05ZTQ1LTgzYjU3NWRjZjI3OC5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwNDA0JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDQwNFQwMDQyMTZaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1jOWM3NjllMmM4NmFlNTYzMDhlMjZiOTkyNjc1ODNmYmIwYjU2MTJlOTNiMDdmODM4MzlhZjVhMmRiNmM2OWVmJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.XVCWqz5uOI0qoYxZItHma-em1V3HOFjq-egn3uDOcts" width="600"> |
 
 | Pixel-wise image difference |
+|:-|
 | <img src="https://private-user-images.githubusercontent.com/105417680/247062590-2127ef36-4b70-4b3a-938a-b90d693e89a5.jpg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MTIxOTE2MzYsIm5iZiI6MTcxMjE5MTMzNiwicGF0aCI6Ii8xMDU0MTc2ODAvMjQ3MDYyNTkwLTIxMjdlZjM2LTRiNzAtNGIzYS05MzhhLWI5MGQ2OTNlODlhNS5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwNDA0JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDQwNFQwMDQyMTZaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1jOTcxMTg5YTcxZmIzNmRiYjFjNTZjZTdjZWY1MTU2OWYyMzNlZjdkZDFkMmRhNmM1ZTNmNDQwNjg4ZjQ0ZDFiJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.gHR8iRas8_mGQSFvtO_lrM4tlnB7TrKoCimc38sX864" width="600"> |
 | 원본 이미지와 텍스트가 제거된 이미지 사이의 픽셀 단위의 차이를 구합니다. |
 
@@ -104,25 +105,23 @@
 - Color extraction
     - 각 bounding box에 대해서 mask에 해당하는 영역에 대해서만 원본 이미지로부터 픽셀별 색깔을 조사합니다. 이때 비슷하지만 서로 조금씩 다른 색깔은 많은 픽셀 수를 갖는 색깔 쪽으로 통합해 나갑니다.
     - 색깔의 수가 3개가 될 때까지 통합합니다. 이 3개의 색깔 중에서 가장 많은 픽셀 수를 갖는 `(7, 145, 58)`을 text color로 정합니다.
-    | Original image |
-    |:-|
-    | <img src="https://user-images.githubusercontent.com/67457712/235061924-e372749d-fa8f-4db2-a655-ad5210ff0c88.jpg" width="400"> |
-    
-    | Pixel-wise image difference |
-    |:-|
-    | <img src="https://user-images.githubusercontent.com/67457712/235061927-f1e4e5ff-fcc4-4640-9817-4d14ba467e28.jpg" width="400"> |
-    
-    | Text color candidates |
-    |:-|
-    | <img src="https://user-images.githubusercontent.com/67457712/235064154-1ff39941-f237-4639-8735-db7bf116986a.jpg" width="300"> |
+
+| Original image | Pixel-wise image difference | Text color candidates |
+|:-|:-|:-|
+| <img src="https://user-images.githubusercontent.com/67457712/235061924-e372749d-fa8f-4db2-a655-ad5210ff0c88.jpg" width="400"> | <img src="https://user-images.githubusercontent.com/67457712/235061927-f1e4e5ff-fcc4-4640-9817-4d14ba467e28.jpg" width="400"> | <img src="https://user-images.githubusercontent.com/67457712/235064154-1ff39941-f237-4639-8735-db7bf116986a.jpg" width="300"> |
 
 # 6. Text Border
-- text border를 적용하지 않았을 때, 사람이 그 텍스트를 읽을 수 없으면 text border를 적용하고 읽을 수 있다면 적용하지 않습니다.
-- font size, text alignment, text line breaking이 결정되면 각 문자가 어디에 렌더링될 지가 결정됩니다. 각 문자에 대해서, 추출된 text color와 text stroke를 둘러싼 영역의 픽셀 하나하나 사이의 contrast ratio를 계산합니다. 이 값이 일정한 값 미만이라면 그 두 색깔 조합은 가독성이 좋지 않은 것으로 판단합니다.
-- 각 문자에 대해서, text stroke를 둘러싼 영역의 전체 픽셀 수와 비교하여 가독성이 좋지 않은 픽셀의 수를 계산합니다. 이 값은 그 문자의 영역 중 읽을 수 있는 부분의 비율을 나타낸다고 볼 수 있습니다.
-    - <img src="https://private-user-images.githubusercontent.com/105417680/245984852-13643982-e41d-412a-9164-0e6d79ab4b47.jpg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MTIxOTE2MzYsIm5iZiI6MTcxMjE5MTMzNiwicGF0aCI6Ii8xMDU0MTc2ODAvMjQ1OTg0ODUyLTEzNjQzOTgyLWU0MWQtNDEyYS05MTY0LTBlNmQ3OWFiNGI0Ny5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwNDA0JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDQwNFQwMDQyMTZaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT00ZmNiMDVhZjYyN2E4OWE5MmM3Y2NlNzk4MGU2Yzk0OTg0YzgxZWYwODE5M2QyMzQ3ZWY2YjBmOGYwNmY0MGQ3JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.0GhaxKOVfUh04CRf69schUM82xxk1LNv1YN-LnXsJW4" width="200">
-- 이 값을 그 문자의 readability라고 할 때, readability가 어떤 값 미만인 문자가 1개라도 존재할 경우 (1개의 문자라도 가독성이 좋지 않은 것이 있다면) 그 텍스트에는 text border를 적용합니다.
-    - <img src="https://private-user-images.githubusercontent.com/67457712/287637459-797a41a5-9743-4f59-80d7-2b6501d07234.jpg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MTIxOTE2MzYsIm5iZiI6MTcxMjE5MTMzNiwicGF0aCI6Ii82NzQ1NzcxMi8yODc2Mzc0NTktNzk3YTQxYTUtOTc0My00ZjU5LTgwZDctMmI2NTAxZDA3MjM0LmpwZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDA0MDQlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQwNDA0VDAwNDIxNlomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTY1Y2RkNmI1NDRjZDZiMGE2NmQ3M2QyMTRmZDg1ZmQ1MWM2NTU0MWFmZTgyMzYxZTkyYjkyMzZjODIyZDMyMzcmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.sTZFadnXOKgj7Vk0fEIKiHlCyBQJrizGM-7aRfpEJmg" width="900">
+| Text border |
+|:-|
+| <img src="https://private-user-images.githubusercontent.com/105417680/245984852-13643982-e41d-412a-9164-0e6d79ab4b47.jpg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MTIxOTE2MzYsIm5iZiI6MTcxMjE5MTMzNiwicGF0aCI6Ii8xMDU0MTc2ODAvMjQ1OTg0ODUyLTEzNjQzOTgyLWU0MWQtNDEyYS05MTY0LTBlNmQ3OWFiNGI0Ny5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwNDA0JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDQwNFQwMDQyMTZaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT00ZmNiMDVhZjYyN2E4OWE5MmM3Y2NlNzk4MGU2Yzk0OTg0YzgxZWYwODE5M2QyMzQ3ZWY2YjBmOGYwNmY0MGQ3JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.0GhaxKOVfUh04CRf69schUM82xxk1LNv1YN-LnXsJW4" width="200"> |
+| text border를 적용하지 않았을 때, 사람이 그 텍스트를 읽을 수 없으면 text border를 적용하고 읽을 수 있다면 적용하지 않습니다. |
+| font size, text alignment, text line breaking이 결정되면 각 문자가 어디에 렌더링될 지가 결정됩니다. 각 문자에 대해서, 추출된 text color와 text stroke를 둘러싼 영역의 픽셀 하나하나 사이의 contrast ratio를 계산합니다. 이 값이 일정한 값 미만이라면 그 두 색깔 조합은 가독성이 좋지 않은 것으로 판단합니다. |
+
+| Text readibility |
+|:-|
+| <img src="https://private-user-images.githubusercontent.com/67457712/287637459-797a41a5-9743-4f59-80d7-2b6501d07234.jpg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MTIxOTE2MzYsIm5iZiI6MTcxMjE5MTMzNiwicGF0aCI6Ii82NzQ1NzcxMi8yODc2Mzc0NTktNzk3YTQxYTUtOTc0My00ZjU5LTgwZDctMmI2NTAxZDA3MjM0LmpwZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDA0MDQlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQwNDA0VDAwNDIxNlomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTY1Y2RkNmI1NDRjZDZiMGE2NmQ3M2QyMTRmZDg1ZmQ1MWM2NTU0MWFmZTgyMzYxZTkyYjkyMzZjODIyZDMyMzcmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.sTZFadnXOKgj7Vk0fEIKiHlCyBQJrizGM-7aRfpEJmg" width="900"> |
+| 각 문자에 대해서, text stroke를 둘러싼 영역의 전체 픽셀 수와 비교하여 가독성이 좋지 않은 픽셀의 수를 계산합니다. 이 값은 그 문자의 영역 중 읽을 수 있는 부분의 비율을 나타낸다고 볼 수 있습니다. |
+| 이 값을 그 문자의 readability라고 할 때, readability가 어떤 값 미만인 문자가 1개라도 존재할 경우 (1개의 문자라도 가독성이 좋지 않은 것이 있다면) 그 텍스트에는 text border를 적용합니다. |
 
 # 7. Text Border Color
 - 검은색과 하얀색 중, 추출된 text color의 보색과 contrast ratio가 더 큰 쪽을 선택합니다. 이것을 A라 합니다.
