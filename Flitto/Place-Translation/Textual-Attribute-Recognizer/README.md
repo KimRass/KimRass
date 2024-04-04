@@ -10,22 +10,22 @@
 
 # 1. Font Size
 | Original image |
-|:-:|
+|:-|
 | <img src="https://user-images.githubusercontent.com/67457712/235050769-a7970aa6-2b99-4de0-a20b-1bf301ad7d38.jpg" width="600"> |
 
 | Bounding box annotation |
-|:-:|
+|:-|
 | <img src="https://user-images.githubusercontent.com/67457712/235050291-34d76d66-cfdc-47fe-a86a-8ea177eda211.jpg" width="600"> |
 
 | Text region score map |
-|:-:|
+|:-|
 | <img src="https://user-images.githubusercontent.com/67457712/235050295-8b42ccdf-976c-4dc3-a0f8-3ceffee8bf7a.jpg" width="600"> |
 | 'CRAFT' scene text detection model [1]을 사용해 'text region score map'을 추출합니다. 어떤 픽셀이 빨간색에 가까울수록 모델이 그 픽셀을 텍스트의 중심이라고 확신함을 나타냅니다. |
 
 | Text region segmentation map |
-|:-:|
+|:-|
 | connected component labeling, watershed 등을 사용해 각 문자를 서로 다른 Class로 구분하는 'text region segmentation map'을 생성합니다. 각 class가 정확히 하나의 문자를 나타내지는 못하므로 pseudo characters라고 부르겠습니다. |
-| <img src="https://user-images.githubusercontent.com/67457712/ 235050300-e4dff000-f476-485f-8cfd-28799b24e9f8.jpg" width="600"> |
+| <img src="https://user-images.githubusercontent.com/67457712/235050300-e4dff000-f476-485f-8cfd-28799b24e9f8.jpg" width="600"> |
 | <img src="https://user-images.githubusercontent.com/67457712/235050726-ab8d3a2f-75cd-4637-8e02-f2105ba41fff.jpg" width="200"> |
 | <img src="https://private-user-images.githubusercontent.com/105417680/247047557-593c6476-042a-47cf-9a99-cf093581cf0e.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MTIxOTE2MzYsIm5iZiI6MTcxMjE5MTMzNiwicGF0aCI6Ii8xMDU0MTc2ODAvMjQ3MDQ3NTU3LTU5M2M2NDc2LTA0MmEtNDdjZi05YTk5LWNmMDkzNTgxY2YwZS5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwNDA0JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDQwNFQwMDQyMTZaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT04ZjdkZDBkNzFiNGZjN2MxOWQ1ZDdkOTBjNWUzNGJiYjBlNjdiZjIzYmQ2ZDkxZTVjMzVhNmY1Y2E4MjdlNDA5JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.DR9ieMPn5W6aZ_DSKmkqV4cSOXvVECciPHsjbba6dzQ" width="600"> |
 | 매우 많은 수의 label이 생성되지만 이해를 돕기 위해 26개의 색상을 사용하여 단순화했습니다.|
@@ -120,11 +120,11 @@
 - bounding box annotation 과정에서 발생한 bounding box간의 겹침 (human error)로 인해 발생하는 텍스트간 충돌을 제거하는 알고리즘입니다.
 
 | Original image and bounding box annotation |
-|:-:|
+|:-|
 | <img src="https://private-user-images.githubusercontent.com/67457712/293923830-22b69cdc-dc5a-4cd7-b7da-8133a2374e46.jpg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MTIxOTE2MzYsIm5iZiI6MTcxMjE5MTMzNiwicGF0aCI6Ii82NzQ1NzcxMi8yOTM5MjM4MzAtMjJiNjljZGMtZGM1YS00Y2Q3LWI3ZGEtODEzM2EyMzc0ZTQ2LmpwZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDA0MDQlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQwNDA0VDAwNDIxNlomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWM3MTU3NGQ5NWFlYmYyMjYxY2MyNWJjZTY2YWI4MDRjODRiMTU0MWYxZDc1MjAxOThhMTlhNGQwZTZmOTNhYmEmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.aRvV2aompVwoLHJkzov3OV4uKCtSO_VV7sD2Mzy-oNo" width="600"> |
 
 | Before and after performing inter-text conflict prevention |
-|:-:|
+|:-|
 | <img src="https://private-user-images.githubusercontent.com/67457712/293923993-428021fd-a8a1-4863-9729-844023fc8b72.jpg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MTIxOTE2MzYsIm5iZiI6MTcxMjE5MTMzNiwicGF0aCI6Ii82NzQ1NzcxMi8yOTM5MjM5OTMtNDI4MDIxZmQtYThhMS00ODYzLTk3MjktODQ0MDIzZmM4YjcyLmpwZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDA0MDQlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQwNDA0VDAwNDIxNlomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWRjYTM2OWViY2RkZjQ0OWJlMWU2ODAzNTMxMzVmODdjNmFkOWEwNWQ1NTQ0MTdjYzhkZTk3NGU0YzU5Njk1NjImWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.LpN-qlAUJUIXTgN2kQMFXH45PieFOAIAfn1ak18bBZ0" width="600"> |
 
 ## 2) End-of-line Hyphenation
@@ -133,25 +133,25 @@
 - 'Start-of-line' mode: 텍스트가 2줄 이상일 경우 마지막 첫 번째 줄을 제외하고 각 줄의 처음에 En dash 삽입
 
 | Original text, 'End-of-line' mode and 'Start-of-line' mode |
-|:-:|
+|:-|
 | <img src="https://github.com/flitto/express-param/assets/67457712/a0c8742e-0c90-40cb-87de-9d3b14b2c623" width="900"> |
 
 # 9. Examples
 ## 1) '화정 by 카쿠시타'
 | Original image |
-|:-:|
+|:-|
 | <img src="https://private-user-images.githubusercontent.com/67457712/293941470-c4b2e456-cba5-45a3-9962-fa50c143ee32.jpg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MTIxOTE2MzYsIm5iZiI6MTcxMjE5MTMzNiwicGF0aCI6Ii82NzQ1NzcxMi8yOTM5NDE0NzAtYzRiMmU0NTYtY2JhNS00NWEzLTk5NjItZmE1MGMxNDNlZTMyLmpwZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDA0MDQlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQwNDA0VDAwNDIxNlomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTE2NDNkNjcwYmVkMDA1YWViMzQ0ZmFiYzgyZTE0NGQ4YjNmMmUxYTMwNzFhNzc3ODQ5NjZlYjEzZDQzNmJkNTgmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.IXLiZcmWO5JJOWLKYW6EAN5Zw8TJL1fKPIeAwCLDP_Q" width="250"> |
 
 | Textual attribute recogition (en, ja and zh-cn) |
-|:-:|
+|:-|
 | <img src="https://private-user-images.githubusercontent.com/67457712/293941865-6db3e213-162b-4ef5-921c-9f45f1314df6.jpg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MTIxOTE2MzYsIm5iZiI6MTcxMjE5MTMzNiwicGF0aCI6Ii82NzQ1NzcxMi8yOTM5NDE4NjUtNmRiM2UyMTMtMTYyYi00ZWY1LTkyMWMtOWY0NWYxMzE0ZGY2LmpwZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDA0MDQlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQwNDA0VDAwNDIxNlomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTBiMmNmOGVhMjYyZGQ5MTllOWIyNjZlZTdjMGIyOTFmOWRlMzc4M2U0ZjdiMGZkYjVmZjJlMjlhZGVlYTc0NGYmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0._MwE4rhD0hFS5WsoJhHBjr89zswqC1pbpUEshYqm-SI" width="750"> |
 ## 2) '어반 웍 스테이션'
 | Original image |
-|:-:|
+|:-|
 | <img src="https://private-user-images.githubusercontent.com/67457712/293943994-8f6dc2bb-28ca-4a59-a11f-eb36bd7f5715.jpg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MTIxOTE2MzYsIm5iZiI6MTcxMjE5MTMzNiwicGF0aCI6Ii82NzQ1NzcxMi8yOTM5NDM5OTQtOGY2ZGMyYmItMjhjYS00YTU5LWExMWYtZWIzNmJkN2Y1NzE1LmpwZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDA0MDQlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQwNDA0VDAwNDIxNlomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTkzZGRjZjVlNWQ5MTllN2Y4MDQ2ZjZjY2RiMzQwNjU5YmQ2NjM4NDI1ODA2ZTc0M2M1Y2NmMzAwNjJkYWYzMTImWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0._jNd4R4AVRnX36M1nMk-xVw9rtCtdfDbtZdhTnK1otc" width="200"> |
 
 | Textual attribute recogition (en, ja and zh-cn) |
-|:-:|
+|:-|
 | <img src="https://private-user-images.githubusercontent.com/67457712/293944572-e70ed722-eec4-434d-8529-2d8fdfccd803.jpg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MTIxOTE2MzYsIm5iZiI6MTcxMjE5MTMzNiwicGF0aCI6Ii82NzQ1NzcxMi8yOTM5NDQ1NzItZTcwZWQ3MjItZWVjNC00MzRkLTg1MjktMmQ4ZmRmY2NkODAzLmpwZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDA0MDQlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQwNDA0VDAwNDIxNlomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWRkOTRiMTYzOTBlYjYwYzVhNTZjY2NiMmMyNDYyYzNiMTlkMDU4Y2UwYzQ1OWZkZjljZGM4ZjViYTRhNmI5MjEmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.kG5mGjjwWBl9ITpdbOp8-ddjkP46YQQnAWxtBQQ5Wtc" width="600"> |
 
 # 10. Text Region Recognition
