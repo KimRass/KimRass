@@ -189,6 +189,7 @@
     - 텍스트가 길 경우 줄바꿈의 수가 주어졌을 때 가능한 줄바꿈의 경우의 수는 매우 많습니다. 따라서 이 모든 경우를 하나씩 렌더링해보는 것은 매우 많은 계산량을 요구합니다.
     - 텍스트를 공백을 기준으로 서브워드 단위로 분리합니다. 분리된 서브워드들을 하나씩 붙여가면서 원래의 텍스트에 가깝게 조금씩 문자열을 만들어갑니다.
     - 완성되어가는 문자열을 가지고 렌더링을 시도합니다. 충돌이 발생하지 않으면 다음 서브워드를 그대로 이어붙여 다음 문자열을 만들고 충돌이 발생하면 줄바꿈을 중간에 삽입한 체로 다음 서브워드를 이어붙입니다. 충돌이 2회 연속 발생하면 해당 font size로의 확대에 실패한 것이므로 해당 bounding box의 최대 font size는 바로 직전 단계에서 텍스트 렌더링에 성공한 font size가 됩니다.
+
 | Before and after |
 |:-|
 | <img src="https://private-user-images.githubusercontent.com/67457712/293927112-e9f879d7-d3f2-4b5e-80dd-0ec665ca8952.jpg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MTIxOTE2MzYsIm5iZiI6MTcxMjE5MTMzNiwicGF0aCI6Ii82NzQ1NzcxMi8yOTM5MjcxMTItZTlmODc5ZDctZDNmMi00YjVlLTgwZGQtMGVjNjY1Y2E4OTUyLmpwZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDA0MDQlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQwNDA0VDAwNDIxNlomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWNlNjViNzI0YjhmYTZlZjU3ZDQ1ZGFhYTM4MzczMTQ3YjYzZjNhNjg0YzVjYTI1MzA3MmRjODVmY2E5ODA1YzMmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.0Wvd6tvK9mJTe5Dev8lIl1tMbxNppBo-xuxSV8x4_UM" width="900"> |
