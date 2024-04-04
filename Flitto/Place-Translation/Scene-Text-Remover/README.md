@@ -2,43 +2,56 @@
 
 # 1. Process
 - [1]에서 제시한 방법론을 참고해 크게 3단계 (Scene text detection → Text stroke mask prediction → Image inpainting)에 걸쳐 작동하도록 개발했습니다.
-- Original image
-    - <img src="https://i.imgur.com/PBIWNHF.png" width="600">
-- Bounding box annotation
-    - <img src="https://i.imgur.com/TVD2dIq.png" width="600">
-    - (빨간색, 파란색, 초록색 간의 차이는 없으며 눈에 가장 잘 띄는 색상으로 표현했습니다.)
+
+| Original image | Bounding box annotation |
+|:-|:-|
+| <img src="https://i.imgur.com/PBIWNHF.png" width="600"> | <img src="https://i.imgur.com/TVD2dIq.png" width="600"> |
+| | 빨간색, 파란색, 초록색 간의 차이는 없으며 눈에 가장 잘 띄는 색상으로 표현했습니다. |
 ## 1) Scene Text Detection
-- Text region score map
-    - <img src="https://i.imgur.com/N2zFzGN.png" width="600">
-    - (이해를 돕기 위해 그 위에 원본 이미지를 함께 배치했습니다.)
-- 'CRAFT' scene text detection model [2]을 사용하여 'text region score map'을 생성합니다. 어떤 픽셀이 빨간색에 가까울수록 모델이 그 픽셀을 텍스트의 중심이라고 확신함을 나타냅니다.
+| Text region score map |
+|:-|
+| <img src="https://i.imgur.com/N2zFzGN.png" width="600"> |
+| 'CRAFT' scene text detection model [2]을 사용하여 'text region score map'을 생성합니다. 어떤 픽셀이 빨간색에 가까울수록 모델이 그 픽셀을 텍스트의 중심이라고 확신함을 나타냅니다. |
+| 이해를 돕기 위해 그 위에 원본 이미지를 함께 배치했습니다. |
 ## 2-1) Text Stroke Prediction
 - rule-based approach와 learning-based approach로 나눌 수 있습니다.
 ### (1) Rule-based Approach
-- Text region mask generation
-    - <img src="https://i.imgur.com/H9lao9t.png" width="600">
-- Image segmentation
-    - <img src="https://i.imgur.com/ujrxsrk.png" width="600">
-    - (매우 많은 수의 label이 생성되지만 이해를 돕기 위해 26개의 색상을 사용하여 단순화했습니다.)
-    - adaptive thresholding과 connected component labeling을 통해 image segmentation을 수행합니다.
-- Text stroke mask generation
-    - <img src="https://i.imgur.com/EgarFnX.png" width="600">
-    - image segmentation map의 각 label이 text region mask와 얼마나 겹치는지 픽셀 수를 세어 계산합니다. 특정한 값 이상의 겹침이 발생하는 image segmentation map의 labels를 가지고 text stroke mask를 생성합니다.
+| Text region mask generation |
+|:-|
+| <img src="https://i.imgur.com/H9lao9t.png" width="600"> |
+
+| Image segmentation |
+|:-|
+| <img src="https://i.imgur.com/ujrxsrk.png" width="600"> |
+| adaptive thresholding과 connected component labeling을 통해 image segmentation을 수행합니다. |
+| 매우 많은 수의 label이 생성되지만 이해를 돕기 위해 26개의 색상을 사용하여 단순화했습니다. |
+
+| Text stroke mask generation |
+|:-|
+| <img src="https://i.imgur.com/EgarFnX.png" width="600"> |
+| image segmentation map의 각 label이 text region mask와 얼마나 겹치는지 픽셀 수를 세어 계산합니다. 특정한 값 이상의 겹침이 발생하는 image segmentation map의 labels를 가지고 text stroke mask를 생성합니다. |
+
 - FC CRFs (Fully Connected Conditional Random Fields) [3]
     - text stroke mask를 보정하여 최종 text stroke mask를 생성합니다.
 ### (2) Learning-based Approach
-- Text stroke mask prediction
-    - <img src="https://i.imgur.com/mQr42x9.png" width="600">
-    - text stroke mask prediction model [4]에 입력하기 위해 각 bounding box에 해당하는 이미지 패치를 1:5 또는 5:1이 비율이 되도록 분할하거나 패딩을 추가합니다.
-    - <img src="https://i.imgur.com/mRQSLzW.png" width="600">
-    - 각 이미지 패치를 640 × 128로 리사이즈하여 text stroke mask prediction을 수행하고 원본 이미지의 원래의 위치에 삽입합니다.
-- Text region mask generation
-    - <img src="https://i.imgur.com/HpEVvJu.png" width="600">
-    - <img src="https://i.imgur.com/J58rZEe.png" width="600">
-    - text region score map으로부터 text region mask를 생성하고 여기에 FC CRFs [3]를 적용합니다.
-- Mask merge
-    - <img src="https://i.imgur.com/2TgCExG.png" width="600">
-    - text stroke mask와 text region mask를 합쳐 최종 text stroke mask를 생성합니다.
+| Text stroke mask prediction |
+|:-|
+| <img src="https://i.imgur.com/mQr42x9.png" width="600"> |
+| text stroke mask prediction model [4]에 입력하기 위해 각 bounding box에 해당하는 이미지 패치를 1:5 또는 5:1이 비율이 되도록 분할하거나 패딩을 추가합니다. |
+| <img src="https://i.imgur.com/mRQSLzW.png" width="600"> |
+| 각 이미지 패치를 640 × 128로 리사이즈하여 text stroke mask prediction을 수행하고 원본 이미지의 원래의 위치에 삽입합니다. |
+
+| Text region mask generation |
+|:-|
+| <img src="https://i.imgur.com/HpEVvJu.png" width="600"> |
+| text region score map으로부터 text region mask를 생성합니다. |
+| <img src="https://i.imgur.com/J58rZEe.png" width="600"> |
+| text region mask에 FC CRFs [3]를 적용합니다. |
+
+| Mask merge |
+|:-|
+| <img src="https://i.imgur.com/2TgCExG.png" width="600"> |
+| text stroke mask와 text region mask를 합쳐 최종 text stroke mask를 생성합니다. |
 ## 2-2) Text Stroke Mask Postprocessing
 - Dilation (Thickening)
     - Text stroke mask가 텍스트를 완전히 덮지 못하면 텍스트가 깔끔하게 지워지지 않습니다. dilation을 통해 text stroke mask가 텍스트를 충분히 덮을 수 있도록 처리합니다.
