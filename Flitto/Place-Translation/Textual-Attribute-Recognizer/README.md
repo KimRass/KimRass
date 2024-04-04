@@ -1,12 +1,11 @@
 - 이미지 상의 각 텍스트로부터 속성을 추출하여 이를 번역문 렌더링 시 활용함으로써 이미지 번역 품질을 향상시키는 모델입니다.
-- Textual attributes:
-    - [Font size](#1-font-size)
-    - [Writing direction](#2-writing-direction)
-    - [Text alignment](#3-text-alignment)
-    - [Text line breaking](#4-text-line-breaking)
-    - [Text color](#5-text-color)
-    - [Text border](#6-text-border)
-    - [Text border color](#7-text-border-color)
+<!-- - [Font size](#1-font-size)
+- [Writing direction](#2-writing-direction)
+- [Text alignment](#3-text-alignment)
+- [Text line breaking](#4-text-line-breaking)
+- [Text color](#5-text-color)
+- [Text border](#6-text-border)
+- [Text border color](#7-text-border-color) -->
 
 # 1. Font Size
 | Original image |
@@ -158,7 +157,7 @@
 # 9. Examples
 ## 1) '화정 by 카쿠시타'
 | Original image | Textual attribute recogition (en, ja and zh-cn) |
-|:-|
+|:-|:-|
 | <img src="https://private-user-images.githubusercontent.com/67457712/293941470-c4b2e456-cba5-45a3-9962-fa50c143ee32.jpg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MTIxOTE2MzYsIm5iZiI6MTcxMjE5MTMzNiwicGF0aCI6Ii82NzQ1NzcxMi8yOTM5NDE0NzAtYzRiMmU0NTYtY2JhNS00NWEzLTk5NjItZmE1MGMxNDNlZTMyLmpwZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDA0MDQlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQwNDA0VDAwNDIxNlomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTE2NDNkNjcwYmVkMDA1YWViMzQ0ZmFiYzgyZTE0NGQ4YjNmMmUxYTMwNzFhNzc3ODQ5NjZlYjEzZDQzNmJkNTgmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.IXLiZcmWO5JJOWLKYW6EAN5Zw8TJL1fKPIeAwCLDP_Q" width="250"> | <img src="https://private-user-images.githubusercontent.com/67457712/293941865-6db3e213-162b-4ef5-921c-9f45f1314df6.jpg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MTIxOTE2MzYsIm5iZiI6MTcxMjE5MTMzNiwicGF0aCI6Ii82NzQ1NzcxMi8yOTM5NDE4NjUtNmRiM2UyMTMtMTYyYi00ZWY1LTkyMWMtOWY0NWYxMzE0ZGY2LmpwZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDA0MDQlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQwNDA0VDAwNDIxNlomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTBiMmNmOGVhMjYyZGQ5MTllOWIyNjZlZTdjMGIyOTFmOWRlMzc4M2U0ZjdiMGZkYjVmZjJlMjlhZGVlYTc0NGYmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0._MwE4rhD0hFS5WsoJhHBjr89zswqC1pbpUEshYqm-SI" width="750"> |
 
 ## 2) '어반 웍 스테이션'
@@ -169,17 +168,11 @@
 # 10. Text Region Recognition
 - 기존에는 텍스트가 렌더링될 수 있는 영역을 bounding box가 차지하는 영역으로만 한정했습니다. 그러면 한국어를 영어로 번역할 때와 같이 원문보다 번역문이 긴 경우에는 필연적으로 원본보다 작은 font size로 텍스트를 렌더링할 수밖에 없습니다.
 - text region recognition은 bounding box가 차지하는 영역을 벗어나 더욱 큰 font size를 가지고 텍스트를 렌더링할 수 있는지 계산하는 알고리즘입니다 [2].
-| Original image |
-|:-|
-| <img src="https://github-production-user-asset-6210df.s3.amazonaws.com/105417680/247049197-45467259-88e4-482e-9d47-92bdcd98877f.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240404T004054Z&X-Amz-Expires=300&X-Amz-Signature=8281b0b5f8846492d7948dacb311e66a12693200d71fda642c13f802fbf8be31&X-Amz-SignedHeaders=host&actor_id=67457712&key_id=0&repo_id=291084893" width="500"> |
 
-| Human-annotated bounding boxes |
-|:-|
-| <img src="https://private-user-images.githubusercontent.com/105417680/247049193-4b08bdb7-1fdd-413e-998f-3ef70f9e3cac.jpg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MTIxOTE2MzYsIm5iZiI6MTcxMjE5MTMzNiwicGF0aCI6Ii8xMDU0MTc2ODAvMjQ3MDQ5MTkzLTRiMDhiZGI3LTFmZGQtNDEzZS05OThmLTNlZjcwZjllM2NhYy5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwNDA0JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDQwNFQwMDQyMTZaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT05NTExMjg1NDE3YzY5MDJmNzZmMmExYjEzMzhkMzMxOTI4NjhmMGFhNTM0Mzk5ZWM4ZDM3OTY3YmIzMTVmOTM2JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.WFs_FmAOZNTpbqK0cbRBINYlyecgW2ugh-ykEtkWD7c" width="500"> |
+| Original image | Human-annotated bounding boxes | Text-removed image |
+|:-|:-|:-|
+| <img src="https://github-production-user-asset-6210df.s3.amazonaws.com/105417680/247049197-45467259-88e4-482e-9d47-92bdcd98877f.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240404T004054Z&X-Amz-Expires=300&X-Amz-Signature=8281b0b5f8846492d7948dacb311e66a12693200d71fda642c13f802fbf8be31&X-Amz-SignedHeaders=host&actor_id=67457712&key_id=0&repo_id=291084893" width="500"> | <img src="https://private-user-images.githubusercontent.com/105417680/247049193-4b08bdb7-1fdd-413e-998f-3ef70f9e3cac.jpg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MTIxOTE2MzYsIm5iZiI6MTcxMjE5MTMzNiwicGF0aCI6Ii8xMDU0MTc2ODAvMjQ3MDQ5MTkzLTRiMDhiZGI3LTFmZGQtNDEzZS05OThmLTNlZjcwZjllM2NhYy5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwNDA0JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDQwNFQwMDQyMTZaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT05NTExMjg1NDE3YzY5MDJmNzZmMmExYjEzMzhkMzMxOTI4NjhmMGFhNTM0Mzk5ZWM4ZDM3OTY3YmIzMTVmOTM2JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.WFs_FmAOZNTpbqK0cbRBINYlyecgW2ugh-ykEtkWD7c" width="500"> | <img src="https://private-user-images.githubusercontent.com/105417680/247049184-32afb8be-9464-4b60-bd1d-0c82f1a0d8fc.jpg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MTIxOTE2MzYsIm5iZiI6MTcxMjE5MTMzNiwicGF0aCI6Ii8xMDU0MTc2ODAvMjQ3MDQ5MTg0LTMyYWZiOGJlLTk0NjQtNGI2MC1iZDFkLTBjODJmMWEwZDhmYy5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwNDA0JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDQwNFQwMDQyMTZaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT0yOWIwOWRlNDUxOThiMzlmNDU1NjE3MGQwZGRhOWRlZmRmODU2NGYxYTk2ODY1OTNmZDJlOTg1YzQ5NWQ2M2I1JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.d8X9HwzR0iZBNkX_J3kyVwZ5jMh0XCpNrfemvPN8xqQ" width="500"> |
 
-| Text-removed image |
-|:-|
-| <img src="https://private-user-images.githubusercontent.com/105417680/247049184-32afb8be-9464-4b60-bd1d-0c82f1a0d8fc.jpg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MTIxOTE2MzYsIm5iZiI6MTcxMjE5MTMzNiwicGF0aCI6Ii8xMDU0MTc2ODAvMjQ3MDQ5MTg0LTMyYWZiOGJlLTk0NjQtNGI2MC1iZDFkLTBjODJmMWEwZDhmYy5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwNDA0JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDQwNFQwMDQyMTZaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT0yOWIwOWRlNDUxOThiMzlmNDU1NjE3MGQwZGRhOWRlZmRmODU2NGYxYTk2ODY1OTNmZDJlOTg1YzQ5NWQ2M2I1JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.d8X9HwzR0iZBNkX_J3kyVwZ5jMh0XCpNrfemvPN8xqQ" width="500"> |
 ## Mask generation
 - 렌더링할 텍스트가 이미지 상의 주요 오브젝트와 충돌하지 않도록 제한하는 과정이 필요합니다. 이를 위해 3가지 마스크를 사용합니다.
 
@@ -192,7 +185,7 @@
 - 이때 4번마스크는 렌더링할 타겟 텍스트 자기 자신을 제외한 나머지 텍스트로 합니다. 이 4가지 마스크들의 합으로 새로운 마스크를 정의합니다.
 - 추출된 font size의 절반에서 시작해 원본 font size의 0.6배 → 0.7배 → 0.8배 → 0.9배 → 1.0배 순으로 총 6개의 font size를 가지고 텍스트 렌더링을 시도합니다.
 - 1번에서 정의한 마스크와 렌더링한 텍스트가 서로 충돌하는지 (겹침이 발생하는지) 확인합니다. 충돌이 발생하지 않으면 해당 font size를 해당 텍스트의 font size로 재정의합니다.
-충돌 판별 로직:
+- 충돌 판별 로직:
     - 텍스트가 길 경우 줄바꿈의 수가 주어졌을 때 가능한 줄바꿈의 경우의 수는 매우 많습니다. 따라서 이 모든 경우를 하나씩 렌더링해보는 것은 매우 많은 계산량을 요구합니다.
     - 텍스트를 공백을 기준으로 서브워드 단위로 분리합니다. 분리된 서브워드들을 하나씩 붙여가면서 원래의 텍스트에 가깝게 조금씩 문자열을 만들어갑니다.
     - 완성되어가는 문자열을 가지고 렌더링을 시도합니다. 충돌이 발생하지 않으면 다음 서브워드를 그대로 이어붙여 다음 문자열을 만들고 충돌이 발생하면 줄바꿈을 중간에 삽입한 체로 다음 서브워드를 이어붙입니다. 충돌이 2회 연속 발생하면 해당 font size로의 확대에 실패한 것이므로 해당 bounding box의 최대 font size는 바로 직전 단계에서 텍스트 렌더링에 성공한 font size가 됩니다.
