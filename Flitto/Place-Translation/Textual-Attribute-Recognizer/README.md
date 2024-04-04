@@ -18,7 +18,7 @@
 - connected component labeling, watershed 등을 사용해 각 문자를 서로 다른 Class로 구분하는 'text region segmentation map'을 생성합니다. 각 class가 정확히 하나의 문자를 나타내지는 못하므로 pseudo characters라고 부르겠습니다.
     - <img src="https://user-images.githubusercontent.com/67457712/235050300-e4dff000-f476-485f-8cfd-28799b24e9f8.jpg" width="600">
     - <img src="https://user-images.githubusercontent.com/67457712/235050726-ab8d3a2f-75cd-4637-8e02-f2105ba41fff.jpg" width="200">
-    - <img src="https://github.com/KimRass/machine_learning/assets/105417680/593c6476-042a-47cf-9a99-cf093581cf0e" width="600">
+    - <img src="https://github-production-user-asset-6210df.s3.amazonaws.com/105417680/247047557-593c6476-042a-47cf-9a99-cf093581cf0e.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240404T001355Z&X-Amz-Expires=300&X-Amz-Signature=ddee9e975d8e9b23c28afd2a80b8b7719e1357985addeeaf08f83f47aa542826&X-Amz-SignedHeaders=host&actor_id=67457712&key_id=0&repo_id=291084893" width="600">
     - (매우 많은 수의 label이 생성되지만 이해를 돕기 위해 26개의 색상을 사용하여 단순화했습니다.)
 - 각 pseudo character의 크기에 일정한 값을 곱해 이를 통해 해당 문자의 font size로 구합니다. 실제로는 하나의 bounding box에서 다양한 font size가 존재할 수도 있지만 모두 동일하다고 가정하여 통계적인 방법을 통해 하나의 font size를 추출합니다.
 
@@ -31,14 +31,14 @@
 # 3. Text Alignment
 - rule-based approach로는 추출이 불가능하다고 판단했습니다 [2]. 또한 각 bounding box의 이미지 영역만을 보고는 알 수 없으며 이미지의 전체적인 visual features를 고려하여야만 높은 정확도로 판단할 수 있다고 보았습니다.
 - 이에 4개의 class ('none', 'left', 'center', 'right')에 대한 semantic segmentation 문제로 접근했습니다. 가로쓰기 텍스트에 대해서는 'left', 'center', 'right' 중 하나로, 세로쓰기 텍스트에 대해서는 'none'으로 레이블링을 했습니다. 즉 가로쓰기 텍스트에 한해서만 모델이 text alignment를 예측하도록 학습시켰습니다.
-    - <img src="https://github.com/KimRass/PGGAN/assets/67457712/089e7647-688a-4d4d-8646-d417ff7ffd51" width="500">
+    - <img src="https://github-production-user-asset-6210df.s3.amazonaws.com/67457712/287611407-089e7647-688a-4d4d-8646-d417ff7ffd51.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240404T000411Z&X-Amz-Expires=300&X-Amz-Signature=7ff30c836d29b19b64945593e4a066c4fb167c28d3b17442aa13e32eecbe728c&X-Amz-SignedHeaders=host&actor_id=67457712&key_id=0&repo_id=669664726" width="500">
     - 빨간색: 'left', 초록색: 'center', 파란색: 'right', 그 외: 'none'
 - 모델이 내놓은 결과에 대해서, 각 bounding box가 차지하는 영역에서 가장 많은 픽셀 수를 차지하는 class를 통해 text alignment를 예측합니다.
 <!-- - 1,000장의 이미지, 19,523개의 bounding box에 대해 학습한 결과 mIoU 0.7341 -->
 - Examples
-    - <img src="https://github.com/KimRass/PGGAN/assets/67457712/f0d354a8-348d-484f-95e4-816c037108b0" width="800">
-    - <img src="https://github.com/KimRass/PGGAN/assets/67457712/edf361f2-6343-4767-a601-7e5ad091a28b" width="800">
-    <!-- - <img src="https://github.com/KimRass/PGGAN/assets/67457712/d2460fbf-9716-4b52-b2c6-0695264a4d33" width="800"> -->
+    - <img src="https://github-production-user-asset-6210df.s3.amazonaws.com/67457712/287599160-f0d354a8-348d-484f-95e4-816c037108b0.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240404T000423Z&X-Amz-Expires=300&X-Amz-Signature=967117577ee86581dbb0971635d04f069c71804f420a08279c4d5a993e993de9&X-Amz-SignedHeaders=host&actor_id=67457712&key_id=0&repo_id=669664726" width="800">
+    - <img src="https://github-production-user-asset-6210df.s3.amazonaws.com/67457712/287599185-edf361f2-6343-4767-a601-7e5ad091a28b.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240404T000431Z&X-Amz-Expires=300&X-Amz-Signature=008ee604a31a6de7c51b92a533a20db43afcf03dee6fe8a3e29568a82ca187a9&X-Amz-SignedHeaders=host&actor_id=67457712&key_id=0&repo_id=669664726" width="800">
+    <!-- - <img src="https://github-production-user-asset-6210df.s3.amazonaws.com/67457712/287581756-d2460fbf-9716-4b52-b2c6-0695264a4d33.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240404T000439Z&X-Amz-Expires=300&X-Amz-Signature=9f3bcc9523004783714da96d1b10865e8631f7aba8baad1620dab455a74f92ce&X-Amz-SignedHeaders=host&actor_id=67457712&key_id=0&repo_id=669664726" width="800"> -->
 
 # 4. Text Line Breaking
 - 주어진 텍스트를 렌더링할 때 어디에 줄바꿈을 삽입했을 때 font size가 가장 원본에 가까워질 지를 계산합니다.
@@ -78,12 +78,12 @@
 
 # 5. Text Color
 - Scene text removal
-    - <img src="https://github.com/KimRass/machine_learning/assets/105417680/d80b176f-f0a3-4ffa-9e45-83b575dcf278" width="600">
+    - <img src="https://github-production-user-asset-6210df.s3.amazonaws.com/105417680/247048146-d80b176f-f0a3-4ffa-9e45-83b575dcf278.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240404T000544Z&X-Amz-Expires=300&X-Amz-Signature=6b3eadb3e5e437035ed5e3383569319e4185823f45b3437582e4c11270bc0cff&X-Amz-SignedHeaders=host&actor_id=67457712&key_id=0&repo_id=291084893" width="600">
 - Pixel-wise image difference
     - 원본 이미지와 텍스트가 제거된 이미지 사이의 픽셀 단위의 차이를 구합니다.
-    - <img src="https://github.com/KimRass/machine_learning/assets/105417680/2127ef36-4b70-4b3a-938a-b90d693e89a5" width="600">
+    - <img src="https://github-production-user-asset-6210df.s3.amazonaws.com/105417680/247062590-2127ef36-4b70-4b3a-938a-b90d693e89a5.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240404T000553Z&X-Amz-Expires=300&X-Amz-Signature=2a54e09283dcaada74c896d181cb4776a5068e75bfaf6173fbb8112249925bf3&X-Amz-SignedHeaders=host&actor_id=67457712&key_id=0&repo_id=291084893" width="600">
 - 이를 바탕으로 mask를 생성합니다 [2].
-    - <img src="https://github.com/KimRass/machine_learning/assets/105417680/8fd85555-6a72-4a2e-a336-bc597f75708c" width="600">
+    - <img src="https://github-production-user-asset-6210df.s3.amazonaws.com/105417680/247062575-8fd85555-6a72-4a2e-a336-bc597f75708c.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240404T000602Z&X-Amz-Expires=300&X-Amz-Signature=be3b51872fea4e21ce36199c6a1bc22c6f24fbf57e4a864d089b9fad8bc54cd5&X-Amz-SignedHeaders=host&actor_id=67457712&key_id=0&repo_id=291084893" width="600">
 - Color extraction
     - 각 bounding box에 대해서 mask에 해당하는 영역에 대해서만 원본 이미지로부터 픽셀별 색깔을 조사합니다. 이때 비슷하지만 서로 조금씩 다른 색깔은 많은 픽셀 수를 갖는 색깔 쪽으로 통합해 나갑니다.
     - 색깔의 수가 3개가 될 때까지 통합합니다. 이 3개의 색깔 중에서 가장 많은 픽셀 수를 갖는 `(7, 145, 58)`을 text color로 정합니다.
@@ -98,9 +98,9 @@
 - text border를 적용하지 않았을 때, 사람이 그 텍스트를 읽을 수 없으면 text border를 적용하고 읽을 수 있다면 적용하지 않습니다.
 - font size, text alignment, text line breaking이 결정되면 각 문자가 어디에 렌더링될 지가 결정됩니다. 각 문자에 대해서, 추출된 text color와 text stroke를 둘러싼 영역의 픽셀 하나하나 사이의 contrast ratio를 계산합니다. 이 값이 일정한 값 미만이라면 그 두 색깔 조합은 가독성이 좋지 않은 것으로 판단합니다.
 - 각 문자에 대해서, text stroke를 둘러싼 영역의 전체 픽셀 수와 비교하여 가독성이 좋지 않은 픽셀의 수를 계산합니다. 이 값은 그 문자의 영역 중 읽을 수 있는 부분의 비율을 나타낸다고 볼 수 있습니다.
-    - <img src="https://github.com/KimRass/machine_learning/assets/105417680/13643982-e41d-412a-9164-0e6d79ab4b47" width="200">
+    - <img src="https://github-production-user-asset-6210df.s3.amazonaws.com/105417680/245984852-13643982-e41d-412a-9164-0e6d79ab4b47.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240404T000655Z&X-Amz-Expires=300&X-Amz-Signature=bcdc565e1050ef550627e71f1e99b99d46e7d70fe5b29eb865fecc1cad20788d&X-Amz-SignedHeaders=host&actor_id=67457712&key_id=0&repo_id=291084893" width="200">
 - 이 값을 그 문자의 readability라고 할 때, readability가 어떤 값 미만인 문자가 1개라도 존재할 경우 (1개의 문자라도 가독성이 좋지 않은 것이 있다면) 그 텍스트에는 text border를 적용합니다.
-    - <img src="https://github.com/KimRass/PGGAN/assets/67457712/797a41a5-9743-4f59-80d7-2b6501d07234" width="900">
+    - <img src="https://github-production-user-asset-6210df.s3.amazonaws.com/67457712/287637459-797a41a5-9743-4f59-80d7-2b6501d07234.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240404T000656Z&X-Amz-Expires=300&X-Amz-Signature=de48e8652e8e24cc47db530c0579452fb5825af3c0caf86ecbe07606ed700ed1&X-Amz-SignedHeaders=host&actor_id=67457712&key_id=0&repo_id=669664726" width="900">
 
 # 7. Text Border Color
 - 검은색과 하얀색 중, 추출된 text color의 보색과 contrast ratio가 더 큰 쪽을 선택합니다. 이것을 A라 합니다.
@@ -109,51 +109,64 @@
 # 8. Rendering Quality Improvement
 ## 1) Inter-text Conflict Prevention
 - bounding box annotation 과정에서 발생한 bounding box간의 겹침 (human error)로 인해 발생하는 텍스트간 충돌을 제거하는 알고리즘입니다.
-- Original image and bounding box annotation
-    - <img src="https://github.com/KimRass/KimRass/assets/67457712/22b69cdc-dc5a-4cd7-b7da-8133a2374e46" width="600">
-- Before and after performing inter-text conflict prevention
-    - <img src="https://github.com/KimRass/KimRass/assets/67457712/428021fd-a8a1-4863-9729-844023fc8b72" width="600">
+
+| Original image and bounding box annotation |
+|:-|
+| <img src="https://github-production-user-asset-6210df.s3.amazonaws.com/67457712/293923830-22b69cdc-dc5a-4cd7-b7da-8133a2374e46.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240404T000735Z&X-Amz-Expires=300&X-Amz-Signature=c481f2b1a28b1f445d4ef9f5b1a030f288cefaba8327f7a5dcaa50e6144e55db&X-Amz-SignedHeaders=host&actor_id=67457712&key_id=0&repo_id=433302214" width="600"> |
+
+| Before and after performing inter-text conflict prevention |
+|:-|
+| <img src="https://github-production-user-asset-6210df.s3.amazonaws.com/67457712/293923993-428021fd-a8a1-4863-9729-844023fc8b72.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240404T000743Z&X-Amz-Expires=300&X-Amz-Signature=fcf6097b9af8d6bcb0b06b574bd8758761234dc441698045ccdb25f001c6cb6e&X-Amz-SignedHeaders=host&actor_id=67457712&key_id=0&repo_id=433302214" width="600"> |
+
 ## 2) End-of-line Hyphenation
 - 바운딩 박스간의 거리가 가까울 때 각 텍스트가 어디서 시작하고 어디서 끝나는 지 알기 어려운 경우가 많습니다. 이에 대한 해결방안으로서 연구 중입니다.
 - 'End-of-line' mode: 텍스트가 2줄 이상일 경우 마지막 줄을 제외하고 각 줄의 마지막에 En dash 삽입
 - 'Start-of-line' mode: 텍스트가 2줄 이상일 경우 마지막 첫 번째 줄을 제외하고 각 줄의 처음에 En dash 삽입
-- Original text, 'End-of-line' mode and 'Start-of-line' mode
-    - <img src="https://github.com/flitto/express-param/assets/67457712/a0c8742e-0c90-40cb-87de-9d3b14b2c623" width="900">
+
+| Original text, 'End-of-line' mode and 'Start-of-line' mode |
+|:-|
+| <img src="https://github.com/flitto/express-param/assets/67457712/a0c8742e-0c90-40cb-87de-9d3b14b2c623" width="900"> |
 
 # 9. Examples
 ## 1) '화정 by 카쿠시타'
-- Original image
-    - <img src="https://github.com/KimRass/KimRass/assets/67457712/c4b2e456-cba5-45a3-9962-fa50c143ee32" width="250">
-- After (en, ja and zh-cn)
-    - <img src="https://github.com/KimRass/KimRass/assets/67457712/6db3e213-162b-4ef5-921c-9f45f1314df6" width="750">
+| Original image |
+|:-|
+| <img src="https://github-production-user-asset-6210df.s3.amazonaws.com/67457712/293941470-c4b2e456-cba5-45a3-9962-fa50c143ee32.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240404T001006Z&X-Amz-Expires=300&X-Amz-Signature=85b02b125797009e0b9d2aade4a2cf35ac159aeec691fea55c66ac427a5a0237&X-Amz-SignedHeaders=host&actor_id=67457712&key_id=0&repo_id=433302214" width="250"> |
+
+| Textual attribute recogition (en, ja and zh-cn) |
+|:-|
+| <img src="https://github-production-user-asset-6210df.s3.amazonaws.com/67457712/293941865-6db3e213-162b-4ef5-921c-9f45f1314df6.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240404T001015Z&X-Amz-Expires=300&X-Amz-Signature=b9ccc5b0fbc1f18ecfb570066ce6d5544257170959376ae5de7f28b19795ac3e&X-Amz-SignedHeaders=host&actor_id=67457712&key_id=0&repo_id=433302214" width="750"> |
 ## 2) '어반 웍 스테이션'
-- Original image
-    - <img src="https://github.com/KimRass/KimRass/assets/67457712/8f6dc2bb-28ca-4a59-a11f-eb36bd7f5715" width="200">
-- After (en, ja and zh-cn)
-    - <img src="https://github.com/KimRass/KimRass/assets/67457712/e70ed722-eec4-434d-8529-2d8fdfccd803" width="600">
+| Original image |
+|:-|
+| <img src="https://github-production-user-asset-6210df.s3.amazonaws.com/67457712/293943994-8f6dc2bb-28ca-4a59-a11f-eb36bd7f5715.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240404T001023Z&X-Amz-Expires=300&X-Amz-Signature=9745e265dfad3e7995133f3fc774f8d2a4b08184c6644b5685d6753ceae5add5&X-Amz-SignedHeaders=host&actor_id=67457712&key_id=0&repo_id=433302214" width="200"> |
+
+| Textual attribute recogition (en, ja and zh-cn) |
+|:-|
+| <img src="https://github-production-user-asset-6210df.s3.amazonaws.com/67457712/293944572-e70ed722-eec4-434d-8529-2d8fdfccd803.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240404T001031Z&X-Amz-Expires=300&X-Amz-Signature=60660a0669be0bc6f9658726b8e273c0df5a26022f4543a8e1e5a085b662821f&X-Amz-SignedHeaders=host&actor_id=67457712&key_id=0&repo_id=433302214" width="600"> |
 
 # 10. Text Region Recognition
 - 기존에는 텍스트가 렌더링될 수 있는 영역을 bounding box가 차지하는 영역으로만 한정했습니다. 그러면 한국어를 영어로 번역할 때와 같이 원문보다 번역문이 긴 경우에는 필연적으로 원본보다 작은 font size로 텍스트를 렌더링할 수밖에 없습니다.
 - text region recognition은 bounding box가 차지하는 영역을 벗어나 더욱 큰 font size를 가지고 텍스트를 렌더링할 수 있는지 계산하는 알고리즘입니다 [2].
 - Original image
-    - <img src="https://github.com/KimRass/machine_learning/assets/105417680/45467259-88e4-482e-9d47-92bdcd98877f" width="500">
+    - <img src="https://github-production-user-asset-6210df.s3.amazonaws.com/105417680/247049197-45467259-88e4-482e-9d47-92bdcd98877f.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240404T004054Z&X-Amz-Expires=300&X-Amz-Signature=8281b0b5f8846492d7948dacb311e66a12693200d71fda642c13f802fbf8be31&X-Amz-SignedHeaders=host&actor_id=67457712&key_id=0&repo_id=291084893" width="500">
 - Human-annotated bounding boxes
-    - <img src="https://github.com/KimRass/machine_learning/assets/105417680/4b08bdb7-1fdd-413e-998f-3ef70f9e3cac" width="500">
+    - <img src="https://github-production-user-asset-6210df.s3.amazonaws.com/105417680/247049193-4b08bdb7-1fdd-413e-998f-3ef70f9e3cac.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240404T001253Z&X-Amz-Expires=300&X-Amz-Signature=63acbfefb31c2ef7a1f92cc55d507297c9362c898351410ae6fdb64cb4f1e5e2&X-Amz-SignedHeaders=host&actor_id=67457712&key_id=0&repo_id=291084893" width="500">
 - Text-removed image
-    - <img src="https://github.com/KimRass/machine_learning/assets/105417680/32afb8be-9464-4b60-bd1d-0c82f1a0d8fc" width="500">
+    - <img src="https://github-production-user-asset-6210df.s3.amazonaws.com/105417680/247049184-32afb8be-9464-4b60-bd1d-0c82f1a0d8fc.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240404T001300Z&X-Amz-Expires=300&X-Amz-Signature=fb5765b2f9b298713fae0d1fa70bdb8766ead81d9c7b422132fa4ea5e6298ad4&X-Amz-SignedHeaders=host&actor_id=67457712&key_id=0&repo_id=291084893" width="500">
 ## Mask generation
 - 렌더링할 텍스트가 이미지 상의 주요 오브젝트와 충돌하지 않도록 제한하는 과정이 필요합니다. 이를 위해 3가지 마스크를 사용합니다.
     - Image boundary mask
-        - <img src="https://github.com/KimRass/machine_learning/assets/105417680/13054ce6-eeb3-47ca-9169-6647670ca00f" width="400">
+        - <img src="https://github-production-user-asset-6210df.s3.amazonaws.com/105417680/247051120-13054ce6-eeb3-47ca-9169-6647670ca00f.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240404T001308Z&X-Amz-Expires=300&X-Amz-Signature=aec77fcdae6aabe3a6f64a7e69b90d1301c23fa30df5ef02e27fd1c44a1ba400&X-Amz-SignedHeaders=host&actor_id=67457712&key_id=0&repo_id=291084893" width="400">
         - font size를 점진적으로 확대해 나갈 때 텍스트가 이미지 바깥으로 나가지 않도록 하기 위해 사용됩니다.
     - Edge mask [2]
-        - <img src="https://github.com/KimRass/machine_learning/assets/105417680/593277ba-98b0-4daa-bc93-01f07e6e3d2b" width="400">
+        - <img src="https://github-production-user-asset-6210df.s3.amazonaws.com/105417680/247050649-593277ba-98b0-4daa-bc93-01f07e6e3d2b.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240404T001315Z&X-Amz-Expires=300&X-Amz-Signature=dc10ecdd5dc2fc1bd72718217a5764ae6d7da79b7f961eaff16d5db0d419d07d&X-Amz-SignedHeaders=host&actor_id=67457712&key_id=0&repo_id=291084893" width="400">
         - 텍스트가 이미지에 존재하는 Edge를 넘어가지 않도록 제한하기 위해 사용됩니다.
     - Mask for remaining text
-        - <img src="https://github.com/KimRass/machine_learning/assets/105417680/2ddec590-4911-4eaf-9733-415654c56b2f" width="400">
+        - <img src="https://github-production-user-asset-6210df.s3.amazonaws.com/105417680/247051838-2ddec590-4911-4eaf-9733-415654c56b2f.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240404T001324Z&X-Amz-Expires=300&X-Amz-Signature=e8082fb13116cfc60f2fd2e048871479ca96a2bb9316eb481af0acb523637d7f&X-Amz-SignedHeaders=host&actor_id=67457712&key_id=0&repo_id=291084893" width="400">
         - 가격이나 음식점 이름과 같이 '메뉴 번역' 서비스의 정책상 제거하지 않은 텍스트와, 렌더링하고자 하는 텍스트가 서로 겹치지 않도록 하기 위해 사용됩니다.
     - Intermediate mask
-        - <img src="https://github.com/KimRass/machine_learning/assets/105417680/d0973eb5-8549-4c83-b591-c93ec178d954" width="400">
+        - <img src="https://github-production-user-asset-6210df.s3.amazonaws.com/105417680/247054336-d0973eb5-8549-4c83-b591-c93ec178d954.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240404T001331Z&X-Amz-Expires=300&X-Amz-Signature=44d2bd61974a7dbaa6de34d3a9fec91889d73f35787625fafeabc5416dd01c13&X-Amz-SignedHeaders=host&actor_id=67457712&key_id=0&repo_id=291084893" width="400">
         - 위 3개의 마스크는 렌더링할 텍스트에 무관하게 변하지 않으므로 빠른 계산을 위해 모두 합쳐 intermediate mask를 생성합니다.
 - 이 모든 마스크의 합과 렌더링할 타겟 텍스트가 충돌하지 않는 범위 내에서 조금씩 font size를 증가시킵니다. 이때 원본 font size보다 크게 증가시키지는 않습니다.
 - 이때 4번마스크는 렌더링할 타겟 텍스트 자기 자신을 제외한 나머지 텍스트로 합니다. 이 4가지 마스크들의 합으로 새로운 마스크를 정의합니다.
@@ -164,7 +177,7 @@
     - 텍스트를 공백을 기준으로 서브워드 단위로 분리합니다. 분리된 서브워드들을 하나씩 붙여가면서 원래의 텍스트에 가깝게 조금씩 문자열을 만들어갑니다.
     - 완성되어가는 문자열을 가지고 렌더링을 시도합니다. 충돌이 발생하지 않으면 다음 서브워드를 그대로 이어붙여 다음 문자열을 만들고 충돌이 발생하면 줄바꿈을 중간에 삽입한 체로 다음 서브워드를 이어붙입니다. 충돌이 2회 연속 발생하면 해당 font size로의 확대에 실패한 것이므로 해당 bounding box의 최대 font size는 바로 직전 단계에서 텍스트 렌더링에 성공한 font size가 됩니다.
 - Before and after
-    - <img src="https://github.com/KimRass/KimRass/assets/67457712/e9f879d7-d3f2-4b5e-80dd-0ec665ca8952" width="900">
+    - <img src="https://github-production-user-asset-6210df.s3.amazonaws.com/67457712/293927112-e9f879d7-d3f2-4b5e-80dd-0ec665ca8952.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240404T001338Z&X-Amz-Expires=300&X-Amz-Signature=04baff8ac6939c89dfd2bdbe6c084a036ac0e88ddbd3a2b20a2ae8b6a5764a3c&X-Amz-SignedHeaders=host&actor_id=67457712&key_id=0&repo_id=433302214" width="900">
 
 # 11. Improvements
 | Textual attribute | Before | After |
