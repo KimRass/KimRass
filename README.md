@@ -33,7 +33,7 @@
 | | [ViT](https://github.com/KimRass/ViT) | Dosovitskiy et al. | [✓] Training on CIFAR-10<br>[✓] Training on CIFAR-100<br>[✓] CutOut<br>Hide-and-Seek<br>[✓] CutMix<br>[✓] Attention Roll-out<br>[✓] Position embedding similarity<br>[✓] Position embedding interpolation |
 | |[SimCLR](https://github.com/KimRass/SimCLR) | Chen et al. | [✓] Normalized temperature-scaled cross entropy loss<br>[✓] Data augmentation<br>[✓] Pixel intensity histogram |
 | 2021 |[Improved DDPM](https://github.com/KimRass/Improved-DDPM) | Nichol and Dhariwal | [✓] Cosine diffusion schedule |
-| | [Classifier-Guidance](https://github.com/KimRass/Classifier-Guidance) | Dhariwal and Nichol | [ ] AdaGN<br>[ ] BiGGAN Upsample/Downsample<br>[ ] Improved DDPM sampling<br>[ ] Conditional/Unconditional models<br>[ ] Super-resolution model<br>[ ] Interpolation |
+| | [Classifier-Guidance](https://github.com/KimRass/Classifier-Guidance) | Dhariwal and Nichol | [✗] AdaGN<br>[✗] BiGGAN Upsample/Downsample<br>[✗] Improved DDPM sampling<br>[✗] Conditional/Unconditional models<br>[✗] Super-resolution model<br>[✗] Interpolation |
 | | [ILVR](https://github.com/KimRass/ILVR) | Choi et al. | [✓] Sampling from single reference<br>[✓] Sampling from various scale factors<br>[✓] Sampling from various conditioning range |
 | | [SDEdit](https://github.com/KimRass/SDEdit) | Meng et al. | [✓] User input stroke simulation |
 | | [MAE](https://github.com/KimRass/MAE) | He et al. | [✓] MAE architecture for pre-training<br>[✗] MAE architecture for self-supervised learning<br>[✗] Training on ImageNet-1K<br>[✗] Fine-tuning<br>[✗] Linear probing |
@@ -45,7 +45,7 @@
 | | [Sentence-BERT](https://github.com/KimRass/Sentence-BERT) | Reimers et al. | [✓] Classification loss<br>[✓] Regression loss<br>[✓] Constrastive loss<br>[✓] STSb data pre-processing<br>[✓] WikiSection data pre-processing<br>[✗] NLI data pre-processing |
 | | [RoBERTa](https://github.com/KimRass/RoBERTa) | Liu et al. | [✓] BookCorpus data pre-processing<br>[✓] Masked language modeling<br>[✗] BookCorpus data pre-processing<br>(SEGMENT-PAIR + NSP)<br>[✗] BookCorpus data pre-processing<br>(SENTENCE-PAIR + NSP)<br>[✓] BookCorpus data pre-processing<br>(FULL-SENTENCES)<br>[✗] BookCorpus data pre-processing<br>(DOC-SENTENCES) |
 | Vision-Language |
-| 2021 | [CLIP](https://github.com/KimRass/CLIP) | Radford et al. | [✓] Training on Flickr8k + Flickr30k<br>[✓] Zero-shot classification on ImageNet1k (mini)<br>[✓]Lineage classification on ImageNet1k (mini) |
+| 2021 | [CLIP](https://github.com/KimRass/CLIP) | Radford et al. | [✓] Training on Flickr8k + Flickr30k<br>[✓] Zero-shot classification on ImageNet1k (mini)<br>[✓] Linear classification on ImageNet1k (mini) |
 
 ||||
 |:-:|:-:|:-:|
