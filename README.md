@@ -1,13 +1,13 @@
 # 1. Resume
 [RESUME](https://github.com/KimRass/KimRass/blob/main/RESUME.md)
 
-# 2. Github Stats
-![KimRass' GitHub stats](https://github-readme-stats.vercel.app/api?username=KimRass&show_icons=true&theme=radical)
+<!-- # 2. Github Stats
+![KimRass' GitHub stats](https://github-readme-stats.vercel.app/api?username=KimRass&show_icons=true&theme=radical) -->
 
-# 3. 'Baekjoon Online Judge' Solved Rank
+# 2. 'Baekjoon Online Judge' Solved Rank
 ![hyp3rflow's solved.ac stats](https://github-readme-solvedac.hyp3rflow.vercel.app/api/?handle=rmx1000)
 
-# 4. PyTorch Implementations From Scratch
+# 3. PyTorch Implementations From Scratch
 |||||
 |:-:|:-|:-|:-|
 | Vision |
