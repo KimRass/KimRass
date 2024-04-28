@@ -32,6 +32,7 @@
 | | [DDIM](https://github.com/KimRass/DDIM) | Song et al. | [✓] Sampling<br>[✓] Spherical interpolation sampling<br>[✓] Interpolation on grid sampling<br>[✓] Truncated normal |
 | | [ViT](https://github.com/KimRass/ViT) | Dosovitskiy et al. | [✓] Training on CIFAR-10<br>[✓] Training on CIFAR-100<br>[✓] Attention Roll-out<br>[✓] Position embedding similarity<br>[✓] Position embedding interpolation<br>Extra<br>[✓] CutOut<br>[✓] Hide-and-Seek<br>[✓] CutMix |
 | |[SimCLR](https://github.com/KimRass/SimCLR) | Chen et al. | [✓] Normalized temperature-scaled cross entropy loss<br>[✓] Data augmentation<br>[✓] Pixel intensity histogram |
+| |[DETR](https://github.com/KimRass/DETR) | Carion et al. | [✓] Architecture<br>[✗] Batch normalization freezing<br>[✗] Data preparation<br>[✗] Training on COCO 2017
 | 2021 |[Improved DDPM](https://github.com/KimRass/Improved-DDPM) | Nichol and Dhariwal | [✓] Cosine diffusion schedule |
 | | [Classifier-Guidance](https://github.com/KimRass/Classifier-Guidance) | Dhariwal and Nichol | [✗] AdaGN<br>[✗] BiGGAN Upsample/Downsample<br>[✗] Improved DDPM sampling<br>[✗] Conditional/Unconditional models<br>[✗] Super-resolution model<br>[✗] Interpolation |
 | | [ILVR](https://github.com/KimRass/ILVR) | Choi et al. | [✓] Sampling from single reference<br>[✓] Sampling from various scale factors<br>[✓] Sampling from various conditioning range |
@@ -46,7 +47,7 @@
 | | [RoBERTa](https://github.com/KimRass/RoBERTa) | Liu et al. | [✓] BookCorpus data pre-processing<br>[✓] Masked language modeling<br>[✗] BookCorpus data pre-processing<br>(SEGMENT-PAIR + NSP)<br>[✗] BookCorpus data pre-processing<br>(SENTENCE-PAIR + NSP)<br>[✓] BookCorpus data pre-processing<br>(FULL-SENTENCES)<br>[✗] BookCorpus data pre-processing<br>(DOC-SENTENCES) |
 | Vision-Language |
 | 2021 | [CLIP](https://github.com/KimRass/CLIP) | Radford et al. | [✓] Training on Flickr8k + Flickr30k<br>[✓] Zero-shot classification on ImageNet1k (mini)<br>[✓] Linear classification on ImageNet1k (mini) |
-
+<!-- 
 ||||
 |:-:|:-:|:-:|
 | Vision |
@@ -55,4 +56,4 @@
 | 2022 | BEiT | Bao et al. |
 | 2022 | Flamingo | Alayrac et al. |
 | 2022 | DiT | Peebles et al. |
-| 2023 | ContolNet | Zhang et al. |
+| 2023 | ContolNet | Zhang et al. | -->
