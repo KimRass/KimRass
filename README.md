@@ -39,6 +39,7 @@
 | | [SDEdit](https://github.com/KimRass/SDEdit) | Meng et al. | [✓] User input stroke simulation |
 | | [MAE](https://github.com/KimRass/MAE) | He et al. | [✓] MAE architecture for pre-training<br>[✗] MAE architecture for self-supervised learning<br>[✗] Training on ImageNet-1K<br>[✗] Fine-tuning<br>[✗] Linear probing |
 | | [Copy-Paste](https://github.com/KimRass/Copy-Paste) | Ghiasi et al. | [✓] Large scale jittering<br>[✓] Copy-Paste (within mini-batch)<br>[✗] Gaussian filter |
+| | [ViViT](https://github.com/KimRass/ViViT) | Arnab et al. | |
 | 2022 | [CFG](https://github.com/KimRass/CFG) | Ho et al. |
 | Language |
 | 2017 | [Transformer](https://github.com/KimRass/Transformer) | Vaswani et al. | [✓] Architecture<br>[✓] Position encoding visualization |
