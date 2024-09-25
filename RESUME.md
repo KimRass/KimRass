@@ -23,8 +23,8 @@
 # 3. Education
 | 기간 | 내용 |
 |-|-|
-| 2010.03 ~ 2016.08 | 연세대학교 신촌 캠퍼스 기계공학과 졸업 |
-| 2006.03 ~ 2009.02 | 충북고등학교 졸업 |
+| 2010.03 ~ 2016.08 | 연세대학교 신촌 캠퍼스 기계공학과 졸업. |
+| 2006.03 ~ 2009.02 | 충북고등학교 졸업. |
 
 # 4. Work Experience
 | 기간 | 회사 |
@@ -38,7 +38,7 @@
 - 회사 소개: 2022년 설립된 AI 스타트업.
 - 퇴직 사유: 경영상 어려움으로 인한 권고사직.
 
-### (1) Video super-resolution 모델 연구개발
+### (1) Video super-resolution 모델 연구개발.
 - 'BasicVSR++' 모델을 기반으로 Stable Diffusion 3의 Pre-trained VAE를 결합하여 Latent space에서 계산 효율성 향상.
 - 이미지 데이터를 사전에 Crop 및 VAE-encode하여 반복 계산을 제거하고 학습 속도 최적화.
 - 8대의 RTX 4090과 `accelerate` 라이브러리를 활용하여 데이터 분산 학습 진행.
@@ -48,12 +48,12 @@
 - 회사 소개: 철도 신호 업계 중견기업 대아티아이의 자회사로서 AI 기술을 활용한 철도 관제 시스템 개발.
 - 이직 사유: AI 연구 업무를 하고자 함.
 
-### (1) 지능형 CCTV 성능 시험인증 취득
+### (1) 지능형 CCTV 성능 시험인증 취득.
 - 한국인터넷진흥원의 '지능형 CCTV 성능 시험 인증'에서 '쓰러짐' 분야 인증 취득.
 - 쓰러진 사람을 탐지하는 Object detection 모델 개발.
 - 실시간으로 영상을 처리하여 이벤트 발생 시각을 추정하는 알고리즘 개발.
 
-### (2) Object detection 모델 개발
+### (2) Object detection 모델 개발.
 - 경남 무인 도시철도 역사에서 유모차, (전동) 휠체어 등의 객체와 실신 등의 상황을 탐지하기 위한 객체 탐지 모델.
 - 유료 데이터와 'AI-Hub' 공공 데이터를 조사하여 탐지 대상 객체가 포함된 데이터셋을 선정하고, 이를 모델 학습에 적합한 포맷으로 변환하는 코드 작성.
 - 실제 지하철 CCTV 영상으로부터 탐지 대상 객체가 포함된 장면을 추출하기 위한 코드 작성:
@@ -79,12 +79,12 @@
 - Data augmentation을 통해 모델의 일반화 성능 확보.
 - Pre-trained scene text detection 모델의 Architecture를 수정하여 Fine-tuning 실시.
 
-### (3) Image processing
-- [Automatic image resizing](https://github.com/KimRass/KimRass/tree/main/Flitto/Place-Translation/Automatic-Image-Resizer)
+### (3) Image processing 알고리즘 개발.
+- [Automatic image resizing 알고리즘 개발.](https://github.com/KimRass/KimRass/tree/main/Flitto/Place-Translation/Automatic-Image-Resizer)
     - 기존 메뉴 이미지를 조금 다른 새로운 이미지로 변경할 때, Feature matching을 통해 적절한 해상도로 resize.
     - SIFT (Scale-Invariant Feature Transform)와 RANSAC (RANdom SAmple Consensus) 사용.
     - 도입 효과: 기존 이미지에 대한 Bounding box annotation, 번역 등의 작업 결과물을 재활용하여 업무 효율 향상.
-- [Menu image generation](https://github.com/KimRass/KimRass/tree/main/Flitto/Place-Translation/Menu-Image-Generator)
+- [Menu image generation 알고리즘 개발.](https://github.com/KimRass/KimRass/tree/main/Flitto/Place-Translation/Menu-Image-Generator)
     - 기존의 수작업 메뉴 이미지 제작을 Python으로 템플릿화하여 자동화.
     - 도입 효과: 비효율적이고 반복적인 프로세스 개선, 시각적 이미지 번역 품질 향상.
 
@@ -98,7 +98,7 @@
 - Scene text detection → Text stroke mask prediction → Image inpainting의 3단계로 작동.
 - 도입 효과: 수작업 감소, 이미지 처리 속도 향상, 시각적 이미지 번역 품질 향상.
 
-### (6) [Data QC](https://github.com/KimRass/KimRass/tree/main/Flitto/Data-Collection)
+### (6) [Data QC.](https://github.com/KimRass/KimRass/tree/main/Flitto/Data-Collection)
 - B2B 고객사의 의뢰에 따라 데이터를 수집하여 납품하는 프로젝트에 있어서 자동 데이터 QC를 위한 각종 알고리즘 개발.
     - 다국어 병렬 말뭉치 (텍스트 데이터)
         - 번역 모델 학습을 위한 다국어 데이터 수집 (ko, en, hi, km, tl, ru, vi, id, th).
@@ -122,12 +122,12 @@
     - 사원 약 1,800명, 매출액 약 3조 원
 - 이직 사유: AI와 관련된 업무 수행 및 그에 대한 전문성 향상.
 
-###	(1) [Tableau 기반의 전사 대시보드 구축 리드](https://github.com/KimRass/KimRass/tree/main/HDC/Tableau-BI) (2021.02 ~ 2022.04)
+###	(1) [Tableau 기반의 전사 대시보드 구축 리드.](https://github.com/KimRass/KimRass/tree/main/HDC/Tableau-BI) (2021.02 ~ 2022.04)
 - 현업과 협의하여 대시보드 설계 및 Tableau와 Data mart 연결.
 - 자동 데이터 업데이트를 위한 Tableau 로직 설계.
 - SQL을 통해 Data mart와 Tableau 로직 점검.
 
-### (2) [아파트 실거래가 데이터 분석 리드](https://github.com/KimRass/KimRass/tree/main/HDC/APT-Price-Analysis) (2020.01 ~ 2020.09)
+### (2) [아파트 실거래가 데이터 분석 리드.](https://github.com/KimRass/KimRass/tree/main/HDC/APT-Price-Analysis) (2020.01 ~ 2020.09)
 - 아파트 실거래가 데이터 분석을 통해 데이터 기반 적정 분양가 산정.
 - Web scraping을 통해 '네이버 부동산' 등에서 부동산 관련 데이터 수집.
 - Feature engineering 및 'XGBoost' 기반 modeling.
