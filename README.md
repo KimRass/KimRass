@@ -27,7 +27,7 @@
 | | [DeepLab v3](https://github.com/KimRass/DeepLabv3) | Chen et al. | [✓] Training on VOC 2012<br>[✓] Prediction on VOC 2012 validation set<br>[✓] Average mIoU |
 | | [PixelLink](https://github.com/KimRass/PixelLink) | Deng et al. | [✓] Architecture<br>[✓] Instance-balanced cross entropy loss<br>[✓] Post-processing |
 | | [RotNet](https://github.com/KimRass/RotNet) | Gidaris et al | [✓] Attention map visualization |
-| 2020 |[STEFANN](https://github.com/KimRass/STEFANN) | Roy et al. | [✓] FANnet architecture<br>[✓]Training FANnet on Google Fonts<br>[✓] Custom Google Fonts dataset<br>[✓] Average SSIM |
+| 2020 |[STEFANN](https://github.com/KimRass/STEFANN) | Roy et al. | [✓] FANnet architecture<br>[✓] Training FANnet on Google Fonts<br>[✓] Custom Google Fonts dataset<br>[✓] Average SSIM |
 | | [DDPM](https://github.com/KimRass/DDPM) | Ho et al. | [✓] Training on CelebA at 32 × 32<br>[✓] Training on CelebA at 64 × 64<br>[✓] Denoising process visualization<br>[✓] Linear interpolation sampling<br>[✓] Coarse-to-fine sampling |
 | | [DDIM](https://github.com/KimRass/DDIM) | Song et al. | [✓] Sampling<br>[✓] Spherical interpolation sampling<br>[✓] Interpolation on grid sampling<br>[✓] Truncated normal |
 | | [ViT](https://github.com/KimRass/ViT) | Dosovitskiy et al. | [✓] Training on CIFAR-10<br>[✓] Training on CIFAR-100<br>[✓] Attention Roll-out<br>[✓] Position embedding similarity<br>[✓] Position embedding interpolation<br>Extra<br>[✓] CutOut<br>[✓] Hide-and-Seek<br>[✓] CutMix |
