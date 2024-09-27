@@ -9,19 +9,62 @@
     - 논문 구현: AI 논문을 밑바닥부터 구현한 코드와 학습된 모델을 공유, 실험 결과와 느낀 점을 정리한 자료.
 
 # 2. Core Competencies
-- **딥 러닝 논문을 PyTorch로 from Scratch 구현 경험**:
-    - **Vision**: 'VQ-VAE', 'Copy-Paste', 'ILVR', 'Pix2Pix', 'CycleGAN', 'PGGAN', 'DDPM', 'ViT', 'ViViT', 'PixelCNN', 'DeepLabv3', Gatys et al. (2016), etc.
-    - **Language**: 'BERT', 'Sentence-BERT', 'RoBERTa', etc.
-    - **Vision-language**: 'CLIP', etc.
-- **Vision 모델 개발 경험**:
-    - scene text image QC 모델.
-    - image rotation classification 모델.
-    - textual attribute recognition 모델.
-    - scene text removal 모델.
-- **Tableau 기반 전사 대시보드 구축 리드 경험.**
-- **아파트 실거래가 데이터 분석 리드 경험.**
-- [**알고리즘과 자료구조에 대한 이해**](https://github.com/KimRass/Algorithm-Coding-Test):
-    - 프로그래머스 90 문제 해결; Baekjoon Online Judge 153 문제 해결, Gold III 등급.
+
+## 1) 딥 러닝 논문 구현 경험.
+- 'ViViT':
+    - 'Spatio-temporal attention', 'Factorised encoder', 'Factorised self-attention'의 3가지 모델 architecture 구현.
+- 'MAE':
+    - pre-training을 위한 모델 architecture 구현.
+- 'Copy-Paste':
+    - large scale jittering, Copy-Paste 구현 및 COCO에 적용.
+- 'ILVR':
+    - 'scale factor' 또는 'conditioning range' 변화에 따른 시각화.
+- 'SD-Edit':
+    - 'human-stroke-simulation algorithm' 및 이를 적용한 image editing 구현.
+- 'DDPM':
+    - 32 × 32, 64 × 64의 CelebA에 대해 학습.
+    - denoising process를 gif 파일로 시각화.
+    - linear interpolation, 'coarse-to-fine interpolation'을 통한 sampling 구현.
+- 'DDIM':
+    - spherical linear interpolation, 'grid interpolation'을 통한 sampling 구현.
+- 'VQ-VAE' & 'PixelCNN':
+    - Fashion MNIST, CIFAR-10에 대해 학습.
+    - 'PixelCNN'을 통한 Sampling.
+- 'CycleGAN':
+    - 논문에서 사용한 데이터셋 중 5가지에 대해 학습.
+- 'PGGAN':
+    - 512 × 512의 CelebA-HQ에 대해 학습.
+- 'DeepLabv3':
+
+- Gatys et al. (2016):
+    - VGGNet-19 기반으로 구현.
+- 'ViT':
+    - 'CutOut', 'Hide-and-Seek', 'CutMix' data augmentation 구현 및 실험.
+    - 'Attention roll-out'을 통한 attention 시각화.
+    - position embedding similarity, position embedding interpolation 구현.
+    - CIFAR-10, CIFAR-100에 대해 학습.
+- 'BERT':
+    - 'BookCorpus', 'SQuAD', 'SWAG' data pre-processing 구현.
+    - architecture, masked language modeling 구현.
+- 'CLIP':
+    - 'Flickr8k' + 'Flickr30k'에 대해 학습.
+    - zero-shot classification, linear classification 구현.
+<!-- - **Vision**: 'VQ-VAE', 'Copy-Paste', 'ILVR', 'Pix2Pix', 'CycleGAN', 'PGGAN', 'DDPM', 'ViT', 'ViViT', 'PixelCNN', 'DeepLabv3', Gatys et al. (2016), etc.
+- **Language**: 'BERT', 'Sentence-BERT', 'RoBERTa', etc.
+- **Vision-language**: 'CLIP', etc. -->
+
+## 2) Vision 모델 개발 경험.
+- scene text image QC 모델.
+- image rotation classification 모델.
+- textual attribute recognition 모델.
+- scene text removal 모델.
+
+## 3) [**알고리즘과 자료구조에 대한 이해.**](https://github.com/KimRass/Algorithm-Coding-Test)
+- 프로그래머스 90 문제 해결; Baekjoon Online Judge 153 문제 해결, Gold III 등급.
+
+## 4) Tableau 기반 전사 대시보드 구축 리드 경험 (2021.02 ~ 2022.04).
+
+## 5) 데이터 분석 프로젝트 리드 경험 (2020.01 ~ 2020.09).
 
 # 3. Education
 | 기간 | 내용 |
@@ -43,7 +86,7 @@
 
 ### (1) video super-resolution 모델 연구개발.
 - 'BasicVSR++' 모델을 기반으로 Stable Diffusion 3의 pre-trained VAE를 결합하여 latent space에서 계산 효율성 향상.
-- 이미지 데이터를 사전에 crop 및 VAE-encode하여 반복 계산을 제거하고 학습 속도 최적화.
+- 이미지 데이터를 사전에 crop 및 VAE-encode하여 반복 계산을 제거 및 학습 속도 최적화.
 - 8대의 RTX 4090과 `accelerate` 라이브러리를 활용하여 데이터 분산 학습 진행.
 - TIPS (Tech Incubator Program for Startup) 프로그램 발표 자료의 기술 파트 작성.
 
@@ -58,7 +101,7 @@
 
 ### (2) object detection 모델 개발.
 - 경남 무인 도시철도 역사에서 유모차, (전동) 휠체어 등의 객체와 실신 등의 상황을 탐지하기 위한 객체 탐지 모델.
-- 유료 데이터와 'AI-Hub' 공공 데이터를 조사하여 탐지 대상 객체가 포함된 데이터셋을 선정하고, 이를 모델 학습에 적합한 포맷으로 변환하는 코드 작성.
+- 유료 데이터와 'AI-Hub' 공공 데이터를 조사하여 탐지 대상 객체가 포함된 데이터셋을 선정, 이를 모델 학습에 적합한 포맷으로 변환하는 코드 작성.
 - 실제 지하철 CCTV 영상으로부터 탐지 대상 객체가 포함된 장면을 추출하기 위한 코드 작성:
     - 1차 학습된 모델로 장면을 선별한 후, 이를 사람이 검수할 수 있는 시스템 설계.
     - 검수를 쉽게 할 수 있도록 'PyQt' 라이브러리 기반의 GUI 제공.
@@ -82,26 +125,29 @@
 - data augmentation을 통해 모델의 일반화 성능 확보.
 - pre-trained scene text detection 모델의 architecture를 수정하여 fine-tuning 실시.
 
-### (3) image processing 알고리즘 개발.
+### (3) digital image processing 알고리즘 개발.
 - [**automatic image resizing 알고리즘 개발.**](https://github.com/KimRass/KimRass/tree/main/Flitto/Place-Translation/Automatic-Image-Resizer):
     - 기존 메뉴 이미지를 조금 다른 새로운 이미지로 변경할 때, feature matching을 통해 적절한 해상도로 resize.
-    - SIFT (Scale-Invariant Feature Transform)와 RANSAC (RANdom SAmple Consensus) 사용.
+    - SIFT (Scale-Invariant Feature Transform), RANSAC (RANdom SAmple Consensus) 사용.
     - 도입 효과: 기존 이미지에 대한 bounding box annotation, 번역 등의 작업 결과물을 재활용하여 업무 효율 향상.
 - [**menu image generation 알고리즘 개발.**](https://github.com/KimRass/KimRass/tree/main/Flitto/Place-Translation/Menu-Image-Generator):
     - 기존의 수작업 메뉴 이미지 제작을 Python으로 템플릿화하여 자동화.
-    - 도입 효과: 비효율적이고 반복적인 프로세스 개선, 시각적 이미지 번역 품질 향상.
+    - 도입 효과: 비효율적이고 반복적인 프로세스 개선, 시각적 품질 향상.
 
 ### (4) [textual attribute recognition 모델 개발.](https://github.com/KimRass/KimRass/tree/main/Flitto/Place-Translation/Textual-Attribute-Recognizer)
-- 메뉴 이미지의 각 텍스트로부터 7가지 속성 (font size, writing direction, text alignment, text line breaking, text color, text border, text border color)을 자동으로 추출하여 이를 반영해 번역문을 렌더링함으로써 시각적 이미지 번역 품질 향상.
-    - 'CRAFT' scene text detection 모델을 통해 추출된 'text region score map'을 기반으로 알고리즘 설계.
-    - 자체 데이터셋을 통해 학습된 semantic segmentation 모델로 text alignment 추출.
-    - 언어별 특성을 고려하여 font size를 최적화하는 동시에 텍스트에 줄바꿈 삽입 위치를 계산.
-    - contrast ratio를 바탕으로 픽셀 단위의 정교한 계산을 통해 렌더링할 텍스트의 가독성 확보.
+- 메뉴 이미지의 각 텍스트에서 7가지 속성 (font size, writing direction, text alignment, text line breaking, text color, text border, text border color)을 추출하는 모델.
+<!-- - 'CRAFT' scene text detection 모델을 통해 추출된 'text region score map'을 기반으로 알고리즘 설계. -->
+- 자체 데이터셋을 통해 학습된 semantic segmentation 모델로 text alignment 추출.
+- 언어별 특성을 고려하여 font size를 최적화하는 동시에 텍스트에 줄바꿈 삽입 위치를 계산.
+- contrast ratio를 기반으로 픽셀 단위의 정교한 계산을 통해 텍스트의 가독성 개선.
+- 번역된 텍스트 렌더링 시, 속성을 반영하여 시각적 품질 향상.
 
 ### (5) [scene text removal 모델 개발.](https://github.com/KimRass/KimRass/tree/main/Flitto/Place-Translation/Scene-Text-Remover)
-- 메뉴 이미지에서, 사용자가 지우고자 하는 텍스트만을 자연스럽게 지우는 모델.
+- 메뉴 이미지에서 번역이 필요한 텍스트를 자연스럽게 지우는 모델.
 - scene text detection → text stroke mask prediction → image inpainting의 3단계로 작동.
-- 도입 효과: 수작업 감소, 이미지 처리 속도 향상, 시각적 이미지 번역 품질 향상.
+- thresholding, connected-component labeling, fully connected CRF 등 다양한 digital image proessing 기법 활용.
+- 지우고자 하는 문자의 중심을 감싸도록 박스를 그림으로써 원하는 텍스트만 선택적으로 제거 가능.
+- 기존 포토샵을 통한 수작업 대비 처리 속도 개선 및 텍스트가 있는 영역만 수정함으로써 시각적 품질 향상.
 
 ### (6) [data QC 알고리즘 개발.](https://github.com/KimRass/KimRass/tree/main/Flitto/Data-Collection)
 - B2B 고객사의 의뢰에 따라 데이터를 수집하여 납품하는 프로젝트에 있어서 자동 데이터 QC를 위한 각종 알고리즘 개발.
@@ -109,7 +155,7 @@
     - 단어별 표준 띄어쓰기 규칙을 반영하여 문장 교정 (e.g., '빅데이터' → '빅 데이터').
     - 형태소 분리에 기반하여 존댓말을 반말로 변환.
     - 'Sentence-BERT'를 활용한 문장 유사도 검사.
-    - 형태소 분리에 기반하여 완전한 문장과 불완전한 문장을 구분하고, 완전한 문장으로 이루어진 데이터 수집.
+    - 형태소 분리에 기반하여 완전한 문장과 불완전한 문장 구분 및 완전한 문장으로 이루어진 데이터 수집.
 - 음성 데이터:
     - QA 요구조건에 따라 발화 구간의 길이와 수, 음성의 크기, 노이즈 등 검토.
     - 음성 데이터 시각화 (waveform, spectrogram, mel-spectrogram)를 통해 수동 QC 보조.
@@ -133,7 +179,7 @@
 - 회사 소개:
     - 종합건설업 (아파트 브랜드 'IPARK')
     - 사원 약 1,800명, 매출액 약 3조 원
-- 이직 사유: AI와 관련된 업무 수행 및 그에 대한 전문성 향상.
+- 이직 사유: AI에 관련된 업무 수행 및 그에 대한 전문성 향상.
 
 ###	(1) [Tableau 기반의 전사 대시보드 구축 리드 (2021.02 ~ 2022.04).](https://github.com/KimRass/KimRass/tree/main/HDC/Tableau-BI)
 - 현업과 협의하여 대시보드 설계 및 Tableau와 data mart 연결.

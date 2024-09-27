@@ -24,14 +24,14 @@
 |:-|
 | <img src="https://i.imgur.com/ujrxsrk.png" width="600"> |
 | 쉽게 말해서 이미지를 작은 영역으로 조각내는 과정입니다. |
-| adaptive thresholding과 connected component labeling을 통해 image segmentation을 수행합니다. |
+| thresholding과 connected-component labeling (CCL)을 통해 image segmentation을 수행합니다. |
 | 매우 많은 수의 label이 생성되지만 이해를 돕기 위해 26개의 색상을 사용하여 단순화했습니다. |
 
 | Text stroke mask generation |
 |:-|
 | <img src="https://i.imgur.com/EgarFnX.png" width="600"> |
 | image segmentation map의 각 label이 text region mask와 얼마나 겹치는지를 픽셀 수를 세어 계산합니다. 일정한 값 이상의 겹침이 발생하는 labels를 가지고 text stroke mask를 생성합니다. |
-| FC CRFs (Fully Connected Conditional Random Fields) [3]을 통해 text stroke mask를 보정하여 최종적으로 text stroke mask를 생성합니다. |
+| fully connected CRF (Conditional Random Field) [3]을 통해 text stroke mask를 보정하여 최종적으로 text stroke mask를 생성합니다. |
 ### (2) Learning-based Approach
 | Text stroke mask prediction |
 |:-|
@@ -45,7 +45,7 @@
 <!-- | <img src="https://i.imgur.com/HpEVvJu.png" width="600"> |
 | text region score map으로부터 text region mask를 생성합니다. | -->
 | <img src="https://i.imgur.com/J58rZEe.png" width="600"> |
-| text region score map으로부터 text region mask를 생성하고 FC CRFs [3]를 적용합니다. |
+| text region score map으로부터 text region mask를 생성하고 fully connected CRF [3]를 적용합니다. |
 
 | Mask merge |
 |:-|
@@ -116,7 +116,7 @@
 # 5. References
 - [1] [Erasing Scene Text with Weak Supervision](https://github.com/KimRass/KimRass/blob/main/Flitto/papers/erasing_scene_text_with_weak_supervision.pdf)
 - [2] [Character Region Awareness for Text Detection](https://github.com/KimRass/CRAFT/blob/main/papers/character_region_awareness_for_text_detection.pdf)
-- [3] [Semantic Image Segmentation with Deep Convolutional Nets and Fully Connected CRFs](https://github.com/KimRass/KimRass/blob/main/Flitto/papers/semantic_image_segmentation_with_deep_convolutional_nets_and_fully_connected_crfs.pdf)
+- [3] [Semantic Image Segmentation with Deep Convolutional Nets and Fully Connected CRF](https://github.com/KimRass/KimRass/blob/main/Flitto/papers/semantic_image_segmentation_with_deep_convolutional_nets_and_fully_connected_crfs.pdf)
 - [4] [Stroke-Based Scene Text Erasing Using Synthetic Data for Training](https://github.com/KimRass/KimRass/blob/main/Flitto/papers/stroke_based_scene_text_erasing_using_synthetic_data_for_training.pdf)
 - [5] [Resolution-robust Large Mask Inpainting with Fourier Convolutions](https://github.com/KimRass/KimRass/blob/main/Flitto/papers/resolution_robust_large_mask_inpainting_with_fourier_convolutions.pdf)
 - [6] [KAIST Scene Text Database](http://www.iapr-tc11.org/mediawiki/index.php/KAIST_Scene_Text_Database)
