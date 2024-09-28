@@ -11,44 +11,34 @@
 # 2. Core Competencies
 
 ## 1) 딥 러닝 논문 구현 경험.
-- 'ViViT':
-    - 'Spatio-temporal attention', 'Factorised encoder', 'Factorised self-attention'의 3가지 모델 architecture 구현.
-- 'MAE':
-    - pre-training을 위한 모델 architecture 구현.
-- 'Copy-Paste':
-    - large scale jittering, Copy-Paste 구현 및 COCO에 적용.
-- 'ILVR':
-    - 'scale factor' 또는 'conditioning range' 변화에 따른 시각화.
-- 'SD-Edit':
-    - 'human-stroke-simulation algorithm' 및 이를 적용한 image editing 구현.
-- 'DDPM':
-    - 32 × 32, 64 × 64의 CelebA에 대해 학습.
-    - denoising process를 gif 파일로 시각화.
-    - linear interpolation, 'coarse-to-fine interpolation'을 통한 sampling 구현.
-- 'DDIM':
-    - spherical linear interpolation, 'grid interpolation'을 통한 sampling 구현.
-- 'VQ-VAE' & 'PixelCNN':
-    - Fashion MNIST, CIFAR-10에 대해 학습.
-    - 'PixelCNN'을 통한 Sampling.
-- 'CycleGAN':
-    - 논문에서 사용한 데이터셋 중 5가지에 대해 학습.
-- 'PGGAN':
-    - 512 × 512의 CelebA-HQ에 대해 학습.
-- 'DeepLabv3':
-
-- Gatys et al. (2016):
-    - VGGNet-19 기반으로 구현.
-- 'ViT':
-    - 'CutOut', 'Hide-and-Seek', 'CutMix' data augmentation 구현 및 실험.
-    - 'Attention roll-out'을 통한 attention 시각화.
-    - position embedding similarity, position embedding interpolation 구현.
-    - CIFAR-10, CIFAR-100에 대해 학습.
-- 'BERT':
-    - 'BookCorpus', 'SQuAD', 'SWAG' data pre-processing 구현.
-    - architecture, masked language modeling 구현.
-- 'CLIP':
-    - 'Flickr8k' + 'Flickr30k'에 대해 학습.
-    - zero-shot classification, linear classification 구현.
+|모델명|내용|
+|-|-|
+|'ViViT'|- 'Spatio-temporal attention', 'Factorised encoder', 'Factorised self-attention'의 3가지 architecture 구현.|
+|'MAE'|- pre-training을 위한 architecture 구현.|
+|'Copy-Paste'|- large scale jittering, Copy-Paste 구현<br>- COCO 2014 데이터셋에 적용.|
+|'ILVR'|- 'scale factor' 또는 'conditioning range' 변화에 따른 시각화.|
+|'SD-Edit'|- 'human-stroke-simulation algorithm' 및 이를 적용한 image editing 구현.|
+|'DDPM'|- 32 × 32, 64 × 64의 CelebA에 대해 학습.<br>- denoising process를 gif 파일로 시각화.<br>- linear interpolation, 'coarse-to-fine interpolation'을 통한 sampling 구현.|
+|'DDIM'|- spherical linear interpolation, 'grid interpolation'을 통한 sampling 구현.|
+|Classifier guidance|- CIFAR-10에 대해 학습.|
+|VAE|- MNIST에 대해 학습.<br>- encoder output, decoder 각각에 대한 시각화.|
+|'VQ-VAE' & 'PixelCNN'|- Fashion MNIST, CIFAR-10에 대해 학습.<br>- 'PixelCNN'을 통한 sampling.|
+|'DCGAN'|- 64 × 64의 CelebA에 대해 학습.<br>- latent space interpolation 구현.|
+|'Pix2Pix'|- 'Facades', Google Maps 데이터셋에 대해 학습.|
+|'CycleGAN'|- 논문에서 사용한 데이터셋 중 5가지에 대해 학습.|
+|'PGGAN'|- 512 × 512의 CelebA-HQ에 대해 학습.|
+|'DeepLabv3'|- VOC2012 데이터셋에 대해 학습, 모델 출력 시각화.|
+|Gatys et al., 2016 (image style transfer)|- VGGNet-19 기반으로 구현.|
+|'ViT'|- 'CutOut', 'Hide-and-Seek', 'CutMix' data augmentation 구현 및 실험.<br>- 'Attention roll-out'을 통한 attention 시각화.<br>- position embedding similarity, position embedding interpolation 구현.<br>- CIFAR-10, CIFAR-100에 대해 학습.|
+|'BERT'|- 'BookCorpus', 'SQuAD', 'SWAG' 데이터셋 전처리 구현.<br>- architecture, masked language modeling 구현.|
+|'Sentence-BERT'|- classification loss, regression loss, constrastive loss 구현<br>-'STSb', 'WikiSection' 데이터셋 전처리|
+|'CLIP'|- 'Flickr8k' + 'Flickr30k'에 대해 학습.<br>- zero-shot classification, linear classification 구현.|
+|'CAM'|- pre-trained GoogleNet에 적용.<br>- 모델 출력을 bounding box로 변환.|
+|Zhang et al., 2016	(image colorization)|- empirical probability distribution 시각화.|
+|'RotNet'|- attention map 시각화.|
+|'SimCLR'|- normalized temperature-scaled cross entropy loss, pixel intensity histogram 구현|
+|'STEFANN'|- Google Fonts 데이터셋<br>- 'FANnet' architecture 구현 및 Google Fonts 데이터셋에 대해 학습.<br>- Average SSIM.|
+| 'PixelLink'|- architecture, instance-balanced cross entropy loss, 모델 출력 후처리 구현|
 <!-- - **Vision**: 'VQ-VAE', 'Copy-Paste', 'ILVR', 'Pix2Pix', 'CycleGAN', 'PGGAN', 'DDPM', 'ViT', 'ViViT', 'PixelCNN', 'DeepLabv3', Gatys et al. (2016), etc.
 - **Language**: 'BERT', 'Sentence-BERT', 'RoBERTa', etc.
 - **Vision-language**: 'CLIP', etc. -->
@@ -67,18 +57,18 @@
 ## 5) 데이터 분석 프로젝트 리드 경험 (2020.01 ~ 2020.09).
 
 # 3. Education
-| 기간 | 내용 |
+|기간|내용|
 |-|-|
-| 2010.03 ~ 2016.08 | 연세대학교 신촌 캠퍼스 기계공학과 졸업. |
-| 2006.03 ~ 2009.02 | 충북고등학교 졸업. |
+|2010.03 ~ 2016.08|연세대학교 신촌 캠퍼스 기계공학과 졸업.|
+|2006.03 ~ 2009.02|충북고등학교 졸업.|
 
 # 4. Work Experience
-| 기간 | 회사 |
+|기간|회사|
 |-|-|
-| 2024.05 ~ 2024.08 | Meraker (정규직) |
-| 2024.03 ~ 2024.05 | D-Meta (정규직) |
-| 2022.05 ~ 2023.12 | Flitto (정규직) |
-| 2016.07 ~ 2022.04 | HDC현대산업개발 (정규직) |
+|2024.05 ~ 2024.08|Meraker (정규직)|
+|2024.03 ~ 2024.05|D-Meta (정규직)|
+|2022.05 ~ 2023.12|Flitto (정규직)|
+|2016.07 ~ 2022.04|HDC현대산업개발 (정규직)|
 
 ## 1) Meraker (2024.05 ~ 2023.08, 정규직)
 - 회사 소개: 2022년 설립된 AI 스타트업.
@@ -159,21 +149,6 @@
 - 음성 데이터:
     - QA 요구조건에 따라 발화 구간의 길이와 수, 음성의 크기, 노이즈 등 검토.
     - 음성 데이터 시각화 (waveform, spectrogram, mel-spectrogram)를 통해 수동 QC 보조.
-    <!-- - 다국어 병렬 말뭉치 (텍스트 데이터)
-        - 번역 모델 학습을 위한 다국어 데이터 수집 (ko, en, hi, km, tl, ru, vi, id, th).
-    - 한국어 사전 예문 (텍스트 데이터)
-        - 전문용어, 공공용어, 신조어로 구분된 단어 및 예문 수집.
-        - 단어별 표준 띄어쓰기 규칙을 반영하여 문장 교정 (e.g., '빅데이터' → '빅 데이터').
-    - 명대사를 포함하는 한국어 대화문 (텍스트 데이터)
-        - 영화 명대사 및 속담이 사용된 Chatbot 학습 데이터 수집.
-        - 형태소 분리에 기반하여 존댓말을 반말로 변환.
-        - Sentence-BERT를 활용한 문장 유사도 검사.
-    - 한국어와 영어 뉴스 기사 (텍스트 데이터)
-        - 형태소 분리에 기반하여 완전한 문장과 불완전한 문장을 구분하고, 완전한 문장으로 이루어진 데이터 수집.
-    - 한국어 명령어 발화 (음성 데이터)
-        - "선풍기 켜 줘"와 같은 짧은 명령어를 발화한 음성 데이터 수집.
-        - QA 요구조건에 따라 발화 구간의 길이와 수, 음성의 크기, 노이즈 등 검토.
-        - 음성 데이터 시각화 (Waveform, Spectrogram, Mel-spectrogram). -->
 
 ## 4) HDC현대산업개발 (2016.07 ~ 2022.04, 정규직)
 - 회사 소개:
@@ -201,11 +176,11 @@
 - 일본어: 초중급 정도의 말하기, 읽기, 듣기 가능.
 
 # 7. Training
-| | | |
+||||
 |-|-|-|
-| 2022.01 ~ 2022.02 | '4가지 유즈 케이스를 활용한 시계열 분석: 전처리부터 딥러닝 적용까지 5기' | '러닝스푼즈' |
-| 2021.09 ~ 2021.10 | '유지·보수 비용 10배 절감을 위한 DB 설계 및 구축 1기' | '러닝스푼즈' |
-| 2021.07 ~ 2021.08 | '태블로 마스터 클래스' | 'VizLab' |
-| 2021.03 ~ 2021.04 | '컴퓨터 비전: 딥러닝 기반의 영상 인식 모델 구현 2기' | '러닝스푼즈' |
-| 2020.09 ~ 2020.12 | 'TensorFlow를 활용한 딥러닝 자연어처리 입문 6기' | '러닝스푼즈' |
-| 2020.08 ~ 2020.09 | '고객데이터와 딥러닝을 활용한 추천시스템 구현' | '러닝스푼즈' |
+|2022.01 ~ 2022.02|'4가지 유즈 케이스를 활용한 시계열 분석: 전처리부터 딥러닝 적용까지 5기'|'러닝스푼즈'|
+|2021.09 ~ 2021.10|'유지·보수 비용 10배 절감을 위한 DB 설계 및 구축 1기'|'러닝스푼즈'|
+|2021.07 ~ 2021.08|'태블로 마스터 클래스'|'VizLab'|
+|2021.03 ~ 2021.04|'컴퓨터 비전: 딥러닝 기반의 영상 인식 모델 구현 2기'|'러닝스푼즈'|
+|2020.09 ~ 2020.12|'TensorFlow를 활용한 딥러닝 자연어처리 입문 6기'|'러닝스푼즈'|
+|2020.08 ~ 2020.09|'고객데이터와 딥러닝을 활용한 추천시스템 구현'|'러닝스푼즈'|
