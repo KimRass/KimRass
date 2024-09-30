@@ -149,25 +149,32 @@
 |<img src="https://github.com/KimRass/KimRass/assets/67457712/e5705985-471d-46d0-8a1c-ed69c584ae01" width="200">|<img src="https://github.com/KimRass/KimRass/assets/67457712/7dfb4c98-d988-43b7-a36c-23fc8a325b83" width="600">|
 
 # 3. Improvements
+<table>
+    <thead>
+        <tr> <th>Textual attribute <th>Before <th>After
+    </thead>
+    <tbody>
+        <tr> <td rowspan=2>Font size <td>bounding box의 가로와 세로 길이에 의해 결정되므로 원본 font size와 크게 달라질 수 있음. <td>충분한 텍스트 렌더링 공간이 확보된다면 bounding box의 가로와 세로 길이에 무관.
+        <tr> <td>충분한 텍스트 렌더링 공간이 확보된다면 bounding box의 가로와 세로 길이에 무관. <td>원본 font size를 넘지 않는 한도 내에서 주어진 boundig box를 최대한 활용하는 font size 추출.
+        <tr> <td>Writing direction <td>bounding box의 가로와 세로 길이의 비율에 의해 결정되므로 틀리게 추출되는 경우가 많음. <td>text detection model이 잘 감지하지 못하는 텍스트를 제외하고는 높은 인식률.
+        <tr> <td>Text alignment <td>? <td>?
+        <tr> <td>Text line breaking <td>띄어쓰기가 없는 언어의 경우 하나의 의미를 갖는 텍스트가 두 줄에 걸쳐 렌더링되는 경우가 많음.|<td>?
+        <tr> <td>Text color <td>검은색 또는 하얀색으로 단조로움. <td>원본 이미지의 text color를 반영함으로써 다채롭고 생동감 있는 느낌을 전달.|
+        <tr> <td rowspan=2>Text border <td>모든 텍스트에 text border가 적용되어 가독성은 보장되나 심미성이 현저히 떨어짐. <td>CSS의 `text-stroke` 속성을 통해 구현되어 글자가 빛나는 듯한 효과.
+        <tr> <td>가독성을 위해서 text border가 꼭 필요한 경우에만 적용하므로 심미성 향상. <td>CSS의 `text-stroke` 속성을 통해 구현되어 깔끔함.
+        <tr> <td>Text border color <td>텍스트가 검은색 일 경우에는 하얀색을, 반대의 경우에는 검은색을 사용함으로써 text border가 지나치게 강조됨. <td>추출된 text color와의 interpolation을 통해 text border가 지나치게 강조되는 느낌을 완화.
+    </tbody>
+</table>
+<!-- 
 |Textual attribute|Before|After|
 |-|-|-|
-|Font size|bounding box의 가로와 세로 길이에 의해 결정되므로 원본 font size와 크게 달라질 수 있음.|충분한 텍스트 렌더링 공간이 확보된다면 bounding box의 가로와 세로 길이에 무관.|
-||원본 font size보다 커질 수 있음.|원본 font size를 넘지 않는 한도 내에서 주어진 boundig box를 최대한 활용하는 font size 추출.|
-|^|원본 font size보다 커질 수 있음.|원본 font size를 넘지 않는 한도 내에서 주어진 boundig box를 최대한 활용하는 font size 추출.|
-|^^|원본 font size보다 커질 수 있음.|원본 font size를 넘지 않는 한도 내에서 주어진 boundig box를 최대한 활용하는 font size 추출.|
-
-<br>- 원본 font size보다 커질 수 있음. |<br>- 원본 font size를 넘지 않는 한도 내에서 주어진 boundig box를 최대한 활용하는 font size 추출.|
-
-
-<!--|Font size|- bounding box의 가로와 세로 길이에 의해 결정되므로 원본 font size와 크게 달라질 수 있음.<br>- 원본 font size보다 커질 수 있음. |- 충분한 텍스트 렌더링 공간이 확보된다면 bounding box의 가로와 세로 길이에 무관.<br>- 원본 font size를 넘지 않는 한도 내에서 주어진 boundig box를 최대한 활용하는 font size 추출.|-->
-
-
+|Font size|- bounding box의 가로와 세로 길이에 의해 결정되므로 원본 font size와 크게 달라질 수 있음.<br>- 원본 font size보다 커질 수 있음. |- 충분한 텍스트 렌더링 공간이 확보된다면 bounding box의 가로와 세로 길이에 무관.<br>- 원본 font size를 넘지 않는 한도 내에서 주어진 boundig box를 최대한 활용하는 font size 추출.|
 |Writing direction|bounding box의 가로와 세로 길이의 비율에 의해 결정되므로 틀리게 추출되는 경우가 많음.|text detection model이 잘 감지하지 못하는 텍스트를 제외하고는 높은 인식률.
 |Text alignment|||
 |Text line breaking|- 띄어쓰기가 없는 언어의 경우 하나의 의미를 갖는 텍스트가 두 줄에 걸쳐 렌더링되는 경우가 많음.||
 |Text color|검은색 또는 하얀색으로 단조로움|원본 이미지의 text color를 반영함으로써 다채롭고 생동감 있는 느낌을 전달.|
 |Text border|- 모든 텍스트에 text border가 적용되어 가독성은 보장되나 심미성이 현저히 떨어짐.<br>- CSS의 `text-stroke` 속성을 통해 구현되어 글자가 빛나는 듯한 효과|- 가독성을 위해서 text border가 꼭 필요한 경우에만 적용하므로 심미성 향상.<br>- CSS의 `text-stroke` 속성을 통해 구현되어 깔끔함.
-|Text border color|텍스트가 검은색 일 경우에는 하얀색을, 반대의 경우에는 검은색을 사용함으로써 text border가 지나치게 강조됨.|추출된 text color와의 interpolation을 통해 text border가 지나치게 강조되는 느낌을 완화.
+|Text border color|텍스트가 검은색 일 경우에는 하얀색을, 반대의 경우에는 검은색을 사용함으로써 text border가 지나치게 강조됨.|추출된 text color와의 interpolation을 통해 text border가 지나치게 강조되는 느낌을 완화. -->
 
 # 4. References
 - [1] [Character Region Awareness for Text Detection](https://github.com/KimRass/CRAFT/blob/main/papers/character_region_awareness_for_text_detection.pdf)
