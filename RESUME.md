@@ -10,7 +10,13 @@
 
 # 2. Core Competencies
 
-## 1) 딥 러닝 논문 구현 경험.
+## 1) Vision 모델 개발 경력.
+- scene text image QC 모델.
+- image rotation classification 모델.
+- textual attribute recognition 모델.
+- scene text removal 모델.
+
+## 2) 딥 러닝 논문 구현 경험.
 |모델명|내용|
 |-|-|
 |'ViViT'|- 3가지 architecture ('Spatio-temporal attention', 'Factorised encoder', 'Factorised self-attention') 구현.|
@@ -40,12 +46,6 @@
 |'Pix2Pix'|- 모델을 'Facades', Google Maps 데이터셋에 대해 각각 학습.|
 |'VAE'|- 모델을 MNIST 데이터셋에 대해 학습.<br>- encoder output, decoder out 시각화.|
 |'StarGAN'|- architecture 구현.|
-
-## 2) Vision 모델 개발 경력.
-- scene text image QC 모델.
-- image rotation classification 모델.
-- textual attribute recognition 모델.
-- scene text removal 모델.
 
 ## 3) [**알고리즘과 자료구조에 대한 이해.**](https://github.com/KimRass/Algorithm-Coding-Test)
 - 프로그래머스 90 문제 해결; Baekjoon Online Judge 153 문제 해결, Gold III 등급.
