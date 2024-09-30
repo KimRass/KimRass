@@ -4,9 +4,9 @@
 - **Mobile**: +82-10-4442-6684
 - **E-mail**: purflow64@gmail.com
 - [**Personal GitHub Repository**](https://github.com/KimRass):
-    - AI 교육 자료: 수강한 AI 관련 교육 내용 및 실습 자료.
+    - AI 논문 구현: 논문을 밑바닥부터 구현한 코드와 학습된 모델을 공유, 실험 결과와 느낀 점을 정리한 자료.
     - AI 논문 정리 및 분석: 주요 AI 논문들을 주제별로 분류하고, 중요한 내용을 하이라이팅한 자료.
-    - 논문 구현: AI 논문을 밑바닥부터 구현한 코드와 학습된 모델을 공유, 실험 결과와 느낀 점을 정리한 자료.
+    - AI 교육 자료: 수강한 AI 관련 교육 내용 및 실습 자료.
 
 # 2. Core Competencies
 
