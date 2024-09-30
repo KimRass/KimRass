@@ -65,7 +65,7 @@
 ### (1) 띄어쓰기가 있는 언어 (ko, en, vi, id, ms, es)
 - 어절과 어절 사이에만 줄바꿈을 삽입할지 여부가 결정됩니다.
 - 한국어 예시
-   |Case|Number of lines|Maximum number<br>of characters<br>on a single line|
+   |Case|Number of lines|Max. # of<br>characters<br>in a single line|
    |------|---|---|
    |저희 업소에서는 남은 음식물을 재활용하지 않습니다.|1|28|
    |저희 업소에서는 남은 음식물을 재활용하지<br>않습니다.|2|22|
@@ -77,7 +77,7 @@
 ### (2) 띄어쓰기가 없는 언어 (ja, zh-cn, zh-tw, th)
 - part-of-speech tagging에 기반하여 의미 단위로 텍스트를 분리하고 줄의 시작 또는 끝에 올 수 없는 문자를 고려하여 줄바꿈합니다.
 - 일본어 예시
-   |Case|Number of lines|Maximum number<br>of characters<br>on a single line|
+   |Case|Number of lines|Max. # of<br>characters<br>in a single line|
    |------|---|---|
    |当店では残飯を再活用しません。|1|15|
    |当店では残飯を再活用<br>しません。|2|10|
@@ -86,7 +86,7 @@
    |当店では<br>残飯を再活用<br>しません。|3|6|
    |当店では<br>残飯を再<br>活用<br>しません。|4|5|
 - 중국어 예시
-   |Case|Number of lines|Maximum number<br>of characters<br>on a single line|
+   |Case|Number of lines|Max. # of<br>characters<br>in a single line|
    |------|---|---|
    |本店绝不使用剩菜。|1|9|
    |本店绝不使用剩<br>菜。|2|7|
@@ -154,27 +154,17 @@
         <tr> <th>Textual attribute <th>Before <th>After
     </thead>
     <tbody>
-        <tr> <td rowspan=2>Font size <td>bounding box의 가로와 세로 길이에 의해 결정되므로 원본 font size와 크게 달라질 수 있음. <td>충분한 텍스트 렌더링 공간이 확보된다면 bounding box의 가로와 세로 길이에 무관.
-        <tr> <td>충분한 텍스트 렌더링 공간이 확보된다면 bounding box의 가로와 세로 길이에 무관. <td>원본 font size를 넘지 않는 한도 내에서 주어진 boundig box를 최대한 활용하는 font size 추출.
-        <tr> <td>Writing direction <td>bounding box의 가로와 세로 길이의 비율에 의해 결정되므로 틀리게 추출되는 경우가 많음. <td>text detection model이 잘 감지하지 못하는 텍스트를 제외하고는 높은 인식률.
-        <tr> <td>Text alignment <td>? <td>?
-        <tr> <td>Text line breaking <td>띄어쓰기가 없는 언어의 경우 하나의 의미를 갖는 텍스트가 두 줄에 걸쳐 렌더링되는 경우가 많음.|<td>?
+        <tr> <td rowspan=2>Font size <td>bounding box의 가로와 세로 길이에 의해 결정되므로 원본 font size와 크게 달라질 수 있음. <td>(충분한 텍스트 렌더링 공간이 확보된다면) bounding box의 가로와 세로 길이에 무관.
+        <tr> <td>원본 font size보다 커질 수 있음. <td>원본 font size를 넘지 않는 한도 내에서 주어진 boundig box를 최대한 활용하는 font size 추출.
+        <tr> <td>Writing direction <td>bounding box의 가로와 세로 길이의 비율에 의해 결정되므로 정확성이 떨어지고 정확성을 떨어짐. <td>정확성이 높음.
+        <tr> <td>Text alignment <td>모든 가로쓰기 텍스트에 left alignment 적용.<td>가로쓰기 텍스트에 대해 적절히 정렬하여 시각적 품질 향상.
+        <tr> <td>Text line breaking <td>띄어쓰기가 없는 언어의 경우, 텍스트의 의미와 무관하게 줄바꿈이 삽입되는 경우가 다수 존재.<td>텍스트의 의미를 고려하여 적절한 위치에 줄바꿈 삽입.
         <tr> <td>Text color <td>검은색 또는 하얀색으로 단조로움. <td>원본 이미지의 text color를 반영함으로써 다채롭고 생동감 있는 느낌을 전달.|
-        <tr> <td rowspan=2>Text border <td>모든 텍스트에 text border가 적용되어 가독성은 보장되나 심미성이 현저히 떨어짐. <td>CSS의 `text-stroke` 속성을 통해 구현되어 글자가 빛나는 듯한 효과.
-        <tr> <td>가독성을 위해서 text border가 꼭 필요한 경우에만 적용하므로 심미성 향상. <td>CSS의 `text-stroke` 속성을 통해 구현되어 깔끔함.
+        <tr> <td rowspan=2>Text border <td>모든 텍스트에 text border가 적용되어 가독성은 보장되나 심미성이 현저히 떨어짐. <td>가독성을 위해서 text border가 꼭 필요한 경우에만 적용하므로 심미성 향상.
+        <tr> <td>CSS의 `text-stroke` 속성을 통해 구현되어 글자가 빛나는 듯한 효과. <td>CSS의 `text-shadow` 속성을 통해 구현되어 깔끔함.
         <tr> <td>Text border color <td>텍스트가 검은색 일 경우에는 하얀색을, 반대의 경우에는 검은색을 사용함으로써 text border가 지나치게 강조됨. <td>추출된 text color와의 interpolation을 통해 text border가 지나치게 강조되는 느낌을 완화.
     </tbody>
 </table>
-<!-- 
-|Textual attribute|Before|After|
-|-|-|-|
-|Font size|- bounding box의 가로와 세로 길이에 의해 결정되므로 원본 font size와 크게 달라질 수 있음.<br>- 원본 font size보다 커질 수 있음. |- 충분한 텍스트 렌더링 공간이 확보된다면 bounding box의 가로와 세로 길이에 무관.<br>- 원본 font size를 넘지 않는 한도 내에서 주어진 boundig box를 최대한 활용하는 font size 추출.|
-|Writing direction|bounding box의 가로와 세로 길이의 비율에 의해 결정되므로 틀리게 추출되는 경우가 많음.|text detection model이 잘 감지하지 못하는 텍스트를 제외하고는 높은 인식률.
-|Text alignment|||
-|Text line breaking|- 띄어쓰기가 없는 언어의 경우 하나의 의미를 갖는 텍스트가 두 줄에 걸쳐 렌더링되는 경우가 많음.||
-|Text color|검은색 또는 하얀색으로 단조로움|원본 이미지의 text color를 반영함으로써 다채롭고 생동감 있는 느낌을 전달.|
-|Text border|- 모든 텍스트에 text border가 적용되어 가독성은 보장되나 심미성이 현저히 떨어짐.<br>- CSS의 `text-stroke` 속성을 통해 구현되어 글자가 빛나는 듯한 효과|- 가독성을 위해서 text border가 꼭 필요한 경우에만 적용하므로 심미성 향상.<br>- CSS의 `text-stroke` 속성을 통해 구현되어 깔끔함.
-|Text border color|텍스트가 검은색 일 경우에는 하얀색을, 반대의 경우에는 검은색을 사용함으로써 text border가 지나치게 강조됨.|추출된 text color와의 interpolation을 통해 text border가 지나치게 강조되는 느낌을 완화. -->
 
 # 4. References
 - [1] [Character Region Awareness for Text Detection](https://github.com/KimRass/CRAFT/blob/main/papers/character_region_awareness_for_text_detection.pdf)

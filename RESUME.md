@@ -13,12 +13,12 @@
 ## 1) 딥 러닝 논문 구현 경험.
 |모델명|내용|
 |-|-|
-|'ViViT'|- 'Spatio-temporal attention', 'Factorised encoder', 'Factorised self-attention'의 3가지 architecture 구현.|
+|'ViViT'|- 3가지 architecture ('Spatio-temporal attention', 'Factorised encoder', 'Factorised self-attention') 구현.|
 |'MAE'|- pre-training을 위한 architecture 구현.|
 |'Copy-Paste'|- large scale jittering, Copy-Paste 구현<br>- COCO 2014 데이터셋에 적용.|
 |'ILVR'|- 'scale factor' 또는 'conditioning range' 변화에 따른 시각화.|
 |'SD-Edit'|- 'human-stroke-simulation algorithm' 및 이를 적용한 image editing 구현.|
-|'DDPM'|- 32 × 32, 64 × 64의 CelebA에 대해 학습.<br>- denoising process를 gif 파일로 시각화.<br>- linear interpolation, 'coarse-to-fine interpolation'을 통한 sampling 구현.|
+|'DDPM'|- 32 × 32, 64 × 64의 CelebA에 대해 학습.<br>- denoising process를 GIF로 시각화.<br>- linear interpolation, 'coarse-to-fine interpolation'을 통한 sampling 구현.|
 |'DDIM'|- spherical linear interpolation, 'grid interpolation'을 통한 sampling 구현.|
 |Classifier guidance|- CIFAR-10에 대해 학습.|
 |VAE|- MNIST에 대해 학습.<br>- encoder output, decoder 각각에 대한 시각화.|
@@ -176,7 +176,7 @@
 - 일본어: 초중급 정도의 말하기, 읽기, 듣기 가능.
 
 # 7. Training
-||||
+|기관|과정|교육기관|
 |-|-|-|
 |2022.01 ~ 2022.02|'4가지 유즈 케이스를 활용한 시계열 분석: 전처리부터 딥러닝 적용까지 5기'|'러닝스푼즈'|
 |2021.09 ~ 2021.10|'유지·보수 비용 10배 절감을 위한 DB 설계 및 구축 1기'|'러닝스푼즈'|
