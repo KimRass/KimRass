@@ -15,35 +15,33 @@
 |-|-|
 |'ViViT'|- 3가지 architecture ('Spatio-temporal attention', 'Factorised encoder', 'Factorised self-attention') 구현.|
 |'MAE'|- pre-training을 위한 architecture 구현.|
-|'Copy-Paste'|- large scale jittering, Copy-Paste 구현<br>- COCO 2014 데이터셋에 적용.|
-|'ILVR'|- 'scale factor' 또는 'conditioning range' 변화에 따른 시각화.|
-|'SD-Edit'|- 'human-stroke-simulation algorithm' 및 이를 적용한 image editing 구현.|
-|'DDPM'|- 32 × 32, 64 × 64의 CelebA에 대해 학습.<br>- denoising process를 GIF로 시각화.<br>- linear interpolation, 'coarse-to-fine interpolation'을 통한 sampling 구현.|
-|'DDIM'|- spherical linear interpolation, 'grid interpolation'을 통한 sampling 구현.|
-|Classifier guidance|- CIFAR-10에 대해 학습.|
-|VAE|- MNIST에 대해 학습.<br>- encoder output, decoder 각각에 대한 시각화.|
-|'VQ-VAE' & 'PixelCNN'|- Fashion MNIST, CIFAR-10에 대해 학습.<br>- 'PixelCNN'을 통한 sampling.|
-|'DCGAN'|- 64 × 64의 CelebA에 대해 학습.<br>- latent space interpolation 구현.|
-|'Pix2Pix'|- 'Facades', Google Maps 데이터셋에 대해 학습.|
-|'CycleGAN'|- 논문에서 사용한 데이터셋 중 5가지에 대해 학습.|
-|'PGGAN'|- 512 × 512의 CelebA-HQ에 대해 학습.|
-|'DeepLabv3'|- VOC2012 데이터셋에 대해 학습, 모델 출력 시각화.|
+|'Copy-Paste'|- COCO 2014 데이터셋에 적용 및 데이터 시각화.|
+|'ILVR'|- downsampling factor, conditioning range 변화에 따른 생성 이미지 변화 시각화.|
+|'SD-Edit'|- 'human-stroke-simulation algorithm' 구현 및 이를 'CelebA' 데이터셋에 적용해 이미지 생성.|
+|'DDPM'|- 모델을 64 × 64의 'CelebA' 데이터셋에 대해 학습.<br>- linear interpolation, 'coarse-to-fine interpolation'.|
+|'DDIM'|- spherical linear interpolation, 'grid interpolation'.|
+|'Classifier guidance'|- 모델을 CIFA-10 데이터셋에 대해 학습.|
+|'VQ-VAE' & 'PixelCNN'|- 모델을 Fashion MNIST, CIFAR-10 데이터셋에 대해 각각 학습.|
+|'CycleGAN'|- 모델을 'monet2photo', 'vangogh2photo', 'cezanne2photo', 'ukiyoe2photo', 'horse2zebra', 'summer2winter_yosemite' 데이터셋에 대해 각각 학습.|
+|'PGGAN'|- 모델을 512 × 512의 'CelebA-HQ' 데이터셋에 대해 학습.|
+|'ViT'|- 'CutOut', 'Hide-and-Seek', 'CutMix' data augmentation 구현 및 실험.<br>- 'Attention roll-out'을 통한 attention map 시각화.<br>- position embedding similarity, position embedding interpolation 구현.<br>- 모델을 CIFAR-10, CIFAR-100에 데이터셋에 대해 각각 학습.|
+|'CLIP'|- 모델을 'Flickr8k' + 'Flickr30k' 데이터셋에 대해 학습.<br>- zero-shot classification, linear classification 구현.|
+|'BERT'|- architecture, masked language modeling 구현.<br>- 'BookCorpus', 'SQuAD', 'SWAG' 데이터셋 전처리.|
+|'Sentence-BERT'|- classification loss, regression loss, constrastive loss 구현<br>-'STSb', 'WikiSection' 데이터셋 전처리.|
+|'DeepLabv3'|- 모델을 VOC2012 데이터셋에 대해 학습<br>- 모델 출력 시각화.|
 |Gatys et al., 2016 (image style transfer)|- VGGNet-19 기반으로 구현.|
-|'ViT'|- 'CutOut', 'Hide-and-Seek', 'CutMix' data augmentation 구현 및 실험.<br>- 'Attention roll-out'을 통한 attention 시각화.<br>- position embedding similarity, position embedding interpolation 구현.<br>- CIFAR-10, CIFAR-100에 대해 학습.|
-|'BERT'|- 'BookCorpus', 'SQuAD', 'SWAG' 데이터셋 전처리 구현.<br>- architecture, masked language modeling 구현.|
-|'Sentence-BERT'|- classification loss, regression loss, constrastive loss 구현<br>-'STSb', 'WikiSection' 데이터셋 전처리|
-|'CLIP'|- 'Flickr8k' + 'Flickr30k'에 대해 학습.<br>- zero-shot classification, linear classification 구현.|
 |'CAM'|- pre-trained GoogleNet에 적용.<br>- 모델 출력을 bounding box로 변환.|
 |Zhang et al., 2016	(image colorization)|- empirical probability distribution 시각화.|
 |'RotNet'|- attention map 시각화.|
-|'SimCLR'|- normalized temperature-scaled cross entropy loss, pixel intensity histogram 구현|
-|'STEFANN'|- Google Fonts 데이터셋<br>- 'FANnet' architecture 구현 및 Google Fonts 데이터셋에 대해 학습.<br>- Average SSIM.|
-| 'PixelLink'|- architecture, instance-balanced cross entropy loss, 모델 출력 후처리 구현|
-<!-- - **Vision**: 'VQ-VAE', 'Copy-Paste', 'ILVR', 'Pix2Pix', 'CycleGAN', 'PGGAN', 'DDPM', 'ViT', 'ViViT', 'PixelCNN', 'DeepLabv3', Gatys et al. (2016), etc.
-- **Language**: 'BERT', 'Sentence-BERT', 'RoBERTa', etc.
-- **Vision-language**: 'CLIP', etc. -->
+|'SimCLR'|- normalized temperature-scaled cross entropy loss, pixel intensity histogram 구현.|
+|'STEFANN'|- 'Google Fonts'의 폰트로부터 데이터셋 생성. <br>- 'FANnet' architecture 구현 및 이를 'Google Fonts' 데이터셋에 대해 학습.|
+| 'PixelLink'|- architecture, instance-balanced cross entropy loss 구현<br>- 모델 출력에 대한 후처리.|
+|'DCGAN'|- 모델을 64 × 64의 'CelebA' 데이터셋에 대해 학습.<br>- latent space interpolation 구현.|
+|'Pix2Pix'|- 모델을 'Facades', Google Maps 데이터셋에 대해 각각 학습.|
+|'VAE'|- 모델을 MNIST 데이터셋에 대해 학습.<br>- encoder output, decoder out 시각화.|
+|'StarGAN'|- architecture 구현.|
 
-## 2) Vision 모델 개발 경험.
+## 2) Vision 모델 개발 경력.
 - scene text image QC 모델.
 - image rotation classification 모델.
 - textual attribute recognition 모델.

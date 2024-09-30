@@ -21,7 +21,7 @@
 |2014<br>2017|[Conditional GAN<br>WGAN-GP](https://github.com/KimRass/Conditional-WGAN-GP)|Mirza et al.<br>Gulrajani et al.|[✓] Training on MNIST|
 |2016<br>2017|[PixelCNN<br>VQ-VAE](https://github.com/KimRass/VQ-VAE)|Oord et al.<br>Oord et al.|[✓] Training on Fashion MNIST<br>[✓] Training on CIFAR-10|
 |2017|[Pix2Pix](https://github.com/KimRass/Pix2Pix)|Isola et al.|[✓] Training on Google Maps<br>[✓] Training on Facades<br> [✗] Inference on larger resolution|
-||[CycleGAN](https://github.com/KimRass/CycleGAN)|Zhu et al.|[✓] Training on Monet to photo<br>[✓] Training on Vangogh to photo<br>[✓] Training on Cezanne to photo<br>[✓] Training on Ukiyo-e to photo<br>[✓] Training on Horse to zebra<br>[✓] Training on Summer to winter|
+||[CycleGAN](https://github.com/KimRass/CycleGAN)|Zhu et al.|[✓] Training on 'monet2photo'<br>[✓] Training on 'vangogh2photo'<br>[✓] Training on 'cezanne2photo'<br>[✓] Training on 'ukiyoe2photo'<br>[✓] Training on 'horse2zebra'<br>[✓] Training on 'summer2winter_yosemite'|
 ||[Noroozi et al., 2017](https://github.com/KimRass/Mehdi-Noroozi-et-al.-2017)|Noroozi et al.|[✓] Constrastive loss|
 |2018|[PGGAN](https://github.com/KimRass/PGGAN)|Karras et al.|[✓] Training on CelebA-HQ at 512 × 512|
 ||[DeepLab v3](https://github.com/KimRass/DeepLabv3)|Chen et al.|[✓] Training on VOC 2012<br>[✓] Prediction on VOC 2012 validation set<br>[✓] Average mIoU|
@@ -38,7 +38,7 @@
 ||[Classifier-Guidance](https://github.com/KimRass/Classifier-Guidance)|Dhariwal and Nichol|[✗] AdaGN<br>[✗] BiGGAN Upsample/Downsample<br>[✗] Improved DDPM sampling<br>[✗] Conditional/Unconditional models<br>[✗] Super-resolution model<br>[✗] Interpolation|
 ||[ILVR](https://github.com/KimRass/ILVR)|Choi et al.|[✓] Sampling from single reference<br>[✓] Sampling from various scale factors<br>[✓] Sampling from various conditioning range|
 ||[SDEdit](https://github.com/KimRass/SDEdit)|Meng et al.|[✓] User input stroke simulation|
-||[MAE](https://github.com/KimRass/MAE)|He et al.|[✓] MAE architecture for pre-training<br>[✗] MAE architecture for self-supervised learning<br>[✗] Training on ImageNet-1K<br>[✗] Fine-tuning<br>[✗] Linear probing|
+||[MAE](https://github.com/KimRass/MAE)|He et al.|[✓] Architecture for pre-training<br>[✗] Architecture for self-supervised learning<br>[✗] Training on ImageNet-1K<br>[✗] Fine-tuning<br>[✗] Linear probing|
 ||[Copy-Paste](https://github.com/KimRass/Copy-Paste)|Ghiasi et al.|[✓] COCO dataset processing<br>[✓] Large scale jittering<br>[✓] Copy-Paste (within mini-batch)<br>[✗] Gaussian filter|
 ||[ViViT](https://github.com/KimRass/ViViT)|Arnab et al.|[✓] Model 1: 'Spatio-temporal attention' architecture<br>[✓] Model 2: 'Factorised encoder' architecture<br>[✓] Model 3: 'Factorised self-attention' architecture|
 |2022|[CFG](https://github.com/KimRass/CFG)|Ho et al.|
