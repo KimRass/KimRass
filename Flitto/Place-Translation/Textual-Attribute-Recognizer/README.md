@@ -151,18 +151,56 @@
 # 3. Improvements
 <table>
     <thead>
-        <tr> <th>Textual attribute <th>Before <th>After
+        <tr>
+            <th>Textual attribute</th>
+            <th>Before</th>
+            <th>After</th>
+        </tr>
     </thead>
     <tbody>
-        <tr> <td rowspan=2>Font size <td>bounding box의 가로와 세로 길이에 의해 결정되므로 원본 font size와 크게 달라질 수 있음. <td>(충분한 텍스트 렌더링 공간이 확보된다면) bounding box의 가로와 세로 길이에 무관.
-        <tr> <td>원본 font size보다 커질 수 있음. <td>원본 font size를 넘지 않는 한도 내에서 주어진 boundig box를 최대한 활용하는 font size 추출.
-        <tr> <td>Writing direction <td>bounding box의 가로와 세로 길이의 비율에 의해 결정되므로 정확성이 떨어지고 정확성을 떨어짐. <td>정확성이 높음.
-        <tr> <td>Text alignment <td>모든 가로쓰기 텍스트에 left alignment 적용.<td>가로쓰기 텍스트에 대해 적절히 정렬하여 시각적 품질 향상.
-        <tr> <td>Text line breaking <td>띄어쓰기가 없는 언어의 경우, 텍스트의 의미와 무관하게 줄바꿈이 삽입되는 경우가 다수 존재.<td>텍스트의 의미를 고려하여 적절한 위치에 줄바꿈 삽입.
-        <tr> <td>Text color <td>검은색 또는 하얀색으로 단조로움. <td>원본 이미지의 text color를 반영함으로써 다채롭고 생동감 있는 느낌을 전달.|
-        <tr> <td rowspan=2>Text border <td>모든 텍스트에 text border가 적용되어 가독성은 보장되나 심미성이 현저히 떨어짐. <td>가독성을 위해서 text border가 꼭 필요한 경우에만 적용하므로 심미성 향상.
-        <tr> <td>CSS의 `text-stroke` 속성을 통해 구현되어 글자가 빛나는 듯한 효과. <td>CSS의 `text-shadow` 속성을 통해 구현되어 깔끔함.
-        <tr> <td>Text border color <td>텍스트가 검은색 일 경우에는 하얀색을, 반대의 경우에는 검은색을 사용함으로써 text border가 지나치게 강조됨. <td>추출된 text color와의 interpolation을 통해 text border가 지나치게 강조되는 느낌을 완화.
+        <tr>
+            <td rowspan="2">Font size</td>
+            <td>bounding box의 가로와 세로 길이에 의해 결정되므로 원본 font size와 크게 달라질 수 있음.</td>
+            <td>(충분한 텍스트 렌더링 공간이 확보된다면) bounding box의 가로와 세로 길이에 무관.</td>
+        </tr>
+        <tr>
+            <td>원본 font size보다 커질 수 있음.</td>
+            <td>원본 font size를 넘지 않는 한도 내에서 주어진 bounding box를 최대한 활용하는 font size 추출.</td>
+        </tr>
+        <tr>
+            <td>Writing direction</td>
+            <td>bounding box의 가로와 세로 길이의 비율에 의해 결정되므로 정확성이 떨어짐.</td>
+            <td>정확성이 높음.</td>
+        </tr>
+        <tr>
+            <td>Text alignment</td>
+            <td>모든 가로쓰기 텍스트에 left alignment 적용.</td>
+            <td>가로쓰기 텍스트에 대해 적절히 정렬하여 시각적 품질 향상.</td>
+        </tr>
+        <tr>
+            <td>Text line breaking</td>
+            <td>띄어쓰기가 없는 언어의 경우, 텍스트의 의미와 무관하게 줄바꿈이 삽입되는 경우가 많음.</td>
+            <td>텍스트의 의미를 고려하여 적절한 위치에 줄바꿈 삽입.</td>
+        </tr>
+        <tr>
+            <td>Text color</td>
+            <td>검은색 또는 하얀색으로 단조로움.</td>
+            <td>원본 이미지의 text color를 반영하여 다채롭고 생동감 있는 느낌을 전달.</td>
+        </tr>
+        <tr>
+            <td rowspan="2">Text border</td>
+            <td>모든 텍스트에 text border가 적용되어 가독성은 보장되나 심미성이 떨어짐.</td>
+            <td>가독성을 위해 필요한 경우에만 적용하여 심미성 향상.</td>
+        </tr>
+        <tr>
+            <td>CSS의 text-stroke 속성을 통해 구현되어 글자가 빛나는 듯한 효과.</td>
+            <td>CSS의 text-shadow 속성을 통해 구현되어 깔끔한 느낌을 전달.</td>
+        </tr>
+        <tr>
+            <td>Text border color</td>
+            <td>검은색 텍스트일 경우 하얀색, 반대의 경우 검은색 사용으로 text border가 지나치게 강조됨.</td>
+            <td>추출된 text color와의 interpolation을 통해 강조가 완화됨.</td>
+        </tr>
     </tbody>
 </table>
 

@@ -10,49 +10,50 @@
 
 # 2. Core Competencies
 
-## 1) Vision 모델 개발 경력.
-- scene text image QC 모델.
-- image rotation classification 모델.
-- textual attribute recognition 모델.
-- scene text removal 모델.
+## 1) Vision 모델 개발 경력
+- scene text image QC 모델
+- image rotation classification 모델
+- textual attribute recognition 모델
+- scene text removal 모델
 
-## 2) 딥 러닝 논문 구현 경험.
+## 2) 딥 러닝 논문 구현 경험
 |모델명|내용|
 |-|-|
-|'ViViT'|- 3가지 architecture ('Spatio-temporal attention', 'Factorised encoder', 'Factorised self-attention') 구현.|
-|'MAE'|- pre-training을 위한 architecture 구현.|
-|'Copy-Paste'|- COCO 2014 데이터셋에 적용 및 데이터 시각화.|
-|'ILVR'|- downsampling factor, conditioning range 변화에 따른 생성 이미지 변화 시각화.|
-|'SD-Edit'|- 'human-stroke-simulation algorithm' 구현 및 이를 'CelebA' 데이터셋에 적용해 이미지 생성.|
-|'DDPM'|- 모델을 64 × 64의 'CelebA' 데이터셋에 대해 학습.<br>- linear interpolation, 'coarse-to-fine interpolation'.|
-|'DDIM'|- spherical linear interpolation, 'grid interpolation'.|
-|'Classifier guidance'|- 모델을 CIFA-10 데이터셋에 대해 학습.|
-|'VQ-VAE' & 'PixelCNN'|- 모델을 Fashion MNIST, CIFAR-10 데이터셋에 대해 각각 학습.|
-|'CycleGAN'|- 모델을 'monet2photo', 'vangogh2photo', 'cezanne2photo', 'ukiyoe2photo', 'horse2zebra', 'summer2winter_yosemite' 데이터셋에 대해 각각 학습.|
-|'PGGAN'|- 모델을 512 × 512의 'CelebA-HQ' 데이터셋에 대해 학습.|
-|'ViT'|- 'CutOut', 'Hide-and-Seek', 'CutMix' data augmentation 구현 및 실험.<br>- 'Attention roll-out'을 통한 attention map 시각화.<br>- position embedding similarity, position embedding interpolation 구현.<br>- 모델을 CIFAR-10, CIFAR-100에 데이터셋에 대해 각각 학습.|
-|'CLIP'|- 모델을 'Flickr8k' + 'Flickr30k' 데이터셋에 대해 학습.<br>- zero-shot classification, linear classification 구현.|
-|'BERT'|- architecture, masked language modeling 구현.<br>- 'BookCorpus', 'SQuAD', 'SWAG' 데이터셋 전처리.|
-|'Sentence-BERT'|- classification loss, regression loss, constrastive loss 구현<br>-'STSb', 'WikiSection' 데이터셋 전처리.|
-|'DeepLabv3'|- 모델을 VOC2012 데이터셋에 대해 학습<br>- 모델 출력 시각화.|
-|Gatys et al., 2016 (image style transfer)|- VGGNet-19 기반으로 구현.|
-|'CAM'|- pre-trained GoogleNet에 적용.<br>- 모델 출력을 bounding box로 변환.|
-|Zhang et al., 2016	(image colorization)|- empirical probability distribution 시각화.|
-|'RotNet'|- attention map 시각화.|
-|'SimCLR'|- normalized temperature-scaled cross entropy loss, pixel intensity histogram 구현.|
-|'STEFANN'|- 'Google Fonts'의 폰트로부터 데이터셋 생성. <br>- 'FANnet' architecture 구현 및 이를 'Google Fonts' 데이터셋에 대해 학습.|
-| 'PixelLink'|- architecture, instance-balanced cross entropy loss 구현<br>- 모델 출력에 대한 후처리.|
-|'DCGAN'|- 모델을 64 × 64의 'CelebA' 데이터셋에 대해 학습.<br>- latent space interpolation 구현.|
-|'Pix2Pix'|- 모델을 'Facades', Google Maps 데이터셋에 대해 각각 학습.|
-|'VAE'|- 모델을 MNIST 데이터셋에 대해 학습.<br>- encoder output, decoder out 시각화.|
-|'StarGAN'|- architecture 구현.|
+|'ViViT'|• 3가지 architecture ('Spatio-temporal attention', 'Factorised encoder', 'Factorised self-attention') 구현.|
+|'MAE'|• pre-training을 위한 architecture 구현.|
+|'Copy-Paste'|• COCO 2014 데이터셋에 적용 및 데이터 시각화.|
+|'ILVR'|• downsampling factor, conditioning range 변화에 따른 생성 이미지 변화 시각화.|
+|'SD-Edit'|• 'human-stroke-simulation algorithm' 구현 및 이를 'CelebA' 데이터셋에 적용해 이미지 생성.|
+|'DDPM'|• 모델을 64 × 64의 'CelebA' 데이터셋에 대해 학습.<br>• linear interpolation, 'coarse-to-fine interpolation'.|
+|'DDIM'|• spherical linear interpolation, 'grid interpolation'.|
+|'Classifier guidance'|• 모델을 CIFA-10 데이터셋에 대해 학습.|
+|'VQ-VAE' & 'PixelCNN'|• 모델을 Fashion MNIST, CIFAR-10 데이터셋에 대해 각각 학습.|
+|'CycleGAN'|• 모델을 'monet2photo', 'vangogh2photo', 'cezanne2photo', 'ukiyoe2photo', 'horse2zebra', 'summer2winter_yosemite' 데이터셋에 대해 각각 학습.|
+|'PGGAN'|• 모델을 512 × 512의 'CelebA-HQ' 데이터셋에 대해 학습.|
+|'ViT'|• 'CutOut', 'Hide-and-Seek', 'CutMix' data augmentation 구현 및 실험.<br>• 'Attention roll-out'을 통한 attention map 시각화.<br>• position embedding similarity, position embedding interpolation 구현.<br>• 모델을 CIFAR-10, CIFAR-100에 데이터셋에 대해 각각 학습.|
+|'CLIP'|• 모델을 'Flickr8k' + 'Flickr30k' 데이터셋에 대해 학습.<br>• zero-shot classification, linear classification 구현.|
+|'BERT'|• architecture, masked language modeling 구현.<br>• 'BookCorpus', 'SQuAD', 'SWAG' 데이터셋 전처리.|
+|'Sentence-BERT'|• classification loss, regression loss, constrastive loss 구현<br>•'STSb', 'WikiSection' 데이터셋 전처리.|
+|'DeepLabv3'|• 모델을 VOC2012 데이터셋에 대해 학습<br>• 모델 출력 시각화.|
+|Gatys et al., 2016 (image style transfer)|• VGGNet-19 기반으로 구현.|
+|'CAM'|• pre-trained GoogleNet에 적용.<br>• 모델 출력을 bounding box로 변환.|
+|Zhang et al., 2016	(image colorization)|• empirical probability distribution 시각화.|
+|'RotNet'|• attention map 시각화.|
+|'SimCLR'|• normalized temperature-scaled cross entropy loss, pixel intensity histogram 구현.|
+|'STEFANN'|• 'Google Fonts'의 폰트로부터 데이터셋 생성. <br>• 'FANnet' architecture 구현 및 이를 'Google Fonts' 데이터셋에 대해 학습.|
+| 'PixelLink'|• architecture, instance-balanced cross entropy loss 구현<br>• 모델 출력에 대한 후처리.|
+|'DCGAN'|• 모델을 64 × 64의 'CelebA' 데이터셋에 대해 학습.<br>• latent space interpolation 구현.|
+|'Pix2Pix'|• 모델을 'Facades', Google Maps 데이터셋에 대해 각각 학습.|
+|'VAE'|• 모델을 MNIST 데이터셋에 대해 학습.<br>• encoder output, decoder out 시각화.|
+|'StarGAN'|• architecture 구현.|
 
-## 3) [**알고리즘과 자료구조에 대한 이해.**](https://github.com/KimRass/Algorithm-Coding-Test)
-- 프로그래머스 90 문제 해결; Baekjoon Online Judge 153 문제 해결, Gold III 등급.
+## 3) [**알고리즘과 자료구조에 대한 이해**](https://github.com/KimRass/Algorithm-Coding-Test)
+- 프로그래머스 90 문제 해결.
+- Baekjoon Online Judge 153 문제 해결 및 Gold III 등급.
 
-## 4) Tableau 기반 전사 대시보드 구축 리드 경험 (2021.02 ~ 2022.04).
+## 4) Tableau 기반 전사 대시보드 구축 리드 경험 (2021.02 ~ 2022.04)
 
-## 5) 데이터 분석 프로젝트 리드 경험 (2020.01 ~ 2020.09).
+## 5) 데이터 분석 프로젝트 리드 경험 (2020.01 ~ 2020.09)
 
 # 3. Education
 |기간|내용|
@@ -72,7 +73,7 @@
 - 회사 소개: 2022년 설립된 AI 스타트업.
 - 퇴직 사유: 경영상 어려움으로 인한 권고사직.
 
-### (1) video super-resolution 모델 연구개발.
+### (1) video super-resolution 모델 연구개발
 - 'BasicVSR++' 모델을 기반으로 Stable Diffusion 3의 pre-trained VAE를 결합하여 latent space에서 계산 효율성 향상.
 - 이미지 데이터를 사전에 crop 및 VAE-encode하여 반복 계산을 제거 및 학습 속도 최적화.
 - 8대의 RTX 4090과 `accelerate` 라이브러리를 활용하여 데이터 분산 학습 진행.
@@ -82,12 +83,12 @@
 - 회사 소개: 철도 신호 업계 중견기업 대아티아이의 자회사로서 AI 기술을 활용한 철도 관제 시스템 개발.
 - 이직 사유: AI 연구 업무를 하고자 함.
 
-### (1) 지능형 CCTV 성능 시험인증 취득.
+### (1) 지능형 CCTV 성능 시험인증 취득
 - 한국인터넷진흥원의 '지능형 CCTV 성능 시험 인증'에서 '쓰러짐' 분야 인증 취득.
 - 쓰러진 사람을 탐지하는 object detection 모델 개발.
 - 실시간으로 영상을 처리하여 이벤트 발생 시각을 추정하는 알고리즘 개발.
 
-### (2) object detection 모델 개발.
+### (2) object detection 모델 개발
 - 경남 무인 도시철도 역사에서 유모차, (전동) 휠체어 등의 객체와 실신 등의 상황을 탐지하기 위한 객체 탐지 모델.
 - 유료 데이터와 'AI-Hub' 공공 데이터를 조사하여 탐지 대상 객체가 포함된 데이터셋을 선정, 이를 모델 학습에 적합한 포맷으로 변환하는 코드 작성.
 - 실제 지하철 CCTV 영상으로부터 탐지 대상 객체가 포함된 장면을 추출하기 위한 코드 작성:
@@ -102,27 +103,27 @@
     - 사원 약 150명, 2019년 코스닥 상장.
 - 이직 사유: AI 기술을 적극적으로 활용하는 회사에서 근무하고자 함.
 
-### (1) [scene text image QC 모델 개발.](https://github.com/KimRass/KimRass/tree/main/Flitto/Scene-Text-Image-QC)
+### (1) [scene text image QC 모델 개발](https://github.com/KimRass/KimRass/tree/main/Flitto/Scene-Text-Image-QC)
 - 아랍어 scene text images 수집 프로젝트에서 다양한 알고리즘을 통해 데이터 QC 수행하는 모델.
 - image rotation classification 모델을 사용해 회전된 이미지를 정상으로 복원.
 - image embedding에 기반하여 기존에 수집된 이미지와 유사한 이미지 제외.
 - 'EasyOCR' OCR framework를 사용하여 아랍어 텍스트의 수와 비율이 적정한지 검토.
 
-### (2) [image rotation classification 모델 개발.](https://github.com/KimRass/KimRass/tree/main/Flitto/Image-Rotation-Classifier)
+### (2) [image rotation classification 모델 개발](https://github.com/KimRass/KimRass/tree/main/Flitto/Image-Rotation-Classifier)
 - scene text image에 대해서 이미지의 회전된 각도를 0°, 90°, 180°, 270° 중 하나로 분류하는 모델.
 - data augmentation을 통해 모델의 일반화 성능 확보.
 - pre-trained scene text detection 모델의 architecture를 수정하여 fine-tuning 실시.
 
-### (3) digital image processing 알고리즘 개발.
-- [**automatic image resizing 알고리즘 개발.**](https://github.com/KimRass/KimRass/tree/main/Flitto/Place-Translation/Automatic-Image-Resizer):
+### (3) digital image processing 알고리즘 개발
+- [**automatic image resizing 알고리즘 개발**](https://github.com/KimRass/KimRass/tree/main/Flitto/Place-Translation/Automatic-Image-Resizer):
     - 기존 메뉴 이미지를 조금 다른 새로운 이미지로 변경할 때, feature matching을 통해 적절한 해상도로 resize.
     - SIFT (Scale-Invariant Feature Transform), RANSAC (RANdom SAmple Consensus) 사용.
     - 도입 효과: 기존 이미지에 대한 bounding box annotation, 번역 등의 작업 결과물을 재활용하여 업무 효율 향상.
-- [**menu image generation 알고리즘 개발.**](https://github.com/KimRass/KimRass/tree/main/Flitto/Place-Translation/Menu-Image-Generator):
+- [**menu image generation 알고리즘 개발**](https://github.com/KimRass/KimRass/tree/main/Flitto/Place-Translation/Menu-Image-Generator):
     - 기존의 수작업 메뉴 이미지 제작을 Python으로 템플릿화하여 자동화.
     - 도입 효과: 비효율적이고 반복적인 프로세스 개선, 시각적 품질 향상.
 
-### (4) [textual attribute recognition 모델 개발.](https://github.com/KimRass/KimRass/tree/main/Flitto/Place-Translation/Textual-Attribute-Recognizer)
+### (4) [textual attribute recognition 모델 개발](https://github.com/KimRass/KimRass/tree/main/Flitto/Place-Translation/Textual-Attribute-Recognizer)
 - 메뉴 이미지의 각 텍스트에서 7가지 속성 (font size, writing direction, text alignment, text line breaking, text color, text border, text border color)을 추출하는 모델.
 <!-- - 'CRAFT' scene text detection 모델을 통해 추출된 'text region score map'을 기반으로 알고리즘 설계. -->
 - 자체 데이터셋을 통해 학습된 semantic segmentation 모델로 text alignment 추출.
@@ -130,14 +131,14 @@
 - contrast ratio를 기반으로 픽셀 단위의 정교한 계산을 통해 텍스트의 가독성 개선.
 - 번역된 텍스트 렌더링 시, 속성을 반영하여 시각적 품질 향상.
 
-### (5) [scene text removal 모델 개발.](https://github.com/KimRass/KimRass/tree/main/Flitto/Place-Translation/Scene-Text-Remover)
+### (5) [scene text removal 모델 개발](https://github.com/KimRass/KimRass/tree/main/Flitto/Place-Translation/Scene-Text-Remover)
 - 메뉴 이미지에서 번역이 필요한 텍스트를 자연스럽게 지우는 모델.
 - scene text detection → text stroke mask prediction → image inpainting의 3단계로 작동.
 - thresholding, connected-component labeling, fully connected CRF 등 다양한 digital image proessing 기법 활용.
 - 지우고자 하는 문자의 중심을 감싸도록 박스를 그림으로써 원하는 텍스트만 선택적으로 제거 가능.
 - 기존 포토샵을 통한 수작업 대비 처리 속도 개선 및 텍스트가 있는 영역만 수정함으로써 시각적 품질 향상.
 
-### (6) [data QC 알고리즘 개발.](https://github.com/KimRass/KimRass/tree/main/Flitto/Data-Collection)
+### (6) [data QC 알고리즘 개발](https://github.com/KimRass/KimRass/tree/main/Flitto/Data-Collection)
 - B2B 고객사의 의뢰에 따라 데이터를 수집하여 납품하는 프로젝트에 있어서 자동 데이터 QC를 위한 각종 알고리즘 개발.
 - 텍스트 데이터:
     - 단어별 표준 띄어쓰기 규칙을 반영하여 문장 교정 (e.g., '빅데이터' → '빅 데이터').
@@ -154,12 +155,12 @@
     - 사원 약 1,800명, 매출액 약 3조 원
 - 이직 사유: AI에 관련된 업무 수행 및 그에 대한 전문성 향상.
 
-###	(1) [Tableau 기반의 전사 대시보드 구축 리드 (2021.02 ~ 2022.04).](https://github.com/KimRass/KimRass/tree/main/HDC/Tableau-BI)
+###	(1) [Tableau 기반의 전사 대시보드 구축 리드 (2021.02 ~ 2022.04)](https://github.com/KimRass/KimRass/tree/main/HDC/Tableau-BI)
 - 현업과 협의하여 대시보드 설계 및 Tableau와 data mart 연결.
 - 자동 데이터 업데이트를 위한 Tableau 로직 설계.
 - SQL을 통해 data mart와 Tableau 로직 점검.
 
-### (2) [아파트 실거래가 데이터 분석 리드 (2020.01 ~ 2020.09).](https://github.com/KimRass/KimRass/tree/main/HDC/APT-Price-Analysis)
+### (2) [아파트 실거래가 데이터 분석 리드 (2020.01 ~ 2020.09)](https://github.com/KimRass/KimRass/tree/main/HDC/APT-Price-Analysis)
 - 아파트 실거래가 데이터 분석을 통해 데이터 기반 적정 분양가 산정.
 - web scraping을 통해 '네이버 부동산' 등에서 부동산 관련 데이터 수집.
 - feature engineering 및 'XGBoost' 기반 modeling.
@@ -167,18 +168,101 @@
 - 최근 10년간 전용면적 또는 층에 대한 선호도 변화 분석.
 
 # 5. Certificates
-- SQLD (한국데이터산업진흥원) (2021.12)
+<!-- |자격증명|발급기관|취득연월|자격증번호|내용|
+|-|-|-|-|-|
+|SQLD|한국데이터산업진흥원|2021.12|SQLD-043002833|데이터 모델링, SQL|
+|일반기계기사|한국산업인력공단|2016.05|16201071456V|• 필기: 4대 역학 등<br>• 필답형 실기: 기계요소설계<br>• 작업형 실기: 'AutoCAD' 활용 2D CAD 및 'SolidWorks' 활용 3D CAD|
+|소방설비기사 (기계분야)|한국산업인력공단|2019.12|19204021153I|소방 설비, 법규 등 관련 필기 및 필답형 실기|
+|한국사능력검정시험 1급|국사편찬위원회|2015.11|29-110236|한국사 필기| -->
+<table>
+    <thead>
+        <tr>
+            <th>구분</th>
+            <th>자격증명</th>
+            <th>발급기관</th>
+            <th>취득연월</th>
+            <th>내용</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>개발 유관</td>
+            <td>SQLD</td>
+            <td>한국데이터산업진흥원</td>
+            <td>2021.12</td>
+            <td>• 필기: 데이터 모델링, SQL<br>• 실기: SQL</td>
+        </tr>
+        <tr>
+            <td rowspan="3">개발 무관</td>
+            <td>한국사능력검정시험 1급</td>
+            <td>국사편찬위원회</td>
+            <td>2015.11</td>
+            <td>필기: 한국사</td>
+        </tr>
+        <tr>
+            <td>일반기계기사</td>
+            <td>한국산업인력공단</td>
+            <td>2016.05</td>
+            <td>• 필기: 4대 역학 등<br>• 필답형 실기: 기계요소설계<br>• 작업형 실기: 'AutoCAD' 및 'SolidWorks' 활용 CAD</td>
+        </tr>
+        <tr>
+            <td>소방설비기사 (기계분야)</td>
+            <td>한국산업인력공단</td>
+            <td>2019.12</td>
+            <td>필기 및 실기: 소방 설비, 법규 등</td>
+        </tr>
+    </tbody>
+</table>
 
 # 6. Foreign Languages
-- 영어: 논문을 읽고 이해하는 데 문제 없음.
-- 일본어: 초중급 정도의 말하기, 읽기, 듣기 가능.
+|언어|수준|
+|-|-|
+|영어|논문을 읽고 이해하는 데 문제 없음.|
+|일본어|초중급 정도의 말하기, 읽기, 듣기 가능.|
 
 # 7. Training
-|기관|과정|교육기관|
+|기간|과정|교육기관|
 |-|-|-|
 |2022.01 ~ 2022.02|'4가지 유즈 케이스를 활용한 시계열 분석: 전처리부터 딥러닝 적용까지 5기'|'러닝스푼즈'|
 |2021.09 ~ 2021.10|'유지·보수 비용 10배 절감을 위한 DB 설계 및 구축 1기'|'러닝스푼즈'|
 |2021.07 ~ 2021.08|'태블로 마스터 클래스'|'VizLab'|
 |2021.03 ~ 2021.04|'컴퓨터 비전: 딥러닝 기반의 영상 인식 모델 구현 2기'|'러닝스푼즈'|
 |2020.09 ~ 2020.12|'TensorFlow를 활용한 딥러닝 자연어처리 입문 6기'|'러닝스푼즈'|
-|2020.08 ~ 2020.09|'고객데이터와 딥러닝을 활용한 추천시스템 구현'|'러닝스푼즈'|
+|2020.08 ~ 2020.09|'고객데이터와 딥러닝을 활용한 추천시스템 구현 1기'|'러닝스푼즈'|
+<!-- <table>
+    <thead>
+        <tr>
+            <th>교육기관</th>
+            <th>기간</th>
+            <th>과정</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td rowspan="5">'러닝스푼즈'</td>
+            <td>2022.01 ~ 2022.02</td>
+            <td>'4가지 유즈 케이스를 활용한 시계열 분석: 전처리부터 딥러닝 적용까지 5기'</td>
+        </tr>
+        <tr>
+            <td>2021.09 ~ 2021.10</td>
+            <td>'유지·보수 비용 10배 절감을 위한 DB 설계 및 구축 1기'</td>
+        </tr>
+        <tr>
+            <td>2021.03 ~ 2021.04</td>
+            <td>'컴퓨터 비전: 딥러닝 기반의 영상 인식 모델 구현 2기'<td>
+        </tr>
+        <tr>
+            <td>2020.09 ~ 2020.12</td>
+            <td>'TensorFlow를 활용한 딥러닝 자연어처리 입문 6기'<td>
+        </tr>
+        <tr>
+            <td>2020.08 ~ 2020.09</td>
+            <td>'고객데이터와 딥러닝을 활용한 추천시스템 구현'</td>
+        </tr>
+        <tr>
+            <td>'VizLab'</td>
+            <td>2021.07 ~ 2021.08</td>
+            <td>태블로 마스터 클래스'</td>
+        </tr>
+    </tbody>
+</table> -->
