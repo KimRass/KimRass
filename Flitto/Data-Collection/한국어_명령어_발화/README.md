@@ -30,7 +30,7 @@
   | <div style="width:150px">female_122_010_female_(20)_c_index_speed_8403.wav | 8403 | 0.42 | 0.56 | 0.4 | 1 | 0.362 | 3 | 1 | 80 | 1 | 0 |
   | <div style="width:150px">female_122_010_female_(20)_c_index_speed_8404.wav | 8404 | 0.41 | 0.83 | 0.46 | 1 | 0.307 | 4 | 1 | 73 | 1 | 0 |
 
-# 4. udio Features
+# 4. Audio Features
 - ![features](https://i.imgur.com/tXk4ppa.png)
   - 위에서부터 순서대로 Waveform, Spectrogram, Mel-spectrogram입니다.
   - Waveform에서 상단에 각각 발화 구간 전 무음 구간의 길이, 발화 구간의 길이, 발화 구간 후 무음 기간의 길이를 표시했습니다.
