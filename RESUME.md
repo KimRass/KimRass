@@ -11,10 +11,10 @@
 # 2. Core Competencies
 
 ## 1) vision 모델 개발 경력
-- [scene text image QC 모델]((https://github.com/KimRass/KimRass/tree/main/Flitto/Scene-Text-Image-QC))
-- [image rotation classification 모델]((https://github.com/KimRass/KimRass/tree/main/Flitto/Image-Rotation-Classifier))
-- [textual attribute recognition 모델]((https://github.com/KimRass/KimRass/tree/main/Flitto/Place-Translation/Textual-Attribute-Recognizer))
-- [scene text removal 모델]((https://github.com/KimRass/KimRass/tree/main/Flitto/Place-Translation/Scene-Text-Remover))
+- [scene text image QC 모델](https://github.com/KimRass/KimRass/tree/main/Flitto/Scene-Text-Image-QC)
+- [image rotation classification 모델](https://github.com/KimRass/KimRass/tree/main/Flitto/Image-Rotation-Classifier)
+- [textual attribute recognition 모델](https://github.com/KimRass/KimRass/tree/main/Flitto/Place-Translation/Textual-Attribute-Recognizer)
+- [scene text removal 모델](https://github.com/KimRass/KimRass/tree/main/Flitto/Place-Translation/Scene-Text-Remover)
 
 ## 2) 딥 러닝 논문 구현 경험
 |모델명|내용|
