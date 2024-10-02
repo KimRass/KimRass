@@ -1,4 +1,4 @@
-# 1. Rendering Quality Improvement Techniques
+# 1. Image Translation Quality Improvement Algorithms
 
 ## 1) Inter-text Conflict Prevention
 - bounding box annotation 과정에서 발생한 bounding box간의 겹침 (human error)로 인해 발생하는 텍스트간 충돌을 제거하는 알고리즘입니다.
@@ -12,9 +12,9 @@
 | <img src="https://github.com/KimRass/KimRass/assets/67457712/96937e89-5b73-4e41-8ab2-d0cc5cc7f0ce" width="600"> |
 
 ## 2) End-of-line Hyphenation
-- 바운딩 박스간의 거리가 가까울 때 각 텍스트가 어디서 시작하고 어디서 끝나는 지 알기 어려운 경우가 많습니다. 이에 대한 해결방안으로서 연구 중입니다.
-- 'End-of-line' mode: 텍스트가 2줄 이상일 경우 마지막 줄을 제외하고 각 줄의 마지막에 En dash 삽입
-- 'Start-of-line' mode: 텍스트가 2줄 이상일 경우 마지막 첫 번째 줄을 제외하고 각 줄의 처음에 En dash 삽입
+- bounding box간의 거리가 가까울 때 각 텍스트가 어디서 시작하고 어디서 끝나는 지 알기 어려운 경우가 많습니다. 이는 사용자가 메뉴 이미지를 인식하는 데 방해가 됩니다. 이에 다음의 두 가지 방식을 고려했습니다:
+    - 'End-of-line' mode: 텍스트가 2줄 이상일 경우 마지막 줄을 제외하고 각 줄의 마지막에 En dash 삽입.
+    - 'Start-of-line' mode: 텍스트가 2줄 이상일 경우 마지막 첫 번째 줄을 제외하고 각 줄의 처음에 En dash 삽입.
 
 | Original text, 'End-of-line' mode and 'Start-of-line' mode |
 |:-|

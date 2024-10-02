@@ -4,17 +4,17 @@
 - **Mobile**: +82-10-4442-6684
 - **E-mail**: purflow64@gmail.com
 - [**Personal GitHub Repository**](https://github.com/KimRass):
-    - AI 논문 구현: 논문을 밑바닥부터 구현한 코드와 학습된 모델을 공유, 실험 결과와 느낀 점을 정리한 자료.
-    - AI 논문 정리 및 분석: 주요 AI 논문들을 주제별로 분류하고, 중요한 내용을 하이라이팅한 자료.
-    - AI 교육 자료: 수강한 AI 관련 교육 내용 및 실습 자료.
+    - **AI 논문 구현**: 논문을 밑바닥부터 구현한 코드와 학습된 모델을 공유, 실험 결과와 느낀 점을 정리한 자료.
+    - **AI 논문 정리 및 분석**: 주요 AI 논문들을 주제별로 분류하고, 중요한 내용을 하이라이팅한 자료.
+    - **AI 교육 자료**: 수강한 AI 관련 교육 내용 및 실습 자료.
 
 # 2. Core Competencies
 
-## 1) Vision 모델 개발 경력
-- scene text image QC 모델
-- image rotation classification 모델
-- textual attribute recognition 모델
-- scene text removal 모델
+## 1) vision 모델 개발 경력
+- [scene text image QC 모델]((https://github.com/KimRass/KimRass/tree/main/Flitto/Scene-Text-Image-QC))
+- [image rotation classification 모델]((https://github.com/KimRass/KimRass/tree/main/Flitto/Image-Rotation-Classifier))
+- [textual attribute recognition 모델]((https://github.com/KimRass/KimRass/tree/main/Flitto/Place-Translation/Textual-Attribute-Recognizer))
+- [scene text removal 모델]((https://github.com/KimRass/KimRass/tree/main/Flitto/Place-Translation/Scene-Text-Remover))
 
 ## 2) 딥 러닝 논문 구현 경험
 |모델명|내용|
@@ -47,13 +47,13 @@
 |'VAE'|• 모델을 MNIST 데이터셋에 대해 학습.<br>• encoder output, decoder out 시각화.|
 |'StarGAN'|• architecture 구현.|
 
-## 3) [**알고리즘과 자료구조에 대한 이해**](https://github.com/KimRass/Algorithm-Coding-Test)
+## 3) [알고리즘과 자료구조에 대한 이해](https://github.com/KimRass/Algorithm-Coding-Test)
 - 프로그래머스 90 문제 해결.
 - Baekjoon Online Judge 153 문제 해결 및 Gold III 등급.
 
-## 4) Tableau 기반 전사 대시보드 구축 리드 경험 (2021.02 ~ 2022.04)
+## 4) [Tableau 기반의 전사 대시보드 구축 리드 경험 (2021.02 ~ 2022.04)](https://github.com/KimRass/KimRass/tree/main/HDC/Tableau-BI)
 
-## 5) 데이터 분석 프로젝트 리드 경험 (2020.01 ~ 2020.09)
+## 5)  [아파트 실거래가 데이터 분석 리드 경험 (2020.01 ~ 2020.09)](https://github.com/KimRass/KimRass/tree/main/HDC/APT-Price-Analysis)
 
 # 3. Education
 |기간|내용|
@@ -70,8 +70,8 @@
 |2016.07 ~ 2022.04|HDC현대산업개발 (정규직)|
 
 ## 1) Meraker (2024.05 ~ 2023.08, 정규직)
-- 회사 소개: 2022년 설립된 AI 스타트업.
-- 퇴직 사유: 경영상 어려움으로 인한 권고사직.
+- **회사 소개**: 2022년 설립된 AI 스타트업.
+- **퇴직 사유**: 경영상 어려움으로 인한 권고사직.
 
 ### (1) video super-resolution 모델 연구개발
 - 'BasicVSR++' 모델을 기반으로 Stable Diffusion 3의 pre-trained VAE를 결합하여 latent space에서 계산 효율성 향상.
@@ -80,8 +80,8 @@
 - TIPS (Tech Incubator Program for Startup) 프로그램 발표 자료의 기술 파트 작성.
 
 ## 2) D-Meta (2024.03 ~ 2024.05, 정규직)
-- 회사 소개: 철도 신호 업계 중견기업 대아티아이의 자회사로서 AI 기술을 활용한 철도 관제 시스템 개발.
-- 이직 사유: AI 연구 업무를 하고자 함.
+- **회사 소개**: 철도 신호 업계 중견기업 대아티아이의 자회사로서 AI 기술을 활용한 철도 관제 시스템 개발.
+- **이직 사유**: AI 연구 업무를 하고자 함.
 
 ### (1) 지능형 CCTV 성능 시험인증 취득
 - 한국인터넷진흥원의 '지능형 CCTV 성능 시험 인증'에서 '쓰러짐' 분야 인증 취득.
@@ -91,17 +91,17 @@
 ### (2) object detection 모델 개발
 - 경남 무인 도시철도 역사에서 유모차, (전동) 휠체어 등의 객체와 실신 등의 상황을 탐지하기 위한 객체 탐지 모델.
 - 유료 데이터와 'AI-Hub' 공공 데이터를 조사하여 탐지 대상 객체가 포함된 데이터셋을 선정, 이를 모델 학습에 적합한 포맷으로 변환하는 코드 작성.
-- 실제 지하철 CCTV 영상으로부터 탐지 대상 객체가 포함된 장면을 추출하기 위한 코드 작성:
+- 실제 지하철 CCTV 영상으로부터 탐지 대상 객체가 포함된 장면을 추출하기 위한 코드 작성;
     - 1차 학습된 모델로 장면을 선별한 후, 이를 사람이 검수할 수 있는 시스템 설계.
     - 검수를 쉽게 할 수 있도록 'PyQt' 라이브러리 기반의 GUI 제공.
 
 ## 3) Flitto (2022.05 ~ 2023.12, 정규직)
-- 회사 소개:
-    - [음식점 메뉴 이미지에 대한 다국어 이미지 번역 서비스 제공.](https://github.com/KimRass/KimRass/tree/main/Flitto/Place-Translation)
+- **회사 소개**:
+    - [음식점 메뉴 이미지에 대한 다국어 이미지 번역 서비스 제공](https://github.com/KimRass/KimRass/tree/main/Flitto/Place-Translation)
     - B2B 데이터 판매.
     - 크라우드 데이터 레이블링 플랫폼 운영.
     - 사원 약 150명, 2019년 코스닥 상장.
-- 이직 사유: AI 기술을 적극적으로 활용하는 회사에서 근무하고자 함.
+- **이직 사유**: AI 기술을 적극적으로 활용하는 회사에서 근무하고자 함.
 
 ### (1) [scene text image QC 모델 개발](https://github.com/KimRass/KimRass/tree/main/Flitto/Scene-Text-Image-QC)
 - 아랍어 scene text images 수집 프로젝트에서 다양한 알고리즘을 통해 데이터 QC 수행하는 모델.
@@ -115,14 +115,17 @@
 - pre-trained scene text detection 모델의 architecture를 수정하여 fine-tuning 실시.
 
 ### (3) digital image processing 알고리즘 개발
-- [**automatic image resizing 알고리즘 개발**](https://github.com/KimRass/KimRass/tree/main/Flitto/Place-Translation/Automatic-Image-Resizer):
+- [**이미지 번역 품질 향상을 위한 알고리즘 개발**](https://github.com/KimRass/KimRass/tree/main/Flitto/Place-Translation/Rendering-Quality-Improvement)
+    - 렌더링할 텍스트가 서로 겹치지 않도록 조정.
+    - 각 항목의 시작과 끝이 명확히 구분되도록 특수문자 삽입.
+    - 메뉴 이미지에서 빈 공간을 인식해 font size를 조정.
+- [**이미지 크기 자동 조정 알고리즘 개발**](https://github.com/KimRass/KimRass/tree/main/Flitto/Place-Translation/Automatic-Image-Resizer):
     - 기존 메뉴 이미지를 조금 다른 새로운 이미지로 변경할 때, feature matching을 통해 적절한 해상도로 resize.
     - SIFT (Scale-Invariant Feature Transform), RANSAC (RANdom SAmple Consensus) 사용.
-    - 도입 효과: 기존 이미지에 대한 bounding box annotation, 번역 등의 작업 결과물을 재활용하여 업무 효율 향상.
-- [**menu image generation 알고리즘 개발**](https://github.com/KimRass/KimRass/tree/main/Flitto/Place-Translation/Menu-Image-Generator):
+    - 기존 이미지에 대한 bounding box annotation, 번역 등의 작업 결과물을 재활용하여 업무 효율 향상.
+- [**메뉴 이미지 생성 자동화 알고리즘 개발**](https://github.com/KimRass/KimRass/tree/main/Flitto/Place-Translation/Menu-Image-Generator):
     - 기존의 수작업 메뉴 이미지 제작을 Python으로 템플릿화하여 자동화.
-    - 도입 효과: 비효율적이고 반복적인 프로세스 개선, 시각적 품질 향상.
-
+    - 비효율적이고 반복적인 프로세스 개선, 시각적 품질 향상.
 ### (4) [textual attribute recognition 모델 개발](https://github.com/KimRass/KimRass/tree/main/Flitto/Place-Translation/Textual-Attribute-Recognizer)
 - 메뉴 이미지의 각 텍스트에서 7가지 속성 (font size, writing direction, text alignment, text line breaking, text color, text border, text border color)을 추출하는 모델.
 <!-- - 'CRAFT' scene text detection 모델을 통해 추출된 'text region score map'을 기반으로 알고리즘 설계. -->
@@ -140,20 +143,20 @@
 
 ### (6) [data QC 알고리즘 개발](https://github.com/KimRass/KimRass/tree/main/Flitto/Data-Collection)
 - B2B 고객사의 의뢰에 따라 데이터를 수집하여 납품하는 프로젝트에 있어서 자동 데이터 QC를 위한 각종 알고리즘 개발.
-- 텍스트 데이터:
+- **텍스트 데이터**:
     - 단어별 표준 띄어쓰기 규칙을 반영하여 문장 교정 (e.g., '빅데이터' → '빅 데이터').
     - 형태소 분리에 기반하여 존댓말을 반말로 변환.
     - 'Sentence-BERT'를 활용한 문장 유사도 검사.
     - 형태소 분리에 기반하여 완전한 문장과 불완전한 문장 구분 및 완전한 문장으로 이루어진 데이터 수집.
-- 음성 데이터:
+- **음성 데이터**:
     - QA 요구조건에 따라 발화 구간의 길이와 수, 음성의 크기, 노이즈 등 검토.
     - 음성 데이터 시각화 (waveform, spectrogram, mel-spectrogram)를 통해 수동 QC 보조.
 
 ## 4) HDC현대산업개발 (2016.07 ~ 2022.04, 정규직)
-- 회사 소개:
+- **회사 소개**:
     - 종합건설업 (아파트 브랜드 'IPARK')
     - 사원 약 1,800명, 매출액 약 3조 원
-- 이직 사유: AI에 관련된 업무 수행 및 그에 대한 전문성 향상.
+- **이직 사유**: 개발자로서의 커리어를 시작하고자 함.
 
 ###	(1) [Tableau 기반의 전사 대시보드 구축 리드 (2021.02 ~ 2022.04)](https://github.com/KimRass/KimRass/tree/main/HDC/Tableau-BI)
 - 현업과 협의하여 대시보드 설계 및 Tableau와 data mart 연결.
