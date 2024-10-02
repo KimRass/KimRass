@@ -115,7 +115,7 @@
 - pre-trained scene text detection 모델의 architecture를 수정하여 fine-tuning 실시.
 
 ### (3) digital image processing 알고리즘 개발
-- [**이미지 번역 품질 향상을 위한 알고리즘 개발**](https://github.com/KimRass/KimRass/tree/main/Flitto/Place-Translation/Rendering-Quality-Improvement)
+- [**이미지 번역 품질 향상을 위한 알고리즘 개발**](https://github.com/KimRass/KimRass/tree/main/Flitto/Place-Translation/Image-Translation-Quality-Improvement)
     - 렌더링할 텍스트가 서로 겹치지 않도록 조정.
     - 각 항목의 시작과 끝이 명확히 구분되도록 특수문자 삽입.
     - 메뉴 이미지에서 빈 공간을 인식해 font size를 조정.
