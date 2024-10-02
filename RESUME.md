@@ -27,33 +27,33 @@
 ## 1) 딥 러닝 논문 구현 경험
 |모델명|내용|
 |-|-|
-|'ViViT'|• 3가지 architecture ('Spatio-temporal attention', 'Factorised encoder', 'Factorised self-attention') 구현.|
-|'MAE'|• pre-training을 위한 architecture 구현.|
-|'Copy-Paste'|• COCO 2014 데이터셋에 적용 및 데이터 시각화.|
-|'ILVR'|• downsampling factor, conditioning range 변화에 따른 생성 이미지 변화 시각화.|
-|'SDEdit'|• 'human-stroke-simulation algorithm' 구현 및 이를 'CelebA' 데이터셋에 적용해 이미지 생성.|
-|'DDPM'|• 모델을 64 × 64의 'CelebA' 데이터셋에 대해 학습.<br>• linear interpolation, 'coarse-to-fine interpolation'.|
-|'DDIM'|• spherical linear interpolation, 'grid interpolation'.|
-|classifier guidance|• 모델을 CIFA-10 데이터셋에 대해 학습.|
-|'VQ-VAE' & 'PixelCNN'|• 모델을 Fashion MNIST, CIFAR-10 데이터셋에 대해 각각 학습.|
-|'CycleGAN'|• 모델을 'monet2photo', 'vangogh2photo', 'cezanne2photo', 'ukiyoe2photo', 'horse2zebra', 'summer2winter_yosemite' 데이터셋에 대해 각각 학습.|
-|'PGGAN'|• 모델을 512 × 512의 'CelebA-HQ' 데이터셋에 대해 학습.|
-|'ViT'|• 'CutOut', 'Hide-and-Seek', 'CutMix' data augmentation 구현 및 실험.<br>• 'Attention roll-out'을 통한 attention map 시각화.<br>• position embedding similarity, position embedding interpolation 구현.<br>• 모델을 CIFAR-10, CIFAR-100에 데이터셋에 대해 각각 학습.|
-|'CLIP'|• 모델을 'Flickr8k' + 'Flickr30k' 데이터셋에 대해 학습.<br>• zero-shot classification, linear classification 구현.|
-|'BERT'|• architecture, masked language modeling 구현.<br>• 'BookCorpus', 'SQuAD', 'SWAG' 데이터셋 전처리.|
-|'Sentence-BERT'|• classification loss, regression loss, constrastive loss 구현<br>•'STSb', 'WikiSection' 데이터셋 전처리.|
-|'DeepLabv3'|• 모델을 VOC2012 데이터셋에 대해 학습<br>• 모델 출력 시각화.|
-|Gatys et al., 2016 (image style transfer)|• VGGNet-19 기반으로 구현.|
-|'CAM'|• pre-trained GoogleNet에 적용.<br>• 모델 출력을 bounding box로 변환.|
-|Zhang et al., 2016	(image colorization)|• empirical probability distribution 시각화.|
-|'RotNet'|• attention map 시각화.|
-|'SimCLR'|• normalized temperature-scaled cross entropy loss, pixel intensity histogram 구현.|
-|'STEFANN'|• 'Google Fonts'의 폰트로부터 데이터셋 생성. <br>• 'FANnet' architecture 구현 및 이를 'Google Fonts' 데이터셋에 대해 학습.|
-| 'PixelLink'|• architecture, instance-balanced cross entropy loss 구현<br>• 모델 출력에 대한 후처리.|
-|'DCGAN'|• 모델을 64 × 64의 'CelebA' 데이터셋에 대해 학습.<br>• latent space interpolation 구현.|
-|'Pix2Pix'|• 모델을 'Facades', Google Maps 데이터셋에 대해 각각 학습.|
-|'VAE'|• 모델을 MNIST 데이터셋에 대해 학습.<br>• encoder output, decoder out 시각화.|
-|'StarGAN'|• architecture 구현.|
+|['ViViT'](https://github.com/KimRass/ViViT)|• 3가지 architecture ('Spatio-temporal attention', 'Factorised encoder', 'Factorised self-attention') 구현.|
+|['MAE'](https://github.com/KimRass/MAE)|• pre-training을 위한 architecture 구현.|
+|['Copy-Paste'](https://github.com/KimRass/Copy-Paste)|• COCO 2014 데이터셋에 적용 및 데이터 시각화.|
+|['ILVR'](https://github.com/KimRass/ILVR)|• downsampling factor, conditioning range 변화에 따른 생성 이미지 변화 시각화.|
+|['SDEdit'](https://github.com/KimRass/SDEdit)|• 'human-stroke-simulation algorithm' 구현 및 이를 'CelebA' 데이터셋에 적용해 이미지 생성.|
+|['DDPM'](https://github.com/KimRass/DDPM)|• 모델을 64 × 64의 'CelebA' 데이터셋에 대해 학습.<br>• linear interpolation, 'coarse-to-fine interpolation'.|
+|['DDIM'](https://github.com/KimRass/DDIM)|• spherical linear interpolation, 'grid interpolation'.|
+|[classifier guidance](https://github.com/KimRass/Classifier-Guidance)|• 모델을 CIFA-10 데이터셋에 대해 학습.|
+|['VQ-VAE' & 'PixelCNN'](https://github.com/KimRass/VQ-VAE)|• 모델을 Fashion MNIST, CIFAR-10 데이터셋에 대해 각각 학습.|
+|['CycleGAN'](https://github.com/KimRass/CycleGAN)|• 모델을 'monet2photo', 'vangogh2photo', 'cezanne2photo', 'ukiyoe2photo', 'horse2zebra', 'summer2winter_yosemite' 데이터셋에 대해 각각 학습.|
+|['PGGAN'](https://github.com/KimRass/PGGAN)|• 모델을 512 × 512의 'CelebA-HQ' 데이터셋에 대해 학습.|
+|['ViT'](https://github.com/KimRass/ViT)|• 'CutOut', 'Hide-and-Seek', 'CutMix' data augmentation 구현 및 실험.<br>• 'Attention roll-out'을 통한 attention map 시각화.<br>• position embedding similarity, position embedding interpolation 구현.<br>• 모델을 CIFAR-10, CIFAR-100에 데이터셋에 대해 각각 학습.|
+|['CLIP'](https://github.com/KimRass/CLIP)|• 모델을 'Flickr8k' + 'Flickr30k' 데이터셋에 대해 학습.<br>• zero-shot classification, linear classification 구현.|
+|['BERT'](https://github.com/KimRass/BERT)|• architecture, masked language modeling 구현.<br>• 'BookCorpus', 'SQuAD', 'SWAG' 데이터셋 전처리.|
+|['Sentence-BERT'](https://github.com/KimRass/Sentence-BERT)|• classification loss, regression loss, constrastive loss 구현<br>•'STSb', 'WikiSection' 데이터셋 전처리.|
+|['DeepLabv3'](https://github.com/KimRass/DeepLabv3)|• 모델을 VOC2012 데이터셋에 대해 학습<br>• 모델 출력 시각화.|
+|[Gatys et al., 2016 (image style transfer)](https://github.com/KimRass/Gatys-et-al.-2016)|• VGGNet-19 기반으로 구현.|
+|['CAM'](https://github.com/KimRass/CAM)|• pre-trained GoogleNet에 적용.<br>• 모델 출력을 bounding box로 변환.|
+|[Zhang et al., 2016 (image colorization)](https://github.com/KimRass/Zhang-et-al.-2016)|• empirical probability distribution 시각화.|
+|['RotNet'](https://github.com/KimRass/RotNet)|• attention map 시각화.|
+|['SimCLR'](https://github.com/KimRass/SimCLR)|• normalized temperature-scaled cross entropy loss, pixel intensity histogram 구현.|
+|['STEFANN'](https://github.com/KimRass/STEFANN)|• 'Google Fonts'의 폰트로부터 데이터셋 생성. <br>• 'FANnet' architecture 구현 및 이를 'Google Fonts' 데이터셋에 대해 학습.|
+|[ 'PixelLink'](https://github.com/KimRass/PixelLink)|• architecture, instance-balanced cross entropy loss 구현<br>• 모델 출력에 대한 후처리.|
+|['DCGAN'](https://github.com/KimRass/DCGAN)|• 모델을 64 × 64의 'CelebA' 데이터셋에 대해 학습.<br>• latent space interpolation 구현.|
+|['Pix2Pix'](https://github.com/KimRass/Pix2Pix)|• 모델을 'Facades', Google Maps 데이터셋에 대해 각각 학습.|
+|['VAE'](https://github.com/KimRass/VAE)|• 모델을 MNIST 데이터셋에 대해 학습.<br>• encoder output, decoder out 시각화.|
+|['StarGAN'](https://github.com/KimRass/StarGAN)|• architecture 구현.|
 
 ## 2) [알고리즘과 자료구조에 대한 이해](https://github.com/KimRass/Algorithm-Coding-Test)
 - '프로그래머스': 1434점.
@@ -186,13 +186,13 @@
 - 최근 10년간 전용면적 또는 층에 대한 선호도 변화 분석.
 
 # 5. Certificates
-<!-- |자격증명|발급기관|취득연월|자격증번호|내용|
-|-|-|-|-|-|
-|SQLD|한국데이터산업진흥원|2021.12|SQLD-043002833|데이터 모델링, SQL|
-|일반기계기사|한국산업인력공단|2016.05|16201071456V|• 필기: 4대 역학 등<br>• 필답형 실기: 기계요소설계<br>• 작업형 실기: 'AutoCAD' 활용 2D CAD 및 'SolidWorks' 활용 3D CAD|
-|소방설비기사 (기계분야)|한국산업인력공단|2019.12|19204021153I|소방 설비, 법규 등 관련 필기 및 필답형 실기|
-|한국사능력검정시험 1급|국사편찬위원회|2015.11|29-110236|한국사 필기| -->
-<table>
+|자격증명|발급기관|취득연월|내용|
+|-|-|-|-|
+|SQLD|한국데이터산업진흥원|2021.12|데이터 모델링, SQL|
+<!-- |일반기계기사|한국산업인력공단|2016.05|• 필기: 4대 역학 등<br>• 필답형 실기: 기계요소설계<br>• 작업형 실기: 'AutoCAD' 활용 2D CAD 및 'SolidWorks' 활용 3D CAD|
+|소방설비기사 (기계분야)|한국산업인력공단|2019.12|소방 설비, 법규 등 관련 필기 및 필답형 실기|
+|한국사능력검정시험 1급|국사편찬위원회|2015.11|한국사 필기| -->
+<!-- <table>
     <thead>
         <tr>
             <th>구분</th>
@@ -230,7 +230,7 @@
             <td>필기 및 실기: 소방 설비, 법규 등</td>
         </tr>
     </tbody>
-</table>
+</table> -->
 
 # 6. Foreign Languages
 |언어|수준|

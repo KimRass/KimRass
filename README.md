@@ -13,13 +13,13 @@
 |Vision|
 |2014|[VAE](https://github.com/KimRass/VAE)|Kingma and Welling|[✓] Training on MNIST<br>[✓] Encoder output visualization<br>[✓] Decoder output visualization|
 |2015|[CAM](https://github.com/KimRass/CAM)|Zhou et al.|[✓] Application to GoogleNet<br>[✓] bounding box generation from CAM|
-|2016|[Gatys et al., 2016](https://github.com/KimRass/Gatys-et-al.-2016)|Gatys et al.|[✓] Application to VGGNet-19|
+|2016|[Gatys et al., 2016 (image style transfer)](https://github.com/KimRass/Gatys-et-al.-2016)|Gatys et al.|[✓] Application to VGGNet-19|
 ||[YOLO](https://github.com/KimRass/YOLO)|Redmon et al.|[✗] Training on VOC 2012<br>[✗] Class probability map<br>[✗] Ground truth vlisualization on grid|
 ||[DCGAN](https://github.com/KimRass/DCGAN)|Radford et al.|[✓] Training on CelebA at 64 × 64<br> [✓] Sampling<br>[✓] Latent space interpolation|
 ||[Noroozi et al., 2016](https://github.com/KimRass/Mehdi-Noroozi-et-al.-2016)|Noroozi et al.|[✓] Architecture<br>[✓] Chromatic aberration<br>[✓] Permutation set|
-||[Zhang et al., 2016](https://github.com/KimRass/Richard-Zhang-et-al.-2016)|Zhang et al.|[✓] Empirical probability distribution<br>[✗] Color space|
+||[Zhang et al., 2016 (image colorization)](https://github.com/KimRass/Richard-Zhang-et-al.-2016)|Zhang et al.|[✓] Empirical probability distribution<br>[✗] Color space|
 |2014<br>2017|[Conditional GAN<br>WGAN-GP](https://github.com/KimRass/Conditional-WGAN-GP)|Mirza et al.<br>Gulrajani et al.|[✓] Training on MNIST|
-|2016<br>2017|[PixelCNN<br>VQ-VAE](https://github.com/KimRass/VQ-VAE)|Oord et al.<br>Oord et al.|[✓] Training on Fashion MNIST<br>[✓] Training on CIFAR-10|
+|2016<br>2017|[VQ-VAE & PixelCNN](https://github.com/KimRass/VQ-VAE-PixelCNN)|Oord et al.<br>Oord et al.|[✓] Training on Fashion MNIST<br>[✓] Training on CIFAR-10|
 |2017|[Pix2Pix](https://github.com/KimRass/Pix2Pix)|Isola et al.|[✓] Training on Google Maps<br>[✓] Training on Facades<br> [✗] Inference on larger resolution|
 ||[CycleGAN](https://github.com/KimRass/CycleGAN)|Zhu et al.|[✓] Training on 'monet2photo'<br>[✓] Training on 'vangogh2photo'<br>[✓] Training on 'cezanne2photo'<br>[✓] Training on 'ukiyoe2photo'<br>[✓] Training on 'horse2zebra'<br>[✓] Training on 'summer2winter_yosemite'|
 ||[Noroozi et al., 2017](https://github.com/KimRass/Mehdi-Noroozi-et-al.-2017)|Noroozi et al.|[✓] Constrastive loss|
