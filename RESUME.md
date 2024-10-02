@@ -9,6 +9,20 @@
     - **AI 교육 자료**: 수강한 AI 관련 교육 내용 및 실습 자료.
 
 # 2. Core Competencies
+<!-- 
+## Skills
+- 딥 러닝
+- Python
+- SQL
+- Solidworks
+- AutoCAD
+- Tableau
+- 알고리즘 설계
+- 데이터 분석
+- 데이터 과학
+- Pytorch
+- NumPy
+- Scikit-Learn -->
 
 ## 1) 딥 러닝 논문 구현 경험
 |모델명|내용|
@@ -17,10 +31,10 @@
 |'MAE'|• pre-training을 위한 architecture 구현.|
 |'Copy-Paste'|• COCO 2014 데이터셋에 적용 및 데이터 시각화.|
 |'ILVR'|• downsampling factor, conditioning range 변화에 따른 생성 이미지 변화 시각화.|
-|'SD-Edit'|• 'human-stroke-simulation algorithm' 구현 및 이를 'CelebA' 데이터셋에 적용해 이미지 생성.|
+|'SDEdit'|• 'human-stroke-simulation algorithm' 구현 및 이를 'CelebA' 데이터셋에 적용해 이미지 생성.|
 |'DDPM'|• 모델을 64 × 64의 'CelebA' 데이터셋에 대해 학습.<br>• linear interpolation, 'coarse-to-fine interpolation'.|
 |'DDIM'|• spherical linear interpolation, 'grid interpolation'.|
-|'Classifier guidance'|• 모델을 CIFA-10 데이터셋에 대해 학습.|
+|classifier guidance|• 모델을 CIFA-10 데이터셋에 대해 학습.|
 |'VQ-VAE' & 'PixelCNN'|• 모델을 Fashion MNIST, CIFAR-10 데이터셋에 대해 각각 학습.|
 |'CycleGAN'|• 모델을 'monet2photo', 'vangogh2photo', 'cezanne2photo', 'ukiyoe2photo', 'horse2zebra', 'summer2winter_yosemite' 데이터셋에 대해 각각 학습.|
 |'PGGAN'|• 모델을 512 × 512의 'CelebA-HQ' 데이터셋에 대해 학습.|
@@ -42,8 +56,8 @@
 |'StarGAN'|• architecture 구현.|
 
 ## 2) [알고리즘과 자료구조에 대한 이해](https://github.com/KimRass/Algorithm-Coding-Test)
-- '프로그래머스' 1,434점.
-- ['Baekjoon Online Judge' AC rating: Gold III 1,115.](https://solved.ac/en/profile/rmx1000)
+- '프로그래머스': 1434점.
+- ['Baekjoon Online Judge' AC rating: Gold III 1115.](https://solved.ac/en/profile/rmx1000)
 
 ## 3) digital image processing 알고리즘 개발 경력
 - [scene text image QC 모델](https://github.com/KimRass/KimRass/tree/main/Flitto/Scene-Text-Image-QC)
@@ -51,9 +65,9 @@
 - [textual attribute recognition 모델](https://github.com/KimRass/KimRass/tree/main/Flitto/Place-Translation/Textual-Attribute-Recognizer)
 - [scene text removal 모델](https://github.com/KimRass/KimRass/tree/main/Flitto/Place-Translation/Scene-Text-Remover)
 
-## 4) [Tableau 기반의 전사 대시보드 구축 리드 경험 (2021.02 ~ 2022.04)](https://github.com/KimRass/KimRass/tree/main/HDC/Tableau-BI)
+## 4) [Tableau 기반의 전사 대시보드 구축 리드 경력 (2021.02 ~ 2022.04)](https://github.com/KimRass/KimRass/tree/main/HDC/Tableau-BI)
 
-## 5)  [아파트 실거래가 데이터 분석 리드 경험 (2020.01 ~ 2020.09)](https://github.com/KimRass/KimRass/tree/main/HDC/APT-Price-Analysis)
+## 5) [아파트 실거래가 데이터 분석 리드 경력 (2020.01 ~ 2020.09)](https://github.com/KimRass/KimRass/tree/main/HDC/APT-Price-Analysis)
 
 # 3. Education
 |기간|내용|
@@ -83,17 +97,17 @@
 - **회사 소개**: 철도 신호 업계 중견기업 대아티아이의 자회사로서 AI 기술을 활용한 철도 관제 시스템 개발.
 - **이직 사유**: AI 연구 업무를 하고자 함.
 
-### (1) 지능형 CCTV 성능 시험인증 취득
-- 한국인터넷진흥원의 '지능형 CCTV 성능 시험 인증'에서 '쓰러짐' 분야 인증 취득.
-- 쓰러진 사람을 탐지하는 object detection 모델 개발.
-- 실시간으로 영상을 처리하여 이벤트 발생 시각을 추정하는 알고리즘 개발.
-
-### (2) object detection 모델 개발
+### (1) object detection 모델 개발
 - 경남 무인 도시철도 역사에서 유모차, (전동) 휠체어 등의 객체와 실신 등의 상황을 탐지하기 위한 객체 탐지 모델.
 - 유료 데이터와 'AI-Hub' 공공 데이터를 조사하여 탐지 대상 객체가 포함된 데이터셋을 선정, 이를 모델 학습에 적합한 포맷으로 변환하는 코드 작성.
 - 실제 지하철 CCTV 영상으로부터 탐지 대상 객체가 포함된 장면을 추출하기 위한 코드 작성;
     - 1차 학습된 모델로 장면을 선별한 후, 이를 사람이 검수할 수 있는 시스템 설계.
     - 검수를 쉽게 할 수 있도록 'PyQt' 라이브러리 기반의 GUI 제공.
+
+### (2) 지능형 CCTV 성능 시험인증 취득
+- 한국인터넷진흥원의 '지능형 CCTV 성능 시험 인증'에서 '쓰러짐' 분야 인증 취득.
+- 쓰러진 사람을 탐지하는 object detection 모델 개발.
+- 실시간으로 영상을 처리하여 이벤트 발생 시각을 추정하는 알고리즘 개발.
 
 ## 3) Flitto (2022.05 ~ 2023.12, 정규직)
 - **회사 소개**:
@@ -122,17 +136,18 @@
 - [**이미지 크기 자동 조정 알고리즘 개발**](https://github.com/KimRass/KimRass/tree/main/Flitto/Place-Translation/Automatic-Image-Resizer):
     - 기존 메뉴 이미지를 조금 다른 새로운 이미지로 변경할 때, feature matching을 통해 적절한 해상도로 resize.
     - SIFT (Scale-Invariant Feature Transform), RANSAC (RANdom SAmple Consensus) 사용.
-    - 기존 이미지에 대한 bounding box annotation, 번역 등의 작업 결과물을 재활용하여 업무 효율 향상.
+    - 기존 이미지에 대한 bounding box annotation, 번역 등의 작업 결과물을 재활용함으로써 업무 효율 향상.
 - [**메뉴 이미지 생성 자동화 알고리즘 개발**](https://github.com/KimRass/KimRass/tree/main/Flitto/Place-Translation/Menu-Image-Generator):
     - 기존의 수작업 메뉴 이미지 제작을 Python으로 템플릿화하여 자동화.
     - 비효율적이고 반복적인 프로세스 개선, 시각적 품질 향상.
+
 ### (4) [textual attribute recognition 모델 개발](https://github.com/KimRass/KimRass/tree/main/Flitto/Place-Translation/Textual-Attribute-Recognizer)
 - 메뉴 이미지의 각 텍스트에서 7가지 속성 (font size, writing direction, text alignment, text line breaking, text color, text border, text border color)을 추출하는 모델.
-<!-- - 'CRAFT' scene text detection 모델을 통해 추출된 'text region score map'을 기반으로 알고리즘 설계. -->
 - 자체 데이터셋을 통해 학습된 semantic segmentation 모델로 text alignment 추출.
 - 언어별 특성을 고려하여 font size를 최적화하는 동시에 텍스트에 줄바꿈 삽입 위치를 계산.
 - contrast ratio를 기반으로 픽셀 단위의 정교한 계산을 통해 텍스트의 가독성 개선.
 - 번역된 텍스트 렌더링 시, 속성을 반영하여 시각적 품질 향상.
+<!-- - 'CRAFT' scene text detection 모델을 통해 추출된 'text region score map'을 기반으로 알고리즘 설계. -->
 
 ### (5) [scene text removal 모델 개발](https://github.com/KimRass/KimRass/tree/main/Flitto/Place-Translation/Scene-Text-Remover)
 - 메뉴 이미지에서 번역이 필요한 텍스트를 자연스럽게 지우는 모델.
