@@ -10,20 +10,20 @@
 
 ## 1) Font Size
 |Original image|
-|:-|
+|-|
 |<img src="https://user-images.githubusercontent.com/67457712/235050769-a7970aa6-2b99-4de0-a20b-1bf301ad7d38.jpg" width="600">|
 
 |Bounding box annotation|
-|:-|
+|-|
 |<img src="https://user-images.githubusercontent.com/67457712/235050291-34d76d66-cfdc-47fe-a86a-8ea177eda211.jpg" width="600">|
 
 |Text region score map|
-|:-|
+|-|
 |<img src="https://user-images.githubusercontent.com/67457712/235050295-8b42ccdf-976c-4dc3-a0f8-3ceffee8bf7a.jpg" width="600">|
 |'CRAFT' scene text detection model [1]을 사용해 'text region score map'을 추출합니다. 어떤 픽셀이 빨간색에 가까울수록 모델이 그 픽셀을 텍스트의 중심이라고 확신함을 나타냅니다.|
 
 |Text region segmentation map|
-|:-|
+|-|
 |<img src="https://user-images.githubusercontent.com/67457712/235050300-e4dff000-f476-485f-8cfd-28799b24e9f8.jpg" width="600">|
 |<img src="https://user-images.githubusercontent.com/67457712/235050726-ab8d3a2f-75cd-4637-8e02-f2105ba41fff.jpg" width="200">|
 |<img src="https://github.com/KimRass/KimRass/assets/67457712/06d1994c-c9a8-495a-a634-27d21b06a2e8" width="600">|
@@ -33,7 +33,7 @@
 
 ## 2) Writing Direction
 |PCCs|
-|:-|
+|-|
 |<img src="https://user-images.githubusercontent.com/67457712/235050297-a43a5b3c-fdb1-41ad-a30c-30e0f2778910.jpg" width="600">|
 |text region segmentation map으로부터 pseudo character centers (PCCs) [3]를 추출합니다.|
 |각 PCC에 대해서 가장 가까운 다른 PCC를 찾습니다. 두 PCCs간의 x축 방향과 y축 방향 각각에 대한 거리를 구해서 x축 방향의 거리가 y축 방향의 거리보다 더 멀면 가로쓰기라고 판단하고 y축 방향의 거리가 x축 방향의 거리보다 멀면 세로쓰기라고 판단합니다.|
@@ -41,7 +41,7 @@
 
 ## 3) Text Alignment
 |Ground truth|
-|:-|
+|-|
 |<img src="https://github.com/KimRass/KimRass/assets/67457712/1d4e8384-926c-4de0-bde4-c8517312bdf3" width="500">|
 |rule-based approach로는 추출이 불가능하다고 판단했습니다 [2]. 또한 각 bounding box의 이미지 영역만을 보고는 알 수 없으며 이미지의 전체적인 visual features를 고려하여야만 높은 정확도로 판단할 수 있다고 보았습니다.|
 |이에 4개의 class ('none', 'left', 'center', 'right')에 대한 semantic segmentation 문제로 접근했습니다. 가로쓰기 텍스트에 대해서는 'left', 'center', 'right' 중 하나로, 세로쓰기 텍스트에 대해서는 'none'으로 레이블링을 했습니다. 즉 가로쓰기 텍스트에 한해서만 모델이 text alignment를 예측하도록 학습시켰습니다.|
@@ -50,11 +50,11 @@
 <!-- - 1,000장의 이미지, 19,523개의 bounding box에 대해 학습한 결과 mIoU 0.7341 -->
 
 |Example 1|
-|:-|
+|-|
 |<img src="https://github.com/KimRass/KimRass/assets/67457712/eab61871-b37f-487b-b12b-9059aefcabf6" width="800">|
 
 |Example 2|
-|:-|
+|-|
 |<img src="https://github.com/KimRass/KimRass/assets/67457712/d27aba57-f3ba-405e-a3f2-157b6e0fa55d" width="800">|
 <!-- - <img src="https://github-production-user-asset-6210df.s3.amazonaws.com/67457712/287581756-d2460fbf-9716-4b52-b2c6-0695264a4d33.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240404T000439Z&X-Amz-Expires=300&X-Amz-Signature=9f3bcc9523004783714da96d1b10865e8631f7aba8baad1620dab455a74f92ce&X-Amz-SignedHeaders=host&actor_id=67457712&key_id=0&repo_id=669664726" width="800"> -->
 
@@ -98,16 +98,16 @@
 
 ## 5) Text Color
 |Scene text removal|
-|:-|
+|-|
 |<img src="https://github.com/KimRass/KimRass/assets/67457712/dbc56f19-2e3e-4280-884d-849c1ff611d1" width="600">|
 
 |Per-pixel absolute difference|
-|:-|
+|-|
 |<img src="https://github.com/KimRass/KimRass/assets/67457712/8a9c2b08-d3df-4304-979f-78435c33055e" width="600">|
 |원본 이미지와 텍스트가 제거된 이미지 사이의 픽셀 단위의 차이를 구합니다.|
 
 |Mask|
-|:-|
+|-|
 |<img src="https://github.com/KimRass/KimRass/assets/67457712/0c8565c8-dfb2-4170-8720-02c00a78acaa" width="600">|
 |이를 바탕으로 mask를 생성합니다 [2].|
 
@@ -116,18 +116,18 @@
     - 색깔의 수가 3개가 될 때까지 통합합니다. 이 3개의 색깔 중에서 가장 많은 픽셀 수를 갖는 `(7, 145, 58)`을 text color로 정합니다.
 
 |Original image|Per-pixel absolute difference|Text color candidates|
-|:-|:-|:-|
+|-|-|-|
 |<img src="https://user-images.githubusercontent.com/67457712/235061924-e372749d-fa8f-4db2-a655-ad5210ff0c88.jpg" width="400">|<img src="https://user-images.githubusercontent.com/67457712/235061927-f1e4e5ff-fcc4-4640-9817-4d14ba467e28.jpg" width="400">|<img src="https://user-images.githubusercontent.com/67457712/235064154-1ff39941-f237-4639-8735-db7bf116986a.jpg" width="300">|
 
 ## 6) Text Border
 |Text border|
-|:-|
+|-|
 |<img src="https://github.com/KimRass/KimRass/assets/67457712/7dbc77da-cdeb-48d0-bc0e-78ea0bd9024b" width="200">|
 |text border를 적용하지 않았을 때, 사람이 그 텍스트를 읽을 수 없으면 text border를 적용하고 읽을 수 있다면 적용하지 않습니다.|
 |font size, text alignment, text line breaking이 결정되면 각 문자가 어디에 렌더링될 지가 결정됩니다. 각 문자에 대해서, 추출된 text color와 text stroke를 둘러싼 영역의 픽셀 하나하나 사이의 contrast ratio를 계산합니다. 이 값이 일정한 값 미만이라면 그 두 색깔 조합은 가독성이 좋지 않은 것으로 판단합니다.|
 
 |Text readibility|
-|:-|
+|-|
 |<img src="https://github.com/KimRass/KimRass/assets/67457712/672349f4-3781-4031-ba7c-046a7779c189" width="900">|
 |각 문자에 대해서, text stroke를 둘러싼 영역의 전체 픽셀 수와 비교하여 가독성이 좋지 않은 픽셀의 수를 계산합니다. 이 값은 그 문자의 영역 중 읽을 수 있는 부분의 비율을 나타낸다고 볼 수 있습니다.|
 |이 값을 그 문자의 readability라고 할 때, readability가 어떤 값 미만인 문자가 1개라도 존재할 경우 (1개의 문자라도 가독성이 좋지 않은 것이 있다면) 그 텍스트에는 text border를 적용합니다.|
@@ -140,12 +140,12 @@
 
 ## 1) '화정 by 카쿠시타'
 |Original image|Textual attribute recogition (en, ja and zh-cn)|
-|:-|:-|
+|-|-|
 |<img src="https://github.com/KimRass/KimRass/assets/67457712/b7d3c121-a5e9-4f07-a049-3de63cc18a50" width="250">|<img src="https://github.com/KimRass/KimRass/assets/67457712/927c8445-4ce8-4690-84cf-664437fdf48b" width="750">|
 
 ## 2) '어반 웍 스테이션'
 |Original image|Textual attribute recogition (en, ja and zh-cn)|
-|:-|:-|
+|-|-|
 |<img src="https://github.com/KimRass/KimRass/assets/67457712/e5705985-471d-46d0-8a1c-ed69c584ae01" width="200">|<img src="https://github.com/KimRass/KimRass/assets/67457712/7dfb4c98-d988-43b7-a36c-23fc8a325b83" width="600">|
 
 # 3. Improvements

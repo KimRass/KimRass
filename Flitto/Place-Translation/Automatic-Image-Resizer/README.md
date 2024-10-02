@@ -12,10 +12,10 @@
 - 음식의 가격이 바뀐 경우
 
 | Old image ($2195 \times 2252$) | New image ($9669 \times 9670$) | New image, resized ($2195 \times 2252$) |
-|:-|:-|:-|
+|-|-|-|
 | <img src="https://github.com/KimRass/Flitto-ML/assets/67457712/58e0dcd0-aa00-4032-945f-e0330b60f923" width="300"> | <img src="https://github.com/KimRass/Flitto-ML/assets/67457712/b032e67e-5854-4c64-833a-377cf5a3ffa4" width="500"> | <img src="https://github.com/KimRass/Flitto-ML/assets/67457712/6cff2872-10e4-42af-b5c2-ff516f876a2b" width="300"> |
 - 음식 이름이 바뀐 경우
 
 | Old image ($1240 \times 1754$) | New image ($1654 \times 2339$) | New image, resized ($1240 \times 1754$) |
-|:-|:-|:-|
+|-|-|-|
 | <img src="https://github.com/KimRass/Flitto-ML/assets/67457712/63a4b6fb-75fe-4e31-b206-18c0fc8fcf7f" width="300"> | <img src="https://github.com/KimRass/Flitto-ML/assets/67457712/4c57b9a3-5a97-4fee-bf2c-f303bf286f28" width="400"> | <img src="https://github.com/KimRass/Flitto-ML/assets/67457712/72307542-b7c0-49f9-b705-34ffe9ffac0b" width="300"> |

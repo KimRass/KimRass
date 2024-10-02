@@ -4,11 +4,11 @@
 - bounding box annotation 과정에서 발생한 bounding box간의 겹침 (human error)로 인해 발생하는 텍스트간 충돌을 제거하는 알고리즘입니다.
 
 | Original image and bounding box annotation |
-|:-|
+|-|
 | <img src="https://github.com/KimRass/KimRass/assets/67457712/27e1bfbd-6cdd-4443-b8d5-a18fc4b07e52" width="600"> |
 
 | Before and after performing inter-text conflict prevention |
-|:-|
+|-|
 | <img src="https://github.com/KimRass/KimRass/assets/67457712/96937e89-5b73-4e41-8ab2-d0cc5cc7f0ce" width="600"> |
 
 ## 2) End-of-line Hyphenation
@@ -17,7 +17,7 @@
     - 'Start-of-line' mode: 텍스트가 2줄 이상일 경우 마지막 첫 번째 줄을 제외하고 각 줄의 처음에 En dash 삽입.
 
 | Original text, 'End-of-line' mode and 'Start-of-line' mode |
-|:-|
+|-|
 | <img src="https://github.com/flitto/express-param/assets/67457712/a0c8742e-0c90-40cb-87de-9d3b14b2c623" width="900"> |
 
 ## 3) Text Region Recognition
@@ -25,14 +25,14 @@
 - text region recognition은 bounding box가 차지하는 영역을 벗어나 더욱 큰 font size를 가지고 텍스트를 렌더링할 수 있는지 계산하는 알고리즘입니다 [2].
 
 | Original image | Human-annotated bounding boxes | Text-removed image |
-|:-|:-|:-|
+|-|-|-|
 | <img src="https://github.com/KimRass/KimRass/assets/67457712/47052c9d-2e5d-47ef-949d-7786fee95709" width="500"> | <img src="https://github.com/KimRass/KimRass/assets/67457712/a84fae9d-57ee-44d6-b067-62a90dd0f6dd" width="500"> | <img src="https://github.com/KimRass/KimRass/assets/67457712/8f61041a-756a-43b3-b010-e7221c75ce8e" width="500"> |
 
 ### (1) Mask Generation
 - 렌더링할 텍스트가 이미지 상의 주요 오브젝트와 충돌하지 않도록 제한하는 과정이 필요합니다. 이를 위해 3가지 마스크를 사용합니다.
 
 | Image boundary mask | Edge mask [2] | Mask for remaining text | Intermediate mask |
-|:-|:-|:-|:-|
+|-|-|-|-|
 | <img src="https://github.com/KimRass/KimRass/assets/67457712/79864008-da43-4ba3-b560-3c55968619a2" width="400"> | <img src="https://github.com/KimRass/KimRass/assets/67457712/8467efc8-cee9-4a2c-a7f8-c20cbd5e6ccc" width="400"> | <img src="https://github.com/KimRass/KimRass/assets/67457712/6485b16b-b954-45a1-931e-955132b201f8" width="400"> | <img src="https://github.com/KimRass/KimRass/assets/67457712/5f4286b7-bfbe-4318-848d-f7fe9113b861" width="400"> |
 | font size를 점진적으로 확대해 나갈 때 텍스트가 이미지 바깥으로 나가지 않도록 하기 위해 사용됩니다. | 텍스트가 이미지에 존재하는 Edge를 넘어가지 않도록 제한하기 위해 사용됩니다. | 가격이나 음식점 이름과 같이 '메뉴 번역' 서비스의 정책상 제거하지 않은 텍스트와, 렌더링하고자 하는 텍스트가 서로 겹치지 않도록 하기 위해 사용됩니다. | 위 3개의 마스크는 렌더링할 텍스트에 무관하게 변하지 않으므로 빠른 계산을 위해 모두 합쳐 intermediate mask를 생성합니다. |
 
@@ -47,5 +47,5 @@
 
 ### (2) Examples
 | Before and after |
-|:-|
+|-|
 | <img src="https://github.com/KimRass/KimRass/assets/67457712/cb3ef1ba-aeb3-4f5a-a14c-7bf986cef64b" width="900"> |

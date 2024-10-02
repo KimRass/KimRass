@@ -1,6 +1,7 @@
-# 한국어 명령화 발화
+# 1. Overview
 - "선풍기 켜줘", "온도 내려" 등의 명령어를 발화한 음성 데이터셋을 구축하는 프로젝트였습니다.
-## Conditions
+
+# 2. Requirements
 - 확장자 'wav'
 - 숨소리, 파열음 등의 잡음 제외
 - 사람이 알아들을 수 있는 명확한 발음
@@ -8,7 +9,8 @@
 - 1.5초 미만의 발화 구간
 - 진폭 5,000 이상 20,000 미만
 - 녹음되지 않은 고주파수 대역이 없을 것
-## Quality Assurance
+
+# 3. Quality Assurance
 - 다음 값들을 기준으로 음성 파일의 품질을 체크하여 품질이 떨어지는 음성 파일에 대해서만 한번 더 체크하도록 했습니다.
   - 발화 구간 전 무음 구간의 길이
   - 발화 구간의 전체 길이
@@ -27,7 +29,8 @@
   | <div style="width:150px">female_122_010_female_(20)_c_index_speed_8402.wav | 8402 | 0.39 | 0.91 | 0.3 | 1 | 0.231 | 1 | 1 | 49 | 1 | 0 |
   | <div style="width:150px">female_122_010_female_(20)_c_index_speed_8403.wav | 8403 | 0.42 | 0.56 | 0.4 | 1 | 0.362 | 3 | 1 | 80 | 1 | 0 |
   | <div style="width:150px">female_122_010_female_(20)_c_index_speed_8404.wav | 8404 | 0.41 | 0.83 | 0.46 | 1 | 0.307 | 4 | 1 | 73 | 1 | 0 |
-## Audio Features
+
+# 4. udio Features
 - ![features](https://i.imgur.com/tXk4ppa.png)
   - 위에서부터 순서대로 Waveform, Spectrogram, Mel-spectrogram입니다.
   - Waveform에서 상단에 각각 발화 구간 전 무음 구간의 길이, 발화 구간의 길이, 발화 구간 후 무음 기간의 길이를 표시했습니다.
