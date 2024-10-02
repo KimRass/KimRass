@@ -10,13 +10,7 @@
 
 # 2. Core Competencies
 
-## 1) vision 모델 개발 경력
-- [scene text image QC 모델](https://github.com/KimRass/KimRass/tree/main/Flitto/Scene-Text-Image-QC)
-- [image rotation classification 모델](https://github.com/KimRass/KimRass/tree/main/Flitto/Image-Rotation-Classifier)
-- [textual attribute recognition 모델](https://github.com/KimRass/KimRass/tree/main/Flitto/Place-Translation/Textual-Attribute-Recognizer)
-- [scene text removal 모델](https://github.com/KimRass/KimRass/tree/main/Flitto/Place-Translation/Scene-Text-Remover)
-
-## 2) 딥 러닝 논문 구현 경험
+## 1) 딥 러닝 논문 구현 경험
 |모델명|내용|
 |-|-|
 |'ViViT'|• 3가지 architecture ('Spatio-temporal attention', 'Factorised encoder', 'Factorised self-attention') 구현.|
@@ -47,9 +41,15 @@
 |'VAE'|• 모델을 MNIST 데이터셋에 대해 학습.<br>• encoder output, decoder out 시각화.|
 |'StarGAN'|• architecture 구현.|
 
-## 3) [알고리즘과 자료구조에 대한 이해](https://github.com/KimRass/Algorithm-Coding-Test)
-- 프로그래머스 90 문제 해결.
-- Baekjoon Online Judge 153 문제 해결 및 Gold III 등급.
+## 2) [알고리즘과 자료구조에 대한 이해](https://github.com/KimRass/Algorithm-Coding-Test)
+- '프로그래머스' 1,434점.
+- ['Baekjoon Online Judge' AC rating: Gold III 1,115.](https://solved.ac/en/profile/rmx1000)
+
+## 3) digital image processing 알고리즘 개발 경력
+- [scene text image QC 모델](https://github.com/KimRass/KimRass/tree/main/Flitto/Scene-Text-Image-QC)
+- [image rotation classification 모델](https://github.com/KimRass/KimRass/tree/main/Flitto/Image-Rotation-Classifier)
+- [textual attribute recognition 모델](https://github.com/KimRass/KimRass/tree/main/Flitto/Place-Translation/Textual-Attribute-Recognizer)
+- [scene text removal 모델](https://github.com/KimRass/KimRass/tree/main/Flitto/Place-Translation/Scene-Text-Remover)
 
 ## 4) [Tableau 기반의 전사 대시보드 구축 리드 경험 (2021.02 ~ 2022.04)](https://github.com/KimRass/KimRass/tree/main/HDC/Tableau-BI)
 

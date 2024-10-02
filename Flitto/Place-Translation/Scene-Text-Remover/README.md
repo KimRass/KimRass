@@ -7,14 +7,17 @@
 |:-|:-|
 | <img src="https://i.imgur.com/PBIWNHF.png" width="600"> | <img src="https://i.imgur.com/TVD2dIq.png" width="600"> |
 | | 빨간색, 파란색, 초록색 간의 차이는 없으며 눈에 가장 잘 띄는 색상으로 표현했습니다. |
+
 ## 1) Scene Text Detection
 | Text region score map |
 |:-|
 | <img src="https://i.imgur.com/N2zFzGN.png" width="600"> |
 | 'CRAFT' scene text detection model [2]을 사용하여 'text region score map'을 생성합니다. 어떤 픽셀이 빨간색에 가까울수록 모델이 그 픽셀을 텍스트의 중심이라고 확신함을 나타냅니다. |
 | 이해를 돕기 위해 그 위에 원본 이미지를 함께 배치했습니다. |
+
 ## 2-1) Text Stroke Prediction
 - rule-based approach와 learning-based approach로 나눌 수 있습니다.
+
 ### (1) Rule-based Approach
 | Text region mask generation |
 |:-|
@@ -32,6 +35,7 @@
 | <img src="https://i.imgur.com/EgarFnX.png" width="600"> |
 | image segmentation map의 각 label이 text region mask와 얼마나 겹치는지를 픽셀 수를 세어 계산합니다. 일정한 값 이상의 겹침이 발생하는 labels를 가지고 text stroke mask를 생성합니다. |
 | fully connected CRF (Conditional Random Field) [3]을 통해 text stroke mask를 보정하여 최종적으로 text stroke mask를 생성합니다. |
+
 ### (2) Learning-based Approach
 | Text stroke mask prediction |
 |:-|
@@ -51,6 +55,7 @@
 |:-|
 | <img src="https://i.imgur.com/2TgCExG.png" width="600"> |
 | 앞서 생성한 두 개의 mask를 합쳐 최종 text stroke mask를 생성합니다. |
+
 ## 2-2) Text Stroke Mask Postprocessing
 - Dilation (Thickening)
     - Text stroke mask가 텍스트를 완전히 덮지 못하면 텍스트가 깔끔하게 지워지지 않습니다. dilation을 통해 text stroke mask가 텍스트를 충분히 덮을 수 있도록 처리합니다.
@@ -74,7 +79,6 @@
 | <img src="https://i.imgur.com/3L5lQT1.png" width="600"> | <img src="https://i.imgur.com/mvNOGF3.png" width="600"> |
 
 ## 3) Image Inpainting
-
 | Inpainted image |
 |:-|
 | <img src="https://i.imgur.com/V9FbGtR.png" width="600"> |
@@ -96,6 +100,7 @@
 <!-- ## (2) Failure Cases -->
 
 # 3. Research
+
 ## 1) Scene Text Detection
 - scene text detection 과정이 꼭 필요한가? 즉 bounding box를 그대로 mask로 사용해 image inpainting을 하면 어떻게 되는지 확인해보겠습니다.
 
