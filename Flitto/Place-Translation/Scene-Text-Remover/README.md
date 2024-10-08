@@ -1,7 +1,7 @@
 - 이미지에서 텍스트를 지우는 모델입니다.
 
 # 1. Process
-- [1]에서 제시한 방법론을 참고해 크게 3단계 (Scene text detection → Text stroke mask prediction → Image inpainting)에 걸쳐 작동하도록 개발했습니다.
+- [1]에서 제시한 방법론을 참고해 크게 3단계 (Scene text detection → Text stroke mask generation → Image inpainting)에 걸쳐 작동하도록 개발했습니다.
 
 | Original image | Bounding box annotation |
 |-|-|
@@ -37,7 +37,7 @@
 | fully connected CRF (Conditional Random Field) [3]을 통해 text stroke mask를 보정하여 최종적으로 text stroke mask를 생성합니다. |
 
 ### (2) Learning-based Approach
-| Text stroke mask prediction |
+| Text stroke mask generation |
 |-|
 | <img src="https://i.imgur.com/mQr42x9.png" width="600"> |
 | text stroke mask prediction model [4]에 입력하기 위해, 각 bounding box에 해당하는 이미지 패치를 분할하거나 패딩을 추가하여 각각의 종횡비가 1:5 또는 5:1이 되도록 합니다. |

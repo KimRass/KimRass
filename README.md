@@ -1,13 +1,4 @@
-# 1. Resume
-[RESUME](https://github.com/KimRass/KimRass/blob/main/RESUME.md)
-
-<!-- # 2. Github Stats
-![KimRass' GitHub stats](https://github-readme-stats.vercel.app/api?username=KimRass&show_icons=true&theme=radical) -->
-
-# 2. 'Baekjoon Online Judge' Solved Rank
-![hyp3rflow's solved.ac stats](https://github-readme-solvedac.hyp3rflow.vercel.app/api/?handle=rmx1000)
-
-# 3. PyTorch Implementations From Scratch
+# 1. PyTorch Implementations From Scratch
 |||||
 |:-:|:-|:-|:-|
 |Vision|
@@ -51,13 +42,12 @@
 |2024|[RoPE](https://github.com/KimRass/RoPE)|Su et al.|[✓] Rotary Positional Embedding|
 |Vision-Language|
 |2021|[CLIP](https://github.com/KimRass/CLIP)|Radford et al.|[✓] Training on Flickr8k + Flickr30k<br>[✓] Zero-shot classification on ImageNet1k (mini)<br>[✓] Linear classification on ImageNet1k (mini)|
+<!-- # 1. Resume
+[RESUME](https://github.com/KimRass/KimRass/blob/main/RESUME.md) -->
+
+<!-- # 2. Github Stats
+![KimRass' GitHub stats](https://github-readme-stats.vercel.app/api?username=KimRass&show_icons=true&theme=radical) -->
 <!-- 
-||||
-|:-:|:-:|:-:|
-|Vision|
-|2014|GAN|Goodfellow et al.|
-|2016|Context Encoder|Pathak et al.|
-|2022|BEiT|Bao et al.|
-|2022|Flamingo|Alayrac et al.|
-|2022|DiT|Peebles et al.|
-|2023|ContolNet|Zhang et al.|-->
+# 2. 'Baekjoon Online Judge' Solved Rank
+![hyp3rflow's solved.ac stats](https://github-readme-solvedac.hyp3rflow.vercel.app/api/?handle=rmx1000)
+ -->
