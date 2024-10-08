@@ -1,16 +1,3 @@
-<!-- • 기술 문서를 읽고 개발이 가능한 정도의 영어 
-• 뛰어난 문제 정의 및 해결 능력
-• Linux 환경에서 python 개발
-• 본인이 구현한 코드, 업무의 진행 상황 및 결과 등을 정확하고 체계적으로 문서화할 수 있는 능력이 있는 분
-- 다양한 분야의 연구 경험 보유자로, 각 연구에 대한 본인의 Contribution, 연구 내용, 문제점 도출, 해결에 따른 결과물 등을 잘 표현해 주시면 더욱 좋습니다. 또한, 이 과정에서 어려움과 문제 해결을 하는 방식 및 지적 호기심을 보여주시면 더욱 좋습니다.
-• 뛰어난 의사소통 능력을 가진 분
-• AI 모델 개발 후 서비스 배포 등 상용 서비스 구현 경험
-- 머신러닝 논문들을 이해하고 구현하여 비즈니스 모델에 적용할 수 있는 분 -->
-<!-- • AI 모델을 이용한 RESTful API 개발 -->
-<!-- - Github, JIRA 등의 툴을 활용한 협업 경험 -->
-<!-- • Cloud 환경 : Google Cloud Platform, Firebase, Amazon Web Services 활용 경험 -->
-<!-- - 애자일 프로젝트 실무 경험 -->
-<!-- • 개발 기록 문서 작성을 위한 Markdown(or Notion) 작성 능력 -->
 
 # 1. 개인 정보
 - **이름**: 김종범 (Jongbeom Kim)
@@ -20,7 +7,44 @@
 - **개인 GitHub 저장소**: https://github.com/KimRass
 
 # 2. 핵심 역량
-|구분|활용 능력|프로젝트 사례|
+- 다양한 분야의 연구 경험 보유자로, 각 연구에 대한 본인의 Contribution, 연구 내용, 문제점 도출, 해결에 따른 결과물 등을 잘 표현해 주시면 더욱 좋습니다. 또한, 이 과정에서 어려움과 문제 해결을 하는 방식 및 지적 호기심을 보여주시면 더욱 좋습니다.
+- 개발
+    • AI 모델 개발 후 서비스 배포 등 상용 서비스 구현 경험
+    • AI 모델을 이용한 RESTful API 개발
+    • Linux 환경에서 python 개발
+    - 머신러닝 논문들을 이해하고 구현하여 비즈니스 모델에 적용할 수 있는 분
+    - PyTorch: [딥 러닝 논문을 읽고 모델 아키텍처, 등을 from scratch로 구현하고 학습시킬 수 있으며 각종 시각화, 실험?](#1-딥-러닝-논문-구현-경험)
+    - 알고리즘:
+        - '프로그래머스': 1434점
+        - ['Baekjoon Online Judge' AC rating: Gold III 1115.](https://solved.ac/en/profile/rmx1000)||
+    - Tableau, SQL
+    - AWS: S3, EC2
+    • Cloud 환경 : Google Cloud Platform, Firebase, Amazon Web Services 활용 경험
+- 외국어:
+    - 영어: 영어 논문을 읽고 이해하는 데 무리 없음.
+        • 기술 문서를 읽고 개발이 가능한 정도의 영어 
+    - 일본어: 초중급 정도의 말하기, 읽기, 듣기.
+- 문서 작성:
+    - Markdown: 개발 기록 문서 작성을 위한 Markdown(or Notion) 작성 능력
+    - 파워포인트
+    • 본인이 구현한 코드, 업무의 진행 상황 및 결과 등을 정확하고 체계적으로 문서화할 수 있는 능력이 있는 분
+- 소프트웨어:
+    - 엑셀
+    - AutoCAD, SolidWorks
+- 성격:
+    - |매일 공부하고자 하는 자세|• 업무상 필요한 기술을 공부하거나 딥 러닝 논문을 읽고 구현하는 것 등을 출퇴근 시간이나 주말에도 꾸준히 하며 실력을 쌓아가는 것에 즐거움을 느낌.<br>• 업무를 수행하는 데 있어서 갖추어야하는 능력이 있다면 악착같이 파고들어 프로젝트를 성공적으로 이끎.|• 데이터 분석과 머신 러닝을 독학하여 아파트 실거래가 데이터 분석을 리드.<br>• Tableau와 SQL을 깊게 공부하여 EIS를 성공적으로 구축.<br>• scene text detection, image inpainting 등의 digital image processing을 공부하여 scene text removal 모델 개발.|
+    - |커뮤니케이션 능력|• 제품 또는 서비스를 개선하기 위한 방안에 대해 토론하는 것을 좋아하며 다른 사람의 이야기를 경청함.||
+    - |능동적|• 프로세스를 파악하고 그 중에서 비효율적이거나 많은 수작업이 수반되는 부분을 스스로 개선하기 위한 아이디어를 내고 이를 실행해 옮기고자 함.||
+    - 오히려 개선점을 찾아서 아이디어 내고 실행에 옮기고 그런걸 좋아하는듯
+    • 뛰어난 문제 정의 및 해결 능력
+    • 뛰어난 의사소통 능력을 가진 분
+- 협업 툴:
+    - Notion, Slack, Jira, GitHub
+    - 애자일 프로젝트 실무 경험
+    - 스프린트 단위의 agile 업무 경험.
+
+
+<!-- |구분|활용 능력|프로젝트 사례|
 |-|-|-|
 |Tableau|• 필요한 차트를 구현하기 위해 데이터 테이블을 분석하고, '관계', '유니온' 등의 기능을 자유자재로 사용하여 복잡한 데이터 구조를 처리.<br>• 주기적인 데이터 변화에 맞춰 차트가 자동으로 업데이트되도록 알고리즘을 설계하고, Tableau의 데이터 원본 업데이트 기능을 활용하여 실시간 데이터 업데이트 환경 구축.<br>• UX를 고려하여 '동작', '필터' 등의 기능을 통해 사용자가 다양한 정보를 얻을 수 있도록 상호작용이 가능한 대시보드를 설계.|• Tableau 기반의 EIS 구축|
 |SQL|자유자재로 원하는 데이터를 집계.|• SQL 쿼리를 작성하여 데이터를 집계하고 이를 Tableau로 차트와 비교하여 데이터 검증.<br>• 전사 직원들의 근무 이력 데이터를 바탕으로 인당 매출액과 인건비당 영업이익을 정확히 산출하여 연도별 생산성의 변화를 파악.|
@@ -38,7 +62,7 @@
 |커뮤니케이션 능력|• 제품 또는 서비스를 개선하기 위한 방안에 대해 토론하는 것을 좋아하며 다른 사람의 이야기를 경청함.||
 |능동적|• 프로세스를 파악하고 그 중에서 비효율적이거나 많은 수작업이 수반되는 부분을 스스로 개선하기 위한 아이디어를 내고 이를 실행해 옮기고자 함.||
 스프린트 단위의 agile 업무 경험.
-오히려 개선점을 찾아서 아이디어 내고 실행에 옮기고 그런걸 좋아하는듯
+오히려 개선점을 찾아서 아이디어 내고 실행에 옮기고 그런걸 좋아하는듯 -->
 
 # 3. 학력
 |기간|내용|
@@ -47,12 +71,12 @@
 |2006.03 ~ 2009.02|충북고등학교 졸업.|
 
 # 4. 경력
-|기간|회사|
-|-|-|
-|2024.05 ~ 2024.08|Meraker (정규직)|
-|2024.03 ~ 2024.05|D-Meta (정규직)|
-|2022.05 ~ 2023.12|Flitto (정규직)|
-|2016.07 ~ 2022.04|HDC현대산업개발 (정규직)|
+|기간|회사|주요 업무|
+|-|-|-|
+|2024.05 ~ 2024.08|Meraker (정규직)|• [video super-resolution 모델 연구개발](#1-video-super-resolution-모델-연구개발)|
+|2024.03 ~ 2024.05|D-Meta (정규직)|• [object detection 모델 개발](#1-object-detection-모델-개발)<br>• [지능형 CCTV 성능 시험인증 취득](#2-지능형-cctv-성능-시험인증-취득)|
+|2022.05 ~ 2023.12|Flitto (정규직)|• [이미지 번역 관련 digital image processing 알고리즘 기획 및 개발](#1-이미지-번역-서비스-place-translation)<br>• [아랍어 텍스트 이미지 수집 프로젝트](#2-아랍어-텍스트-이미지-수집-프로젝트)<br>• [B2B 판매용 data 수집](#3-b2b-판매용-data-수집)|
+|2016.07 ~ 2022.04|HDC현대산업개발 (정규직)|• [Tableau 기반의 EIS 구축](#1-tableau-기반의-eis-구축-202102--202204)<br>• [아파트 실거래가 데이터 분석](#2-아파트-실거래가-데이터-분석-202001--202009)|
 
 ## 1) Meraker (2024.05 ~ 2023.08, 정규직)
 - 회사 소개: 2022년 설립된 AI 스타트업.
@@ -123,13 +147,15 @@
 - 이직 사유
     - AI 기술을 적극적으로 활용하는 회사에서 근무하고자 함.
 
-### (1) 'Place Translation'
+### (1) 이미지 번역 서비스 ('Place Translation')
 
 #### 프로젝트 소개
 - [외국인 고객에게 원활한 주문 경험을 제공하기 위해, 음식점의 메뉴 이미지를 다국어로 번역하여 고객에게 QR 코드 형태로 제공하는 서비스.](https://github.com/KimRass/KimRass/tree/main/Flitto/Place-Translation)
+- 이미지 번역과 관련된 각종 digital image processing 알고리즘 기획 및 개발.
 
 #### 참여 인원
 - PO 1명, UX 디자이너 1명, 프론트 엔드 개발자 1명, 백 엔드 개발자 2명, ML 엔지니어 1명 (본인)
+- Jira~ 애자일 프로젝트 경험~
 
 #### 주요 성과
 - 이미지 번역의 시각적 품질을 획기적으로 향상시켜 사용자 경험 개선.
@@ -172,10 +198,10 @@
     - 불필요한 바운딩 박스 생성, 텍스트 제거 및 텍스트 인식 모델 구동 프로세스 제거.
     - 이미지의 시각적 품질 향상.
 
-### (2) scene text image 수집
+### (2) 아랍어 텍스트 이미지 수집 프로젝트
 
 #### 프로젝트 소개
-- 'N'사의 OCR 모델 구축 및 평가를 위해, Flitto의 크라우드 데이터 레이블링 플랫폼을 활용하여 아랍어 텍스트가 포함된 이미지를 수집.
+- Flitto의 크라우드 데이터 레이블링 플랫폼을 활용하여 'N'사의 OCR 모델 학습을 위한 아랍어 텍스트가 이미지 수집.
 
 #### 참여 인원
 - PO 1명, 백 엔드 개발자 2명, ML 엔지니어 1명 (본인)
@@ -184,16 +210,13 @@
 - 이미지 임베딩 기반의 유사도 판단을 통해 중복 이미지의 77%를 자동으로 제거.
 - 수동 QC 전담 인력 고용 30% 절감.
 
-- 데이터 품질 향상 및 비용 절감: 수동 QC 과정을 자동화하는 알고리즘을 개발하여 데이터 품질을 유지하면서도 수집 비용을 크게 절감.
-<!-- - 모델 정확도 향상: 이미지 회전 각도 분류 모델을 개발해 정확도 98% 이상 달성, 데이터 전처리 효율성 개선. -->
-- 데이터 중복 감소: 이미지 임베딩 기반 유사도 검증을 통해 중복 데이터를 15% 이상 자동으로 제거하여, 데이터 품질과 다양성 확보.
-
 #### 수행 업무
 - [**image rotation classification 모델 개발**](https://github.com/KimRass/KimRass/tree/main/Flitto/Image-Rotation-Classifier)
-    - scene text image의 회전 각도를 0°, 90°, 180°, 270° 중 하나로 분류하는 모델 구축.
-    - data augmentation을 통해 모델의 일반화 성능 향상.
-    - pre-trained scene text detection 모델의 아키텍처를 수정하고 fine-tuning을 통해 모델 성능 최적화.
-- **scene text image QC 알고리즘 개발**
+    - 텍스트 이미지의 회전 각도를 0°, 90°, 180°, 270°로 분류하는 모델 개발.
+    - 데이터: 자체 수집한 이미지 31,652장 및 EvArEST 데이터셋 510장 사용.
+    - 모델 아키텍처: 사전 학습된 텍스트 탐지 모델을 분류 태스크에 맞게 일부 수정.
+    - 테스트셋에 대한 정확도 88.2% 기록.
+- **아랍어 텍스트 이미지 QC 알고리즘 개발**
     - 높은 품질과 다양성을 가진 데이터를 수집하기 위해, 수동 QC 과정을 일부 자동화하는 알고리즘을 개발하여 비용 절감.
     - 회전된 이미지를 복원하는 분류 모델 사용.
     - 'Faiss' 라이브러리를 사용하여 이미지간 임베딩 기반 유사도 계산을 최적화하고 이를 사용해 기존에 수집된 이미지와 유사한 이미지를 자동으로 제외. ~% 이상 정확도~
@@ -218,6 +241,7 @@
     - **음성 데이터**:
         - QA 요구조건에 따라 발화 구간의 길이와 수, 음성의 크기, 노이즈 등 검토.
         - 음성 데이터 시각화 (waveform, spectrogram, mel-spectrogram)를 통해 수동 QC 보조.
+    - 이미지 데이터 수집 프로젝트에서 Google Sheets를 활용한 데이터 입력 프로세스에 있어서 드롭다운 메뉴와 문자열 관련 함수를 활용하여 인적오류를 최소화.
 
 ## 4) HDC현대산업개발 (2016.07 ~ 2022.04, 정규직)
 - 회사 소개:
@@ -309,12 +333,12 @@
 # 6. 교육
 |기간|과정|교육기관|
 |-|-|-|
-|2022.01 ~ 2022.02|'4가지 유즈 케이스를 활용한 시계열 분석: 전처리부터 딥러닝 적용까지 5기'|'러닝스푼즈'|
+|2022.01 ~ 2022.02|['4가지 유즈 케이스를 활용한 시계열 분석: 전처리부터 딥러닝 적용까지 5기'](https://github.com/KimRass/time_series_using_4_use_cases)|'러닝스푼즈'|
 |2021.09 ~ 2021.10|'유지·보수 비용 10배 절감을 위한 DB 설계 및 구축 1기'|'러닝스푼즈'|
 |2021.07 ~ 2021.08|'태블로 마스터 클래스'|'VizLab'|
-|2021.03 ~ 2021.04|'컴퓨터 비전: 딥러닝 기반의 영상 인식 모델 구현 2기'|'러닝스푼즈'|
-|2020.09 ~ 2020.12|'TensorFlow를 활용한 딥러닝 자연어처리 입문 6기'|'러닝스푼즈'|
-|2020.08 ~ 2020.09|'고객데이터와 딥러닝을 활용한 추천시스템 구현 1기'|'러닝스푼즈'|
+|2021.03 ~ 2021.04|['컴퓨터 비전: 딥러닝 기반의 영상 인식 모델 구현 2기'](https://github.com/KimRass/dl_based_image_recognition_model)|'러닝스푼즈'|
+|2020.09 ~ 2020.12|['TensorFlow를 활용한 딥러닝 자연어처리 입문 6기'](https://github.com/KimRass/introduction_to_nlp_using_tf)|'러닝스푼즈'|
+|2020.08 ~ 2020.09|['고객데이터와 딥러닝을 활용한 추천시스템 구현 1기'](https://github.com/KimRass/rec_sys_using_customer_data_and_dl)|'러닝스푼즈'|
 ---
 ---
 ---
@@ -327,8 +351,8 @@
 
 |모델명|내용|
 |-|-|
-|['ViViT'](https://github.com/KimRass/ViViT)|• 3가지 아키텍처 ('Spatio-temporal attention', 'Factorised encoder', 'Factorised self-attention') 구현.|
-|['MAE'](https://github.com/KimRass/MAE)|• pre-training을 위한 아키텍처 구현.|
+|['ViViT'](https://github.com/KimRass/ViViT)|• 3가지 모델 아키텍처 ('Spatio-temporal attention', 'Factorised encoder', 'Factorised self-attention') 구현.|
+|['MAE'](https://github.com/KimRass/MAE)|• pre-training을 위한 모델 아키텍처 구현.|
 |['Copy-Paste'](https://github.com/KimRass/Copy-Paste)|• COCO 2014 데이터셋에 적용 및 데이터 시각화.|
 |['ILVR'](https://github.com/KimRass/ILVR)|• downsampling factor, conditioning range 변화에 따른 생성 이미지 변화 시각화.|
 |['SDEdit'](https://github.com/KimRass/SDEdit)|• 'human-stroke-simulation algorithm' 구현 및 이를 'CelebA' 데이터셋에 적용하여 이미지 생성.|
@@ -340,7 +364,7 @@
 |['PGGAN'](https://github.com/KimRass/PGGAN)|• 모델을 512 × 512의 'CelebA-HQ' 데이터셋에 대해 학습.|
 |['ViT'](https://github.com/KimRass/ViT)|• 'CutOut', 'Hide-and-Seek', 'CutMix' data augmentation 구현 및 실험.<br>• 'Attention roll-out'을 통한 attention map 시각화.<br>• position embedding similarity, position embedding interpolation 구현.<br>• 모델을 CIFAR-10, CIFAR-100에 데이터셋에 대해 각각 학습.|
 |['CLIP'](https://github.com/KimRass/CLIP)|• 모델을 'Flickr8k' + 'Flickr30k' 데이터셋에 대해 학습.<br>• zero-shot classification, linear classification 구현.|
-|['BERT'](https://github.com/KimRass/BERT)|• 아키텍처, masked language modeling 구현.<br>• 'BookCorpus', 'SQuAD', 'SWAG' 데이터셋 전처리.|
+|['BERT'](https://github.com/KimRass/BERT)|• 모델 아키텍처, masked language modeling 구현.<br>• 'BookCorpus', 'SQuAD', 'SWAG' 데이터셋 전처리.|
 |['Sentence-BERT'](https://github.com/KimRass/Sentence-BERT)|• classification loss, regression loss, constrastive loss 구현<br>•'STSb', 'WikiSection' 데이터셋 전처리.|
 |['DeepLabv3'](https://github.com/KimRass/DeepLabv3)|• 모델을 VOC2012 데이터셋에 대해 학습<br>• 모델 출력 시각화.|
 |[Gatys et al., 2016 (image style transfer)](https://github.com/KimRass/Gatys-et-al.-2016)|• VGGNet-19 기반으로 구현.|
@@ -349,9 +373,9 @@
 |['RotNet'](https://github.com/KimRass/RotNet)|• attention map 시각화.|
 |['SimCLR'](https://github.com/KimRass/SimCLR)|• normalized temperature-scaled cross entropy loss, pixel intensity histogram 구현.|
 |['STEFANN'](https://github.com/KimRass/STEFANN)|• 'Google Fonts'의 폰트로부터 데이터셋 생성. <br>• 'FANnet' 아키텍처 구현 및 이를 'Google Fonts' 데이터셋에 대해 학습.|
-|[ 'PixelLink'](https://github.com/KimRass/PixelLink)|• 아키텍처, instance-balanced cross entropy loss 구현<br>• 모델 출력에 대한 후처리.|
+|[ 'PixelLink'](https://github.com/KimRass/PixelLink)|• 모델 아키텍처, instance-balanced cross entropy loss 구현<br>• 모델 출력에 대한 후처리.|
 |['DCGAN'](https://github.com/KimRass/DCGAN)|• 모델을 64 × 64의 'CelebA' 데이터셋에 대해 학습.<br>• latent space interpolation 구현.|
 |['Pix2Pix'](https://github.com/KimRass/Pix2Pix)|• 모델을 'Facades', Google Maps 데이터셋에 대해 각각 학습.|
 |['VAE'](https://github.com/KimRass/VAE)|• 모델을 MNIST 데이터셋에 대해 학습.<br>• encoder output, decoder out 시각화.|
-|['StarGAN'](https://github.com/KimRass/StarGAN)|• 아키텍처 구현.|
+|['StarGAN'](https://github.com/KimRass/StarGAN)|• 모델 아키텍처 구현.|
 </details>
