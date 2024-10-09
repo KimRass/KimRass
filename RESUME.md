@@ -7,33 +7,33 @@
 - **개인 GitHub 저장소**: https://github.com/KimRass
 
 # 2. 핵심 역량
-- 다양한 분야의 연구 경험 보유자로, 각 연구에 대한 본인의 Contribution, 연구 내용, 문제점 도출, 해결에 따른 결과물 등을 잘 표현해 주시면 더욱 좋습니다. 또한, 이 과정에서 어려움과 문제 해결을 하는 방식 및 지적 호기심을 보여주시면 더욱 좋습니다.
+<!-- - 다양한 분야의 연구 경험 보유자로, 각 연구에 대한 본인의 Contribution, 연구 내용, 문제점 도출, 해결에 따른 결과물 등을 잘 표현해 주시면 더욱 좋습니다. 또한, 이 과정에서 어려움과 문제 해결을 하는 방식 및 지적 호기심을 보여주시면 더욱 좋습니다. -->
 - 개발:
     - AI:
-        - AI 모델 개발 후 서비스 배포 등 상용 서비스 구현 경험
-        - [PyTorch를 기반의 딥 러닝 논문 구현](#1-딥-러닝-논문-구현-경험) 경험 다수.
-        <!-- • Linux 환경에서 python 개발 -->
+        - [문자 단위의 scene text removal 모델 개발 경험](#ec8898ed9689-ec9785ebacb4-3)
+        - [PyTorch 기반의 딥 러닝 논문 구현 경험](#1-딥-러닝-논문-구현-경험) 다수.
+        - ['공공행정문서 OCR' 데이터셋을 활용하여 'EasyOCR' 모델을 fine-tuning하여 92.6% 성능을 향상시킨 경험 (개인 프로젝트)](https://github.com/KimRass/train_easyocr)
+        - [TensorBoard 및 Wandb를 통한 실시간 모델 학습 모니터링 및 실험 경험.](#1-video-super-resolution-모델-연구개발)
+        - [`accelerate` 라이브러리를 활용하여 8대의 GPU를 통해 데이터 분산 학습 수행 경험.](#1-video-super-resolution-모델-연구개발)
     - 알고리즘: ['Baekjoon Online Judge' AC rating: Gold III 1115.](https://solved.ac/en/profile/rmx1000)||
-    - Tableau: EIS 구축 프로젝트를 총괄하여 다수의 대시보드 설계 및 차트 개발 경험.
-    - SQL: 다수의 Tableau 차트에 대한 SQL 쿼리 작성 및 비교 검증 경험.
+    - Tableau: [EIS 구축 프로젝트를 총괄하여 다수의 대시보드 설계 및 차트 개발 경험.](#1-tableau-기반의-eis-구축-202102--202204)
+    - SQL: [SQL 쿼리를 작성하여 데이터 분석 및 Tableau 차트 결과를 비교·검증한 경험.](#1-tableau-기반의-eis-구축-202102--202204)
     - AWS EC2:
+        - [RabbitMQ 기반 비동기 AMQP 서버를 개발하여 백 오피스에 배포한 경험.](#1-이미지-번역-서비스-place-translation)
         - ['FastAPI' 기반의 RESTful API 게시판 애플리케이션을 AWS EC2에 배포 및 운영해본 경험 (개인 프로젝트)](https://github.com/KimRass/FastAPI).
         - ['DeepLabv3' 기반의 실시간 semantic segmentation 서비스를 AWS EC2에 배포 및 운영해본 경험 (개인 프로젝트)](https://github.com/KimRass/FastAPI).
     - AWS S3: ['DuckDB'로 구현된 이미지 메타데이터를 AWS S3와 동기화하여 백업 및 복원 작업 구현 경험.](#2-아랍어-텍스트-이미지-수집-프로젝트)
+- 문서 작성:
+    - Markdown 및 Notion: 개발 기록 문서 작성을 위해 활용하는 데 익숙함.
+    - Slack: 'Incoming WebHooks' 기능을 통한 실시간 시스템 에러 알림 기능 구현 경험.
+    - Jira: [2주 단위의 스프린트를 통한 애자일 프로젝트 수행 경험.](#1-이미지-번역-서비스-place-translation)
+- 소프트웨어:
+    - SolidWorks: 동력전달장치 등의 투상도를 바탕으로 3D 도면 작성 가능.
+    - AutoCAD: SolidWorks로 작성된 3D 도면을 2D 도면화 가능.
+    <!-- - 파워포인트: [알고리즘을 설명하는 그림 포함된 발표 자료 작성 경험?.](#1-video-super-resolution-모델-연구개발) -->
 - 외국어:
     - 영어: 영어 논문 및 기술 문서를 읽고 이해하여 활용 가능.
     - 일본어: 초중급 수준의 회화, 독해, 청취 가능.
-- 문서 작성:
-    - Markdown 및 Notion: 개발 기록 문서 작성을 위해 활용하는 데 익숙함.
-    - Slack
-    - Jira
-    - GitHub
-    - 파워포인트:
-        - [알고리즘을 설명하는 그림 포함된 발표 자료 작성 경험?.](#1-video-super-resolution-모델-연구개발)
-- 소프트웨어:
-    - 엑셀
-    - SolidWorks: 동력전달장치 등의 투상도를 바탕으로 3D 도면 작성 가능.
-    - AutoCAD: SolidWorks로 작성된 3D 도면을 2D 도면화 가능.
 - 성격:
     - 매일 공부하는 자세:
         - 업무상 필요한 기술을 공부하거나 딥 러닝 논문을 읽고 구현하는 것 등을 출퇴근 시간이나 주말에도 꾸준히 하며 실력을 쌓아가는 것에 즐거움을 느낌.
@@ -47,10 +47,6 @@
     - 오히려 개선점을 찾아서 아이디어 내고 실행에 옮기고 그런걸 좋아하는듯
     • 뛰어난 문제 정의 및 해결 능력
     • 뛰어난 의사소통 능력을 가진 분
-- 협업 툴:
-    - 애자일 프로젝트 실무 경험
-    - 스프린트 단위의 agile 업무 경험.
-
 
 <!-- |구분|활용 능력|프로젝트 사례|
 |-|-|-|
@@ -176,8 +172,8 @@
     - 이미지에서 텍스트를 탐지하고 (scene text detection) 자연스럽게 제거하는 (image inpainting) 모델.
     - 사용자가 제거하고 하는 텍스트를 문자 단위로 지정하는 기능 구현.
     - 사전 학습된 딥 러닝 모델과 connected-component labeling, fully connected CRF 등의 digital image proessing 기법 활용.
-    - RabbitMQ 기반의 AMQP 서버 개발 및 백 오피스와 연동.
-    - Slack과 연동하여 시스템 에러 발생 시 실시간 알림 구현.
+    - RabbitMQ 기반 비동기 AMQP 서버 개발 및 백 오피스와 연동.
+    - Slack과 연동하여 시스템 에러에 대한 실시간 알림 구현.
     - 기존 포토샵을 통한 수작업 대비 처리 속도 개선.
     - 'O'사 서비스 대비 뛰어난 시각적 품질 구현.
     - 밈 번역 커뮤니티 ['Desert Fox'](https://www.desertfox.io/ko)에 도입.
@@ -188,20 +184,20 @@
     - 자체 데이터셋을 통해 학습된 semantic segmentation 모델로 텍스트 정렬 추출.
     - 언어별 특성을 반영해 텍스트의 줄바꿈 위치 계산 및 폰트 크기 최적화.
     - contrast ratio를 기반의 픽셀 단위의 정교한 계산을 통해 텍스트의 가독성 최적화.
-    - RabbitMQ 기반의 AMQP 서버 개발 및 백 오피스와 연동.
-    - Slack과 연동하여 시스템 에러 발생 시 실시간 알림 구현.
+    - RabbitMQ 기반 비동기 AMQP 서버 개발 및 백 오피스와 연동.
+    - Slack과 연동하여 시스템 에러에 대한 실시간 알림 구현.
     - 원본 이미지와 유사한 느낌의 이미지 번역 구현.
 - [**이미지 크기 자동 조정 알고리즘 개발**](https://github.com/KimRass/KimRass/tree/main/Flitto/Place-Translation/Automatic-Image-Resizer):
     - 기존 이미지와 새로운 이미지 간의 feature matching을 통해 새로운 이미지를 적절한 해상도로 자동 조정하는 알고리즘 개발.
     - SIFT를 활용해 두 이미지 간의 특징점 추출 후, RANSAC을 사용해 최적의 호모그래피 행렬 계산.
     - 새로운 이미지가 다수 존재하는 경우 기존 이미지와 가장 유사한 이미지를 자동으로 찾는 기능 구현.
-    - RabbitMQ 기반의 AMQP 서버 개발 및 백 오피스와 연동.
+    - RabbitMQ 기반 비동기 AMQP 서버 개발 및 백 오피스와 연동.
     - 기존 포토샵을 통한 수작업 대비 처리 속도 개선.
 - [**메뉴 이미지 생성 자동화 기능 개발**:](https://github.com/KimRass/KimRass/tree/main/Flitto/Place-Translation/Menu-Image-Generator)
     - 엑셀 파일을 입력 받아 메뉴 이미지를 자동으로 생성하는 기능 개발.
     - 메뉴 항목별로 폰트 크기, 블록 높이, 배경 이미지 등 사용자 맞춤 설정 가능.
     - 언어별 특성을 반영해 텍스트의 줄바꿈 위치 계산.
-    - RabbitMQ 기반의 AMQP 서버 개발 및 백 오피스와 연동.
+    - RabbitMQ 기반 비동기 AMQP 서버 개발 및 백 오피스와 연동.
     - 기존의 Figma를 통한 수작업 메뉴 이미지 제작 프로세스 제거.
     - 불필요한 바운딩 박스 생성, 텍스트 제거 및 텍스트 인식 모델 구동 프로세스 제거.
     - 이미지의 시각적 품질 향상.
@@ -229,8 +225,8 @@
     - 회전된 이미지를 복원하는 분류 모델 사용.
     - 'Faiss' 라이브러리를 사용하여 이미지간 임베딩 기반 유사도 계산을 최적화하고 이를 사용해 기존에 수집된 이미지와 유사한 이미지를 자동으로 제외. ~% 이상 정확도~
     - 'EasyOCR' 프레임워크를 활용하여 아랍어 텍스트의 수와 비율 확인.
-    - RabbitMQ 기반의 AMQP 서버 개발 및 백 오피스와 연동.
-    - Slack과 연동하여 시스템 에러 발생 시 실시간 알림 구현.
+    - RabbitMQ 기반 비동기 AMQP 서버 개발 및 백 오피스와 연동.
+    - Slack과 연동하여 시스템 에러에 대한 실시간 알림 구현.
 
 ### (3) B2B 판매용 data 수집
 
