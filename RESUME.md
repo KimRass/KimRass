@@ -163,7 +163,7 @@
     - 새로운 이미지가 다수 존재하는 경우 기존 이미지와 가장 유사한 이미지를 자동으로 찾는 기능 구현.
     - RabbitMQ 기반 비동기 AMQP 서버 개발 및 백 오피스와 연동.
     - 기존 포토샵을 통한 수작업 대비 처리 속도 개선.
-- [**메뉴 이미지 생성 자동화 기능 개발**:](https://github.com/KimRass/KimRass/tree/main/Flitto/Place-Translation/Menu-Image-Generator)
+- [**메뉴 이미지 생성 자동화 기능 개발**](https://github.com/KimRass/KimRass/tree/main/Flitto/Place-Translation/Menu-Image-Generator):
     - 엑셀 파일을 입력 받아 메뉴 이미지를 자동으로 생성하는 기능 개발.
     - 메뉴 항목별로 폰트 크기, 블록 높이, 배경 이미지 등 사용자 맞춤 설정 가능.
     - 언어별 특성을 반영해 텍스트의 줄바꿈 위치 계산.
@@ -207,7 +207,7 @@
 - 여러 알고리즘을 바탕으로 수동 데이터 QC를 보조하여 소요 시간 및 비용 단축.
 
 #### 수행 업무
-- 데이터 QC 알고리즘 개발:
+- **데이터 QC 알고리즘 개발**:
     - 텍스트 데이터:
         - 문장 부호 표준화.
         - Levenshtein distance 기반 유사도 측정을 통해 중복 문장 제거.
