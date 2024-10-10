@@ -9,27 +9,27 @@
 # 2. 핵심 역량
 - 개발:
     - AI:
-        - [문자 단위의 scene text removal 모델 개발 경험](#ec8898ed9689-ec9785ebacb4-3)
+        - [문자 단위의 장면 텍스트 제거 모델 개발 경험](#1-이미지-번역-서비스-place-translation)
+        - [텍스트 속성 인식 모델 개발 경험](#1-이미지-번역-서비스-place-translation)
         - [PyTorch 기반의 AI 논문 구현 경험](https://github.com/KimRass/KimRass) 다수.
-        - ['공공행정문서 OCR' 데이터셋을 활용하여 'EasyOCR' 모델을 fine-tuning하여 92.6% 성능을 향상시킨 경험 (개인 프로젝트)](https://github.com/KimRass/train_easyocr)
+        - ['공공행정문서 OCR' 데이터셋을 활용하여 'EasyOCR' 모델 fine-tuning 경험 (개인 프로젝트)](https://github.com/KimRass/train_easyocr)
         - [`accelerate` 라이브러리를 활용하여 8대의 GPU를 통해 데이터 분산 학습 수행 경험.](#1-video-super-resolution-모델-연구개발)
         - [TensorBoard 및 Wandb를 통한 실시간 모델 학습 모니터링 및 실험 경험.](#1-video-super-resolution-모델-연구개발)
         - 사내 AI 및 개발 스터디 주관 경험.
-    - 알고리즘: ['Baekjoon Online Judge' AC rating: Gold III 1115.](https://solved.ac/en/profile/rmx1000)||
+    - 알고리즘: ['Baekjoon Online Judge' AC rating: Gold III 1115.](https://solved.ac/en/profile/rmx1000)
     - Tableau: [EIS 구축 프로젝트를 총괄하여 다수의 대시보드 설계 및 차트 개발 경험.](#1-tableau-기반의-eis-구축-202102--202204)
     - SQL: [SQL 쿼리를 작성하여 데이터 분석 및 Tableau 차트 결과를 비교·검증한 경험.](#1-tableau-기반의-eis-구축-202102--202204)
     - AWS EC2:
         - [RabbitMQ 기반 비동기 AMQP 서버를 개발하여 백 오피스에 배포한 경험.](#1-이미지-번역-서비스-place-translation)
         - ['FastAPI' 기반의 RESTful API 게시판 애플리케이션을 AWS EC2에 배포 및 운영해본 경험 (개인 프로젝트)](https://github.com/KimRass/FastAPI).
         - ['DeepLabv3' 기반의 실시간 semantic segmentation 서비스를 AWS EC2에 배포 및 운영해본 경험 (개인 프로젝트)](https://github.com/KimRass/FastAPI).
-    - AWS S3: ['DuckDB'로 구현된 이미지 메타데이터를 AWS S3와 동기화하여 백업 및 복원 작업 구현 경험.](#2-아랍어-텍스트-이미지-수집-프로젝트)
-- 문서 작성:
+    - AWS S3: ['DuckDB'로 구현된 이미지 메타데이터를 AWS S3와 동기화하여 백업 및 복원 작업 구현 경험.](#2-아랍어-텍스트-이미지-수집)
+- 소프트웨어:
     - Slack: 'Incoming WebHooks' 기능을 통한 실시간 시스템 에러 알림 기능 구현 경험.
     - Jira: [2주 단위의 스프린트를 통한 애자일 프로젝트 수행 경험.](#1-이미지-번역-서비스-place-translation)
-    <!-- - Markdown 및 Notion: 개발 기록 문서 작성을 위해 활용하는 데 익숙함. -->
-- 소프트웨어:
     - SolidWorks: 동력전달장치 등의 투상도를 바탕으로 3D 도면 작성 가능.
     - AutoCAD: SolidWorks로 작성된 3D 도면을 2D 도면화 가능.
+    <!-- - Markdown 및 Notion: 개발 기록 문서 작성을 위해 활용하는 데 익숙함. -->
     <!-- - 파워포인트: [알고리즘을 설명하는 그림 포함된 발표 자료 작성 경험?.](#1-video-super-resolution-모델-연구개발) -->
 - 외국어:
     - 영어: 영어 논문 및 기술 문서를 읽고 이해하여 활용 가능.
@@ -51,7 +51,7 @@
 |-|-|-|
 |2024.05 ~ 2024.08|Meraker (정규직)|• [video super-resolution 모델 연구개발](#1-video-super-resolution-모델-연구개발)|
 |2024.03 ~ 2024.05|D-Meta (정규직)|• [object detection 모델 개발](#1-object-detection-모델-개발)<br>• [지능형 CCTV 성능 시험인증 취득](#2-지능형-cctv-성능-시험인증-취득)|
-|2022.05 ~ 2023.12|Flitto (정규직)|• [이미지 번역 관련 digital image processing 알고리즘 기획 및 개발](#1-이미지-번역-서비스-place-translation)<br>• [아랍어 텍스트 이미지 수집 프로젝트](#2-아랍어-텍스트-이미지-수집)<br>• [B2B 판매용 데이터 수집](#3-b2b-판매용-데이터-수집)|
+|2022.05 ~ 2023.12|Flitto (정규직)|• [이미지 번역 프로젝트](#1-이미지-번역-서비스-place-translation)<br>• [아랍어 텍스트 이미지 수집 프로젝트](#2-아랍어-텍스트-이미지-수집)<br>• [B2B 판매용 데이터 수집 프로젝트](#3-b2b-판매용-데이터-수집)|
 |2016.07 ~ 2022.04|HDC현대산업개발 (정규직)|• [Tableau 기반의 EIS 구축](#1-tableau-기반의-eis-구축-202102--202204)<br>• [아파트 실거래가 데이터 분석](#2-아파트-실거래가-데이터-분석-202001--202009)|
 
 ## 1) Meraker (2024.05 ~ 2023.08, 정규직)
@@ -121,7 +121,7 @@
 - 이직 사유
     - AI 기술을 적극적으로 활용하는 회사에서 근무하고자 함.
 
-### (1) 이미지 번역 서비스 ('Place Translation')
+### (1) 이미지 번역 서비스 'Place Translation'
 
 #### 프로젝트 소개
 - [외국인 고객에게 원활한 주문 경험을 제공하기 위해, 음식점의 메뉴 이미지를 다국어로 번역하여 고객에게 QR 코드 형태로 제공하는 서비스.](https://github.com/KimRass/KimRass/tree/main/Flitto/Place-Translation)
@@ -138,7 +138,7 @@
 - 의류 브랜드 'M'사와 상품 소개 페이지 번역 서비스 계약 체결.
 
 #### 수행 업무
-- [**scene text removal 모델 개발**](https://github.com/KimRass/KimRass/tree/main/Flitto/Place-Translation/Scene-Text-Remover):
+- [**character-level scene text removal 모델 개발**](https://github.com/KimRass/KimRass/tree/main/Flitto/Place-Translation/Scene-Text-Remover):
     - 이미지에서 텍스트를 탐지하고 (scene text detection) 자연스럽게 제거하는 (image inpainting) 모델.
     - 사용자가 제거하고 하는 텍스트를 문자 단위로 지정하는 기능 구현.
     - 사전 학습된 AI 모델과 connected-component labeling, fully connected CRF 등의 digital image proessing 기법 활용.
