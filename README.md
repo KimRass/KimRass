@@ -1,4 +1,4 @@
-# 1. PyTorch Implementations From Scratch
+# 1. From-scratch PyTorch Implementations
 |분류 및 연도|이름|저자|구현 내용|
 |:-:|:-|:-|:-|
 |Vision|
