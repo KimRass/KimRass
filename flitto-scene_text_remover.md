@@ -116,21 +116,33 @@
 ## 1) Examples
 
 ### (1) Success Cases
-|원본|텍스트 제거|
-|-|-|
-|빛의 반사가 많은 경우||
-|<img src="https://raw.githubusercontent.com/KimRass/KimRass/refs/heads/main/Flitto/Place-Translation/Scene-Text-Remover/examples/success_cases/chinese_character_detection/430_1_original.jpg" width="400">|<img src="https://raw.githubusercontent.com/KimRass/KimRass/refs/heads/main/Flitto/Place-Translation/Scene-Text-Remover/examples/success_cases/chinese_character_detection/430_1_texts_removed.jpg" width="400">|
-|텍스트간 거리가 좁음||
-| <img src="https://raw.githubusercontent.com/KimRass/KimRass/refs/heads/main/Flitto/Place-Translation/Scene-Text-Remover/examples/success_cases/dense_text/539_1_original.jpg" width="400"> | <img src="https://raw.githubusercontent.com/KimRass/KimRass/refs/heads/main/Flitto/Place-Translation/Scene-Text-Remover/examples/success_cases/dense_text/539_1_text_removed.jpg" width="400"> |
-|복잡한 배경 이미지||
-| <img src="https://raw.githubusercontent.com/KimRass/KimRass/refs/heads/main/Flitto/Place-Translation/Scene-Text-Remover/examples/success_cases/complicated_background/1555_5943_original.jpg" width="400"> | <img src="https://raw.githubusercontent.com/KimRass/KimRass/refs/heads/main/Flitto/Place-Translation/Scene-Text-Remover/examples/success_cases/complicated_background/1555_5943_text_removed.jpg" width="400"> |
-| <img src="https://raw.githubusercontent.com/KimRass/KimRass/refs/heads/main/Flitto/Place-Translation/Scene-Text-Remover/examples/success_cases/complicated_background/696_1_original.jpg" width="400"> | <img src="https://raw.githubusercontent.com/KimRass/KimRass/refs/heads/main/Flitto/Place-Translation/Scene-Text-Remover/examples/success_cases/complicated_background/696_1_texts_removed.jpg" width="400"> |
-| <img src="https://raw.githubusercontent.com/KimRass/KimRass/refs/heads/main/Flitto/Place-Translation/Scene-Text-Remover/examples/success_cases/complicated_background/389_2_original.jpg" width="400"> | <img src="https://raw.githubusercontent.com/KimRass/KimRass/refs/heads/main/Flitto/Place-Translation/Scene-Text-Remover/examples/success_cases/complicated_background/389_2_text_removed.jpg" width="400"> |
-|고해상도 이미지||
-| <img src="https://raw.githubusercontent.com/KimRass/KimRass/refs/heads/main/Flitto/Place-Translation/Scene-Text-Remover/examples/success_cases/high_resolution/ontheboarder1_original.jpg" width="400"> | <img src="https://raw.githubusercontent.com/KimRass/KimRass/refs/heads/main/Flitto/Place-Translation/Scene-Text-Remover/examples/success_cases/high_resolution/ontheboarder1_texts_removed.png" width="400"> |
-|한정된 공간 내의 텍스트||
-| <img src="https://raw.githubusercontent.com/KimRass/KimRass/refs/heads/main/Flitto/Place-Translation/Scene-Text-Remover/examples/success_cases/texts_in_constrained_space/gajok_original.png" width="400"> | <img src="https://raw.githubusercontent.com/KimRass/KimRass/refs/heads/main/Flitto/Place-Translation/Scene-Text-Remover/examples/success_cases/texts_in_constrained_space/gajok_text_removed.png" width="400"> |
-| <img src="https://raw.githubusercontent.com/KimRass/KimRass/refs/heads/main/Flitto/Place-Translation/Scene-Text-Remover/examples/success_cases/texts_in_constrained_space/776_2846_original.jpg" width="400"> | <img src="https://raw.githubusercontent.com/KimRass/KimRass/refs/heads/main/Flitto/Place-Translation/Scene-Text-Remover/examples/success_cases/texts_in_constrained_space/776_2846_text_removed.jpg" width="400"> |
+- 빛의 반사가 많은 경우
+    |원본|텍스트 제거|
+    |-|-|
+    |<img src="https://raw.githubusercontent.com/KimRass/KimRass/refs/heads/main/Flitto/Place-Translation/Scene-Text-Remover/examples/success_cases/chinese_character_detection/430_1_original.jpg" width="400">|<img src="https://raw.githubusercontent.com/KimRass/KimRass/refs/heads/main/Flitto/Place-Translation/Scene-Text-Remover/examples/success_cases/chinese_character_detection/430_1_texts_removed.jpg" width="400">|
+
+- 텍스트간 거리가 좁음
+    |원본|텍스트 제거|
+    |-|-|
+    | <img src="https://raw.githubusercontent.com/KimRass/KimRass/refs/heads/main/Flitto/Place-Translation/Scene-Text-Remover/examples/success_cases/dense_text/539_1_original.jpg" width="400"> | <img src="https://raw.githubusercontent.com/KimRass/KimRass/refs/heads/main/Flitto/Place-Translation/Scene-Text-Remover/examples/success_cases/dense_text/539_1_text_removed.jpg" width="400"> |
+
+- 복잡한 배경 이미지
+    |원본|텍스트 제거|
+    |-|-|
+    | <img src="https://raw.githubusercontent.com/KimRass/KimRass/refs/heads/main/Flitto/Place-Translation/Scene-Text-Remover/examples/success_cases/complicated_background/1555_5943_original.jpg" width="400"> | <img src="https://raw.githubusercontent.com/KimRass/KimRass/refs/heads/main/Flitto/Place-Translation/Scene-Text-Remover/examples/success_cases/complicated_background/1555_5943_text_removed.jpg" width="400"> |
+    | <img src="https://raw.githubusercontent.com/KimRass/KimRass/refs/heads/main/Flitto/Place-Translation/Scene-Text-Remover/examples/success_cases/complicated_background/696_1_original.jpg" width="400"> | <img src="https://raw.githubusercontent.com/KimRass/KimRass/refs/heads/main/Flitto/Place-Translation/Scene-Text-Remover/examples/success_cases/complicated_background/696_1_texts_removed.jpg" width="400"> |
+    | <img src="https://raw.githubusercontent.com/KimRass/KimRass/refs/heads/main/Flitto/Place-Translation/Scene-Text-Remover/examples/success_cases/complicated_background/389_2_original.jpg" width="400"> | <img src="https://raw.githubusercontent.com/KimRass/KimRass/refs/heads/main/Flitto/Place-Translation/Scene-Text-Remover/examples/success_cases/complicated_background/389_2_text_removed.jpg" width="400"> |
+
+- 고해상도 이미지
+    |원본|텍스트 제거|
+    |-|-|
+    | <img src="https://raw.githubusercontent.com/KimRass/KimRass/refs/heads/main/Flitto/Place-Translation/Scene-Text-Remover/examples/success_cases/high_resolution/ontheboarder1_original.jpg" width="400"> | <img src="https://raw.githubusercontent.com/KimRass/KimRass/refs/heads/main/Flitto/Place-Translation/Scene-Text-Remover/examples/success_cases/high_resolution/ontheboarder1_texts_removed.png" width="400"> |
+
+- 한정된 공간 내의 텍스트
+    |원본|텍스트 제거|
+    |-|-|
+    | <img src="https://raw.githubusercontent.com/KimRass/KimRass/refs/heads/main/Flitto/Place-Translation/Scene-Text-Remover/examples/success_cases/texts_in_constrained_space/gajok_original.png" width="400"> | <img src="https://raw.githubusercontent.com/KimRass/KimRass/refs/heads/main/Flitto/Place-Translation/Scene-Text-Remover/examples/success_cases/texts_in_constrained_space/gajok_text_removed.png" width="400"> |
+    | <img src="https://raw.githubusercontent.com/KimRass/KimRass/refs/heads/main/Flitto/Place-Translation/Scene-Text-Remover/examples/success_cases/texts_in_constrained_space/776_2846_original.jpg" width="400"> | <img src="https://raw.githubusercontent.com/KimRass/KimRass/refs/heads/main/Flitto/Place-Translation/Scene-Text-Remover/examples/success_cases/texts_in_constrained_space/776_2846_text_removed.jpg" width="400"> |
 
 ### (2) Failure Cases
 |원본|텍스트 제거|
