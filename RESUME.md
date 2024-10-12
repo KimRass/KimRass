@@ -9,10 +9,10 @@
 # 2. 핵심 역량
 - 개발:
     - AI:
-        - [문자 단위의 장면 텍스트 제거 모델 개발](#1-이미지-번역-서비스-place-translation)
-        - [텍스트 속성 인식 모델 개발](#1-이미지-번역-서비스-place-translation)
-        - [PyTorch 기반의 AI 논문 구현 (개인 프로젝트)](https://github.com/KimRass/KimRass) 다수.
-        - ['공공행정문서 OCR' 데이터셋을 활용하여 'EasyOCR' 모델 fine-tuning (개인 프로젝트)](https://github.com/KimRass/train_easyocr)
+        - [문자 단위의 장면 텍스트 제거 모델 개발.](#1-이미지-번역-서비스-place-translation)
+        - [텍스트 속성 인식 모델 개발.](#1-이미지-번역-서비스-place-translation)
+        - [PyTorch 기반의 AI 논문 구현 (개인 프로젝트) 다수.](https://github.com/KimRass/KimRass)
+        - ['공공행정문서 OCR' 데이터셋을 활용하여 'EasyOCR' 모델 fine-tuning (개인 프로젝트).](https://github.com/KimRass/train_easyocr)
         - [`accelerate` 라이브러리를 활용하여 8대의 GPU를 통해 데이터 분산 학습 수행.](#1-video-super-resolution-모델-연구개발)
         - [TensorBoard 및 Wandb를 통한 실시간 모델 학습 모니터링 및 실험.](#1-video-super-resolution-모델-연구개발)
         <!-- - 사내 AI 및 개발 스터디 주관. -->
@@ -21,8 +21,8 @@
     - SQL: [SQL 쿼리를 작성하여 데이터 분석 및 Tableau 차트 결과를 비교검증.](#1-tableau-기반의-eis-구축-202102--202204)
     - AWS EC2:
         - [RabbitMQ 기반 비동기 AMQP 서버를 개발하여 백 오피스에 배포.](#1-이미지-번역-서비스-place-translation)
-        - ['FastAPI' 기반의 RESTful API 게시판 애플리케이션을 AWS EC2에 배포 및 운영 (개인 프로젝트)](https://github.com/KimRass/FastAPI).
-        - ['DeepLabv3' 기반의 실시간 semantic segmentation 서비스를 AWS EC2에 배포 및 운영 (개인 프로젝트)](https://github.com/KimRass/FastAPI).
+        - ['FastAPI' 기반의 RESTful API 게시판 애플리케이션을 AWS EC2에 배포 및 운영 (개인 프로젝트).](https://github.com/KimRass/FastAPI)
+        - ['DeepLabv3' 기반의 실시간 semantic segmentation 서비스를 AWS EC2에 배포 및 운영 (개인 프로젝트).](https://github.com/KimRass/FastAPI)
     - AWS S3: ['DuckDB'로 구현된 이미지 메타데이터를 AWS S3와 동기화하여 백업 및 복원 작업 구현.](#2-아랍어-텍스트-이미지-수집)
 - 소프트웨어:
     - Slack: 'Incoming WebHooks' 기능을 통한 실시간 시스템 에러 알림 기능 구현.
@@ -123,7 +123,7 @@
     - 국내 3대 백화점 브랜드 및 지자체 등과 메뉴 이미지 번역 서비스 계약 체결.
     <!-- - 의류 브랜드 'M'사와 상품 소개 페이지 번역 서비스 계약 체결. -->
 - 업무 내용:
-    - [character-level scene text removal 모델 개발](https://github.com/KimRass/KimRass/tree/main/Flitto/Place-Translation/Scene-Text-Remover):
+    - [character-level scene text removal 모델 개발:](https://github.com/KimRass/KimRass/tree/main/Flitto/Place-Translation/Scene-Text-Remover)
         - 이미지에서 텍스트를 탐지하고 (scene text detection) 자연스럽게 제거하는 (image inpainting) 모델.
         - 사용자가 제거하고 하는 텍스트를 문자 단위로 지정하는 기능 구현.
         - 사전 학습된 AI 모델과 connected-component labeling, fully connected CRF 등의 digital image proessing 기법 활용.
@@ -132,7 +132,7 @@
         - 기존 포토샵을 통한 수작업 대비 처리 속도 개선.
         - 'O'사 서비스 대비 뛰어난 시각적 품질 구현.
         - 밈 번역 커뮤니티 ['Desert Fox'](https://www.desertfox.io/ko)에 도입.
-    - [textual attribute recognition 모델 개발](https://github.com/KimRass/KimRass/tree/main/Flitto/Place-Translation/Textual-Attribute-Recognizer):
+    - [textual attribute recognition 모델 개발:](https://github.com/KimRass/KimRass/tree/main/Flitto/Place-Translation/Textual-Attribute-Recognizer)
         - 이미지의 각 텍스트에서 7가지 속성 (폰트 크기, 텍스트 방향, 텍스트 정렬, 텍스트 줄바꿈, 텍스트 색상, 텍스트 테두리, 텍스트 테두리 색상)을 추출하는 모델.
         - 원본 텍스트를 지운 이미지에 번역된 텍스트 렌더링 시 텍스트의 속성을 반영.
         - 각 문자의 좌표를 기반으로 텍스트 방향 추출.
@@ -142,13 +142,13 @@
         - RabbitMQ 기반 비동기 AMQP 서버 개발 및 백 오피스와 연동.
         - Slack과 연동하여 시스템 에러에 대한 실시간 알림 구현.
         - 원본 이미지와 유사한 느낌의 이미지 번역 구현.
-    - [이미지 크기 자동 조정 알고리즘 개발](https://github.com/KimRass/KimRass/tree/main/Flitto/Place-Translation/Automatic-Image-Resizer):
+    - [이미지 크기 자동 조정 알고리즘 개발:](https://github.com/KimRass/KimRass/tree/main/Flitto/Place-Translation/Automatic-Image-Resizer)
         - 기존 이미지와 새로운 이미지 간의 feature matching을 통해 새로운 이미지를 적절한 해상도로 자동 조정하는 알고리즘 개발.
         - SIFT를 활용해 두 이미지 간의 특징점 추출 후, RANSAC을 사용해 최적의 호모그래피 행렬 계산.
         - 새로운 이미지가 다수 존재하는 경우 기존 이미지와 가장 유사한 이미지를 자동으로 찾는 기능 구현.
         - RabbitMQ 기반 비동기 AMQP 서버 개발 및 백 오피스와 연동.
         - 기존 포토샵을 통한 수작업 대비 처리 속도 개선.
-    - [메뉴 이미지 생성 자동화 기능 개발](https://github.com/KimRass/KimRass/tree/main/Flitto/Place-Translation/Menu-Image-Generator):
+    - [메뉴 이미지 생성 자동화 기능 개발:](https://github.com/KimRass/KimRass/tree/main/Flitto/Place-Translation/Menu-Image-Generator)
         - 엑셀 파일을 입력 받아 메뉴 이미지를 자동으로 생성하는 기능 개발.
         - 메뉴 항목별로 폰트 크기, 블록 높이, 배경 이미지 등 사용자 맞춤 설정 가능.
         - 언어별 특성을 반영해 텍스트의 줄바꿈 위치 계산.
@@ -156,7 +156,8 @@
         - 기존의 Figma를 통한 수작업 메뉴 이미지 제작 프로세스 제거.
         - 불필요한 바운딩 박스 생성, 텍스트 제거 및 텍스트 인식 모델 구동 프로세스 제거.
         - 이미지의 시각적 품질 향상.
-
+    - 바운딩 박스 생성 모델 개발
+        
 ### (2) 아랍어 텍스트 이미지 수집
 - 프로젝트 소개:
     - Flitto의 크라우드 데이터 레이블링 플랫폼을 활용하여 'N'사의 OCR 모델 학습을 위한 아랍어 텍스트가 이미지 수집.
