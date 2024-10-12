@@ -13,7 +13,7 @@
 - 사용자가 제거하고 하는 텍스트를 문자 단위로 지정하는 기능 구현.
 
 ## 2) 프로세스
-- [1]에서 제시한 방법론을 참고해 크게 3단계 (Scene text detection → Text stroke mask generation → Image inpainting)에 걸쳐 작동하도록 개발했습니다.
+- 3단계 (scene text detection → text stroke mask generation → image inpainting)로 작동합니다 [1].
 
 ### (1) Scene Text Detection
 - 'CRAFT'의 출력을 시각화한 이미지입니다. 빨간색에 가까울수록 그 픽셀이 문자의 중심에 가까움을 의미합니다. 이를 'text region score map'이라고 부르겠습니다.
@@ -78,7 +78,7 @@
 - 'O'사 서비스 대비 뛰어난 시각적 품질 구현.
 - 밈 번역 커뮤니티 ['Desert Fox'](https://www.desertfox.io/ko)에 도입.
 
-## 1) Examples
+## 1) 예시
 
 ### (1) Success Cases
 - 빛의 반사가 많은 경우
