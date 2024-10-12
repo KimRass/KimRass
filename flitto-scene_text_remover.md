@@ -114,19 +114,30 @@
 - 밈 번역 커뮤니티 ['Desert Fox'](https://www.desertfox.io/ko)에 도입.
 
 ## 1) Examples
-### (1) Success Cases
-- <img src="https://github.com/KimRass/Flitto-ML/assets/67457712/4738b594-c869-41f6-bbbb-7cdc83cec6b8" width="700">
-| Dense Text |
-|-|
-| <img src="https://github.com/KimRass/Flitto-ML/assets/67457712/6f295647-c8cb-41c5-bf9a-c0503a840edf" width="350"> |
-| <img src="https://github.com/KimRass/Flitto-ML/assets/67457712/4315e3c7-3c60-4584-80ac-094a194c6b9a" width="400"> |
 
-| Complicated Background |
-|-|
-| <img src="https://github.com/KimRass/Flitto-ML/assets/67457712/929867bd-14d8-4b74-92e4-7e7c60b66377" width="600"> |
-| <img src="https://github.com/KimRass/KimRass/assets/67457712/9d6f8ecd-40a4-4067-83bd-c978a583df59" width="500"> |
+### (1) Success Cases
+|원본|텍스트 제거|
+|-|-|
+|빛의 반사가 많은 경우||
+|<img src="https://raw.githubusercontent.com/KimRass/KimRass/refs/heads/main/Flitto/Place-Translation/Scene-Text-Remover/examples/success_cases/chinese_character_detection/430_1_original.jpg" width="400">|<img src="https://raw.githubusercontent.com/KimRass/KimRass/refs/heads/main/Flitto/Place-Translation/Scene-Text-Remover/examples/success_cases/chinese_character_detection/430_1_texts_removed.jpg" width="400">|
+|텍스트간 거리가 좁음||
+| <img src="https://raw.githubusercontent.com/KimRass/KimRass/refs/heads/main/Flitto/Place-Translation/Scene-Text-Remover/examples/success_cases/dense_text/539_1_original.jpg" width="400"> | <img src="https://raw.githubusercontent.com/KimRass/KimRass/refs/heads/main/Flitto/Place-Translation/Scene-Text-Remover/examples/success_cases/dense_text/539_1_text_removed.jpg" width="400"> |
+|복잡한 배경 이미지||
+| <img src="https://raw.githubusercontent.com/KimRass/KimRass/refs/heads/main/Flitto/Place-Translation/Scene-Text-Remover/examples/success_cases/complicated_background/1555_5943_original.jpg" width="400"> | <img src="https://raw.githubusercontent.com/KimRass/KimRass/refs/heads/main/Flitto/Place-Translation/Scene-Text-Remover/examples/success_cases/complicated_background/1555_5943_text_removed.jpg" width="400"> |
+| <img src="https://raw.githubusercontent.com/KimRass/KimRass/refs/heads/main/Flitto/Place-Translation/Scene-Text-Remover/examples/success_cases/complicated_background/696_1_original.jpg" width="400"> | <img src="https://raw.githubusercontent.com/KimRass/KimRass/refs/heads/main/Flitto/Place-Translation/Scene-Text-Remover/examples/success_cases/complicated_background/696_1_texts_removed.jpg" width="400"> |
+| <img src="https://raw.githubusercontent.com/KimRass/KimRass/refs/heads/main/Flitto/Place-Translation/Scene-Text-Remover/examples/success_cases/complicated_background/389_2_original.jpg" width="400"> | <img src="https://raw.githubusercontent.com/KimRass/KimRass/refs/heads/main/Flitto/Place-Translation/Scene-Text-Remover/examples/success_cases/complicated_background/389_2_text_removed.jpg" width="400"> |
+|고해상도 이미지||
+| <img src="https://raw.githubusercontent.com/KimRass/KimRass/refs/heads/main/Flitto/Place-Translation/Scene-Text-Remover/examples/success_cases/high_resolution/ontheboarder1_original.jpg" width="400"> | <img src="https://raw.githubusercontent.com/KimRass/KimRass/refs/heads/main/Flitto/Place-Translation/Scene-Text-Remover/examples/success_cases/high_resolution/ontheboarder1_texts_removed.png" width="400"> |
+|한정된 공간 내의 텍스트||
+| <img src="https://raw.githubusercontent.com/KimRass/KimRass/refs/heads/main/Flitto/Place-Translation/Scene-Text-Remover/examples/success_cases/texts_in_constrained_space/gajok_original.png" width="400"> | <img src="https://raw.githubusercontent.com/KimRass/KimRass/refs/heads/main/Flitto/Place-Translation/Scene-Text-Remover/examples/success_cases/texts_in_constrained_space/gajok_text_removed.png" width="400"> |
+| <img src="https://raw.githubusercontent.com/KimRass/KimRass/refs/heads/main/Flitto/Place-Translation/Scene-Text-Remover/examples/success_cases/texts_in_constrained_space/776_2846_original.jpg" width="400"> | <img src="https://raw.githubusercontent.com/KimRass/KimRass/refs/heads/main/Flitto/Place-Translation/Scene-Text-Remover/examples/success_cases/texts_in_constrained_space/776_2846_text_removed.jpg" width="400"> |
 
 ### (2) Failure Cases
+|원본|텍스트 제거|
+|-|-|
+|빛의 반사가 많은 경우||
+| <img src="" width="400"> | <img src="" width="400"> |
+| <img src="" width="400"> | <img src="" width="400"> |
 
 ## 2) Why Scene Text Detection
 - scene text detection 과정이 꼭 필요한가? 즉 bounding box를 그대로 mask로 사용해 image inpainting을 하면 어떻게 되는지 확인해보겠습니다.
