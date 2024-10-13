@@ -34,7 +34,7 @@
 - 모델의 출력에서 바운딩 박스별로 가장 많은 픽셀 수를 차지하는 클래스를 텍스트 정렬로 추출합니다.
     |원본|As-is|To-be|
     |-|-|-|
-    |<img src="https://raw.githubusercontent.com/KimRass/KimRass/refs/heads/main/Flitto/Place-Translation/Textual-Attribute-Recognizer/resources/125_257-ori.jpg" width="600">|<img src="https://raw.githubusercontent.com/KimRass/KimRass/refs/heads/main/Flitto/Place-Translation/Textual-Attribute-Recognizer/resources/125_257-as_is.png" width="600">|<img src="https://raw.githubusercontent.com/KimRass/KimRass/refs/heads/main/Flitto/Place-Translation/Textual-Attribute-Recognizer/resources/125_257-to_be.png" width="600">|
+    |<img src="https://raw.githubusercontent.com/KimRass/KimRass/refs/heads/main/Flitto/Place-Translation/Textual-Attribute-Recognizer/resources/125_257-ori.png" width="600">|<img src="https://raw.githubusercontent.com/KimRass/KimRass/refs/heads/main/Flitto/Place-Translation/Textual-Attribute-Recognizer/resources/125_257-as_is.png" width="600">|<img src="https://raw.githubusercontent.com/KimRass/KimRass/refs/heads/main/Flitto/Place-Translation/Textual-Attribute-Recognizer/resources/125_257-to_be.png" width="600">|
     <!-- |<img src="https://github.com/KimRass/KimRass/assets/67457712/d27aba57-f3ba-405e-a3f2-157b6e0fa55d" width="600">| -->
 
 ## 4) 텍스트 줄바꿈
