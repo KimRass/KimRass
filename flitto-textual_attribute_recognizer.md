@@ -3,44 +3,42 @@
 # 2. 문제 해결
 
 ## 1) 폰트 크기
-- connected component labeling, watershed 등을 사용해 각 문자를 서로 다른 Class로 구분하는 'text region segmentation map'을 생성합니다. 각 class가 정확히 하나의 문자를 나타내지는 못하므로 pseudo characters라고 부르겠습니다.
-- 매우 많은 수의 label이 생성되지만 이해를 돕기 위해 26개의 색상을 사용하여 단순화했습니다.
-- 각 pseudo character의 크기에 일정한 값을 곱해 이를 통해 해당 문자의 font size로 구합니다. 실제로는 하나의 bounding box에서 다양한 font size가 존재할 수도 있지만 모두 동일하다고 가정하여 통계적인 방법을 통해 하나의 font size를 추출합니다.
+- 'CRAFT' [1]의 출력을 시각화한 이미지입니다. 빨간색에 가까울수록 그 픽셀이 문자의 중심에 가까움을 의미합니다. 이를 'text region score map'이라고 부르겠습니다.
+    |Text Region Score Map|
+    |-|
+    |<img src="https://user-images.githubusercontent.com/67457712/235050295-8b42ccdf-976c-4dc3-a0f8-3ceffee8bf7a.jpg" width="600">|
+- 'text stroke mask'에 connected component labeling (CCL), watershed 등을 활용하여 서로 다른 문자를 구분하는 'text region segmentation map'을 생성합니다.
     |Text region segmentation map|
     |-|
     |<img src="https://user-images.githubusercontent.com/67457712/235050300-e4dff000-f476-485f-8cfd-28799b24e9f8.jpg" width="600">|
     |<img src="https://user-images.githubusercontent.com/67457712/235050726-ab8d3a2f-75cd-4637-8e02-f2105ba41fff.jpg" width="200">|
     |<img src="https://github.com/KimRass/KimRass/assets/67457712/06d1994c-c9a8-495a-a634-27d21b06a2e8" width="600">|
+- 'text region segmentation map'의 각 레이블의 높이를 구하고 이로부터 통계적인 방법을 통해 바운딩 박스별로 하나의 폰트 사이즈를 추출합니다.
+- 실제로는 하나의 바운딩 박스 안에서 다양한 폰트 사이즈가 존재할 수도 있지만 모두 동일하다고 가정합니다.
 
 ## 2) 텍스트 방향
-- text region segmentation map으로부터 pseudo character centers (PCCs) [3]를 추출합니다.
-- 각 PCC에 대해서 가장 가까운 다른 PCC를 찾습니다. 두 PCCs간의 x축 방향과 y축 방향 각각에 대한 거리를 구해서 x축 방향의 거리가 y축 방향의 거리보다 더 멀면 가로쓰기라고 판단하고 y축 방향의 거리가 x축 방향의 거리보다 멀면 세로쓰기라고 판단합니다.
-- 이때 가장 가까운 다른 PCC와의 거리가 font size와 비교해 너무 작다면, 바로 그 다음으로 가까운 PCC를 찾습니다. 이는 동일한 하나의 문자에 대해서 다수의 PCCs가 추출되는 경우에 이를 보완하기 위함입니다.
-    |PCCs|
+- 'text region score map'을 사용해 각 문자의 중심 (Pseudo Character Center (PCC) [3])을 추출합니다.
+    |Pseudo Character Centers (PCCs)|
     |-|
     |<img src="https://user-images.githubusercontent.com/67457712/235050297-a43a5b3c-fdb1-41ad-a30c-30e0f2778910.jpg" width="600">|
+- 각 PCC에 대해서 가장 가까운 다른 PCC를 찾습니다. 두 PCC간의 x축 방향과 y축 방향 각각에 대한 거리를 구해서 x축 방향의 거리가 y축 방향의 거리보다 더 멀면 가로쓰기라고 판단하고 y축 방향의 거리가 x축 방향의 거리보다 멀면 세로쓰기라고 판단합니다.
+- 이때 가장 가까운 다른 PCC와의 거리가 폰트 사이즈와 비교해 너무 작다면, 바로 그 다음으로 가까운 PCC를 찾습니다. 이는 동일한 하나의 문자에 대해서 다수의 PCC가 추출되는 에러를 보완하기 위함입니다.
 
 ## 3) 텍스트 정렬
-|Ground truth|
-|-|
-|<img src="https://github.com/KimRass/KimRass/assets/67457712/1d4e8384-926c-4de0-bde4-c8517312bdf3" width="500">|
-|rule-based approach로는 추출이 불가능하다고 판단했습니다 [2]. 또한 각 bounding box의 이미지 영역만을 보고는 알 수 없으며 이미지의 전체적인 visual features를 고려하여야만 높은 정확도로 판단할 수 있다고 보았습니다.|
-|이에 4개의 class ('none', 'left', 'center', 'right')에 대한 semantic segmentation 문제로 접근했습니다. 가로쓰기 텍스트에 대해서는 'left', 'center', 'right' 중 하나로, 세로쓰기 텍스트에 대해서는 'none'으로 레이블링을 했습니다. 즉 가로쓰기 텍스트에 한해서만 모델이 text alignment를 예측하도록 학습시켰습니다.|
-|빨간색: 'left', 초록색: 'center', 파란색: 'right', 그 외: 'none'|
-|모델이 내놓은 결과에 대해서, 각 bounding box가 차지하는 영역에서 가장 많은 픽셀 수를 차지하는 class를 통해 text alignment를 예측합니다.|
-<!-- - 1,000장의 이미지, 19,523개의 bounding box에 대해 학습한 결과 mIoU 0.7341 -->
-
-|Example 1|
-|-|
-|<img src="https://github.com/KimRass/KimRass/assets/67457712/eab61871-b37f-487b-b12b-9059aefcabf6" width="800">|
-
-|Example 2|
-|-|
-|<img src="https://github.com/KimRass/KimRass/assets/67457712/d27aba57-f3ba-405e-a3f2-157b6e0fa55d" width="800">|
-<!-- - <img src="https://github-production-user-asset-6210df.s3.amazonaws.com/67457712/287581756-d2460fbf-9716-4b52-b2c6-0695264a4d33.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240404T000439Z&X-Amz-Expires=300&X-Amz-Signature=9f3bcc9523004783714da96d1b10865e8631f7aba8baad1620dab455a74f92ce&X-Amz-SignedHeaders=host&actor_id=67457712&key_id=0&repo_id=669664726" width="800"> -->
+- 규칙 기반 방법론으로는 추출이 불가능하다고 판단했습니다 [2]. 또한 각 텍스트만 보고는 알 수 없고 이미지 전체를 봐야만 높은 정확도로 판단할 수 있다고 보았습니다.
+- 이에 4개의 클래스 ('none', 'left', 'center', 'right')에 대한 semantic segmentation 문제로 접근했습니다. 세로쓰기 텍스트는 데이터의 수가 매우 부족했기 때문에 전부 위쪽 정렬을 적용하고 가로쓰기 텍스트에 한해서만 모델을 통해 텍스트 정렬을 추출하도록 했습니다.
+    |Ground truth|
+    |-|
+    |<img src="https://github.com/KimRass/KimRass/assets/67457712/1d4e8384-926c-4de0-bde4-c8517312bdf3" width="600">|
+    |빨간색: 'left', 초록색: 'center', 파란색: 'right'|
+- 모델의 출력에서 바운딩 박스별로 가장 많은 픽셀 수를 차지하는 클래스를 텍스트 정렬로 추출합니다.
+    |원본|As-is|To-be|
+    |-|-|-|
+    |<img src="https://raw.githubusercontent.com/KimRass/KimRass/refs/heads/main/Flitto/Place-Translation/Textual-Attribute-Recognizer/resources/125_257-ori.jpg" width="600">|<img src="https://raw.githubusercontent.com/KimRass/KimRass/refs/heads/main/Flitto/Place-Translation/Textual-Attribute-Recognizer/resources/125_257-as_is.png" width="600">|<img src="https://raw.githubusercontent.com/KimRass/KimRass/refs/heads/main/Flitto/Place-Translation/Textual-Attribute-Recognizer/resources/125_257-to_be.png" width="600">|
+    <!-- |<img src="https://github.com/KimRass/KimRass/assets/67457712/d27aba57-f3ba-405e-a3f2-157b6e0fa55d" width="600">| -->
 
 ## 4) 텍스트 줄바꿈
-- 주어진 텍스트를 렌더링할 때 어디에 줄바꿈을 삽입했을 때 font size가 가장 원본에 가까워질 지를 계산합니다.
+- 주어진 텍스트를 렌더링할 때 어디에 줄바꿈을 삽입했을 때 폰트 사이즈가 가장 원본에 가까워질 지를 계산합니다.
 <!-- - 주어진 텍스트를 렌더링할 때 한 줄로 할 수도 있고 중간에 줄바꿈을 삽입하여 두 줄 이상으로 할 수도 있을 것입니다. 수많은 경우 중 최적을 찾는 알고리즘입니다. -->
 
 ### (1) 띄어쓰기가 있는 언어 (ko, en, vi, id, ms, es)
@@ -74,8 +72,8 @@
    |本店绝不使用<br>剩菜。|2|6|
    |本店绝不<br>使用剩菜。|2|5|
    |本店绝<br>不使用<br>剩菜。|3|3|
-- 위 경우 각각에 대해, 추출된 font size로 bounding box를 벗어나지 않도록 렌더링을 시도하고 bounding box를 벗어난다면 벗어나지 않도록 font size를 줄입니다.
-- 가장 font size가 클 수 있는 줄바꿈을 최종적으로 선택하고 같은 font size에 대해서는 줄바꿈 횟수가 가장 적은 것을 선택합니다. 
+- 위 경우 각각에 대해, 추출된 폰트 사이즈로 바운딩 박스를 벗어나지 않도록 렌더링을 시도하고 바운딩 박스를 벗어난다면 벗어나지 않도록 폰트 사이즈를 줄입니다.
+- 가장 폰트 사이즈가 클 수 있는 줄바꿈을 최종적으로 선택하고 같은 폰트 사이즈에 대해서는 줄바꿈 횟수가 가장 적은 것을 선택합니다. 
 
 ## 5) 텍스트 색상
 - 원본 이미지와 텍스트가 제거된 이미지 사이의 픽셀 단위의 차이를 구합니다.
@@ -83,7 +81,7 @@
     |Mask|
     |-|
     |<img src="https://github.com/KimRass/KimRass/assets/67457712/0c8565c8-dfb2-4170-8720-02c00a78acaa" width="600">|
-- 각 bounding box에 대해서 mask에 해당하는 영역에 대해서만 원본 이미지로부터 픽셀별 색깔을 조사합니다. 이때 비슷하지만 서로 조금씩 다른 색깔은 많은 픽셀 수를 갖는 색깔 쪽으로 통합해 나갑니다.
+- 각 바운딩 박스에 대해서 mask에 해당하는 영역에 대해서만 원본 이미지로부터 픽셀별 색깔을 조사합니다. 이때 비슷하지만 서로 조금씩 다른 색깔은 많은 픽셀 수를 갖는 색깔 쪽으로 통합해 나갑니다.
 - 색깔의 수가 3개가 될 때까지 통합합니다. 이 3개의 색깔 중에서 가장 많은 픽셀 수를 갖는 `(7, 145, 58)`을 text color로 정합니다.
     |Original image|Per-pixel absolute difference|Text color candidates|
     |-|-|-|
@@ -91,7 +89,7 @@
 
 ## 6) 텍스트 테두리
 - text border를 적용하지 않았을 때, 사람이 그 텍스트를 읽을 수 없으면 text border를 적용하고 읽을 수 있다면 적용하지 않습니다.
-- font size, text alignment, text line breaking이 결정되면 각 문자가 어디에 렌더링될 지가 결정됩니다. 각 문자에 대해서, 추출된 text color와 text stroke를 둘러싼 영역의 픽셀 하나하나 사이의 contrast ratio를 계산합니다. 이 값이 일정한 값 미만이라면 그 두 색깔 조합은 가독성이 좋지 않은 것으로 판단합니다.
+- 폰트 사이즈, text alignment, text line breaking이 결정되면 각 문자가 어디에 렌더링될 지가 결정됩니다. 각 문자에 대해서, 추출된 text color와 text stroke를 둘러싼 영역의 픽셀 하나하나 사이의 contrast ratio를 계산합니다. 이 값이 일정한 값 미만이라면 그 두 색깔 조합은 가독성이 좋지 않은 것으로 판단합니다.
     |Text border|
     |-|
     |<img src="https://github.com/KimRass/KimRass/assets/67457712/7dbc77da-cdeb-48d0-bc0e-78ea0bd9024b" width="200">|
@@ -125,16 +123,16 @@
     <tbody>
         <tr>
             <td rowspan="2">Font size</td>
-            <td>bounding box의 가로와 세로 길이에 의해 결정되므로 원본 font size와 크게 달라질 수 있음.</td>
-            <td>(충분한 텍스트 렌더링 공간이 확보된다면) bounding box의 가로와 세로 길이에 무관.</td>
+            <td>바운딩 박스의 가로와 세로 길이에 의해 결정되므로 원본 폰트 사이즈와 크게 달라질 수 있음.</td>
+            <td>(충분한 텍스트 렌더링 공간이 확보된다면) 바운딩 박스의 가로와 세로 길이에 무관.</td>
         </tr>
         <tr>
-            <td>원본 font size보다 커질 수 있음.</td>
-            <td>원본 font size를 넘지 않는 한도 내에서 주어진 bounding box를 최대한 활용하는 font size 추출.</td>
+            <td>원본 폰트 사이즈보다 커질 수 있음.</td>
+            <td>원본 폰트 사이즈를 넘지 않는 한도 내에서 주어진 바운딩 박스를 최대한 활용하는 폰트 사이즈 추출.</td>
         </tr>
         <tr>
             <td>Writing direction</td>
-            <td>bounding box의 가로와 세로 길이의 비율에 의해 결정되므로 정확성이 떨어짐.</td>
+            <td>바운딩 박스의 가로와 세로 길이의 비율에 의해 결정되므로 정확성이 떨어짐.</td>
             <td>정확성이 높음.</td>
         </tr>
         <tr>
@@ -172,4 +170,4 @@
 # 4. References
 - [1] [Character Region Awareness for Text Detection](https://github.com/KimRass/CRAFT/blob/main/papers/character_region_awareness_for_text_detection.pdf)
 - [2] ['더' 잘 읽히고 자연스러운 이미지 번역을 위해 (파파고 텍스트 렌더링 개발기)](https://deview.kr/2023/sessions)
-- [3] [CLEval: Character-Level Evaluation for Text Detection and Recognition Tasks](https://github.com/KimRass/KimRass/tree/main/Flitto/papers/cleval_character_level_evaluation_for_text_detection_and_recognition_tasks.pdf)
+- [3] [CLEval: Character-Level Evaluation for Text Detection and Recognition Tasks](https://arxiv.org/abs/2006.06244)

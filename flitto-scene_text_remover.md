@@ -9,7 +9,7 @@
 - 이미지에서 텍스트를 지우는 것은 scene text removal 태스크에 해당합니다.
 - 그러나 이미지 내의 모든 텍스트를 지우는 보통의 경우와는 다르게, 메뉴 이미지에서는 가게 이름이나 음식의 가격 등 일부의 텍스트만을 지워야 합니다.
 - 이러한 요구사항에 맞는 모델을 만들기 위해 문자 단위의 scene text detection 모델을 사용하고자 했습니다.
-- 모델의 가중치가 공개되어 있으며 널리 알려진 'CRAFT' 모델 [2]을 사용했습니다.
+- 모델의 가중치가 공개되어 있으며 널리 알려진 'CRAFT' [2]을 사용했습니다.
 - 사용자가 제거하고 하는 텍스트를 문자 단위로 지정하는 기능 구현.
 
 ## 2) 프로세스
@@ -37,11 +37,11 @@
     - 모델의 출력을 원본 이미지의 원래 위치에 삽입하여 'text stroke mask'를 생성합니다.
     - fully-connected CRF [3]을 통해 'text stroke mask'를 좀 더 세밀하게 보정합니다.
 - 'text stroke mask'가 텍스트를 완전히 덮지 못하면 텍스트가 깔끔하게 지워지지 않으므로 dilation을 통해 이를 보정합니다.
-- 'text stroke mask'에 watershed를 적용해 문자를 서로 구분하는 'text region segmentation map'을 생성합니다.
+- 'text stroke mask'에 watershed를 활용하여 서로 다른 문자를 구분하는 'text region segmentation map'을 생성합니다.
    |Text Region Segmentation Map|
    |-|
    |<img src="https://i.imgur.com/3m2TOkK.png" width="600">|
-- 'text region score map'을 사용해 각 문자의 중심을 추출합니다.
+- 'text region score map'을 사용해 각 문자의 중심 (Pseudo Character Center (PCC) [8])을 추출합니다.
     |Pseudo Character Centers (PCCs)|
     |-|
     |<img src="https://i.imgur.com/8ZC9zD4.png" width="600">|
@@ -148,11 +148,11 @@
   |learning-based approach|32.95|0.9536|0.0019|-->
 
 # 4. References
-- [1] [Erasing Scene Text with Weak Supervision](https://github.com/KimRass/KimRass/blob/main/Flitto/papers/erasing_scene_text_with_weak_supervision.pdf)
-- [2] [Character Region Awareness for Text Detection](https://github.com/KimRass/CRAFT/blob/main/papers/character_region_awareness_for_text_detection.pdf)
-- [3] [Semantic Image Segmentation with Deep Convolutional Nets and Fully Connected CRF](https://github.com/KimRass/KimRass/blob/main/Flitto/papers/semantic_image_segmentation_with_deep_convolutional_nets_and_fully_connected_crfs.pdf)
-- [4] [Stroke-Based Scene Text Erasing Using Synthetic Data for Training](https://github.com/KimRass/KimRass/blob/main/Flitto/papers/stroke_based_scene_text_erasing_using_synthetic_data_for_training.pdf)
+- [1] [Erasing Scene Text with Weak Supervision](https://ieeexplore.ieee.org/document/9093544)
+- [2] [Character Region Awareness for Text Detection](https://arxiv.org/abs/1904.01941)
+- [3] [Semantic Image Segmentation with Deep Convolutional Nets and Fully Connected CRF](https://arxiv.org/abs/1412.7062)
+- [4] [Stroke-Based Scene Text Erasing Using Synthetic Data for Training](https://ieeexplore.ieee.org/document/9609970)
 - [5] [Resolution-robust Large Mask Inpainting with Fourier Convolutions](https://arxiv.org/abs/2109.07161)
 - [6] [KAIST Scene Text Database](http://www.iapr-tc11.org/mediawiki/index.php/KAIST_Scene_Text_Database)
 - [7] [SCUT-EnsText](https://github.com/HCIILAB/SCUT-EnsText)
-<!-- - [8] [CLEval: Character-Level Evaluation for Text Detection and Recognition Tasks](https://github.com/KimRass/KimRass/tree/main/Flitto/papers/cleval_character_level_evaluation_for_text_detection_and_recognition_tasks.pdf) -->
+- [8] [CLEval: Character-Level Evaluation for Text Detection and Recognition Tasks](https://arxiv.org/abs/2006.06244)
