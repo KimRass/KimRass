@@ -3,7 +3,7 @@
     |원본 이미지|기존 이미지 번역|||
     |-|-|-|-|
     |한국어|영어|일본어|중국어 간체|
-    |<img src="https://raw.githubusercontent.com/KimRass/KimRass/refs/heads/main/Flitto/Place-Translation/Textual-Attribute-Recognizer/examples/1283_3030_original.jpg" width="150">|<img src="https://raw.githubusercontent.com/KimRass/KimRass/refs/heads/main/Flitto/Place-Translation/Textual-Attribute-Recognizer/examples/1283_3030_ko_en_as_is.png" width="150">|<img src="https://raw.githubusercontent.com/KimRass/KimRass/refs/heads/main/Flitto/Place-Translation/Textual-Attribute-Recognizer/examples/1283_3030_ko_ja_as_is.png" width="150">|<img src="https://raw.githubusercontent.com/KimRass/KimRass/refs/heads/main/Flitto/Place-Translation/Textual-Attribute-Recognizer/examples/1283_3030_ko_zh-CN_as_is.png" width="150">|
+    |<img src="https://raw.githubusercontent.com/KimRass/KimRass/refs/heads/main/Flitto/Place-Translation/Textual-Attribute-Recognizer/examples/1283_3030_original.jpg" width="200">|<img src="https://raw.githubusercontent.com/KimRass/KimRass/refs/heads/main/Flitto/Place-Translation/Textual-Attribute-Recognizer/examples/1283_3030_ko_en_as_is.png" width="200">|<img src="https://raw.githubusercontent.com/KimRass/KimRass/refs/heads/main/Flitto/Place-Translation/Textual-Attribute-Recognizer/examples/1283_3030_ko_ja_as_is.png" width="200">|<img src="https://raw.githubusercontent.com/KimRass/KimRass/refs/heads/main/Flitto/Place-Translation/Textual-Attribute-Recognizer/examples/1283_3030_ko_zh-CN_as_is.png" width="200">|
  - 문제점을 정리하면 다음과 같습니다.
     - 너무 작거나 큰 폰트 크기:
         - 단순히 바운딩 박스의 크기에 따라 폰트 크기를 계산하는 알고리즘을 사용했습니다.
@@ -22,7 +22,6 @@
     - 모든 텍스트에 삽입된 텍스트 테두리:
         - 어떤 배경에서도 텍스트의 가독성을 보장하기 위해 모든 텍스트에 텍스트 테두리를 설정했습니다.
         - 원본 이미지에서 대부분의 텍스트에는 텍스트 테두리가 없으므로, 결과물이 원본 이미지의 느낌에서 크게 벗어나는 문제점이 있었습니다.
-
 - 이에 원본 이미지의 텍스트에서 그 속성을 추출하는 모델을 개발했습니다.
 
 # 2. 문제 해결
@@ -118,7 +117,7 @@
 - 각 바운딩 박스에 내의 마스킹 영역에서 원본 이미지로부터 픽셀별 색상을 분석합니다. 이때 비슷하지만 서로 조금씩 다른 색상은 더 많은 픽셀 수를 갖는 색상 쪽으로 통합해 나갑니다. 3가지 색상만 남도록 통합한 다음, 이 중에서 가장 많은 픽셀 수를 갖는 색상을 텍스트 색상으로 정합니다.
     |원본 이미지|픽셀별 차|최종 통합된 3가지 색상|
     |-|-|-|
-    |<img src="https://user-images.githubusercontent.com/67457712/235061924-e372749d-fa8f-4db2-a655-ad5210ff0c88.jpg" width="200">|<img src="https://user-images.githubusercontent.com/67457712/235061927-f1e4e5ff-fcc4-4640-9817-4d14ba467e28.jpg" width="200">|<img src="https://user-images.githubusercontent.com/67457712/235064154-1ff39941-f237-4639-8735-db7bf116986a.jpg" width="200">|
+    |<img src="https://user-images.githubusercontent.com/67457712/235061924-e372749d-fa8f-4db2-a655-ad5210ff0c88.jpg" width="250">|<img src="https://user-images.githubusercontent.com/67457712/235061927-f1e4e5ff-fcc4-4640-9817-4d14ba467e28.jpg" width="250">|<img src="https://user-images.githubusercontent.com/67457712/235064154-1ff39941-f237-4639-8735-db7bf116986a.jpg" width="250">|
 
 ## 6) 텍스트 테두리 색상
 - 검은색과 흰색 중 텍스트 색상의 보색과 이루는 명암비가 더 큰 쪽을 선택하고 이를 CIELAB 색 공간 상에서 텍스트 색상과 적절히 보간한 값을 텍스트 테두리 색상으로 지정합니다.
@@ -139,13 +138,31 @@
     |<img src="https://github.com/KimRass/KimRass/assets/67457712/672349f4-3781-4031-ba7c-046a7779c189" width="900">| -->
 
 ## 8) 텍스트 속성 외
-- 문자열 처리:
-    - 물음표 앞의 공백, 가운뎃점 앞뒤의 공백 등 특수문자가 잘못 사용된 경우를 수정합니다.
-    - 사용자가 텍스트의 시작과 끝을 쉽게 인식할 수 있도록 여러 줄에 걸친 텍스트에 엔 대시를 삽입하는 방안 실험.
-- 렌더링:
-    - CSS에서 텍스트 테두리를 표현하기 위해 `text-stroke` 속성이 아닌 `text-shadow` 속성을 사용하도록 변경.
-    - 일본어, 중국어, 태국어에 대해서 `text-shadow` 속성을 지원하고 심미성이 높은 폰트로 변경.
-    - 파이썬으로 프론트 엔드와 동일한 텍스트 렌더링 결과물을 얻을 수 있도록 'Pillow' 라이브러리로 텍스트 렌더링 엔진 개발.
+- 물음표 앞의 공백, 가운뎃점 앞뒤의 공백 등 특수문자가 잘못 사용된 경우를 수정하는 코드를 개발했습니다.
+- 사용자가 텍스트의 시작과 끝을 쉽게 인식할 수 있도록 여러 줄에 걸친 텍스트에 엔 대시를 삽입하는 방안을 제시하고 코드를 개발했으나, 실험 끝에 사용하지 않기로 결정했습니다.
+- CSS에서 텍스트 테두리를 표현하기 위해 `text-stroke` 속성이 아닌 `text-shadow` 속성을 사용하도록 변경했습니다.
+- 일본어, 중국어, 태국어에 대해서 `text-shadow` 속성을 지원하고 심미성이 높은 폰트를 찾아 변경했습니다.
+- 파이썬으로 프론트 엔드와 동일한 텍스트 렌더링 결과물을 얻을 수 있도록 'Pillow' 라이브러리로 텍스트 렌더링 엔진을 개발했습니다.
+### (1) 텍스트 영역 인식
+- 기존에는 텍스트가 렌더링될 수 있는 영역을 바운딩 박스가 차지하는 영역으로만 한정했습니다. 그러면 원문보다 번역문이 긴 경우에는 필연적으로 폰트 크기가 작아질 수밖에 없습니다.
+- 따라서 바운딩 박스가 차지하는 영역을 벗어나 원본에 더 근접하게 폰트 크기를 계산하는 알고리즘을 개발했으나 [2], 서비스에 적용하지는 못했습니다.
+- 렌더링할 텍스트가 이미지 상의 주요 오브젝트와 충돌하지 않도록 제한하기 위해 마스크를 사용합니다.
+    <!-- | Image boundary mask | Edge mask [2] | Mask for remaining text | Intermediate mask |
+    |-|-|-|-|
+    | <img src="https://github.com/KimRass/KimRass/assets/67457712/79864008-da43-4ba3-b560-3c55968619a2" width="400"> | <img src="https://github.com/KimRass/KimRass/assets/67457712/8467efc8-cee9-4a2c-a7f8-c20cbd5e6ccc" width="400"> | <img src="https://github.com/KimRass/KimRass/assets/67457712/6485b16b-b954-45a1-931e-955132b201f8" width="400"> | <img src="https://github.com/KimRass/KimRass/assets/67457712/5f4286b7-bfbe-4318-848d-f7fe9113b861" width="400"> |
+    | font size를 점진적으로 확대해 나갈 때 텍스트가 이미지 바깥으로 나가지 않도록 하기 위해 사용됩니다. | 텍스트가 이미지에 존재하는 Edge를 넘어가지 않도록 제한하기 위해 사용됩니다. | 가격이나 음식점 이름과 같이 '메뉴 번역' 서비스의 정책상 제거하지 않은 텍스트와, 렌더링하고자 하는 텍스트가 서로 겹치지 않도록 하기 위해 사용됩니다. | 위 3개의 마스크는 렌더링할 텍스트에 무관하게 변하지 않으므로 빠른 계산을 위해 모두 합쳐 intermediate mask를 생성합니다. | -->
+<!-- - 이 모든 마스크의 합과 렌더링할 타겟 텍스트가 충돌하지 않는 범위 내에서 조금씩 font size를 증가시킵니다. 이때 원본 font size보다 크게 증가시키지는 않습니다.
+- 이때 4번마스크는 렌더링할 타겟 텍스트 자기 자신을 제외한 나머지 텍스트로 합니다. 이 4가지 마스크들의 합으로 새로운 마스크를 정의합니다.
+- 추출된 font size의 절반에서 시작해 원본 font size의 0.6배 → 0.7배 → 0.8배 → 0.9배 → 1.0배 순으로 총 6개의 font size를 가지고 텍스트 렌더링을 시도합니다.
+- 1번에서 정의한 마스크와 렌더링한 텍스트가 서로 충돌하는지 (겹침이 발생하는지) 확인합니다. 충돌이 발생하지 않으면 해당 font size를 해당 텍스트의 font size로 재정의합니다.
+- 충돌 판별 로직:
+    - 텍스트가 길 경우 줄바꿈의 수가 주어졌을 때 가능한 줄바꿈의 경우의 수는 매우 많습니다. 따라서 이 모든 경우를 하나씩 렌더링해보는 것은 매우 많은 계산량을 요구합니다.
+    - 텍스트를 공백을 기준으로 서브워드 단위로 분리합니다. 분리된 서브워드들을 하나씩 붙여가면서 원래의 텍스트에 가깝게 조금씩 문자열을 만들어갑니다.
+    - 완성되어가는 문자열을 가지고 렌더링을 시도합니다. 충돌이 발생하지 않으면 다음 서브워드를 그대로 이어붙여 다음 문자열을 만들고 충돌이 발생하면 줄바꿈을 중간에 삽입한 체로 다음 서브워드를 이어붙입니다. 충돌이 2회 연속 발생하면 해당 font size로의 확대에 실패한 것이므로 해당 바운딩 박스의 최대 font size는 바로 직전 단계에서 텍스트 렌더링에 성공한 font size가 됩니다. -->
+- 결과:
+    |텍스트 영역 인식 적용 전후|
+    |-|
+    |<img src="https://github.com/KimRass/KimRass/assets/67457712/cb3ef1ba-aeb3-4f5a-a14c-7bf986cef64b" width="600">|
 
 # 3. 성과
 
@@ -153,15 +170,15 @@
 |원본 이미지|개선된 이미지 번역|||
 |-|-|-|-|
 |한국어|영어|일본어|중국어 간체|
-|<img src="https://raw.githubusercontent.com/KimRass/KimRass/refs/heads/main/Flitto/Place-Translation/Textual-Attribute-Recognizer/examples/1283_3030_original.jpg" width="150">|<img src="https://raw.githubusercontent.com/KimRass/KimRass/refs/heads/main/Flitto/Place-Translation/Textual-Attribute-Recognizer/examples/1283_3030_ko_en_to_be.png" width="150">|<img src="https://raw.githubusercontent.com/KimRass/KimRass/refs/heads/main/Flitto/Place-Translation/Textual-Attribute-Recognizer/examples/1283_3030_ko_ja_to_be.png" width="150">|<img src="https://raw.githubusercontent.com/KimRass/KimRass/refs/heads/main/Flitto/Place-Translation/Textual-Attribute-Recognizer/examples/1283_3030_ko_zh-CN_to_be.png" width="150">|
+|<img src="https://raw.githubusercontent.com/KimRass/KimRass/refs/heads/main/Flitto/Place-Translation/Textual-Attribute-Recognizer/examples/1283_3030_original.jpg" width="200">|<img src="https://raw.githubusercontent.com/KimRass/KimRass/refs/heads/main/Flitto/Place-Translation/Textual-Attribute-Recognizer/examples/1283_3030_ko_en_to_be.png" width="200">|<img src="https://raw.githubusercontent.com/KimRass/KimRass/refs/heads/main/Flitto/Place-Translation/Textual-Attribute-Recognizer/examples/1283_3030_ko_ja_to_be.png" width="200">|<img src="https://raw.githubusercontent.com/KimRass/KimRass/refs/heads/main/Flitto/Place-Translation/Textual-Attribute-Recognizer/examples/1283_3030_ko_zh-CN_to_be.png" width="200">|
 |한국어|영어|일본어|중국어|
-|<img src="https://raw.githubusercontent.com/KimRass/KimRass/refs/heads/main/Flitto/Place-Translation/Textual-Attribute-Recognizer/examples/new/1499_5721_ko_original.jpg" width="150">|<img src="https://raw.githubusercontent.com/KimRass/KimRass/refs/heads/main/Flitto/Place-Translation/Textual-Attribute-Recognizer/examples/new/1499_5721_en_after.png" width="150">|<img src="https://raw.githubusercontent.com/KimRass/KimRass/refs/heads/main/Flitto/Place-Translation/Textual-Attribute-Recognizer/examples/new/1499_5721_ja_after.png" width="150">|<img src="https://raw.githubusercontent.com/KimRass/KimRass/refs/heads/main/Flitto/Place-Translation/Textual-Attribute-Recognizer/examples/new/1499_5721_zh-cn_after.png" width="150">|
+|<img src="https://raw.githubusercontent.com/KimRass/KimRass/refs/heads/main/Flitto/Place-Translation/Textual-Attribute-Recognizer/examples/new/1499_5721_ko_original.jpg" width="200">|<img src="https://raw.githubusercontent.com/KimRass/KimRass/refs/heads/main/Flitto/Place-Translation/Textual-Attribute-Recognizer/examples/new/1499_5721_en_after.png" width="200">|<img src="https://raw.githubusercontent.com/KimRass/KimRass/refs/heads/main/Flitto/Place-Translation/Textual-Attribute-Recognizer/examples/new/1499_5721_ja_after.png" width="200">|<img src="https://raw.githubusercontent.com/KimRass/KimRass/refs/heads/main/Flitto/Place-Translation/Textual-Attribute-Recognizer/examples/new/1499_5721_zh-cn_after.png" width="200">|
 |한국어|영어|일본어|중국어|
-|<img src="https://raw.githubusercontent.com/KimRass/KimRass/refs/heads/main/Flitto/Place-Translation/Textual-Attribute-Recognizer/examples/new/1508_5739_ko_original.jpg" width="150">|<img src="https://raw.githubusercontent.com/KimRass/KimRass/refs/heads/main/Flitto/Place-Translation/Textual-Attribute-Recognizer/examples/new/1508_5739_en_after.png" width="150">|<img src="https://raw.githubusercontent.com/KimRass/KimRass/refs/heads/main/Flitto/Place-Translation/Textual-Attribute-Recognizer/examples/new/1508_5739_ja_after.png" width="150">|<img src="https://raw.githubusercontent.com/KimRass/KimRass/refs/heads/main/Flitto/Place-Translation/Textual-Attribute-Recognizer/examples/new/1508_5739_zh-cn_after.png" width="150">|
+|<img src="https://raw.githubusercontent.com/KimRass/KimRass/refs/heads/main/Flitto/Place-Translation/Textual-Attribute-Recognizer/examples/new/1508_5739_ko_original.jpg" width="200">|<img src="https://raw.githubusercontent.com/KimRass/KimRass/refs/heads/main/Flitto/Place-Translation/Textual-Attribute-Recognizer/examples/new/1508_5739_en_after.png" width="200">|<img src="https://raw.githubusercontent.com/KimRass/KimRass/refs/heads/main/Flitto/Place-Translation/Textual-Attribute-Recognizer/examples/new/1508_5739_ja_after.png" width="200">|<img src="https://raw.githubusercontent.com/KimRass/KimRass/refs/heads/main/Flitto/Place-Translation/Textual-Attribute-Recognizer/examples/new/1508_5739_zh-cn_after.png" width="200">|
 |중국어 번체|영어|||
-|<img src="https://raw.githubusercontent.com/KimRass/KimRass/refs/heads/main/Flitto/Place-Translation/Textual-Attribute-Recognizer/examples/1816_7274_original.jpg" width="150">|<img src="https://raw.githubusercontent.com/KimRass/KimRass/refs/heads/main/Flitto/Place-Translation/Textual-Attribute-Recognizer/examples/1816_7274_zh-TW_en_to_be.png" width="150">|||
+|<img src="https://raw.githubusercontent.com/KimRass/KimRass/refs/heads/main/Flitto/Place-Translation/Textual-Attribute-Recognizer/examples/1816_7274_original.jpg" width="200">|<img src="https://raw.githubusercontent.com/KimRass/KimRass/refs/heads/main/Flitto/Place-Translation/Textual-Attribute-Recognizer/examples/1816_7274_zh-TW_en_to_be.png" width="200">|||
 |일본어|영어|한국어|중국어 간체|
-|<img src="https://raw.githubusercontent.com/KimRass/KimRass/refs/heads/main/Flitto/Place-Translation/Textual-Attribute-Recognizer/examples/1380_5047_original.jpg" width="150">|<img src="https://raw.githubusercontent.com/KimRass/KimRass/refs/heads/main/Flitto/Place-Translation/Textual-Attribute-Recognizer/examples/1380_5047_ja_en_to_be.png" width="150">|<img src="https://raw.githubusercontent.com/KimRass/KimRass/refs/heads/main/Flitto/Place-Translation/Textual-Attribute-Recognizer/examples/1380_5047_ja_ko_to_be.png" width="150">|<img src="https://raw.githubusercontent.com/KimRass/KimRass/refs/heads/main/Flitto/Place-Translation/Textual-Attribute-Recognizer/examples/1380_5047_ja_zh-CN_to_be.png" width="150">|
+|<img src="https://raw.githubusercontent.com/KimRass/KimRass/refs/heads/main/Flitto/Place-Translation/Textual-Attribute-Recognizer/examples/1380_5047_original.jpg" width="200">|<img src="https://raw.githubusercontent.com/KimRass/KimRass/refs/heads/main/Flitto/Place-Translation/Textual-Attribute-Recognizer/examples/1380_5047_ja_en_to_be.png" width="200">|<img src="https://raw.githubusercontent.com/KimRass/KimRass/refs/heads/main/Flitto/Place-Translation/Textual-Attribute-Recognizer/examples/1380_5047_ja_ko_to_be.png" width="200">|<img src="https://raw.githubusercontent.com/KimRass/KimRass/refs/heads/main/Flitto/Place-Translation/Textual-Attribute-Recognizer/examples/1380_5047_ja_zh-CN_to_be.png" width="200">|
 
 ## 2) 개선 사항
 <table>
