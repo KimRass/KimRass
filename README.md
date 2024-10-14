@@ -16,7 +16,7 @@
 ||[Noroozi et al., 2017](https://github.com/KimRass/Mehdi-Noroozi-et-al.-2017)|Noroozi et al.|[✓] Constrastive loss|
 |2018|[PGGAN](https://github.com/KimRass/PGGAN)|Karras et al.|[✓] Training on CelebA-HQ at 512 × 512|
 ||[DeepLab v3](https://github.com/KimRass/DeepLabv3)|Chen et al.|[✓] Training on VOC 2012<br>[✓] Prediction on VOC 2012 validation set<br>[✓] Average mIoU<br>[✓] Model output visualization|
-||[PixelLink](https://github.com/KimRass/PixelLink)|Deng et al.|[✓] Model architecture<br>[✓] Instance-balanced cross entropy loss<br>[✓] Model output post-processing|
+<!-- ||[PixelLink](https://github.com/KimRass/PixelLink)|Deng et al.|[✓] Model architecture<br>[✓] Instance-balanced cross entropy loss<br>[✓] Model output post-processing| -->
 ||[RotNet](https://github.com/KimRass/RotNet)|Gidaris et al|[✓] Attention map visualization|
 ||[StarGAN]()|Yunjey Choi et al.|[✓] Model architecture|
 |2020|[STEFANN](https://github.com/KimRass/STEFANN)|Roy et al.|[✓] FANnet architecture<br>[✓] Training FANnet on Google Fonts<br>[✓] Custom Google Fonts dataset<br>[✓] Average SSIM|
