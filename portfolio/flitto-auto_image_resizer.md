@@ -1,29 +1,23 @@
-- 기존 이미지와 새로운 이미지 간의 feature matching을 통해 새로운 이미지를 적절한 해상도로 자동 조정하는 알고리즘 개발.
-- SIFT를 활용해 두 이미지 간의 특징점 추출 후, RANSAC을 사용해 최적의 호모그래피 행렬 계산.
-- 새로운 이미지가 다수 존재하는 경우 기존 이미지와 가장 유사한 이미지를 자동으로 찾는 기능 구현.
-- RabbitMQ 기반 비동기 AMQP 서버 개발 및 백 오피스와 연동.
-- 기존 포토샵을 통한 수작업 대비 처리 속도 개선.
-
-
 # 1. 문제 정의
-- old image가 있고 old image와 약간의 차이점만 있는 new image가 있을 때 old image와 new image 간의 feature matching을 통해 new image를 적절한 해상도로 resize하는 알고리즘입니다.
+- 기존에 접수된 이미지에서, 메뉴 구성이나 항목의 가격 변화가 발생하는 경우가 있습니다. 새로 접수된 이미지는 기존 이미지와 약간의 차이점만 존재하므로 처음부터 모든 작업을 하기보다 기존의 작업물을 재활용하는 것이 바람직합니다.
+- 이를 위해서 기존에는 디자인팀이 포토샵을 통해 수작업으로 기존 이미지를 바탕으로 새로운 이미지의 해상도를 수정해왔습니다. 이 모습을 가만히 지켜보다가 이미지 처리 알고리즘으로 자동화할 수 있겠다는 생각이 들어 이 기능을 개발하게 되었습니다.
 
 # 2. 문제 해결
-- 'SIFT' ('Scale-Invariant Feature Transform')와 'RANSAC' ('RANdom SAmple Consensus')를 사용합니다.
-- new image를 resize한 후 생기는 빈 영역은 old image로부터 그대로 가져오고 반대의 경우에는 영역을 잘라냅니다.
-- new image를 이미지가 아닌 pdf 파일로 지정할 경우 feature matching이 가장 많이 발생한 페이지를 자동으로 찾아내어 이를 new image로서 사용합니다.
+- 기존 이미지와 새로운 이미지 간의 feature matching을 통해 새로운 이미지를 적절한 해상도로 자동 조정하는 알고리즘 개발.
+- SIFT (Scale-Invariant Feature Transform)를 활용해 두 이미지 간의 특징점 추출 후, RANSAC (RANdom SAmple Consensus)을 사용해 최적의 호모그래피 행렬을 계산합니다.
+- 새로운 이미지의 해상도를 조정한 후 빈 영역이 생기면 기존 이미지로부터 그대로 가져와 채웁니다. 반대로 기존 이미지를 벗어나는 영역이 생기면 잘라냅니다.
+- RabbitMQ를 기반으로 비동기 AMQP (메세지 큐) 서버를 개발하고 백 오피스와 연동했습니다.
+- 사용자가 새로운 이미지를 PDF 파일로 등록할 경우, feature matching이 가장 많이 발생한 페이지를 자동으로 찾는 기능을 추가로 구현했습니다.
 
 # 3. 성과
+- 기존 수작업 대비 이미지 번역의 처리 속도를 대폭 개선했습니다.
+
 ## 1) 예시
 - 음식의 가격이 바뀐 경우
-    | Old image ($2195 \times 2252$) | New image ($9669 \times 9670$) | New image, resized ($2195 \times 2252$) |
-    |-|-|-|
-    | <img src="https://github.com/KimRass/Flitto-ML/assets/67457712/58e0dcd0-aa00-4032-945f-e0330b60f923" width="300"> | <img src="https://github.com/KimRass/Flitto-ML/assets/67457712/b032e67e-5854-4c64-833a-377cf5a3ffa4" width="500"> | <img src="https://github.com/KimRass/Flitto-ML/assets/67457712/6cff2872-10e4-42af-b5c2-ff516f876a2b" width="300"> |
+   |기존 이미지 (2195 × 2252)|새로운 이미지 (9669 × 9670)|해상도 조정 (2195 × 2252)|
+   |-|-|-|
+   |<img src="https://raw.githubusercontent.com/KimRass/KimRass/refs/heads/main/Flitto/Place-Translation/Automatic-Image-Resizer/examples/eataly_old.jpg" width="300">|<img src="https://raw.githubusercontent.com/KimRass/KimRass/refs/heads/main/Flitto/Place-Translation/Automatic-Image-Resizer/examples/eataly_new.jpg" width="500">|<img src="https://raw.githubusercontent.com/KimRass/KimRass/refs/heads/main/Flitto/Place-Translation/Automatic-Image-Resizer/examples/eataly_new_resized.png" width="300">|
 - 음식 이름이 바뀐 경우
-    | Old image ($1240 \times 1754$) | New image ($1654 \times 2339$) | New image, resized ($1240 \times 1754$) |
-    |-|-|-|
-    | <img src="https://github.com/KimRass/Flitto-ML/assets/67457712/63a4b6fb-75fe-4e31-b206-18c0fc8fcf7f" width="300"> | <img src="https://github.com/KimRass/Flitto-ML/assets/67457712/4c57b9a3-5a97-4fee-bf2c-f303bf286f28" width="400"> | <img src="https://github.com/KimRass/Flitto-ML/assets/67457712/72307542-b7c0-49f9-b705-34ffe9ffac0b" width="300"> |
-- new image에 대해 새롭게 이미지 번역을 진행하지 않고도 old image에 맞춰 annotate한 bounding boxes와 각 bounding box가 가지고 있는 번역문, 텍스트 속성 등을 그대로 사용할 수 있습니다.
-- 기존에 포토샵 등을 사용해서 수작업으로 image resizing할 필요가 없습니다.
-
-# 4. References
+   |기존 이미지 (1240 × 1754)|새로운 이미지 (1654 × 2339)|새로운 이미지, resized (1240 × 1754)|
+   |-|-|-|
+   |<img src="https://raw.githubusercontent.com/KimRass/KimRass/refs/heads/main/Flitto/Place-Translation/Automatic-Image-Resizer/examples/langman1_old.jpg" width="300">|<img src="https://github-production-user-asset-6210df.s3.amazonaws.com/67457712/293841750-4c57b9a3-5a97-4fee-bf2c-f303bf286f28.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20241014%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20241014T101357Z&X-Amz-Expires=300&X-Amz-Signature=90bc2b0944fac05a350d024f035abaf1cbabfecab964a0b61d07df126a6108d2&X-Amz-SignedHeaders=host" width="400">|<img src="https://raw.githubusercontent.com/KimRass/KimRass/refs/heads/main/Flitto/Place-Translation/Automatic-Image-Resizer/examples/langman1_new_resized.png" width="300">|

@@ -15,6 +15,8 @@
         - ['공공행정문서 OCR' 데이터셋을 활용하여 'EasyOCR' 모델 fine-tuning (개인 프로젝트).](https://github.com/KimRass/train_easyocr)
         - [`accelerate` 라이브러리를 활용하여 8대의 GPU를 통해 데이터 분산 학습 수행.](#1-video-super-resolution-모델-연구개발)
         - [TensorBoard 및 Wandb를 통한 실시간 모델 학습 모니터링 및 실험.](#1-video-super-resolution-모델-연구개발)
+        - [PyTorch Lightning 기반의 텍스트 생성 모델 개발 (개인 프로젝트).](https://github.com/KimRass/LSTM-Text-Gen.)
+        <!-- - [Hugging Face] -->
         <!-- - 사내 AI 및 개발 스터디 주관. -->
     - 알고리즘: ['Baekjoon Online Judge' AC rating: Gold III 1115.](https://solved.ac/en/profile/rmx1000)
     - Tableau: [EIS 구축 프로젝트를 총괄하여 다수의 대시보드 설계 및 차트 개발.](#1-tableau-기반의-eis-구축-202102--202204)
