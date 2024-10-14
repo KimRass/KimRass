@@ -14,10 +14,10 @@
 
 ## 1) 예시
 - 음식의 가격이 바뀐 경우
-   |기존 이미지 (2195 × 2252)|새로운 이미지 (9669 × 9670)|해상도 조정 (2195 × 2252)|
+   |기존 이미지 (2,195 × 2,252)|새로운 이미지 (9,669 × 9,670)|해상도 조정 (2,195 × 2,252)|
    |-|-|-|
    |<img src="https://raw.githubusercontent.com/KimRass/KimRass/refs/heads/main/Flitto/Place-Translation/Automatic-Image-Resizer/examples/eataly_old.jpg" width="300">|<img src="https://raw.githubusercontent.com/KimRass/KimRass/refs/heads/main/Flitto/Place-Translation/Automatic-Image-Resizer/examples/eataly_new.jpg" width="500">|<img src="https://raw.githubusercontent.com/KimRass/KimRass/refs/heads/main/Flitto/Place-Translation/Automatic-Image-Resizer/examples/eataly_new_resized.png" width="300">|
 - 음식 이름이 바뀐 경우
-   |기존 이미지 (1240 × 1754)|새로운 이미지 (1654 × 2339)|새로운 이미지, resized (1240 × 1754)|
+   |기존 이미지 (1,240 × 1,754)|새로운 이미지 (1,654 × 2,339)|해상도 조정 (1,240 × 1,754)|
    |-|-|-|
    |<img src="https://raw.githubusercontent.com/KimRass/KimRass/refs/heads/main/Flitto/Place-Translation/Automatic-Image-Resizer/examples/langman1_old.jpg" width="300">|<img src="https://github-production-user-asset-6210df.s3.amazonaws.com/67457712/293841750-4c57b9a3-5a97-4fee-bf2c-f303bf286f28.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20241014%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20241014T101357Z&X-Amz-Expires=300&X-Amz-Signature=90bc2b0944fac05a350d024f035abaf1cbabfecab964a0b61d07df126a6108d2&X-Amz-SignedHeaders=host" width="400">|<img src="https://raw.githubusercontent.com/KimRass/KimRass/refs/heads/main/Flitto/Place-Translation/Automatic-Image-Resizer/examples/langman1_new_resized.png" width="300">|
