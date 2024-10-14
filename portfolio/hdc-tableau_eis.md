@@ -18,60 +18,41 @@
 ## 1) 메인 화면
 |Main 화면|
 |-|
-|<img src="https://i.imgur.com/hK8XOTi.png" width="600">|
+|<img src="https://raw.githubusercontent.com/KimRass/KimRass/refs/heads/main/HDC/Tableau-BI/%EB%A9%94%EC%9D%B8.png" width="600">|
 
 ## 2) 분양일보
 |분양 상세 현황|
 |-|
-|<img src="https://i.imgur.com/qWKsbgP.png" width="600">|
+|<img src="https://raw.githubusercontent.com/KimRass/KimRass/refs/heads/main/HDC/Tableau-BI/%EB%B6%84%EC%96%91.png" width="600">|
 |'기준 날짜'를 선택함으로써 과거 시점의 분양 현황을 볼 수 있도록 구성했습니다.|
 |사용되는 테이블은 2개이며 하나는 각 사업지의 기본 정보를 담고 있는 테이블, 또 다른 하나는 각각의 레코드가 하나의 계약 또는 해약 정보를 담고 있는 테이블입니다. 후자에서는 해약이 발생하는 경우 분양 세대 수가 감소할 수 있도록 테이블 구조를 설계했습니다.|
-|이 대시보드를 개발함으로써 담당자가 매일 타 부서로부터 분양 현황 자료를 받아 엑셀 작업을 할 필요가 없어졌습니다.|
+|이 대시보드를 개발함으로써 담당자는 매일 타 부서로부터 분양 현황 자료를 받아 엑셀 작업을 수행할 필요가 없어졌습니다.|
 
 ## 3) CS (Customer Satisfaction)
 |CS 대시보드 화면|
 |-|
-|<img src="https://i.imgur.com/9FCDekW.png" width="600">|
+|<img src="https://raw.githubusercontent.com/KimRass/KimRass/refs/heads/main/HDC/Tableau-BI/CS.png" width="600">|
 |아파트 준공 전 이루어지는 BS ('주부전수점검'과 '오픈하우스점검') 그리고 입주 후 이루어지는 AS의 접수 및 처리 현황을 보여주는 대시보드입니다.|
-|Salesforce는 Tableau의 'Custom SQL' 기능을 지원하지 않아 data mart를 구축할 수 없었습니다. 그래서 다음과 같이 12개의 Salesforce object를 가지고 Tableau의 'Relationship' 기능을 활용해 데이터셋을 구성했습니다. 그리고 Tableau에서 데이터를 처리하는 속도를 향상시키기 위해 Publish Data Source 기능을 사용해 매일 오전 4시에 Salesforce로부터 Tableau server에 데이터를 추출해 놓고 이를 다른 Tableau workbook에서 불러오는 방식을 통해 대시보드를 구현했습니다.|
-
+|Salesforce는 Tableau의 'Custom SQL' 기능을 지원하지 않아 data mart를 구축할 수 없었습니다. 그래서 12개의 Salesforce object를 가지고 Tableau의 'Relationship' 기능을 활용해 데이터셋을 구성했습니다. 그리고 Tableau에서 데이터를 처리하는 속도를 향상시키기 위해 Publish Data Source 기능을 사용해 매일 오전 4시에 Salesforce로부터 Tableau server에 데이터를 추출해 놓고 이를 다른 Tableau workbook에서 불러오는 방식을 통해 대시보드를 구현했습니다.|
+<!-- 
 |CS data architecture|
 |-|
-|<img src="https://i.imgur.com/vSkCbN2.png" width="400">|
+|<img src="https://raw.githubusercontent.com/KimRass/KimRass/refs/heads/main/HDC/Tableau-BI/Salesforce.png" width="400">|-->
 
 ## 4) HR 연간 추이
 |HR 연간 추이 대시보드 화면|
 |-|
-|<img src="https://i.imgur.com/2CU7UVj.png" width="600">|
-|최근 10년 간의 HR과 관련된 지표의 추이를 나타내는 대시보드입니다.|
-|인당 매출액과 인건비당 영업이익을 적나라하게 보여줌으로써 회사의 생산성을 정확히 파악할 수 있도록 설계했습니다.|
-|'채용구분별 인원'과 '채용구분별 인건비'는 계약직의 비중이 얼마나 늘어나는지를 보여주는 그래프입니다.|
-|'정규직 입퇴사 추이'를 통해 최근 퇴사자가 증가하고 있는데 반해 회사가 채용에는 소극적인 모습을 보이고 있는 상황을 경영진에게 있는 그대로 보여주고자 했습니다.|
-|'입금피크·정년퇴직'을 통해 향후 높은 직급의 임직원들이 대량으로 임금피크에 들어가거나 정년퇴직함으로써 회사의 우수 인력이 급격히 감소하게 될 것을 보여주고 있습니다.|
+|<img src="https://raw.githubusercontent.com/KimRass/KimRass/refs/heads/main/HDC/Tableau-BI/HR.png" width="600">|
+|최근 10년간의 HR 관련 지표 추이를 나타내는 대시보드입니다.|
+|인당 매출액과 인건비 대비 영업이익을 명확하게 보여주어 회사의 생산성을 정확히 파악할 수 있도록 설계했습니다.|
+|'채용구분별 인원'과 '채용구분별 인건비' 차트는 계약직 비중의 변화를 보여줍니다.|
+|'정규직 입퇴사 추이' 차트는 최근 퇴사자가 증가하고 있는 반면, 회사의 채용은 소극적인 모습을 보이고 있음을 전달합니다.|
+|'입금피크·정년퇴직' 차트는 향후 높은 직급의 임직원들이 대량으로 임금 피크에 진입하거나 정년퇴직함으로써 회사의 우수 인력이 급격히 감소할 것임을 보여줍니다.|
 
-<!-- ## 5) 조직도
+## 5) 조직도
 |조직도 대시보드 화면|
 |-|
-|<img src="https://i.imgur.com/Y7ivUF9.png" width="600">|
-|이 대시보드도 기존에 엑셀을 통한 수작업으로 인해 존재했던 업무 비효율을 개선하고자 만들게 되었습니다.|
-|각 사업지의 이름, 조직도 등이 변경되거나 직원들의 인사이동이 발생하면 이것이 데이터를 통해 자연스럽게 대시보드에 반영되므로 업무 효율성이 크게 향상될 수 있었습니다.|
-|첨부된 대시보드는 설비 그룹의 조직도를 나타내지만 필터만 바꾸어주면 다른 조직의 조직도로 변경 가능합니다.| -->
-
-# 4. References
-
-
-### (1) [Tableau 기반의 EIS 구축](https://github.com/KimRass/KimRass/tree/main/HDC/Tableau-BI) (2021.02 ~ 2022.04)
-- 프로젝트 소개:
-    - ERP 신규 개발 프로젝트의 일환으로, 경영진이 데이터 기반의 합리적인 의사결정을 내릴 수 있도록 지원하는 시스템 구축. 이를 위해 분산된 데이터를 한 곳에 모아 주요 지표를 한눈에 확인할 수 있도록 하고, 자동화된 데이터 업데이트를 통해 반복적인 보고서 작성을 줄이는 것을 목표로 함.
-- 프로젝트 진행:
-    - 개발 방향성 수립 및 일정 관리 등 프로젝트 총괄.
-    - 본인 외 태블로 개발자 2명, data mart 개발자 4명 등 참여.
-- 주요 성과:
-    - 각 부서의 주요 성과를 한눈에 파악할 수 있는 체계를 마련하여 경영진의 의사결정 시간 단축.
-    - 수작업을 통한 반복적인 자료 수집 및 보고서 작성 업무 제거.
-- 업무 내용:
-    - 부서별 KPI에 대해 현업 담당자와 협의, 요구사항 수집 및 반영.
-    - 차트 개발 및 점검.
-    - 모든 차트에 대한 SQL 쿼리 작성 및 비교 검증.
-    - 대시보드 간의 통일된 디자인 양식 수립 및 적용.
-    - 데이터 업데이트 점검 등 시스템 유지보수.
+|<img src="https://raw.githubusercontent.com/KimRass/KimRass/refs/heads/main/HDC/Tableau-BI/%EC%A1%B0%EC%A7%81%EB%8F%84.png" width="600">|
+|조직도 변경, 인사 이동 등이 발생할 경우, 이러한 변화가 데이터에 자동으로 반영되어 대시보드에 나타나므로 업무 효율성이 크게 향상되었습니다.|
+|필터를 변경하여 다른 조직의 조직도로 손쉽게 전환할 수 있습니다.|
+|기존의 엑셀 수작업을 개선하여 효율성을 높였습니다.|

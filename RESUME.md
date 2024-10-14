@@ -32,8 +32,6 @@
     - Jira: [2주 단위의 스프린트를 통한 애자일 프로젝트 수행.](#1-이미지-번역-서비스-place-translation)
     - SolidWorks: 동력전달장치 등의 투상도를 바탕으로 3D 도면 작성 가능.
     - AutoCAD: SolidWorks로 작성된 3D 도면을 2D 도면화 가능.
-    <!-- - Markdown 및 Notion: 개발 기록 문서 작성을 위해 활용하는 데 익숙함. -->
-    <!-- - 파워포인트: [알고리즘을 설명하는 그림 포함된 발표 자료 작성.](#1-video-super-resolution-모델-연구개발) -->
 - 외국어:
     - 영어: 영어 논문 및 기술 문서를 읽고 이해하여 활용 가능.
     - 일본어: 초중급 수준의 회화, 독해, 청취 가능.
@@ -126,7 +124,7 @@
     - 국내 3대 백화점 브랜드 및 지자체 등과 메뉴 이미지 번역 서비스 계약 체결.
     <!-- - 의류 브랜드 'M'사와 상품 소개 페이지 번역 서비스 계약 체결. -->
 - 업무 내용:
-    - [character-level scene text removal 모델 개발:](https://github.com/KimRass/KimRass/tree/main/Flitto/Place-Translation/Scene-Text-Remover)
+    - [문자 단위 텍스트 제거 모델 개발:](https://github.com/KimRass/KimRass/tree/main/Flitto/Place-Translation/Scene-Text-Remover)
         - 이미지에서 텍스트를 탐지하고 (scene text detection) 자연스럽게 제거하는 (image inpainting) 모델.
         - 사용자가 제거하고 하는 텍스트를 문자 단위로 지정하는 기능 구현.
         - 사전 학습된 AI 모델과 connected-component labeling, fully connected CRF 등의 digital image proessing 기법 활용.
@@ -135,7 +133,7 @@
         - 기존 포토샵을 통한 수작업 대비 처리 속도 개선.
         - 'O'사 서비스 대비 뛰어난 시각적 품질 구현.
         - 밈 번역 커뮤니티 ['Desert Fox'](https://www.desertfox.io/ko)에 도입.
-    - [textual attribute recognition 모델 개발:](https://github.com/KimRass/KimRass/tree/main/Flitto/Place-Translation/Textual-Attribute-Recognizer)
+    - [텍스트 속성 인식 모델 개발:](https://github.com/KimRass/KimRass/tree/main/Flitto/Place-Translation/Textual-Attribute-Recognizer)
         - 이미지의 각 텍스트에서 7가지 속성 (폰트 크기, 텍스트 방향, 텍스트 정렬, 텍스트 줄바꿈, 텍스트 색상, 텍스트 테두리, 텍스트 테두리 색상)을 추출하는 모델.
         - 원본 텍스트를 지운 이미지에 번역된 텍스트 렌더링 시 텍스트의 속성을 반영.
         - 각 문자의 좌표를 기반으로 텍스트 방향 추출.
@@ -197,10 +195,10 @@
             - 'Kiwipiepy' 라이브러리를 통한 형태소 분리에 기반하여 존댓말을 반말로 변환.
             - 사전 학습된 'Sentence-BERT'를 활용하여 임베딩을 기반으로 문장 유사도 검사.
             - 'khaiii', 'MeCab', 'spaCy', 'NLTK' 라이브러리를 활용하여 완전한 한국어 및 영어 문장 선별.
+            - Google Sheets를 활용한 데이터 입력 프로세스에서 드롭다운 메뉴와 문자열 관련 함수를 활용하여 인적오류 최소화.
         - 음성 데이터:
             - 발화 구간의 길이, 진폭 비율, 미녹음 주파수 수 등을 기준으로 음성 품질 평가.
             - waveform, spectrogram, mel-spectrogram으로 음성 데이터 시각화.
-        <!-- - 이미지 데이터 수집 프로젝트에서 Google Sheets를 활용한 데이터 입력 프로세스에 있어서 드롭다운 메뉴와 문자열 관련 함수를 활용하여 인적오류를 최소화. -->
 
 ## 4) HDC현대산업개발 (2016.07 ~ 2022.04, 정규직)
 - 회사 소개:
@@ -221,7 +219,7 @@
     - 부서별 KPI에 대해 현업 담당자와 협의, 요구사항 수집 및 반영.
     - 차트 개발 및 점검.
     - 모든 차트에 대한 SQL 쿼리 작성 및 비교 검증.
-    - 대시보드 간의 통일된 디자인 양식 수립 및 적용.
+    - 대시보드 간의 통일된 디자인 가이드라인 수립 및 적용.
     - 데이터 업데이트 점검 등 시스템 유지보수.
 
 ### (2) 아파트 실거래가 데이터 분석 (2020.01 ~ 2020.09)

@@ -1,6 +1,4 @@
-- 음식점의 메뉴 이미지를 다국어로 이미지 번역해 고객에게 QR 코드의 형태로 제공하는 서비스입니다.
-
-# 1. Process
+# 1. 프로세스
 
 ## 1) OCR
 - <img src="https://github.com/flitto/express-param/assets/105417680/7caaf45f-d45a-439d-8e2c-fafbe7ff8f99" width="600">
