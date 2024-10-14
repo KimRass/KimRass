@@ -14,11 +14,12 @@
         - [PyTorch 기반의 AI 논문 구현 (개인 프로젝트) 다수.](https://github.com/KimRass/KimRass)
         - ['공공행정문서 OCR' 데이터셋을 활용하여 'EasyOCR' 모델 fine-tuning (개인 프로젝트).](https://github.com/KimRass/train_easyocr)
         - [`accelerate` 라이브러리를 활용하여 8대의 GPU를 통해 데이터 분산 학습 수행.](#1-video-super-resolution-모델-연구개발)
-        - [TensorBoard 및 Wandb를 통한 실시간 모델 학습 모니터링 및 실험.](#1-video-super-resolution-모델-연구개발)
         - [PyTorch Lightning 기반의 텍스트 생성 모델 개발 (개인 프로젝트).](https://github.com/KimRass/LSTM-Text-Gen.)
-        <!-- - [Hugging Face] -->
-        <!-- - 사내 AI 및 개발 스터디 주관. -->
-    - 알고리즘: ['Baekjoon Online Judge' AC rating: Gold III 1115.](https://solved.ac/en/profile/rmx1000)
+        - [사전 학습된 장면 텍스트 탐지 모델 및 'CLOVA OCR API'을 활용하여 책의 내용을 인식하는 모델 개발.](https://github.com/KimRass/book_text_recognizer)
+        - [TensorBoard 및 Wandb를 통한 실시간 모델 학습 모니터링.](#1-video-super-resolution-모델-연구개발)
+    - 알고리즘:
+        - ['Baekjoon Online Judge' AC rating: Gold III 1115.](https://solved.ac/en/profile/rmx1000)
+        - [임의 크기의 퍼즐을 맞추는 L2 거리 기반의 알고리즘 개발 (개인 프로젝트).](https://github.com/KimRass/Jigsaw-Puzzle)
     - Tableau: [EIS 구축 프로젝트를 총괄하여 다수의 대시보드 설계 및 차트 개발.](#1-tableau-기반의-eis-구축-202102--202204)
     - SQL: [SQL 쿼리를 작성하여 데이터 분석 및 Tableau 차트 결과를 비교검증.](#1-tableau-기반의-eis-구축-202102--202204)
     - AWS EC2:
@@ -209,10 +210,10 @@
 
 ### (1) [Tableau 기반의 EIS 구축](https://github.com/KimRass/KimRass/tree/main/HDC/Tableau-BI) (2021.02 ~ 2022.04)
 - 프로젝트 소개:
-    - ERP 신규 개발 프로젝트의 일환으로, 경영진이 데이터 기반의 합리적인 의사결정을 내릴 수 있도록 지원하는 시스템 구축. 이를 위해 분산된 데이터를 한 곳에 모아 주요 지표를 한눈에 확인할 수 있도록 하고, 자동화된 데이터 업데이트를 통해 반복적인 보고서 작성을 줄이는 것을 목표로 함.
+    - 경영진이 데이터 기반의 합리적인 의사결정을 내릴 수 있도록 지원하는 시스템 구축. 이를 위해 분산된 데이터를 한 곳에 모아 주요 지표를 한눈에 확인할 수 있도록 하고, 자동화된 데이터 업데이트를 통해 반복적인 보고서 작성을 줄이는 것을 목표로 함.
 - 프로젝트 진행:
     - 개발 방향성 수립 및 일정 관리 등 프로젝트 총괄.
-    - 본인 외 태블로 개발자 2명, data mart 개발자 4명 등 참여.
+    - 본인 외 Tableau 개발자 2명, data mart 개발자 4명, 부문별 현업 담당자 등 참여.
 - 주요 성과:
     - 각 부서의 주요 성과를 한눈에 파악할 수 있는 체계를 마련하여 경영진의 의사결정 시간 단축.
     - 수작업을 통한 반복적인 자료 수집 및 보고서 작성 업무 제거.

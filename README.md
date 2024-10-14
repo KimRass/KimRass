@@ -17,7 +17,7 @@
 |2018|[PGGAN](https://github.com/KimRass/PGGAN)|Karras et al.|[✓] Training on CelebA-HQ at 512 × 512|
 ||[DeepLab v3](https://github.com/KimRass/DeepLabv3)|Chen et al.|[✓] Training on VOC 2012<br>[✓] Prediction on VOC 2012 validation set<br>[✓] Average mIoU<br>[✓] Model output visualization|
 ||[RotNet](https://github.com/KimRass/RotNet)|Gidaris et al|[✓] Attention map visualization|
-||[StarGAN]()|Yunjey Choi et al.|[✓] Model architecture|
+||[StarGAN](https://github.com/KimRass/StarGAN)|Yunjey Choi et al.|[✓] Model architecture|
 |2020|[STEFANN](https://github.com/KimRass/STEFANN)|Roy et al.|[✓] FANnet architecture<br>[✓] Training FANnet on Google Fonts<br>[✓] Custom Google Fonts dataset<br>[✓] Average SSIM|
 ||[DDPM](https://github.com/KimRass/DDPM)|Ho et al.|[✓] Training on CelebA at 32 × 32<br>[✓] Training on CelebA at 64 × 64<br>[✓] Denoising process visualization<br>[✓] Sampling using linear interpolation<br>[✓] Sampling using coarse-to-fine interpolation|
 ||[DDIM](https://github.com/KimRass/DDIM)|Song et al.|[✓] Normal sampling<br>[✓] Sampling using spherical linear interpolation<br>[✓] Sampling using grid interpolation<br>[✓] Truncated normal|
