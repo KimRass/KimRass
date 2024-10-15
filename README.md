@@ -44,7 +44,7 @@
 <!-- ||[PixelLink](https://github.com/KimRass/PixelLink)|Deng et al.|[✓] Model architecture<br>[✓] Instance-balanced cross entropy loss<br>[✓] Model output post-processing| -->
 
 # 2. Resume
-- [이력서-김종범](https://github.com/KimRass/KimRass/blob/main/이력서-김종범.html)
+- [이력서-김종범](https://github.com/KimRass/KimRass/blob/main/이력서-김종범.md)
 
 <!-- # 2. Github Stats
 ![KimRass' GitHub stats](https://github-readme-stats.vercel.app/api?username=KimRass&show_icons=true&theme=radical) -->
