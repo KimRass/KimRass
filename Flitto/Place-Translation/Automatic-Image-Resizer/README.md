@@ -1,3 +1,5 @@
+# <이미지 크기 자동 조정 알고리즘 개발>
+
 # 1. 문제 정의
 - 기존에 접수된 이미지에서, 메뉴 구성이나 항목의 가격 변화가 발생하는 경우가 있습니다. 새로 접수된 이미지는 기존 이미지와 약간의 차이점만 존재하므로 처음부터 모든 작업을 하기보다 기존의 작업물을 재활용하는 것이 바람직합니다.
 - 이를 위해서 기존에는 디자인팀이 포토샵을 통해 수작업으로 기존 이미지를 바탕으로 새로운 이미지의 해상도를 수정해왔습니다. 이 모습을 가만히 지켜보다가 이미지 처리 알고리즘으로 자동화할 수 있겠다는 생각이 들어 이 기능을 개발하게 되었습니다.
@@ -20,4 +22,4 @@
 - 음식 이름이 바뀐 경우
    |기존 이미지 (1,240 × 1,754)|새로운 이미지 (1,654 × 2,339)|해상도 조정 (1,240 × 1,754)|
    |-|-|-|
-   |<img src="https://raw.githubusercontent.com/KimRass/KimRass/refs/heads/main/Flitto/Place-Translation/Automatic-Image-Resizer/examples/langman1_old.jpg" width="300">|<img src="https://github-production-user-asset-6210df.s3.amazonaws.com/67457712/293841750-4c57b9a3-5a97-4fee-bf2c-f303bf286f28.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20241014%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20241014T101357Z&X-Amz-Expires=300&X-Amz-Signature=90bc2b0944fac05a350d024f035abaf1cbabfecab964a0b61d07df126a6108d2&X-Amz-SignedHeaders=host" width="400">|<img src="https://raw.githubusercontent.com/KimRass/KimRass/refs/heads/main/Flitto/Place-Translation/Automatic-Image-Resizer/examples/langman1_new_resized.png" width="300">|
+   |<img src="https://raw.githubusercontent.com/KimRass/KimRass/refs/heads/main/Flitto/Place-Translation/Automatic-Image-Resizer/examples/langman1_old.jpg" width="300">|<img src="https://github-production-user-asset-6210df.s3.amazonaws.com/67457712/293841750-4c57b9a3-5a97-4fee-bf2c-f303bf286f28.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20241015%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20241015T054201Z&X-Amz-Expires=300&X-Amz-Signature=f93e2129c2b7b0d740136088f2e9b9cdeb4db04d2a1e93adddfdd897fe400ae0&X-Amz-SignedHeaders=host" width="400">|<img src="https://raw.githubusercontent.com/KimRass/KimRass/refs/heads/main/Flitto/Place-Translation/Automatic-Image-Resizer/examples/langman1_new_resized.png" width="300">|
