@@ -43,8 +43,8 @@
 |2021|[CLIP](https://github.com/KimRass/CLIP)|Radford et al.|[✓] Training on Flickr8k + Flickr30k<br>[✓] Zero-shot classification on ImageNet1k (mini)<br>[✓] Linear classification on ImageNet1k (mini)|
 <!-- ||[PixelLink](https://github.com/KimRass/PixelLink)|Deng et al.|[✓] Model architecture<br>[✓] Instance-balanced cross entropy loss<br>[✓] Model output post-processing| -->
 
-<!-- # 1. Resume
-[RESUME](https://github.com/KimRass/KimRass/blob/main/RESUME.md) -->
+# 2. Resume
+- [이력서-김종범](https://github.com/KimRass/KimRass/blob/main/이력서-김종범.html)
 
 <!-- # 2. Github Stats
 ![KimRass' GitHub stats](https://github-readme-stats.vercel.app/api?username=KimRass&show_icons=true&theme=radical) -->
