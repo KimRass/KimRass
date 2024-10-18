@@ -15,7 +15,7 @@
 ||[CycleGAN](https://github.com/KimRass/CycleGAN)|Zhu et al.|[✓] Training on monet2photo<br>[✓] Training on vangogh2photo<br>[✓] Training on cezanne2photo<br>[✓] Training on ukiyoe2photo<br>[✓] Training on horse2zebra<br>[✓] Training on summer2winter_yosemite|
 ||[Noroozi et al., 2017](https://github.com/KimRass/Mehdi-Noroozi-et-al.-2017)|Noroozi et al.|[✓] Constrastive loss|
 |2018|[PGGAN](https://github.com/KimRass/PGGAN)|Karras et al.|[✓] Training on CelebA-HQ at 512 × 512|
-||[DeepLab v3](https://github.com/KimRass/DeepLabv3)|Chen et al.|[✓] Training on VOC 2012<br>[✓] Prediction on VOC 2012 validation set<br>[✓] Average mIoU<br>[✓] Model output visualization|
+||[DeepLabv3](https://github.com/KimRass/DeepLabv3)|Chen et al.|[✓] Training on VOC 2012<br>[✓] Prediction on VOC 2012 validation set<br>[✓] Average mIoU<br>[✓] Model output visualization|
 ||[RotNet](https://github.com/KimRass/RotNet)|Gidaris et al|[✓] Attention map visualization|
 ||[StarGAN](https://github.com/KimRass/StarGAN)|Yunjey Choi et al.|[✓] Model architecture|
 |2020|[STEFANN](https://github.com/KimRass/STEFANN)|Roy et al.|[✓] FANnet architecture<br>[✓] Training FANnet on Google Fonts<br>[✓] Custom Google Fonts dataset<br>[✓] Average SSIM|
@@ -25,7 +25,7 @@
 ||[SimCLR](https://github.com/KimRass/SimCLR)|Chen et al.|[✓] Normalized temperature-scaled cross entropy loss<br>[✓] Data augmentation<br>[✓] Pixel intensity histogram|
 ||[DETR](https://github.com/KimRass/DETR)|Carion et al.|[✓] Model architecture<br>[✗] Bipartite matching & loss<br>[✗] Batch normalization freezing<br>[✗] Data preparation<br>[✗] Training on COCO 2017
 |2021|[Improved DDPM](https://github.com/KimRass/Improved-DDPM)|Nichol and Dhariwal|[✓] Cosine diffusion schedule|
-||[Classifier-Guidance](https://github.com/KimRass/Classifier-Guidance)|Dhariwal and Nichol|[✓] Training on CIFAR-10[✗] AdaGN<br>[✗] BiGGAN Upsample/Downsample<br>[✗] Improved DDPM sampling<br>[✗] Conditional/Unconditional models<br>[✗] Super-resolution model<br>[✗] Interpolation|
+||[Classifier-Guidance](https://github.com/KimRass/Classifier-Guidance)|Dhariwal and Nichol|[✓] Training on CIFAR-10<br>[✗] AdaGN<br>[✗] BiGGAN Upsample/Downsample<br>[✗] Improved DDPM sampling<br>[✗] Conditional/Unconditional models<br>[✗] Super-resolution model<br>[✗] Interpolation|
 ||[ILVR](https://github.com/KimRass/ILVR)|Choi et al.|[✓] Sampling using single reference<br>[✓] Sampling using various downsampling factors<br>[✓] Sampling using various conditioning range|
 ||[SDEdit](https://github.com/KimRass/SDEdit)|Meng et al.|[✓] User input stroke simulation<br>[✓] Application to CelebA at 64 × 64|
 ||[MAE](https://github.com/KimRass/MAE)|He et al.|[✓] Model architecture for pre-training<br>[✗] Model architecture for self-supervised learning<br>[✗] Training on ImageNet-1K<br>[✗] Fine-tuning<br>[✗] Linear probing|
@@ -43,8 +43,8 @@
 |2021|[CLIP](https://github.com/KimRass/CLIP)|Radford et al.|[✓] Training on Flickr8k + Flickr30k<br>[✓] Zero-shot classification on ImageNet1k (mini)<br>[✓] Linear classification on ImageNet1k (mini)|
 <!-- ||[PixelLink](https://github.com/KimRass/PixelLink)|Deng et al.|[✓] Model architecture<br>[✓] Instance-balanced cross entropy loss<br>[✓] Model output post-processing| -->
 
-# 2. Resume
-- [이력서-김종범](https://github.com/KimRass/KimRass/blob/main/이력서-김종범.md)
+<!-- # 2. Resume
+- [이력서-김종범](https://github.com/KimRass/KimRass/blob/main/이력서-김종범.md) -->
 
 <!-- # 2. Github Stats
 ![KimRass' GitHub stats](https://github-readme-stats.vercel.app/api?username=KimRass&show_icons=true&theme=radical) -->
