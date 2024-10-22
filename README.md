@@ -1,5 +1,7 @@
-# 1. From-scratch PyTorch Implementations
-|분류 및 연도|이름|저자|구현 내용|
+# 1. Personal Projects
+
+## 1) From-scratch PyTorch Implementations
+|분류 및 연도|모델 이름 또는 논문|저자|내용|
 |:-:|:-|:-|:-|
 |Vision|
 |2014|[VAE](https://github.com/KimRass/VAE)|Kingma and Welling|[✓] Training on MNIST<br>[✓] Encoder output visualization<br>[✓] Decoder output visualization|
@@ -42,6 +44,14 @@
 |Vision-Language|
 |2021|[CLIP](https://github.com/KimRass/CLIP)|Radford et al.|[✓] Training on Flickr8k + Flickr30k<br>[✓] Zero-shot classification on ImageNet1k (mini)<br>[✓] Linear classification on ImageNet1k (mini)|
 <!-- ||[PixelLink](https://github.com/KimRass/PixelLink)|Deng et al.|[✓] Model architecture<br>[✓] Instance-balanced cross entropy loss<br>[✓] Model output post-processing| -->
+
+## 2) [Fine-tuning 'EasyOCR' on the '공공행정문서 OCR' Dataset Provided by 'AI-Hub'](https://github.com/KimRass/train_easyocr)
+
+## 3) [Recognizing Book Content Using the 'CLOVA OCR API'](https://github.com/KimRass/book_text_recognizer)
+
+## 4) [A Rule-based Algorithm for Solving Edge-matching Puzzles of Arbitrary Sizes Using L2 Distance](https://github.com/KimRass/Jigsaw-Puzzle)
+
+## 5) [A 'FastAPI'-based API for Performing Semantic Segmentation Using a 'DeepLabv3' Pretrained on the 'VOC2012' dataset](https://github.com/KimRass/FastAPI)
 
 <!-- # 2. Resume
 - [이력서-김종범](https://github.com/KimRass/KimRass/blob/main/이력서-김종범.md) -->
