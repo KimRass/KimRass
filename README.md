@@ -1,6 +1,6 @@
 # 1. Personal Projects
 
-## 1) From-scratch PyTorch Implementations
+## 1) From-scratch PyTorch Implementations of AI papers
 |분류 및 연도|모델 이름 또는 논문|저자|내용|
 |:-:|:-|:-|:-|
 |Vision|
