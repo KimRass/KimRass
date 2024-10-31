@@ -29,7 +29,7 @@
 ||[Classifier-Guidance](https://github.com/KimRass/Classifier-Guidance) (Dhariwal and Nichol)|[✓] Training on CIFAR-10<br>[ㅤ] AdaGN<br>[ㅤ] BiGGAN Upsample/Downsample<br>[ㅤ] Improved DDPM sampling<br>[ㅤ] Conditional/Unconditional models<br>[ㅤ] Super-resolution model<br>[ㅤ] Interpolation|
 ||[ILVR](https://github.com/KimRass/ILVR) (Choi et al.)|[✓] Sampling using single reference<br>[✓] Sampling using various downsampling factors<br>[✓] Sampling using various conditioning range|
 ||[SDEdit](https://github.com/KimRass/SDEdit) (Meng et al.)|[✓] User input stroke simulation<br>[✓] Applying CelebA at 64 × 64|
-||[MAE](https://github.com/KimRass/MAE) (He et al.)|[✓] Model architecture for pre-training<br>[ㅤ] Model architecture for self-supervised learning<br>[ㅤ] Training on ImageNet-1K<br>[ㅤ] Fine-tuning<br>[ㅤ] Linear probing|
+||[MAE](https://github.com/KimRass/MAE) (He et al.)|[✓] Model architecture for self-supervised pre-training<br>[✓] Model architecture for classification<br>[ㅤ] Self-supervised pre-training on ImageNet-1K<br>[ㅤ] Fine-tuning on ImageNet-1K<br>[ㅤ] Linear probing|
 ||[Copy-Paste](https://github.com/KimRass/Copy-Paste) (Ghiasi et al.)|[✓] COCO dataset processing<br>[✓] Large scale jittering<br>[✓] Copy-Paste (within mini-batch)<br>[✓] Visualizing data<br>[ㅤ] Gaussian filter|
 ||[ViViT](https://github.com/KimRass/ViViT) (Arnab et al.)|[✓] 'Spatio-temporal attention' architecture<br>[✓] 'Factorised encoder' architecture<br>[✓] 'Factorised self-attention' architecture|
 |2022|[CFG](https://github.com/KimRass/CFG) (Ho et al.)|
