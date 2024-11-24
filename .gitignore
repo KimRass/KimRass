@@ -8,3 +8,5 @@ lib64
 pretrained/
 pyvenv.cfg
 share/
+Flitto/
+HDC/
