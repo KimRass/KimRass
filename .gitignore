@@ -8,5 +8,10 @@ lib64
 pretrained/
 pyvenv.cfg
 share/
-Flitto/
-HDC/
+Image-Rotation-Classifier/
+Menu-Image-Generator/
+Scene-Text-Image-QC/
+Data-Collection/
+Automatic-Image-Resizer/README.md
+Scene-Text-Remover/README.md
+Textual-Attribute-Recognizer/README.md
